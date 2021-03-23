@@ -14,7 +14,7 @@ import static java.lang.Math.abs;
  *
  * @author Apple Bee
  */
-public class NetDut extends Canvas{
+public class NetDut extends Canvas {
     private int x1;
     private int y1;
     private int x2;
@@ -40,7 +40,7 @@ public class NetDut extends Canvas{
         y = y1;
         int x_unit = 1, y_unit = 1;
         g.fillRect(x, y, 1, 1); //ve diem pixel dau tien
-        int dem = 0; //bien dem so lan putpixel
+        int dem = 0;
         //xét trường hợp để cho y_unit và x_unit để vẽ tăng lên hay giảm xuống
         if (x2 - x1 < 0)
             x_unit = -x_unit;
@@ -55,7 +55,7 @@ public class NetDut extends Canvas{
                 if (dem < 10) {
                     g.fillRect(x, y, 1, 1);
                     dem++;
-                }
+                }    
                 else if (dem < 20)
                     dem++;
                 else
@@ -71,7 +71,7 @@ public class NetDut extends Canvas{
                 if (dem < 10) {
                     g.fillRect(x, y, 1, 1);
                     dem++;
-                }
+                }    
                 else if (dem < 20)
                     dem++;
                 else
@@ -90,7 +90,7 @@ public class NetDut extends Canvas{
                 if (dem < 10) {
                     g.fillRect(x, y, 1, 1);
                     dem++;
-                }
+                }    
                 else if (dem < 20)
                     dem++;
                 else
