@@ -5,7 +5,14 @@
  */
 package presenhemline;
 
+import java.awt.Graphics;
+import java.awt.Dimension;
+import java.awt.Color;
+import java.awt.Frame;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -19,6 +26,8 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     public GiaoDienChinh() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.getContentPane().setBackground(Color.white); //doi mau nen jFrame
+        System.out.println(jPanel_KhungVe.getBounds());
     }
 
     /**
@@ -48,16 +57,58 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jTextField_r = new javax.swing.JTextField();
         jButton_VeNetDut = new javax.swing.JButton();
+        jPanel_KhungVe = new javax.swing.JPanel(){
+            private static final long serialVersionUID = 1L;
+            @Override
+            protected void paintComponent(Graphics arg0) {
+                // TODO Auto-generated method stub
+                super.paintComponent(arg0);
+                arg0.setColor(Color.BLACK);
+                arg0.drawLine(BasicParam.backgroundWidth/2, 0, BasicParam.backgroundWidth/2, BasicParam.backgroundHeight/2);//x+
+                arg0.setColor(Color.GREEN);
+                for(int i=BasicParam.backgroundHeight/2;i<=BasicParam.backgroundHeight;i+=6){//y-
+                    arg0.drawLine(BasicParam.backgroundWidth/2, i, BasicParam.backgroundWidth/2,i+3);
+                }
+                arg0.setColor(Color.BLACK);
+                arg0.drawLine(BasicParam.backgroundWidth/2, BasicParam.backgroundHeight/2, BasicParam.backgroundWidth, BasicParam.backgroundHeight/2);//y+
+                arg0.setColor(Color.GREEN);
+                for(int i=BasicParam.backgroundWidth/2;i>=0;i-=6){//x-
+                    arg0.drawLine(i,BasicParam.backgroundHeight/2,i-3,BasicParam.backgroundHeight/2);
+                }
+                arg0.setColor(Color.BLACK);
+                arg0.drawLine(0,BasicParam.backgroundHeight,BasicParam.backgroundWidth/2,BasicParam.backgroundHeight/2);//z+
+                int l=BasicParam.backgroundHeight/2;
+                arg0.setColor(Color.GREEN);
+                for(int i=BasicParam.backgroundWidth/2;i<BasicParam.backgroundWidth;i+=5){
+                    arg0.drawLine(i, l, i+3,(int)(l*1.0-2.4));
+                    l-=4;
+                }
+            }
+        };
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jButton_NetHaiChamGach = new javax.swing.JButton();
+        jButton_NetChamGach = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("x1:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 21, -1, -1));
 
         jLabel2.setText("y1:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 50, -1, -1));
 
         jLabel3.setText("x2:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 91, -1, -1));
 
         jLabel4.setText("y2:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 122, -1, -1));
+        getContentPane().add(jTextField_x1, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 18, 116, -1));
+        getContentPane().add(jTextField_y1, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 47, 116, -1));
+        getContentPane().add(jTextField_x2, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 88, 116, -1));
+        getContentPane().add(jTextField_y2, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 119, 116, -1));
 
         jButton_VeDoanThang.setText("Ve doan thang");
         jButton_VeDoanThang.addActionListener(new java.awt.event.ActionListener() {
@@ -65,6 +116,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 jButton_VeDoanThangActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton_VeDoanThang, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 201, 107, -1));
 
         jButton_VeHinhChuNhat.setText("Ve hinh chu nhat");
         jButton_VeHinhChuNhat.addActionListener(new java.awt.event.ActionListener() {
@@ -72,10 +124,15 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 jButton_VeHinhChuNhatActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton_VeHinhChuNhat, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 242, -1, -1));
 
         jLabel5.setText("xO:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 21, -1, -1));
 
         jLabel6.setText("yO:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 50, -1, -1));
+        getContentPane().add(jTextField_xO, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 18, 112, -1));
+        getContentPane().add(jTextField_yO, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 47, 112, -1));
 
         jButton_VeDuongTron.setText("Ve duong tron");
         jButton_VeDuongTron.addActionListener(new java.awt.event.ActionListener() {
@@ -83,8 +140,11 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 jButton_VeDuongTronActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton_VeDuongTron, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 217, -1, -1));
 
         jLabel7.setText("r:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 91, -1, -1));
+        getContentPane().add(jTextField_r, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 88, 112, -1));
 
         jButton_VeNetDut.setText("Ve net dut");
         jButton_VeNetDut.addActionListener(new java.awt.event.ActionListener() {
@@ -92,164 +152,185 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 jButton_VeNetDutActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton_VeNetDut, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 294, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField_y2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel1)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jTextField_x1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel2)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jTextField_y1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGap(81, 81, 81)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel6)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel5)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(jTextField_xO, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel3)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jTextField_x2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(4, 4, 4)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(jButton_VeHinhChuNhat)
-                                                .addComponent(jButton_VeDoanThang, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                    .addGap(81, 81, 81)
-                                    .addComponent(jLabel7)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField_r, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jButton_VeDuongTron)
-                                        .addComponent(jTextField_yO, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(jButton_VeNetDut)))
-                .addContainerGap(250, Short.MAX_VALUE))
+        jPanel_KhungVe.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel9.setText("x");
+
+        jLabel10.setText("y");
+
+        jLabel12.setText("O");
+
+        javax.swing.GroupLayout jPanel_KhungVeLayout = new javax.swing.GroupLayout(jPanel_KhungVe);
+        jPanel_KhungVe.setLayout(jPanel_KhungVeLayout);
+        jPanel_KhungVeLayout.setHorizontalGroup(
+            jPanel_KhungVeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_KhungVeLayout.createSequentialGroup()
+                .addGap(252, 252, 252)
+                .addGroup(jPanel_KhungVeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel_KhungVeLayout.createSequentialGroup()
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(227, 227, 227)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField_x1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField_xO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jTextField_y1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jTextField_x2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7)
-                            .addComponent(jTextField_r, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField_yO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField_y2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton_VeDoanThang)
-                    .addComponent(jButton_VeDuongTron))
-                .addGap(18, 18, 18)
-                .addComponent(jButton_VeHinhChuNhat)
-                .addGap(18, 18, 18)
-                .addComponent(jButton_VeNetDut)
-                .addContainerGap(46, Short.MAX_VALUE))
+        jPanel_KhungVeLayout.setVerticalGroup(
+            jPanel_KhungVeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_KhungVeLayout.createSequentialGroup()
+                .addComponent(jLabel10)
+                .addGap(247, 247, 247)
+                .addGroup(jPanel_KhungVeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel12))
+                .addContainerGap(223, Short.MAX_VALUE))
         );
+
+        getContentPane().add(jPanel_KhungVe, new org.netbeans.lib.awtextra.AbsoluteConstraints(389, 11, 510, 500));
+
+        jButton_NetHaiChamGach.setText("Ve net hai cham gach");
+        jButton_NetHaiChamGach.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_NetHaiChamGachActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton_NetHaiChamGach, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, -1, -1));
+
+        jButton_NetChamGach.setText("Ve net cham gach");
+        jButton_NetChamGach.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_NetChamGachActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton_NetChamGach, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton_VeDoanThangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeDoanThangActionPerformed
         // TODO add your handling code here:
-       
-        int x1 = Integer.parseInt(jTextField_x1.getText());
-        int y1 = Integer.parseInt(jTextField_y1.getText());
-        int x2 = Integer.parseInt(jTextField_x2.getText());
-        int y2 = Integer.parseInt(jTextField_y2.getText());
-        DoanThang m = new DoanThang(x1, y1, x2, y2); 
-        JFrame f = new JFrame("BGI"); 
-        f.setLocationRelativeTo(null);
-        f.add(m);  
-        f.setSize(400,400);  
-        //f.setLayout(null);  
-        f.setVisible(true); 
+        if (rangBuocDuLieuDuongThang() == true) {
+            int x1 = Integer.parseInt(jTextField_x1.getText())*5;
+            int y1 = Integer.parseInt(jTextField_y1.getText())*5;
+            int x2 = Integer.parseInt(jTextField_x2.getText())*5;
+            int y2 = Integer.parseInt(jTextField_y2.getText())*5;
+            DoanThang m = new DoanThang(x1, y1, x2, y2); 
+            jPanel_KhungVe.removeAll();
+            jPanel_KhungVe.add(m.draw());
+            jPanel_KhungVe.revalidate();
+            jPanel_KhungVe.repaint();
+            return;
+        }
+        JOptionPane.showMessageDialog(this, "Toa do khong duoc bo trong!");    
     }//GEN-LAST:event_jButton_VeDoanThangActionPerformed
 
     private void jButton_VeHinhChuNhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeHinhChuNhatActionPerformed
         // TODO add your handling code here:
-        int x1 = Integer.parseInt(jTextField_x1.getText());
-        int y1 = Integer.parseInt(jTextField_y1.getText());
-        int x2 = Integer.parseInt(jTextField_x2.getText());
-        int y2 = Integer.parseInt(jTextField_y2.getText());
-        HinhChuNhat m = new HinhChuNhat(x1, y1, x2, y2); 
-        JFrame f = new JFrame("BGI"); 
-        f.setLocationRelativeTo(null);
-        f.add(m);  
-        f.setSize(400,400);  
-        //f.setLayout(null);  
-        f.setVisible(true); 
+        if (rangBuocDuLieuDuongThang() == true) {
+            int x1 = Integer.parseInt(jTextField_x1.getText())*5;
+            int y1 = Integer.parseInt(jTextField_y1.getText())*5;
+            int x2 = Integer.parseInt(jTextField_x2.getText())*5;
+            int y2 = Integer.parseInt(jTextField_y2.getText())*5;
+            HinhChuNhat m = new HinhChuNhat(x1, y1, x2, y2); 
+            jPanel_KhungVe.removeAll();
+            jPanel_KhungVe.add(m.draw());
+            jPanel_KhungVe.revalidate();
+            jPanel_KhungVe.repaint(); 
+            return;
+        }
+        JOptionPane.showMessageDialog(this, "Toa do khong duoc bo trong!");
     }//GEN-LAST:event_jButton_VeHinhChuNhatActionPerformed
 
     private void jButton_VeDuongTronActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeDuongTronActionPerformed
         // TODO add your handling code here:
-        int xO = Integer.parseInt(jTextField_xO.getText());
-        int yO = Integer.parseInt(jTextField_yO.getText());
-        int r = Integer.parseInt(jTextField_r.getText());
-        DuongTron m = new DuongTron(xO, yO, r); 
-        JFrame f = new JFrame("BGI"); 
-        f.setLocationRelativeTo(null);
-        f.add(m);  
-        f.setSize(400,400);  
-        //f.setLayout(null);  
-        f.setVisible(true); 
+        if (rangBuocDuLieuDuongTron() == true) {
+            int xO = Integer.parseInt(jTextField_xO.getText())*5;
+            int yO = Integer.parseInt(jTextField_yO.getText())*5;
+            int r = Integer.parseInt(jTextField_r.getText())*5;
+            DuongTron m = new DuongTron(xO, yO, r); 
+            jPanel_KhungVe.removeAll();
+            jPanel_KhungVe.add(m.draw());
+            jPanel_KhungVe.revalidate();
+            jPanel_KhungVe.repaint();
+            System.out.println(jPanel_KhungVe.getBounds());
+            return;
+        }
+        JOptionPane.showMessageDialog(this, "Toa do khong duoc bo trong!");
     }//GEN-LAST:event_jButton_VeDuongTronActionPerformed
 
     private void jButton_VeNetDutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeNetDutActionPerformed
         // TODO add your handling code here:
-        int x1 = Integer.parseInt(jTextField_x1.getText());
-        int y1 = Integer.parseInt(jTextField_y1.getText());
-        int x2 = Integer.parseInt(jTextField_x2.getText());
-        int y2 = Integer.parseInt(jTextField_y2.getText());
-        NetDut m = new NetDut(x1, y1, x2, y2); 
-        JFrame f = new JFrame("BGI"); 
-        f.setLocationRelativeTo(null);
-        f.add(m);  
-        f.setSize(400,400);  
+        if (rangBuocDuLieuDuongThang() == true) {
+            int x1 = Integer.parseInt(jTextField_x1.getText())*5;
+            int y1 = Integer.parseInt(jTextField_y1.getText())*5;
+            int x2 = Integer.parseInt(jTextField_x2.getText())*5;
+            int y2 = Integer.parseInt(jTextField_y2.getText())*5;
+            NetDut m = new NetDut(x1, y1, x2, y2);
+            jPanel_KhungVe.removeAll();
+            jPanel_KhungVe.add(m.draw());
+            jPanel_KhungVe.revalidate();
+            jPanel_KhungVe.repaint();
+            return;
+        }
+        JOptionPane.showMessageDialog(this, "Toa do khong duoc bo trong!");
         //f.setLayout(null);  
-        f.setVisible(true); 
     }//GEN-LAST:event_jButton_VeNetDutActionPerformed
 
+    private void jButton_NetChamGachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_NetChamGachActionPerformed
+        // TODO add your handling code here:
+        if (rangBuocDuLieuDuongThang() == true) {
+            int x1 = Integer.parseInt(jTextField_x1.getText())*5;
+            int y1 = Integer.parseInt(jTextField_y1.getText())*5;
+            int x2 = Integer.parseInt(jTextField_x2.getText())*5;
+            int y2 = Integer.parseInt(jTextField_y2.getText())*5;
+            NetChamGach m = new NetChamGach(x1, y1, x2, y2);
+            jPanel_KhungVe.removeAll();
+            jPanel_KhungVe.add(m.draw());
+            jPanel_KhungVe.revalidate();
+            jPanel_KhungVe.repaint();
+            return;
+        }
+        JOptionPane.showMessageDialog(this, "Toa do khong duoc bo trong!");
+    }//GEN-LAST:event_jButton_NetChamGachActionPerformed
+
+    private void jButton_NetHaiChamGachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_NetHaiChamGachActionPerformed
+        // TODO add your handling code here:
+        if (rangBuocDuLieuDuongThang() == true) {
+            int x1 = Integer.parseInt(jTextField_x1.getText())*5;
+            int y1 = Integer.parseInt(jTextField_y1.getText())*5;
+            int x2 = Integer.parseInt(jTextField_x2.getText())*5;
+            int y2 = Integer.parseInt(jTextField_y2.getText())*5;
+            NetHaiChamGach m = new NetHaiChamGach(x1, y1, x2, y2);
+            jPanel_KhungVe.removeAll();
+            jPanel_KhungVe.add(m.draw());
+            jPanel_KhungVe.revalidate();
+            jPanel_KhungVe.repaint();
+            return;
+        }
+        JOptionPane.showMessageDialog(this, "Toa do khong duoc bo trong!");
+    }//GEN-LAST:event_jButton_NetHaiChamGachActionPerformed
+
+    boolean rangBuocDuLieuDuongThang () {
+        String x1 = jTextField_x1.getText();
+        String y1 = jTextField_y1.getText();
+        String x2 = jTextField_x2.getText();
+        String y2 = jTextField_y2.getText();
+        if (!x1.equals("") && !x2.equals("") && !y1.equals("") && !y2.equals("")) {
+            return true;
+        }
+        return false;
+    }
+    
+    boolean rangBuocDuLieuDuongTron () {
+        String xO = jTextField_xO.getText();
+        String yO = jTextField_yO.getText();
+        String r = jTextField_r.getText();
+        if (!xO.equals("") && !yO.equals("") && !r.equals("")) {
+            return true;
+        }
+        return false;
+    }
     /**
      * @param args the command line arguments
      */
@@ -286,17 +367,23 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton_NetChamGach;
+    private javax.swing.JButton jButton_NetHaiChamGach;
     private javax.swing.JButton jButton_VeDoanThang;
     private javax.swing.JButton jButton_VeDuongTron;
     private javax.swing.JButton jButton_VeHinhChuNhat;
     private javax.swing.JButton jButton_VeNetDut;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel_KhungVe;
     private javax.swing.JTextField jTextField_r;
     private javax.swing.JTextField jTextField_x1;
     private javax.swing.JTextField jTextField_x2;

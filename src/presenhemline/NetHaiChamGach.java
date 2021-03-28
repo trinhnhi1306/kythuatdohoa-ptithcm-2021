@@ -14,10 +14,10 @@ import javax.swing.JPanel;
  *
  * @author Apple Bee
  */
-public class NetDut {
+public class NetHaiChamGach {
     private int x1, x2, y1, y2;
 
-    public NetDut(int x1, int y1, int x2, int y2) {
+    public NetHaiChamGach(int x1, int y1, int x2, int y2) {
         this.x1 = x1;
         this.y1 = y1;
         this.x2 = x2;
@@ -66,6 +66,18 @@ public class NetDut {
                             g.fillRect(x, y, 1, 1);
                             dem++;
                         }
+                        else if (dem < 13)
+                            dem++;
+                        else if (dem < 14) {
+                            g.fillRect(x, y, 1, 1);
+                            dem++;
+                        }
+                        else if (dem < 17)
+                            dem++;
+                        else if (dem < 18) {
+                            g.fillRect(x, y, 1, 1);
+                            dem++;
+                        }
                         else if (dem < 20)
                             dem++;
                         else
@@ -79,6 +91,18 @@ public class NetDut {
                     {
                         x += x_unit;
                         if (dem < 10) {
+                            g.fillRect(x, y, 1, 1);
+                            dem++;
+                        }
+                        else if (dem < 13)
+                            dem++;
+                        else if (dem < 14) {
+                            g.fillRect(x, y, 1, 1);
+                            dem++;
+                        }
+                        else if (dem < 17)
+                            dem++;
+                        else if (dem < 18) {
                             g.fillRect(x, y, 1, 1);
                             dem++;
                         }
@@ -98,6 +122,18 @@ public class NetDut {
                         }
                         x += x_unit;
                         if (dem < 10) {
+                            g.fillRect(x, y, 1, 1);
+                            dem++;
+                        }
+                        else if (dem < 13)
+                            dem++;
+                        else if (dem < 14) {
+                            g.fillRect(x, y, 1, 1);
+                            dem++;
+                        }
+                        else if (dem < 17)
+                            dem++;
+                        else if (dem < 18) {
                             g.fillRect(x, y, 1, 1);
                             dem++;
                         }

@@ -9,6 +9,7 @@ import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 import static java.lang.Math.abs;
+import javax.swing.JPanel;
 
 /**
  *
@@ -27,41 +28,41 @@ public class HinhChuNhat extends Canvas {
         this.y2 = y2;
     }
     
-    @Override
-    public void paint(Graphics g) {  
-        setBackground(Color.WHITE);  //dat mau nen la white
-        setForeground(Color.RED);  //dat mau hinh ve la red
-        //khai bao 4 diem hinh chu nhat
-        int xA = x1, yA = y2;   //           A----------------B (x2, y2)
-        int xB = x2, yB = y2;   //           |                |
-        int xC = x2, yC = y1;   //           |                |
-        int xD = x1, yD = y1;   //  (x1, y1) D----------------C
-        //khai bao cac bien trong thuat toan Presenhem, vi chi ve duong thang ngang va doc nen khong can Dx, Dy, P
-        int x = x1, y = y1;
-        int x_unit = 1, y_unit = 1;
- 
-        //xét trường hợp để cho y_unit và x_unit để vẽ tăng lên hay giảm xuống
-        if (x2 - x1 < 0)
-            x_unit = -x_unit;
-        if (y2 - y1 < 0)
-            y_unit = -y_unit;
-        //ve hai doan thang doc DA va CB
-        g.fillRect(xD, yD, 1, 1); //ve diem D
-        g.fillRect(xC, yC, 1, 1); //ve diem C
-        while (y != y2)
-        {
-            y += y_unit;
-            g.fillRect(xD, y, 1, 1);
-            g.fillRect(xC, y, 1, 1);
-        }
-        //ve hai doan thang ngang AB va DC
-        g.fillRect(xD, yD, 1, 1); //ve diem A
-        while (x != x2)
-        {
-            x += x_unit;
-            g.fillRect(x, yA, 1, 1);
-            g.fillRect(x, yD, 1, 1);
-        }
-    }  
-    
+    public JPanel draw () {
+        JPanel panel = new JPanel() {
+            private static final long serialVersionUID = 1L;
+            @Override
+            public void paintComponent(Graphics g) {  
+//                setBackground(Color.WHITE);  //dat mau nen la white
+                setForeground(Color.RED);  //dat mau hinh ve la red
+                //khai bao 4 diem hinh chu nhat
+                int chieuCao = Math.abs(x1 - x2);    //           A----------------B (x2, y2)
+                int chieuRong = Math.abs(y1 - y2);   //           |                |
+                                                     //           |                |
+                                                     //  (x1, y1) D----------------C
+
+                int x = 0, y = 0;
+                //ve AB va DC
+                while (x != chieuRong)
+                {
+                    g.fillRect(x, 0, 1, 1);
+                    g.fillRect(x, chieuCao, 1, 1);
+                    x++;
+                }
+                //ve AD va BC
+                while (y != chieuCao)
+                {
+                    g.fillRect(0, y, 1, 1);
+                    g.fillRect(chieuRong, y, 1, 1);
+                    y++;
+                }
+            }
+        };
+        int xPanel = (x1 < x2) ? x1 : x2;
+        int yPanel = (y1 > y2) ? y1 : y2;
+        panel.setOpaque(false);
+        panel.setBounds(250 + xPanel, 250 - yPanel, Math.abs(x1-x2) + 1, Math.abs(y1-y2)+ 1);
+        panel.setVisible(true);
+        return panel;
+    }
 }
