@@ -26,7 +26,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     public GiaoDienChinh() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.getContentPane().setBackground(Color.white); //doi mau nen jFrame
+//        this.getContentPane().setBackground(Color.LIGHT_GRAY);
         System.out.println(jPanel_KhungVe.getBounds());
     }
 
@@ -63,17 +63,26 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             protected void paintComponent(Graphics arg0) {
                 // TODO Auto-generated method stub
                 super.paintComponent(arg0);
+                setBackground(Color.WHITE);
                 arg0.setColor(Color.BLACK);
-                arg0.drawLine(BasicParam.backgroundWidth/2, 0, BasicParam.backgroundWidth/2, BasicParam.backgroundHeight/2);//x+
-                for (int i = 1; i <= 10; i++) {
-                    arg0.drawLine(250 + i * 5, 248, 250 + i * 5, 252);
+                arg0.drawString("O", BasicParam.backgroundWidth/2 + 5, BasicParam.backgroundHeight/2 + 20);
+                arg0.drawString("10", BasicParam.backgroundWidth/2 + 50, BasicParam.backgroundHeight/2 + 20);
+                arg0.drawString("20", BasicParam.backgroundWidth/2 + 100, BasicParam.backgroundHeight/2 + 20);
+                arg0.drawString("30", BasicParam.backgroundWidth/2 + 150, BasicParam.backgroundHeight/2 + 20);
+                arg0.drawString("40", BasicParam.backgroundWidth/2 + 200, BasicParam.backgroundHeight/2 + 20);
+                arg0.drawString("x", BasicParam.backgroundWidth - 5, BasicParam.backgroundHeight/2 + 20);
+                arg0.drawString("y", BasicParam.backgroundWidth/2 + 5, 20);
+                arg0.drawString("z", 5, BasicParam.backgroundHeight - 20);
+                arg0.drawLine(BasicParam.backgroundWidth/2, 0, BasicParam.backgroundWidth/2, BasicParam.backgroundHeight/2);//y+
+                for (int i = 1; i <= BasicParam.backgroundWidth/100; i++) { //vach don vi
+                    arg0.drawLine(BasicParam.backgroundWidth/2 + i * 50, BasicParam.backgroundHeight/2 - 2, BasicParam.backgroundWidth/2 + i * 50, BasicParam.backgroundHeight/2 + 2);
                 }
                 arg0.setColor(Color.GREEN);
                 for(int i=BasicParam.backgroundHeight/2;i<=BasicParam.backgroundHeight;i+=6){//y-
                     arg0.drawLine(BasicParam.backgroundWidth/2, i, BasicParam.backgroundWidth/2,i+3);
                 }
                 arg0.setColor(Color.BLACK);
-                arg0.drawLine(BasicParam.backgroundWidth/2, BasicParam.backgroundHeight/2, BasicParam.backgroundWidth, BasicParam.backgroundHeight/2);//y+
+                arg0.drawLine(BasicParam.backgroundWidth/2, BasicParam.backgroundHeight/2, BasicParam.backgroundWidth, BasicParam.backgroundHeight/2);//x+
                 arg0.setColor(Color.GREEN);
                 for(int i=BasicParam.backgroundWidth/2;i>=0;i-=6){//x-
                     arg0.drawLine(i,BasicParam.backgroundHeight/2,i-3,BasicParam.backgroundHeight/2);
@@ -88,9 +97,6 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 }
             }
         };
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jButton_NetHaiChamGach = new javax.swing.JButton();
         jButton_NetChamGach = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
@@ -160,35 +166,15 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
         jPanel_KhungVe.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel9.setText("x");
-
-        jLabel10.setText("y");
-
-        jLabel12.setText("O");
-
         javax.swing.GroupLayout jPanel_KhungVeLayout = new javax.swing.GroupLayout(jPanel_KhungVe);
         jPanel_KhungVe.setLayout(jPanel_KhungVeLayout);
         jPanel_KhungVeLayout.setHorizontalGroup(
             jPanel_KhungVeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel_KhungVeLayout.createSequentialGroup()
-                .addGap(252, 252, 252)
-                .addGroup(jPanel_KhungVeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel_KhungVeLayout.createSequentialGroup()
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(227, 227, 227)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 508, Short.MAX_VALUE)
         );
         jPanel_KhungVeLayout.setVerticalGroup(
             jPanel_KhungVeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel_KhungVeLayout.createSequentialGroup()
-                .addComponent(jLabel10)
-                .addGap(247, 247, 247)
-                .addGroup(jPanel_KhungVeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel12))
-                .addContainerGap(223, Short.MAX_VALUE))
+            .addGap(0, 498, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanel_KhungVe, new org.netbeans.lib.awtextra.AbsoluteConstraints(389, 11, 510, 500));
@@ -382,8 +368,6 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private javax.swing.JButton jButton_VeHinhChuNhat;
     private javax.swing.JButton jButton_VeNetDut;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -391,7 +375,6 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel_KhungVe;
     private javax.swing.JTextField jTextField_r;
     private javax.swing.JTextField jTextField_x1;

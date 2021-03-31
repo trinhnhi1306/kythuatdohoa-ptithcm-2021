@@ -205,7 +205,7 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JPanel(){&#xa;    private static final long serialVersionUID = 1L;&#xa;    @Override&#xa;    protected void paintComponent(Graphics arg0) {&#xa;        // TODO Auto-generated method stub&#xa;        super.paintComponent(arg0);&#xa;        arg0.setColor(Color.BLACK);&#xa;        arg0.drawLine(BasicParam.backgroundWidth/2, 0, BasicParam.backgroundWidth/2, BasicParam.backgroundHeight/2);//x+&#xa;        for (int i = 1; i &lt;= 10; i++) {&#xa;            arg0.drawLine(250 + i * 5, 248, 250 + i * 5, 252);&#xa;        }&#xa;        arg0.setColor(Color.GREEN);&#xa;        for(int i=BasicParam.backgroundHeight/2;i&lt;=BasicParam.backgroundHeight;i+=6){//y-&#xa;            arg0.drawLine(BasicParam.backgroundWidth/2, i, BasicParam.backgroundWidth/2,i+3);&#xa;        }&#xa;        arg0.setColor(Color.BLACK);&#xa;        arg0.drawLine(BasicParam.backgroundWidth/2, BasicParam.backgroundHeight/2, BasicParam.backgroundWidth, BasicParam.backgroundHeight/2);//y+&#xa;        arg0.setColor(Color.GREEN);&#xa;        for(int i=BasicParam.backgroundWidth/2;i&gt;=0;i-=6){//x-&#xa;            arg0.drawLine(i,BasicParam.backgroundHeight/2,i-3,BasicParam.backgroundHeight/2);&#xa;        }&#xa;        arg0.setColor(Color.BLACK);&#xa;        arg0.drawLine(0,BasicParam.backgroundHeight,BasicParam.backgroundWidth/2,BasicParam.backgroundHeight/2);//z+&#xa;        int l = BasicParam.backgroundHeight / 2;&#xa;        arg0.setColor(Color.GREEN);&#xa;        for (int i = BasicParam.backgroundWidth / 2; i &lt;= BasicParam.backgroundWidth; i += 6) {&#xa;            arg0.drawLine(i + 3, l - 3, i + 6, l - 6);&#xa;            l -= 6;&#xa;        }&#xa;    }&#xa;}"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JPanel(){&#xa;    private static final long serialVersionUID = 1L;&#xa;    @Override&#xa;    protected void paintComponent(Graphics arg0) {&#xa;        // TODO Auto-generated method stub&#xa;        super.paintComponent(arg0);&#xa;        setBackground(Color.WHITE);&#xa;        arg0.setColor(Color.BLACK);&#xa;        arg0.drawString(&quot;O&quot;, BasicParam.backgroundWidth/2 + 5, BasicParam.backgroundHeight/2 + 20);&#xa;        arg0.drawString(&quot;10&quot;, BasicParam.backgroundWidth/2 + 50, BasicParam.backgroundHeight/2 + 20);&#xa;        arg0.drawString(&quot;20&quot;, BasicParam.backgroundWidth/2 + 100, BasicParam.backgroundHeight/2 + 20);&#xa;        arg0.drawString(&quot;30&quot;, BasicParam.backgroundWidth/2 + 150, BasicParam.backgroundHeight/2 + 20);&#xa;        arg0.drawString(&quot;40&quot;, BasicParam.backgroundWidth/2 + 200, BasicParam.backgroundHeight/2 + 20);&#xa;        arg0.drawString(&quot;x&quot;, BasicParam.backgroundWidth - 5, BasicParam.backgroundHeight/2 + 20);&#xa;        arg0.drawString(&quot;y&quot;, BasicParam.backgroundWidth/2 + 5, 20);&#xa;        arg0.drawString(&quot;z&quot;, 5, BasicParam.backgroundHeight - 20);&#xa;        arg0.drawLine(BasicParam.backgroundWidth/2, 0, BasicParam.backgroundWidth/2, BasicParam.backgroundHeight/2);//y+&#xa;        for (int i = 1; i &lt;= BasicParam.backgroundWidth/100; i++) { //vach don vi&#xa;            arg0.drawLine(BasicParam.backgroundWidth/2 + i * 50, BasicParam.backgroundHeight/2 - 2, BasicParam.backgroundWidth/2 + i * 50, BasicParam.backgroundHeight/2 + 2);&#xa;        }&#xa;        arg0.setColor(Color.GREEN);&#xa;        for(int i=BasicParam.backgroundHeight/2;i&lt;=BasicParam.backgroundHeight;i+=6){//y-&#xa;            arg0.drawLine(BasicParam.backgroundWidth/2, i, BasicParam.backgroundWidth/2,i+3);&#xa;        }&#xa;        arg0.setColor(Color.BLACK);&#xa;        arg0.drawLine(BasicParam.backgroundWidth/2, BasicParam.backgroundHeight/2, BasicParam.backgroundWidth, BasicParam.backgroundHeight/2);//x+&#xa;        arg0.setColor(Color.GREEN);&#xa;        for(int i=BasicParam.backgroundWidth/2;i&gt;=0;i-=6){//x-&#xa;            arg0.drawLine(i,BasicParam.backgroundHeight/2,i-3,BasicParam.backgroundHeight/2);&#xa;        }&#xa;        arg0.setColor(Color.BLACK);&#xa;        arg0.drawLine(0,BasicParam.backgroundHeight,BasicParam.backgroundWidth/2,BasicParam.backgroundHeight/2);//z+&#xa;        int l = BasicParam.backgroundHeight / 2;&#xa;        arg0.setColor(Color.GREEN);&#xa;        for (int i = BasicParam.backgroundWidth / 2; i &lt;= BasicParam.backgroundWidth; i += 6) {&#xa;            arg0.drawLine(i + 3, l - 3, i + 6, l - 6);&#xa;            l -= 6;&#xa;        }&#xa;    }&#xa;}"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -216,51 +216,15 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="252" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel10" min="-2" pref="21" max="-2" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <Component id="jLabel12" min="-2" pref="21" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="227" max="-2" attributes="0"/>
-                          <Component id="jLabel9" min="-2" pref="8" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
+              <EmptySpace min="0" pref="508" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="247" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="223" max="32767" attributes="0"/>
-              </Group>
+              <EmptySpace min="0" pref="498" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
-      <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel9">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="x"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel10">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="y"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel12">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="O"/>
-          </Properties>
-        </Component>
-      </SubComponents>
     </Container>
     <Component class="javax.swing.JButton" name="jButton_NetHaiChamGach">
       <Properties>
