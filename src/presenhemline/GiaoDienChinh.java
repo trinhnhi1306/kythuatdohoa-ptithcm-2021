@@ -65,6 +65,9 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 super.paintComponent(arg0);
                 arg0.setColor(Color.BLACK);
                 arg0.drawLine(BasicParam.backgroundWidth/2, 0, BasicParam.backgroundWidth/2, BasicParam.backgroundHeight/2);//x+
+                for (int i = 1; i <= 10; i++) {
+                    arg0.drawLine(250 + i * 5, 248, 250 + i * 5, 252);
+                }
                 arg0.setColor(Color.GREEN);
                 for(int i=BasicParam.backgroundHeight/2;i<=BasicParam.backgroundHeight;i+=6){//y-
                     arg0.drawLine(BasicParam.backgroundWidth/2, i, BasicParam.backgroundWidth/2,i+3);
@@ -77,11 +80,11 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 }
                 arg0.setColor(Color.BLACK);
                 arg0.drawLine(0,BasicParam.backgroundHeight,BasicParam.backgroundWidth/2,BasicParam.backgroundHeight/2);//z+
-                int l=BasicParam.backgroundHeight/2;
+                int l = BasicParam.backgroundHeight / 2;
                 arg0.setColor(Color.GREEN);
-                for(int i=BasicParam.backgroundWidth/2;i<BasicParam.backgroundWidth;i+=5){
-                    arg0.drawLine(i, l, i+3,(int)(l*1.0-2.4));
-                    l-=4;
+                for (int i = BasicParam.backgroundWidth / 2; i <= BasicParam.backgroundWidth; i += 6) {
+                    arg0.drawLine(i + 3, l - 3, i + 6, l - 6);
+                    l -= 6;
                 }
             }
         };
@@ -90,6 +93,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jButton_NetHaiChamGach = new javax.swing.JButton();
         jButton_NetChamGach = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -204,6 +208,10 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton_NetChamGach, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, -1, -1));
+
+        jLabel8.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel8.setText("1 đơn vị = 5 pixel");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -382,6 +390,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel_KhungVe;
     private javax.swing.JTextField jTextField_r;
