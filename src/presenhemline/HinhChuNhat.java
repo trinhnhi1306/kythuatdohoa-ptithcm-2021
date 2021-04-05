@@ -36,8 +36,8 @@ public class HinhChuNhat extends Canvas {
 //                setBackground(Color.WHITE);  //dat mau nen la white
                 setForeground(Color.RED);  //dat mau hinh ve la red
                 //khai bao 4 diem hinh chu nhat
-                int chieuCao = Math.abs(x1 - x2);    //           A----------------B (x2, y2)
-                int chieuRong = Math.abs(y1 - y2);   //           |                |
+                int chieuCao = Math.abs(y1 - y2);    //           A----------------B (x2, y2)
+                int chieuRong = Math.abs(x1 - x2);   //           |                |
                                                      //           |                |
                                                      //  (x1, y1) D----------------C
 
