@@ -39,24 +39,6 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField_x1 = new javax.swing.JTextField();
-        jTextField_y1 = new javax.swing.JTextField();
-        jTextField_x2 = new javax.swing.JTextField();
-        jTextField_y2 = new javax.swing.JTextField();
-        jButton_VeDoanThang = new javax.swing.JButton();
-        jButton_VeHinhChuNhat = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField_xO = new javax.swing.JTextField();
-        jTextField_yO = new javax.swing.JTextField();
-        jButton_VeDuongTron = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField_r = new javax.swing.JTextField();
-        jButton_VeNetDut = new javax.swing.JButton();
         jPanel_KhungVe = new javax.swing.JPanel(){
             private static final long serialVersionUID = 1L;
             @Override
@@ -77,6 +59,9 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 for (int i = 1; i <= BasicParam.backgroundWidth/100; i++) { //vach don vi
                     arg0.drawLine(BasicParam.backgroundWidth/2 + i * 50, BasicParam.backgroundHeight/2 - 2, BasicParam.backgroundWidth/2 + i * 50, BasicParam.backgroundHeight/2 + 2);
                 }
+                for (int i = 1; i <= BasicParam.backgroundHeight/100; i++) { //vach don vi
+                    arg0.drawLine(BasicParam.backgroundWidth/2 - 2, i * 50, BasicParam.backgroundWidth/2 + 2, i * 50);
+                }
                 arg0.setColor(Color.GREEN);
                 for(int i=BasicParam.backgroundHeight/2;i<=BasicParam.backgroundHeight;i+=6){//y-
                     arg0.drawLine(BasicParam.backgroundWidth/2, i, BasicParam.backgroundWidth/2,i+3);
@@ -87,82 +72,58 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 for(int i=BasicParam.backgroundWidth/2;i>=0;i-=6){//x-
                     arg0.drawLine(i,BasicParam.backgroundHeight/2,i-3,BasicParam.backgroundHeight/2);
                 }
-                arg0.setColor(Color.BLACK);
-                arg0.drawLine(0,BasicParam.backgroundHeight,BasicParam.backgroundWidth/2,BasicParam.backgroundHeight/2);//z+
-                int l = BasicParam.backgroundHeight / 2;
-                arg0.setColor(Color.GREEN);
-                for (int i = BasicParam.backgroundWidth / 2; i <= BasicParam.backgroundWidth; i += 6) {
-                    arg0.drawLine(i + 3, l - 3, i + 6, l - 6);
-                    l -= 6;
-                }
+                //        arg0.setColor(Color.BLACK);
+                //        arg0.drawLine(0,BasicParam.backgroundHeight,BasicParam.backgroundWidth/2,BasicParam.backgroundHeight/2);//z+
+                //        int l = BasicParam.backgroundHeight / 2;
+                //        arg0.setColor(Color.GREEN);
+                //        for (int i = BasicParam.backgroundWidth / 2; i <= BasicParam.backgroundWidth; i += 6) {
+                    //            arg0.drawLine(i + 3, l - 3, i + 6, l - 6);
+                    //            l -= 6;
+                    //        }
             }
         };
-        jButton_NetHaiChamGach = new javax.swing.JButton();
-        jButton_NetChamGach = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        DoanThang = new javax.swing.JPanel();
+        jTextField_x1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField_y1 = new javax.swing.JTextField();
+        jTextField_x2 = new javax.swing.JTextField();
+        jTextField_y2 = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jButton_VeDoanThang = new javax.swing.JButton();
+        jButton_VeHinhChuNhat = new javax.swing.JButton();
+        jButton_VeNetDut = new javax.swing.JButton();
+        jButton_NetChamGach = new javax.swing.JButton();
+        jButton_NetHaiChamGach = new javax.swing.JButton();
+        HinhTron = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jTextField_xO = new javax.swing.JTextField();
+        jTextField_yO = new javax.swing.JTextField();
+        jButton_VeDuongTron = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField_r = new javax.swing.JTextField();
+        TamGiacDeu = new javax.swing.JPanel();
+        jTextField_xDinh = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jTextField_yDinh = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jTextField_canh = new javax.swing.JTextField();
+        jButton_VeTamGiac = new javax.swing.JButton();
+        Diem = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jTextField_x = new javax.swing.JTextField();
+        jTextField_y = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jButton_VeDiem = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setText("x1:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 21, -1, -1));
-
-        jLabel2.setText("y1:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 50, -1, -1));
-
-        jLabel3.setText("x2:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 91, -1, -1));
-
-        jLabel4.setText("y2:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 122, -1, -1));
-        getContentPane().add(jTextField_x1, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 18, 116, -1));
-        getContentPane().add(jTextField_y1, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 47, 116, -1));
-        getContentPane().add(jTextField_x2, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 88, 116, -1));
-        getContentPane().add(jTextField_y2, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 119, 116, -1));
-
-        jButton_VeDoanThang.setText("Ve doan thang");
-        jButton_VeDoanThang.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_VeDoanThangActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton_VeDoanThang, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 201, 107, -1));
-
-        jButton_VeHinhChuNhat.setText("Ve hinh chu nhat");
-        jButton_VeHinhChuNhat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_VeHinhChuNhatActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton_VeHinhChuNhat, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 242, -1, -1));
-
-        jLabel5.setText("xO:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 21, -1, -1));
-
-        jLabel6.setText("yO:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 50, -1, -1));
-        getContentPane().add(jTextField_xO, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 18, 112, -1));
-        getContentPane().add(jTextField_yO, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 47, 112, -1));
-
-        jButton_VeDuongTron.setText("Ve duong tron");
-        jButton_VeDuongTron.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_VeDuongTronActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton_VeDuongTron, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 217, -1, -1));
-
-        jLabel7.setText("r:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 91, -1, -1));
-        getContentPane().add(jTextField_r, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 88, 112, -1));
-
-        jButton_VeNetDut.setText("Ve net dut");
-        jButton_VeNetDut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_VeNetDutActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton_VeNetDut, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 294, -1, -1));
 
         jPanel_KhungVe.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -177,27 +138,145 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             .addGap(0, 498, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel_KhungVe, new org.netbeans.lib.awtextra.AbsoluteConstraints(389, 11, 510, 500));
+        getContentPane().add(jPanel_KhungVe, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 510, 500));
 
-        jButton_NetHaiChamGach.setText("Ve net hai cham gach");
-        jButton_NetHaiChamGach.addActionListener(new java.awt.event.ActionListener() {
+        jLabel8.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel8.setText("1 đơn vị = 5 pixel");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        DoanThang.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        DoanThang.add(jTextField_x1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 116, -1));
+
+        jLabel1.setText("x1:");
+        DoanThang.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+
+        jLabel2.setText("y1:");
+        DoanThang.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
+
+        jLabel3.setText("x2:");
+        DoanThang.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
+
+        jLabel4.setText("y2:");
+        DoanThang.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
+        DoanThang.add(jTextField_y1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 116, -1));
+        DoanThang.add(jTextField_x2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 116, -1));
+        DoanThang.add(jTextField_y2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 116, -1));
+
+        jPanel1.setLayout(new java.awt.GridLayout(5, 1, 0, 10));
+
+        jButton_VeDoanThang.setText("Vẽ đoạn thẳng");
+        jButton_VeDoanThang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_NetHaiChamGachActionPerformed(evt);
+                jButton_VeDoanThangActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton_NetHaiChamGach, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, -1, -1));
+        jPanel1.add(jButton_VeDoanThang);
 
-        jButton_NetChamGach.setText("Ve net cham gach");
+        jButton_VeHinhChuNhat.setText("Vẽ hình chữ nhật");
+        jButton_VeHinhChuNhat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_VeHinhChuNhatActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton_VeHinhChuNhat);
+
+        jButton_VeNetDut.setText("Vẽ nét đứt");
+        jButton_VeNetDut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_VeNetDutActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton_VeNetDut);
+
+        jButton_NetChamGach.setText("Vẽ nét chấm gạch");
         jButton_NetChamGach.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_NetChamGachActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton_NetChamGach, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, -1, -1));
+        jPanel1.add(jButton_NetChamGach);
 
-        jLabel8.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel8.setText("1 đơn vị = 5 pixel");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jButton_NetHaiChamGach.setText("Vẽ nét hai chấm gạch");
+        jButton_NetHaiChamGach.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_NetHaiChamGachActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton_NetHaiChamGach);
+
+        DoanThang.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 174, 160, 230));
+
+        jTabbedPane1.addTab("Đoạn thẳng", DoanThang);
+
+        HinhTron.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setText("xO:");
+        HinhTron.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+
+        jLabel6.setText("yO:");
+        HinhTron.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
+        HinhTron.add(jTextField_xO, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 112, -1));
+        HinhTron.add(jTextField_yO, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 112, -1));
+
+        jButton_VeDuongTron.setText("Vẽ đường tròn");
+        jButton_VeDuongTron.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_VeDuongTronActionPerformed(evt);
+            }
+        });
+        HinhTron.add(jButton_VeDuongTron, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
+
+        jLabel7.setText("r:");
+        HinhTron.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
+        HinhTron.add(jTextField_r, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 112, -1));
+
+        jTabbedPane1.addTab("Hình tròn", HinhTron);
+
+        TamGiacDeu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        TamGiacDeu.add(jTextField_xDinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 112, -1));
+
+        jLabel9.setText("x đỉnh:");
+        TamGiacDeu.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+
+        jLabel10.setText("y đỉnh:");
+        TamGiacDeu.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
+        TamGiacDeu.add(jTextField_yDinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 112, -1));
+
+        jLabel11.setText("a:");
+        TamGiacDeu.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
+        TamGiacDeu.add(jTextField_canh, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 112, -1));
+
+        jButton_VeTamGiac.setText("Vẽ tam giác");
+        jButton_VeTamGiac.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_VeTamGiacActionPerformed(evt);
+            }
+        });
+        TamGiacDeu.add(jButton_VeTamGiac, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
+
+        jTabbedPane1.addTab("Tam giác đều", TamGiacDeu);
+
+        Diem.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel12.setText("x:");
+        Diem.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 30, -1));
+        Diem.add(jTextField_x, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 112, -1));
+        Diem.add(jTextField_y, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 112, -1));
+
+        jLabel13.setText("y:");
+        Diem.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
+
+        jButton_VeDiem.setText("Vẽ điểm");
+        jButton_VeDiem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_VeDiemActionPerformed(evt);
+            }
+        });
+        Diem.add(jButton_VeDiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
+
+        jTabbedPane1.addTab("Điểm", Diem);
+
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 310, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -305,6 +384,31 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Toa do khong duoc bo trong!");
     }//GEN-LAST:event_jButton_NetHaiChamGachActionPerformed
 
+    private void jButton_VeTamGiacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeTamGiacActionPerformed
+        // TODO add your handling code here:
+        int xDinh = Integer.parseInt(jTextField_xDinh.getText())*5;
+        int yDinh = Integer.parseInt(jTextField_yDinh.getText())*5;
+        int canh = Integer.parseInt(jTextField_canh.getText())*5;
+        TamGiacDeu m = new TamGiacDeu(xDinh, yDinh, canh);
+        jPanel_KhungVe.removeAll();
+        jPanel_KhungVe.add(m.draw());
+        jPanel_KhungVe.revalidate();
+        jPanel_KhungVe.repaint();
+        return;
+    }//GEN-LAST:event_jButton_VeTamGiacActionPerformed
+
+    private void jButton_VeDiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeDiemActionPerformed
+        // TODO add your handling code here:
+        int x = Integer.parseInt(jTextField_x.getText())*5;
+        int y = Integer.parseInt(jTextField_y.getText())*5;
+        Diem m = new Diem(x, y);
+        jPanel_KhungVe.removeAll();
+        jPanel_KhungVe.add(m.draw());
+        jPanel_KhungVe.revalidate();
+        jPanel_KhungVe.repaint();
+        return;
+    }//GEN-LAST:event_jButton_VeDiemActionPerformed
+
     boolean rangBuocDuLieuDuongThang () {
         String x1 = jTextField_x1.getText();
         String y1 = jTextField_y1.getText();
@@ -361,13 +465,23 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Diem;
+    private javax.swing.JPanel DoanThang;
+    private javax.swing.JPanel HinhTron;
+    private javax.swing.JPanel TamGiacDeu;
     private javax.swing.JButton jButton_NetChamGach;
     private javax.swing.JButton jButton_NetHaiChamGach;
+    private javax.swing.JButton jButton_VeDiem;
     private javax.swing.JButton jButton_VeDoanThang;
     private javax.swing.JButton jButton_VeDuongTron;
     private javax.swing.JButton jButton_VeHinhChuNhat;
     private javax.swing.JButton jButton_VeNetDut;
+    private javax.swing.JButton jButton_VeTamGiac;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -375,13 +489,21 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel_KhungVe;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField jTextField_canh;
     private javax.swing.JTextField jTextField_r;
+    private javax.swing.JTextField jTextField_x;
     private javax.swing.JTextField jTextField_x1;
     private javax.swing.JTextField jTextField_x2;
+    private javax.swing.JTextField jTextField_xDinh;
     private javax.swing.JTextField jTextField_xO;
+    private javax.swing.JTextField jTextField_y;
     private javax.swing.JTextField jTextField_y1;
     private javax.swing.JTextField jTextField_y2;
+    private javax.swing.JTextField jTextField_yDinh;
     private javax.swing.JTextField jTextField_yO;
     // End of variables declaration//GEN-END:variables
 }

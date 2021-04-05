@@ -5,7 +5,6 @@
  */
 package presenhemline;
 
-import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
@@ -56,7 +55,7 @@ public class DuongTron {
             }
         };
         panel.setOpaque(false);
-        panel.setBounds(250 + xO - r, 250 - yO - r, 2*r + 1, 2*r + 1);
+        panel.setBounds(BasicParam.backgroundWidth/2 + xO - r, BasicParam.backgroundHeight/2 - yO - r, 2*r + 1, 2*r + 1);
         panel.setVisible(true);
         return panel;
     }

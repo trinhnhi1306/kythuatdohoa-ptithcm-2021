@@ -61,7 +61,7 @@ public class HinhChuNhat extends Canvas {
         int xPanel = (x1 < x2) ? x1 : x2;
         int yPanel = (y1 > y2) ? y1 : y2;
         panel.setOpaque(false);
-        panel.setBounds(250 + xPanel, 250 - yPanel, Math.abs(x1-x2) + 1, Math.abs(y1-y2)+ 1);
+        panel.setBounds(BasicParam.backgroundWidth/2 + xPanel, BasicParam.backgroundHeight/2 - yPanel, Math.abs(x1-x2) + 1, Math.abs(y1-y2)+ 1);
         panel.setVisible(true);
         return panel;
     }
