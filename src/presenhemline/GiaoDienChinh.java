@@ -295,7 +295,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             HinhTron.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
             HinhTron.add(jTextField_r, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 112, -1));
 
-            jTabbedPane1.addTab("Hình tròn", HinhTron);
+            jTabbedPane1.addTab("Đường tròn", HinhTron);
 
             getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 310, 450));
 

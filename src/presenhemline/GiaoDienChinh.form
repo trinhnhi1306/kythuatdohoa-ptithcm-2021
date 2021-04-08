@@ -400,8 +400,8 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="H&#xec;nh tr&#xf2;n">
-                <Property name="tabTitle" type="java.lang.String" value="H&#xec;nh tr&#xf2;n"/>
+              <JTabbedPaneConstraints tabName="&#x110;&#x1b0;&#x1edd;ng tr&#xf2;n">
+                <Property name="tabTitle" type="java.lang.String" value="&#x110;&#x1b0;&#x1edd;ng tr&#xf2;n"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>

@@ -99,7 +99,7 @@ public class MuiTen {
                     xC = xH - (AB/20);
                 }
                 else{
-                    yC = (int)(yH - Math.sqrt((double)((AB/10.0)/(Math.pow((double)(b/a), 2.0)+1))));
+                    yC = (int)(yH - Math.sqrt((double)((AB/20.0)/(Math.pow((double)(b/a), 2.0)+1))));
                     xC = (int)((a*xH+b*yH-b*yC)/a);            
                 }
                 // Tính tọa độ của D
