@@ -26,7 +26,8 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     public GiaoDienChinh() {
         initComponents();
         this.setLocationRelativeTo(null);
-//        this.getContentPane().setBackground(Color.LIGHT_GRAY);
+        this.getContentPane().setBackground(Color.WHITE);
+        jPanel_KhungVe.setBackground(Color.BLUE);
 //        System.out.println(jPanel_KhungVe.getBounds());
     }
 
@@ -127,6 +128,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             jButton_Xoa = new javax.swing.JButton();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+            setBackground(new java.awt.Color(0, 204, 255));
             getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
             jPanel_KhungVe.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -148,6 +150,9 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             jLabel8.setText("1 đơn vị = 5 pixel");
             getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+            jTabbedPane1.setBackground(new java.awt.Color(0, 204, 255));
+
+            Diem.setBackground(new java.awt.Color(0, 204, 255));
             Diem.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
             jLabel12.setText("x:");
@@ -168,6 +173,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
             jTabbedPane1.addTab("Điểm", Diem);
 
+            DoanThang.setBackground(new java.awt.Color(0, 204, 255));
             DoanThang.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
             DoanThang.add(jTextField_x1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 116, -1));
 
@@ -186,6 +192,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             DoanThang.add(jTextField_x2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 116, -1));
             DoanThang.add(jTextField_y2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 116, -1));
 
+            jPanel1.setBackground(new java.awt.Color(0, 204, 255));
             jPanel1.setLayout(new java.awt.GridLayout(6, 1, 0, 10));
 
             jButton_VeDoanThang.setText("Vẽ đoạn thẳng");
@@ -240,6 +247,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
             jTabbedPane1.addTab("Đoạn thẳng", DoanThang);
 
+            TamGiacDeu.setBackground(new java.awt.Color(0, 204, 255));
             TamGiacDeu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
             TamGiacDeu.add(jTextField_xDinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 112, -1));
 
@@ -264,6 +272,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
             jTabbedPane1.addTab("Tam giác đều", TamGiacDeu);
 
+            HinhTron.setBackground(new java.awt.Color(0, 204, 255));
             HinhTron.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
             jLabel5.setText("xO:");
@@ -288,7 +297,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
             jTabbedPane1.addTab("Hình tròn", HinhTron);
 
-            getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 310, 450));
+            getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 310, 450));
 
             jButton_Xoa.setText("Xóa");
             jButton_Xoa.addActionListener(new java.awt.event.ActionListener() {

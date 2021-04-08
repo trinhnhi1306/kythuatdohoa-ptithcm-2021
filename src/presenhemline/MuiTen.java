@@ -82,7 +82,6 @@ public class MuiTen {
                     }
                 }
                 
-                // canh xet cung la 10
                 //khai bao tọa độ các đỉnh
                 int xB, yB, xH, yH, xC, yC, xD, yD, AB; 
                 int a = x2-x1 ;
@@ -97,7 +96,7 @@ public class MuiTen {
                 // Tính tọa độ của C
                 if (a==0){
                     yC = yH;
-                    xC = xH - (AB/10);
+                    xC = xH - (AB/20);
                 }
                 else{
                     yC = (int)(yH - Math.sqrt((double)((AB/10.0)/(Math.pow((double)(b/a), 2.0)+1))));

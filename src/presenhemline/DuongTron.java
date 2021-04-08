@@ -31,6 +31,7 @@ public class DuongTron {
                 setBackground(Color.WHITE);  //dat mau nen la white
                 setForeground(Color.RED);  //dat mau hinh ve la red
                 //khai bao cac bien cua thuat toan Presenhem
+                int dem = 0;
                 int x, y, p, x0;
                 p = 3 - 2*r;
                 x = 0;
@@ -43,14 +44,21 @@ public class DuongTron {
                         y -= 1;
                     }
                     x += 1;
-                    g.fillRect(x + r, y + r, 1, 1);
-                    g.fillRect(y + r, x + r, 1, 1);
-                    g.fillRect(-y + r, x + r, 1, 1);
-                    g.fillRect(-x + r, y + r, 1, 1);
-                    g.fillRect(-x + r, -y + r, 1, 1);
-                    g.fillRect(-y + r, -x + r, 1, 1);
-                    g.fillRect(y + r, -x + r, 1, 1);
-                    g.fillRect(x + r, -y + r, 1, 1);
+                    if (dem < 5) {
+                        g.fillRect(x + r, y + r, 1, 1);
+                        g.fillRect(y + r, x + r, 1, 1);
+                        g.fillRect(-y + r, x + r, 1, 1);
+                        g.fillRect(-x + r, y + r, 1, 1);
+                        g.fillRect(-x + r, -y + r, 1, 1);
+                        g.fillRect(-y + r, -x + r, 1, 1);
+                        g.fillRect(y + r, -x + r, 1, 1);
+                        g.fillRect(x + r, -y + r, 1, 1);
+                        dem++;
+                    }
+                    else if (dem < 10)
+                        dem++;
+                    else
+                        dem = 0;
                 }
             }
         };
