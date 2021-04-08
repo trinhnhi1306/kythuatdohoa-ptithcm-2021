@@ -47,7 +47,7 @@ public class TamGiacDeu {
             }
         };
         int xPanel = BasicParam.backgroundWidth/2 + xDinh - (canh/2);
-        int yPanel = BasicParam.backgroundWidth/2 - yDinh;
+        int yPanel = BasicParam.backgroundHeight/2 - yDinh;
         panel.setOpaque(false);
         panel.setBounds(xPanel, yPanel, canh, canh);
         panel.setVisible(true);

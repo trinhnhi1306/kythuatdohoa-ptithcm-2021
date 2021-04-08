@@ -110,7 +110,7 @@ public class NetChamGach {
             }
         };
         panel.setOpaque(false);
-        panel.setSize(500, 500);//set size cho vuwaf jpanel ma mh ve
+        panel.setSize(500, 500);//set size cho vua jpanel ma minh ve
         panel.setVisible(true);
         return panel;
     }

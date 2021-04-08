@@ -27,9 +27,7 @@ public class DoanThang {
 
     public JPanel draw() {
         JPanel panel = new JPanel() {
-            private static final long serialVersionUID = 1L;
 
-            //Mục đích của biến này là để chắc chắn trước và sau khi chuyển đổi, đối tượng của chúng ta vẫn là một
             @Override
             protected void paintComponent(Graphics g) {
                 // TODO Auto-generated method stub
@@ -83,7 +81,7 @@ public class DoanThang {
             }
         };
         panel.setOpaque(false);
-        panel.setSize(500, 500);//set size cho vuwaf jpanel ma mh ve
+        panel.setSize(500, 500);//set size cho vua jpanel ma minh ve
         panel.setVisible(true);
         return panel;
     }

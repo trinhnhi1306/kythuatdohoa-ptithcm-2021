@@ -30,7 +30,6 @@ public class HinhChuNhat extends Canvas {
     
     public JPanel draw () {
         JPanel panel = new JPanel() {
-            private static final long serialVersionUID = 1L;
             @Override
             public void paintComponent(Graphics g) {  
 //                setBackground(Color.WHITE);  //dat mau nen la white
