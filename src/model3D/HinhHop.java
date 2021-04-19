@@ -86,7 +86,7 @@ public class HinhHop {
     }
     
     public JFrame nhapToaDo3D(){
-        JFrame frame = new JFrame("HINH CAU");
+        JFrame frame = new JFrame("HÌNH HỘP");
         frame.setSize(subFrameWidth, subFrameHight);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLocationRelativeTo(null);
