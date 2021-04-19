@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package presenhemline;
+package baitap;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -14,11 +14,11 @@ import javax.swing.JPanel;
  *
  * @author Apple Bee
  */
-public class NetHaiChamGach {
+public class NetChamGach {
 
     private int x1, x2, y1, y2;
 
-    public NetHaiChamGach(int x1, int y1, int x2, int y2) {
+    public NetChamGach(int x1, int y1, int x2, int y2) {
         this.x1 = x1;
         this.y1 = y1;
         this.x2 = x2;
@@ -27,7 +27,9 @@ public class NetHaiChamGach {
 
     public JPanel draw() {
         JPanel panel = new JPanel() {
+            private static final long serialVersionUID = 1L;
 
+            //Mục đích của biến này là để chắc chắn trước và sau khi chuyển đổi, đối tượng của chúng ta vẫn là một
             @Override
             protected void paintComponent(Graphics g) {
                 // TODO Auto-generated method stub
@@ -66,15 +68,9 @@ public class NetHaiChamGach {
                             g.fillRect(x + 250, 250 - y, 1, 1);
                             dem++;
                         }
-                        else if (dem < 13)
+                        else if (dem < 15)
                             dem++;
-                        else if (dem < 14) {
-                            g.fillRect(x + 250, 250 - y, 1, 1);
-                            dem++;
-                        }
-                        else if (dem < 17)
-                            dem++;
-                        else if (dem < 18) {
+                        else if (dem < 16) {
                             g.fillRect(x + 250, 250 - y, 1, 1);
                             dem++;
                         }
@@ -98,15 +94,9 @@ public class NetHaiChamGach {
                             g.fillRect(x + 250, 250 - y, 1, 1);
                             dem++;
                         }
-                        else if (dem < 13)
+                        else if (dem < 15)
                             dem++;
-                        else if (dem < 14) {
-                            g.fillRect(x + 250, 250 - y, 1, 1);
-                            dem++;
-                        }
-                        else if (dem < 17)
-                            dem++;
-                        else if (dem < 18) {
+                        else if (dem < 16) {
                             g.fillRect(x + 250, 250 - y, 1, 1);
                             dem++;
                         }

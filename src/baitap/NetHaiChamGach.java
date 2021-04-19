@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package presenhemline;
+package baitap;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -14,11 +14,11 @@ import javax.swing.JPanel;
  *
  * @author Apple Bee
  */
-public class MuiTen {
+public class NetHaiChamGach {
 
     private int x1, x2, y1, y2;
 
-    public MuiTen(int x1, int y1, int x2, int y2) {
+    public NetHaiChamGach(int x1, int y1, int x2, int y2) {
         this.x1 = x1;
         this.y1 = y1;
         this.x2 = x2;
@@ -26,17 +26,14 @@ public class MuiTen {
     }
 
     public JPanel draw() {
-        
         JPanel panel = new JPanel() {
-            private static final long serialVersionUID = 1L;
 
-            //Mục đích của biến này là để chắc chắn trước và sau khi chuyển đổi, đối tượng của chúng ta vẫn là một
             @Override
             protected void paintComponent(Graphics g) {
                 // TODO Auto-generated method stub
                 super.paintComponent(g);
                 setForeground(Color.RED);  //dat mau hinh ve la red
-
+                int dem = 0;
                 int x, y, Dx, Dy, p;
                 Dx = Math.abs(x2 - x1);
                 Dy = Math.abs(y2 - y1);
@@ -65,7 +62,26 @@ public class MuiTen {
                             y += y_unit;
                         }
                         x += x_unit;
-                        g.fillRect(x + 250, 250 - y, 1, 1);
+                        if (dem < 10) {
+                            g.fillRect(x + 250, 250 - y, 1, 1);
+                            dem++;
+                        }
+                        else if (dem < 13)
+                            dem++;
+                        else if (dem < 14) {
+                            g.fillRect(x + 250, 250 - y, 1, 1);
+                            dem++;
+                        }
+                        else if (dem < 17)
+                            dem++;
+                        else if (dem < 18) {
+                            g.fillRect(x + 250, 250 - y, 1, 1);
+                            dem++;
+                        }
+                        else if (dem < 20)
+                            dem++;
+                        else
+                            dem = 0;
                     }
                 } else {
                     p = 2 * Dx - Dy;
@@ -78,44 +94,29 @@ public class MuiTen {
                             x += x_unit;
                         }
                         y += y_unit;
-                        g.fillRect(x + 250, 250 - y, 1, 1);
+                        if (dem < 10) {
+                            g.fillRect(x + 250, 250 - y, 1, 1);
+                            dem++;
+                        }
+                        else if (dem < 13)
+                            dem++;
+                        else if (dem < 14) {
+                            g.fillRect(x + 250, 250 - y, 1, 1);
+                            dem++;
+                        }
+                        else if (dem < 17)
+                            dem++;
+                        else if (dem < 18) {
+                            g.fillRect(x + 250, 250 - y, 1, 1);
+                            dem++;
+                        }
+                        else if (dem < 20)
+                            dem++;
+                        else
+                            dem = 0;
+                        
                     }
                 }
-                
-                //khai bao tọa độ các đỉnh
-                int xB, yB, xH, yH, xC, yC, xD, yD, AB; 
-                int a = x2-x1 ;
-                int b = y1-y2 ;
-                xB = x2 +250;
-                yB = 250 - y2;
-                AB = (int) Math.sqrt((Math.pow(a*1.0, 2.0))+Math.pow(b*1.0, 2.0));
-                // Tính tọa độ của H
-                xH = (int)(xB - a/(AB/10.0));  
-                yH = (int)(yB - b/(AB/10.0));
-                
-                // Tính tọa độ của C
-                if (a==0){
-                    yC = yH;
-                    xC = xH - (AB/20);
-                }
-                else{
-                    yC = (int)(yH - Math.sqrt((double)((AB/20.0)/(Math.pow((double)(b/a), 2.0)+1))));
-                    xC = (int)((a*xH+b*yH-b*yC)/a);            
-                }
-                // Tính tọa độ của D
-                xD = 2*xH - xC;
-                yD = 2*yH - yC;
-
-                //khai bao cac bien trong thuat toan Presenhem
-//                int x, y, Dx, Dy, p;
-                //vẽ cạnh bên trái
-                g.drawLine(xB, yB, xD, yD);
-                //vẽ cạnh bên phải
-                g.drawLine(xD, yD, xC, yC);
-                //vẽ cạnh đáy
-                g.drawLine(xB, yB, xC, yC);
-//                g.drawLine(xB, yB, xH, yH);
-                
             }
         };
         panel.setOpaque(false);

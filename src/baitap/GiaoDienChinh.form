@@ -37,7 +37,7 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JPanel(){&#xa;    private static final long serialVersionUID = 1L;&#xa;    @Override&#xa;    protected void paintComponent(Graphics arg0) {&#xa;        // TODO Auto-generated method stub&#xa;        super.paintComponent(arg0);&#xa;        setBackground(Color.WHITE);&#xa;        arg0.setColor(Color.BLACK);&#xa;        arg0.drawString(&quot;O&quot;, BasicParam.backgroundWidth/2 + 5, BasicParam.backgroundHeight/2 + 20);&#xa;        arg0.drawString(&quot;10&quot;, BasicParam.backgroundWidth/2 + 50, BasicParam.backgroundHeight/2 + 20);&#xa;        arg0.drawString(&quot;20&quot;, BasicParam.backgroundWidth/2 + 100, BasicParam.backgroundHeight/2 + 20);&#xa;        arg0.drawString(&quot;30&quot;, BasicParam.backgroundWidth/2 + 150, BasicParam.backgroundHeight/2 + 20);&#xa;        arg0.drawString(&quot;40&quot;, BasicParam.backgroundWidth/2 + 200, BasicParam.backgroundHeight/2 + 20);&#xa;        arg0.drawString(&quot;x&quot;, BasicParam.backgroundWidth - 5, BasicParam.backgroundHeight/2 + 20);&#xa;        arg0.drawString(&quot;y&quot;, BasicParam.backgroundWidth/2 + 5, 20);&#xa;        arg0.drawString(&quot;&gt;&quot;, BasicParam.backgroundWidth, BasicParam.backgroundHeight/2 + 5);&#xa;        arg0.drawString(&quot;/\\&quot;, BasicParam.backgroundWidth/2 - 3, 10);&#xa;//        arg0.drawString(&quot;z&quot;, 5, BasicParam.backgroundHeight - 20);&#xa;        arg0.drawLine(BasicParam.backgroundWidth/2, 0, BasicParam.backgroundWidth/2, BasicParam.backgroundHeight/2);//y+&#xa;        for (int i = 1; i &lt; BasicParam.backgroundWidth/100; i++) { //vach don vi&#xa;            arg0.drawLine(BasicParam.backgroundWidth/2 + i * 50, BasicParam.backgroundHeight/2 - 2, BasicParam.backgroundWidth/2 + i * 50, BasicParam.backgroundHeight/2 + 2);&#xa;        }&#xa;        for (int i = 1; i &lt; BasicParam.backgroundHeight/100; i++) { //vach don vi&#xa;            arg0.drawLine(BasicParam.backgroundWidth/2 - 2, i * 50, BasicParam.backgroundWidth/2 + 2, i * 50);&#xa;        }&#xa;        arg0.setColor(Color.BLUE);&#xa;        for(int i=BasicParam.backgroundHeight/2;i&lt;=BasicParam.backgroundHeight;i+=6){//y-&#xa;            arg0.drawLine(BasicParam.backgroundWidth/2, i, BasicParam.backgroundWidth/2,i+3);&#xa;        }&#xa;        arg0.setColor(Color.BLACK);&#xa;        arg0.drawLine(BasicParam.backgroundWidth/2, BasicParam.backgroundHeight/2, BasicParam.backgroundWidth, BasicParam.backgroundHeight/2);//x+&#xa;        arg0.setColor(Color.BLUE);&#xa;        for(int i=BasicParam.backgroundWidth/2;i&gt;=0;i-=6){//x-&#xa;            arg0.drawLine(i,BasicParam.backgroundHeight/2,i-3,BasicParam.backgroundHeight/2);&#xa;        }&#xa;//        arg0.setColor(Color.BLACK);&#xa;//        arg0.drawLine(0,BasicParam.backgroundHeight,BasicParam.backgroundWidth/2,BasicParam.backgroundHeight/2);//z+&#xa;//        int l = BasicParam.backgroundHeight / 2;&#xa;//        arg0.setColor(Color.GREEN);&#xa;//        for (int i = BasicParam.backgroundWidth / 2; i &lt;= BasicParam.backgroundWidth; i += 6) {&#xa;//            arg0.drawLine(i + 3, l - 3, i + 6, l - 6);&#xa;//            l -= 6;&#xa;//        }&#xa;    }&#xa;}"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JPanel(){&#xa;    private static final long serialVersionUID = 1L;&#xa;    @Override&#xa;    protected void paintComponent(Graphics arg0) {&#xa;        // TODO Auto-generated method stub&#xa;        super.paintComponent(arg0);&#xa;        arg0.setColor(Color.LIGHT_GRAY);&#xa;        for (int i = 5; i&lt; BasicParam.backgroundWidth; i += 5) {&#xa;            arg0.drawLine(i,0,i,BasicParam.backgroundHeight);&#xa;        }&#xa;        for (int i = 5; i&lt; BasicParam.backgroundHeight; i += 5) {&#xa;            arg0.drawLine(0,i,BasicParam.backgroundWidth, i);&#xa;        }&#xa;        setBackground(Color.WHITE);&#xa;        arg0.setColor(Color.BLACK);&#xa;        arg0.drawString(&quot;O&quot;, BasicParam.backgroundWidth/2 + 5, BasicParam.backgroundHeight/2 + 20);&#xa;        arg0.drawString(&quot;10&quot;, BasicParam.backgroundWidth/2 + 50, BasicParam.backgroundHeight/2 + 20);&#xa;        arg0.drawString(&quot;20&quot;, BasicParam.backgroundWidth/2 + 100, BasicParam.backgroundHeight/2 + 20);&#xa;        arg0.drawString(&quot;30&quot;, BasicParam.backgroundWidth/2 + 150, BasicParam.backgroundHeight/2 + 20);&#xa;        arg0.drawString(&quot;40&quot;, BasicParam.backgroundWidth/2 + 200, BasicParam.backgroundHeight/2 + 20);&#xa;        arg0.drawString(&quot;x&quot;, BasicParam.backgroundWidth - 5, BasicParam.backgroundHeight/2 + 20);&#xa;        arg0.drawString(&quot;y&quot;, BasicParam.backgroundWidth/2 + 5, 20);&#xa;        arg0.drawString(&quot;&gt;&quot;, BasicParam.backgroundWidth, BasicParam.backgroundHeight/2 + 5);&#xa;        arg0.drawString(&quot;/\\&quot;, BasicParam.backgroundWidth/2 - 3, 10);&#xa;//        arg0.drawString(&quot;z&quot;, 5, BasicParam.backgroundHeight - 20);&#xa;        arg0.drawLine(BasicParam.backgroundWidth/2, 0, BasicParam.backgroundWidth/2, BasicParam.backgroundHeight/2);//y+&#xa;        for (int i = 1; i &lt; BasicParam.backgroundWidth/100; i++) { //vach don vi&#xa;            arg0.drawLine(BasicParam.backgroundWidth/2 + i * 50, BasicParam.backgroundHeight/2 - 2, BasicParam.backgroundWidth/2 + i * 50, BasicParam.backgroundHeight/2 + 2);&#xa;        }&#xa;        for (int i = 1; i &lt; BasicParam.backgroundHeight/100; i++) { //vach don vi&#xa;            arg0.drawLine(BasicParam.backgroundWidth/2 - 2, i * 50, BasicParam.backgroundWidth/2 + 2, i * 50);&#xa;        }&#xa;        arg0.setColor(Color.BLUE);&#xa;        for(int i=BasicParam.backgroundHeight/2;i&lt;=BasicParam.backgroundHeight;i+=6){//y-&#xa;            arg0.drawLine(BasicParam.backgroundWidth/2, i, BasicParam.backgroundWidth/2,i+3);&#xa;        }&#xa;        arg0.setColor(Color.BLACK);&#xa;        arg0.drawLine(BasicParam.backgroundWidth/2, BasicParam.backgroundHeight/2, BasicParam.backgroundWidth, BasicParam.backgroundHeight/2);//x+&#xa;        arg0.setColor(Color.BLUE);&#xa;        for(int i=BasicParam.backgroundWidth/2;i&gt;=0;i-=6){//x-&#xa;            arg0.drawLine(i,BasicParam.backgroundHeight/2,i-3,BasicParam.backgroundHeight/2);&#xa;        }&#xa;        &#xa;//        arg0.setColor(Color.BLACK);&#xa;//        arg0.drawLine(0,BasicParam.backgroundHeight,BasicParam.backgroundWidth/2,BasicParam.backgroundHeight/2);//z+&#xa;//        int l = BasicParam.backgroundHeight / 2;&#xa;//        arg0.setColor(Color.GREEN);&#xa;//        for (int i = BasicParam.backgroundWidth / 2; i &lt;= BasicParam.backgroundWidth; i += 6) {&#xa;//            arg0.drawLine(i + 3, l - 3, i + 6, l - 6);&#xa;//            l -= 6;&#xa;//        }&#xa;    }&#xa;}"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -79,7 +79,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="50" y="30" width="310" height="450"/>
+          <AbsoluteConstraints x="0" y="40" width="360" height="450"/>
         </Constraint>
       </Constraints>
 
@@ -473,6 +473,135 @@
                   <AbsoluteConstraints x="110" y="140" width="112" height="-1"/>
                 </Constraint>
               </Constraints>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="Ellipse">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Ellipse">
+                <Property name="tabTitle" type="java.lang.String" value="Ellipse"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="111" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jTextField_b" min="-2" pref="112" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jButton_VeEllipse" min="-2" pref="120" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jTextField_a" min="-2" pref="112" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
+                                  <Component id="jTextField_xC" min="-2" pref="112" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
+                                  <Component id="jTextField_yC" min="-2" pref="112" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jTextField_a" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField_b" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+                      <Component id="jButton_VeEllipse" min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace pref="112" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="0" pref="66" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextField_xC" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextField_yC" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="306" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel14">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="xO:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField_xC">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel15">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="yO:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField_yC">
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField_a">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel16">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="a:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton_VeEllipse">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="V&#x1ebd; Ellipse"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_VeEllipseActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel17">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="b:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField_b">
             </Component>
           </SubComponents>
         </Container>

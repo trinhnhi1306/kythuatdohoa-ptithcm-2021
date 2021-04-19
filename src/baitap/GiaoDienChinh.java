@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package presenhemline;
+package baitap;
 
 import java.awt.Graphics;
 import java.awt.Dimension;
@@ -46,6 +46,13 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             protected void paintComponent(Graphics arg0) {
                 // TODO Auto-generated method stub
                 super.paintComponent(arg0);
+                arg0.setColor(Color.LIGHT_GRAY);
+                for (int i = 5; i< BasicParam.backgroundWidth; i += 5) {
+                    arg0.drawLine(i,0,i,BasicParam.backgroundHeight);
+                }
+                for (int i = 5; i< BasicParam.backgroundHeight; i += 5) {
+                    arg0.drawLine(0,i,BasicParam.backgroundWidth, i);
+                }
                 setBackground(Color.WHITE);
                 arg0.setColor(Color.BLACK);
                 arg0.drawString("O", BasicParam.backgroundWidth/2 + 5, BasicParam.backgroundHeight/2 + 20);
@@ -75,6 +82,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                     for(int i=BasicParam.backgroundWidth/2;i>=0;i-=6){//x-
                         arg0.drawLine(i,BasicParam.backgroundHeight/2,i-3,BasicParam.backgroundHeight/2);
                     }
+
                     //        arg0.setColor(Color.BLACK);
                     //        arg0.drawLine(0,BasicParam.backgroundHeight,BasicParam.backgroundWidth/2,BasicParam.backgroundHeight/2);//z+
                     //        int l = BasicParam.backgroundHeight / 2;
@@ -125,6 +133,16 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             jButton_VeDuongTron = new javax.swing.JButton();
             jLabel7 = new javax.swing.JLabel();
             jTextField_r = new javax.swing.JTextField();
+            Ellipse = new javax.swing.JPanel();
+            jLabel14 = new javax.swing.JLabel();
+            jTextField_xC = new javax.swing.JTextField();
+            jLabel15 = new javax.swing.JLabel();
+            jTextField_yC = new javax.swing.JTextField();
+            jTextField_a = new javax.swing.JTextField();
+            jLabel16 = new javax.swing.JLabel();
+            jButton_VeEllipse = new javax.swing.JButton();
+            jLabel17 = new javax.swing.JLabel();
+            jTextField_b = new javax.swing.JTextField();
             jButton_Xoa = new javax.swing.JButton();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -297,7 +315,86 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
             jTabbedPane1.addTab("Đường tròn", HinhTron);
 
-            getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 310, 450));
+            jLabel14.setText("xO:");
+
+            jLabel15.setText("yO:");
+
+            jLabel16.setText("a:");
+
+            jButton_VeEllipse.setText("Vẽ Ellipse");
+            jButton_VeEllipse.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton_VeEllipseActionPerformed(evt);
+                }
+            });
+
+            jLabel17.setText("b:");
+
+            javax.swing.GroupLayout EllipseLayout = new javax.swing.GroupLayout(Ellipse);
+            Ellipse.setLayout(EllipseLayout);
+            EllipseLayout.setHorizontalGroup(
+                EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EllipseLayout.createSequentialGroup()
+                    .addContainerGap(111, Short.MAX_VALUE)
+                    .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(EllipseLayout.createSequentialGroup()
+                            .addComponent(jLabel17)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jTextField_b, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap())
+                        .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EllipseLayout.createSequentialGroup()
+                                .addComponent(jButton_VeEllipse, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(114, 114, 114))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EllipseLayout.createSequentialGroup()
+                                .addComponent(jLabel16)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextField_a, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(112, 112, 112)))))
+                .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(EllipseLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(EllipseLayout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addGap(2, 2, 2)
+                                .addComponent(jTextField_xC, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(EllipseLayout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addGap(2, 2, 2)
+                                .addComponent(jTextField_yC, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+            );
+            EllipseLayout.setVerticalGroup(
+                EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(EllipseLayout.createSequentialGroup()
+                    .addGap(151, 151, 151)
+                    .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextField_a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel16))
+                    .addGap(18, 18, 18)
+                    .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel17)
+                        .addComponent(jTextField_b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(71, 71, 71)
+                    .addComponent(jButton_VeEllipse, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(112, Short.MAX_VALUE))
+                .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(EllipseLayout.createSequentialGroup()
+                        .addGap(0, 66, Short.MAX_VALUE)
+                        .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel14)
+                            .addComponent(jTextField_xC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(10, 10, 10)
+                        .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15)
+                            .addComponent(jTextField_yC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 306, Short.MAX_VALUE)))
+            );
+
+            jTabbedPane1.addTab("Ellipse", Ellipse);
+
+            getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 360, 450));
 
             jButton_Xoa.setText("Xóa");
             jButton_Xoa.addActionListener(new java.awt.event.ActionListener() {
@@ -462,6 +559,20 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         jPanel_KhungVe.repaint();
     }//GEN-LAST:event_jButton_XoaActionPerformed
 
+    private void jButton_VeEllipseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeEllipseActionPerformed
+        // TODO add your handling code here:
+        int xO = Integer.parseInt(jTextField_xC.getText())*5;
+        int yO = Integer.parseInt(jTextField_yC.getText())*5;
+        int a = Integer.parseInt(jTextField_a.getText())*5;
+        int b = Integer.parseInt(jTextField_b.getText())*5;
+        Ellipse m = new Ellipse(xO, yO, a, b);
+//        jPanel_KhungVe.removeAll();
+        jPanel_KhungVe.add(m.draw());
+        jPanel_KhungVe.revalidate();
+        jPanel_KhungVe.repaint();
+        return;
+    }//GEN-LAST:event_jButton_VeEllipseActionPerformed
+
     boolean rangBuocDuLieuDuongThang () {
         String x1 = jTextField_x1.getText();
         String y1 = jTextField_y1.getText();
@@ -520,6 +631,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Diem;
     private javax.swing.JPanel DoanThang;
+    private javax.swing.JPanel Ellipse;
     private javax.swing.JPanel HinhTron;
     private javax.swing.JPanel TamGiacDeu;
     private javax.swing.JButton jButton_NetChamGach;
@@ -527,6 +639,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private javax.swing.JButton jButton_VeDiem;
     private javax.swing.JButton jButton_VeDoanThang;
     private javax.swing.JButton jButton_VeDuongTron;
+    private javax.swing.JButton jButton_VeEllipse;
     private javax.swing.JButton jButton_VeHinhChuNhat;
     private javax.swing.JButton jButton_VeMuiTen;
     private javax.swing.JButton jButton_VeNetDut;
@@ -537,6 +650,10 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -548,16 +665,20 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel_KhungVe;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField jTextField_a;
+    private javax.swing.JTextField jTextField_b;
     private javax.swing.JTextField jTextField_canh;
     private javax.swing.JTextField jTextField_r;
     private javax.swing.JTextField jTextField_x;
     private javax.swing.JTextField jTextField_x1;
     private javax.swing.JTextField jTextField_x2;
+    private javax.swing.JTextField jTextField_xC;
     private javax.swing.JTextField jTextField_xDinh;
     private javax.swing.JTextField jTextField_xO;
     private javax.swing.JTextField jTextField_y;
     private javax.swing.JTextField jTextField_y1;
     private javax.swing.JTextField jTextField_y2;
+    private javax.swing.JTextField jTextField_yC;
     private javax.swing.JTextField jTextField_yDinh;
     private javax.swing.JTextField jTextField_yO;
     // End of variables declaration//GEN-END:variables
