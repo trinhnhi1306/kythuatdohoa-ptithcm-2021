@@ -19,6 +19,7 @@ import java.awt.Graphics;
 import java.awt.Dimension;
 import java.awt.Color;
 import java.awt.Frame;
+import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
@@ -336,8 +337,10 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EllipseLayout.createSequentialGroup()
                     .addGap(164, 164, 164)
                     .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel14)
-                        .addComponent(jLabel15)
+                        .addGroup(EllipseLayout.createSequentialGroup()
+                            .addComponent(jLabel15)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jTextField_yC, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(EllipseLayout.createSequentialGroup()
                             .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel16)
@@ -345,31 +348,29 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jTextField_b, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField_a, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGap(169, 169, 169))
+                                .addComponent(jTextField_a, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(EllipseLayout.createSequentialGroup()
+                            .addComponent(jLabel14)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jTextField_xC, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(168, 168, 168))
                 .addGroup(EllipseLayout.createSequentialGroup()
                     .addGap(174, 174, 174)
                     .addComponent(jButton_VeEllipse, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap())
-                .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(EllipseLayout.createSequentialGroup()
-                        .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(EllipseLayout.createSequentialGroup()
-                                .addGap(20, 190, Short.MAX_VALUE)
-                                .addComponent(jTextField_xC, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(EllipseLayout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField_yC, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 170, Short.MAX_VALUE)))
             );
             EllipseLayout.setVerticalGroup(
                 EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(EllipseLayout.createSequentialGroup()
                     .addGap(65, 65, 65)
-                    .addComponent(jLabel14)
+                    .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel14)
+                        .addComponent(jTextField_xC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
-                    .addComponent(jLabel15)
-                    .addGap(37, 37, 37)
+                    .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel15)
+                        .addComponent(jTextField_yC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(34, 34, 34)
                     .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel16)
                         .addComponent(jTextField_a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -379,14 +380,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                         .addComponent(jTextField_b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(49, 49, 49)
                     .addComponent(jButton_VeEllipse, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(134, Short.MAX_VALUE))
-                .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(EllipseLayout.createSequentialGroup()
-                        .addGap(0, 66, Short.MAX_VALUE)
-                        .addComponent(jTextField_xC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jTextField_yC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 306, Short.MAX_VALUE)))
+                    .addContainerGap(125, Short.MAX_VALUE))
             );
 
             jTabbedPane_Menu2D.addTab("Ellipse", Ellipse);
@@ -557,7 +551,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                     jButton_Xoa3DActionPerformed(evt);
                 }
             });
-            jPanel_3D.add(jButton_Xoa3D, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 460, 460, 40));
+            jPanel_3D.add(jButton_Xoa3D, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 450, 460, 50));
 
             jTextArea_ToaDo.setBackground(new java.awt.Color(51, 51, 51));
             jTextArea_ToaDo.setColumns(20);
@@ -565,7 +559,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             jTextArea_ToaDo.setRows(5);
             jScrollPane1.setViewportView(jTextArea_ToaDo);
 
-            jPanel_3D.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 460, 300));
+            jPanel_3D.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 460, 290));
 
             jTabbedPane_MenuChinh.addTab("Vẽ 3D", jPanel_3D);
 
@@ -576,16 +570,14 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
     private void jButton_VeDoanThangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeDoanThangActionPerformed
         // TODO add your handling code here:
+        Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
         if (rangBuocDuLieuDuongThang() == true) {
             int x1 = Integer.parseInt(jTextField_x1.getText());
             int y1 = Integer.parseInt(jTextField_y1.getText());
             int x2 = Integer.parseInt(jTextField_x2.getText());
             int y2 = Integer.parseInt(jTextField_y2.getText());
             DoanThang m = new DoanThang(x1, y1, x2, y2); 
-//            jPanel_KhungVe.removeAll();
-            jPanel_KhungVe2D.add(m.draw());
-            jPanel_KhungVe2D.revalidate();
-            jPanel_KhungVe2D.repaint();
+            m.draw(g);
             return;
         }
         JOptionPane.showMessageDialog(this, "Toa do khong duoc bo trong!");    
@@ -599,10 +591,8 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             int x2 = Integer.parseInt(jTextField_x2.getText());
             int y2 = Integer.parseInt(jTextField_y2.getText());
             HinhChuNhat m = new HinhChuNhat(x1, y1, x2, y2); 
-//            jPanel_KhungVe.removeAll();
             jPanel_KhungVe2D.add(m.draw());
-            jPanel_KhungVe2D.revalidate();
-            jPanel_KhungVe2D.repaint(); 
+            jPanel_KhungVe2D.repaint();
             return;
         }
         JOptionPane.showMessageDialog(this, "Toa do khong duoc bo trong!");
@@ -610,16 +600,13 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
     private void jButton_VeDuongTronActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeDuongTronActionPerformed
         // TODO add your handling code here:
+        Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
         if (rangBuocDuLieuDuongTron() == true) {
             int xO = Integer.parseInt(jTextField_xO.getText());
             int yO = Integer.parseInt(jTextField_yO.getText());
             int r = Integer.parseInt(jTextField_r.getText());
             DuongTron m = new DuongTron(xO, yO, r); 
-//            jPanel_KhungVe.removeAll();
-            jPanel_KhungVe2D.add(m.draw());
-            jPanel_KhungVe2D.revalidate();
-            jPanel_KhungVe2D.repaint();
-            System.out.println(jPanel_KhungVe2D.getBounds());
+            m.draw(g);
             return;
         }
         JOptionPane.showMessageDialog(this, "Toa do khong duoc bo trong!");
@@ -627,16 +614,14 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
     private void jButton_VeNetDutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeNetDutActionPerformed
         // TODO add your handling code here:
+        Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
         if (rangBuocDuLieuDuongThang() == true) {
             int x1 = Integer.parseInt(jTextField_x1.getText());
             int y1 = Integer.parseInt(jTextField_y1.getText());
             int x2 = Integer.parseInt(jTextField_x2.getText());
             int y2 = Integer.parseInt(jTextField_y2.getText());
             NetDut m = new NetDut(x1, y1, x2, y2);
-//            jPanel_KhungVe.removeAll();
-            jPanel_KhungVe2D.add(m.draw());
-            jPanel_KhungVe2D.revalidate();
-            jPanel_KhungVe2D.repaint();
+            m.draw(g);
             return;
         }
         JOptionPane.showMessageDialog(this, "Toa do khong duoc bo trong!");
@@ -645,16 +630,14 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
     private void jButton_NetChamGachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_NetChamGachActionPerformed
         // TODO add your handling code here:
+        Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
         if (rangBuocDuLieuDuongThang() == true) {
             int x1 = Integer.parseInt(jTextField_x1.getText());
             int y1 = Integer.parseInt(jTextField_y1.getText());
             int x2 = Integer.parseInt(jTextField_x2.getText());
             int y2 = Integer.parseInt(jTextField_y2.getText());
             NetChamGach m = new NetChamGach(x1, y1, x2, y2);
-//            jPanel_KhungVe.removeAll();
-            jPanel_KhungVe2D.add(m.draw());
-            jPanel_KhungVe2D.revalidate();
-            jPanel_KhungVe2D.repaint();
+            m.draw(g);
             return;
         }
         JOptionPane.showMessageDialog(this, "Toa do khong duoc bo trong!");
@@ -662,16 +645,14 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
     private void jButton_NetHaiChamGachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_NetHaiChamGachActionPerformed
         // TODO add your handling code here:
+        Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
         if (rangBuocDuLieuDuongThang() == true) {
-            int x1 = Integer.parseInt(jTextField_x1.getText())*5;
-            int y1 = Integer.parseInt(jTextField_y1.getText())*5;
-            int x2 = Integer.parseInt(jTextField_x2.getText())*5;
-            int y2 = Integer.parseInt(jTextField_y2.getText())*5;
+            int x1 = Integer.parseInt(jTextField_x1.getText());
+            int y1 = Integer.parseInt(jTextField_y1.getText());
+            int x2 = Integer.parseInt(jTextField_x2.getText());
+            int y2 = Integer.parseInt(jTextField_y2.getText());
             NetHaiChamGach m = new NetHaiChamGach(x1, y1, x2, y2);
-//            jPanel_KhungVe.removeAll();
-            jPanel_KhungVe2D.add(m.draw());
-            jPanel_KhungVe2D.revalidate();
-            jPanel_KhungVe2D.repaint();
+            m.draw(g);
             return;
         }
         JOptionPane.showMessageDialog(this, "Toa do khong duoc bo trong!");
@@ -679,69 +660,61 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
     private void jButton_VeTamGiacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeTamGiacActionPerformed
         // TODO add your handling code here:
-        int xDinh = Integer.parseInt(jTextField_xDinh.getText())*5;
-        int yDinh = Integer.parseInt(jTextField_yDinh.getText())*5;
-        int canh = Integer.parseInt(jTextField_canh.getText())*5;
+        Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
+        int xDinh = Integer.parseInt(jTextField_xDinh.getText());
+        int yDinh = Integer.parseInt(jTextField_yDinh.getText());
+        int canh = Integer.parseInt(jTextField_canh.getText());
         TamGiacDeu m = new TamGiacDeu(xDinh, yDinh, canh);
-//        jPanel_KhungVe.removeAll();
         jPanel_KhungVe2D.add(m.draw());
-        jPanel_KhungVe2D.revalidate();
         jPanel_KhungVe2D.repaint();
         return;
     }//GEN-LAST:event_jButton_VeTamGiacActionPerformed
 
     private void jButton_VeDiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeDiemActionPerformed
         // TODO add your handling code here:
+        Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
         int x = Integer.parseInt(jTextField_x.getText())*5;
         int y = Integer.parseInt(jTextField_y.getText())*5;
         Diem2D m = new Diem2D(x, y);
-//        jPanel_KhungVe.removeAll();
-        jPanel_KhungVe2D.add(m.draw());
-        jPanel_KhungVe2D.revalidate();
-        jPanel_KhungVe2D.repaint();
+        m.draw(g);
         return;
     }//GEN-LAST:event_jButton_VeDiemActionPerformed
 
     private void jButton_VeMuiTenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeMuiTenActionPerformed
         // TODO add your handling code here:
+        Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
         if (rangBuocDuLieuDuongThang() == true) {
             int x1 = Integer.parseInt(jTextField_x1.getText())*5;
             int y1 = Integer.parseInt(jTextField_y1.getText())*5;
             int x2 = Integer.parseInt(jTextField_x2.getText())*5;
             int y2 = Integer.parseInt(jTextField_y2.getText())*5;
             MuiTen m = new MuiTen(x1, y1, x2, y2);
-//            jPanel_KhungVe.removeAll();
-            jPanel_KhungVe2D.add(m.draw());
-            jPanel_KhungVe2D.revalidate();
-            jPanel_KhungVe2D.repaint();
+            m.draw(g);
             return;
         }
         JOptionPane.showMessageDialog(this, "Toa do khong duoc bo trong!");
     }//GEN-LAST:event_jButton_VeMuiTenActionPerformed
 
     private void jButton_Xoa2DActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Xoa2DActionPerformed
-        // TODO add your handling code here:
         jPanel_KhungVe2D.removeAll();
-        jPanel_KhungVe2D.revalidate();
         jPanel_KhungVe2D.repaint();
     }//GEN-LAST:event_jButton_Xoa2DActionPerformed
 
     private void jButton_VeEllipseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeEllipseActionPerformed
         // TODO add your handling code here:
+        Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
         int xO = Integer.parseInt(jTextField_xC.getText());
         int yO = Integer.parseInt(jTextField_yC.getText());
         int a = Integer.parseInt(jTextField_a.getText());
         int b = Integer.parseInt(jTextField_b.getText());
         Ellipse m = new Ellipse(xO, yO, a, b);
-//        jPanel_KhungVe.removeAll();
-        jPanel_KhungVe2D.add(m.draw());
-//        jPanel_KhungVe.revalidate();
-        jPanel_KhungVe2D.repaint();
+        m.draw(g);
         return;
     }//GEN-LAST:event_jButton_VeEllipseActionPerformed
 
     private void jButton_VeHinhHopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeHinhHopActionPerformed
         // TODO add your handling code here:
+        Graphics2D g = (Graphics2D) jPanel_KhungVe3D.getGraphics();
         HinhHop hh = new HinhHop();
         hh.nhapToaDo3D();
         ThamSoTruyenVao.nutVe.addActionListener(new ActionListener() {
@@ -750,8 +723,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 ThamSoTruyenVao.nutVe.setBackground(Color.MAGENTA);
                 ThamSoTruyenVao.nutXoa.setBackground(Color.WHITE);
                 hh.xuLyDuLieu();
-                jPanel_KhungVe3D.add(hh.draw());
-                jPanel_KhungVe3D.repaint();
+                hh.draw(g);
                 jTextArea_ToaDo.setText(hh.layDuLieu());
             }
         });
@@ -767,6 +739,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
     private void jButton_VeHinhChopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeHinhChopActionPerformed
         // TODO add your handling code here:
+        Graphics2D g = (Graphics2D) jPanel_KhungVe3D.getGraphics();
         HinhChop hc = new HinhChop();
         hc.nhapToaDo3D();
         ThamSoTruyenVao.nutVe.addActionListener(new ActionListener() {
@@ -775,8 +748,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 ThamSoTruyenVao.nutVe.setBackground(Color.MAGENTA);
                 ThamSoTruyenVao.nutXoa.setBackground(Color.WHITE);
                 hc.xuLyDuLieu();
-                jPanel_KhungVe3D.add(hc.draw());
-                jPanel_KhungVe3D.repaint();
+                hc.draw(g);
                 jTextArea_ToaDo.setText(hc.layDuLieu());
             }
         });
@@ -792,8 +764,8 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
     private void jButton_Xoa3DActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Xoa3DActionPerformed
         // TODO add your handling code here:
-        jPanel_KhungVe3D.removeAll();
         jPanel_KhungVe3D.repaint();
+        jTextArea_ToaDo.setText("");
     }//GEN-LAST:event_jButton_Xoa3DActionPerformed
 
     boolean rangBuocDuLieuDuongThang () {

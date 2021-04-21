@@ -6,8 +6,7 @@
 package model2D;
 
 import java.awt.Color;
-import java.awt.Graphics;
-import javax.swing.JPanel;
+import java.awt.Graphics2D;
 
 /**
  *
@@ -55,97 +54,88 @@ public class Ellipse {
         this.b = b;
     }
     
-    public JPanel draw () {
-        JPanel panel = new JPanel() {
-            @Override
-            protected void paintComponent(Graphics g) {
-                setForeground(Color.RED);  //dat mau hinh ve la red
-                //khai bao cac bien cua thuat toan Midpoint
-                int dem = 0;
-                int dx, dy, p0, q0, x, y;
-                x = 0;
-                y = b;
-  
-                //Khai bao cac bien vung I
-                p0 = (int) ((b * b) - (a * a * b) + (0.25 * a * a));
-                dx = 2 * b * b * x;
-                dy = 2 * a * a * y;
-      
-                //Ve vung I
-                while (dx < dy) {
-                    // Ve diem dua tren doi xung
-                    if (dem < 5) {
-                        g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                        g.fillOval(-x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                        dem++;
-                    }
-                    else if (dem < 10) {
-                        dem++;
-                    }
-                    else {
-                        dem = 0;
-                        g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                        g.fillOval(-x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                    }
-                    g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                    g.fillOval(-x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
+    public void draw (Graphics2D g) {
+        g.setColor(Color.RED);  //dat mau hinh ve la red
+        //khai bao cac bien cua thuat toan Midpoint
+        int dem = 0;
+        int dx, dy, p0, q0, x, y;
+        x = 0;
+        y = b;
 
-                    // Kiem tra va cap nhat cac gia tri
-                    if (p0 < 0) 
-                    {
-                        x++;
-                        dx = dx + (2 * b * b);
-                        p0 = p0 + dx + (b * b);
-                    }
-                    else
-                    {
-                        x++;
-                        y--;
-                        dx = dx + (2 * b * b);
-                        dy = dy - (2 * a * a);
-                        p0 = p0 + dx - dy + (b * b);
-                    }
-                }
-                // Ve vung II
-                q0 = (int) (((b * b) * ((x + 0.5) * (x + 0.5))) + ((a * a) * ((y - 1) * (y - 1))) - (a * a * b * b));
-                while (y >= 0) {
+        //Khai bao cac bien vung I
+        p0 = (int) ((b * b) - (a * a * b) + (0.25 * a * a));
+        dx = 2 * b * b * x;
+        dy = 2 * a * a * y;
 
-                    // Ve 4 diem
-                    if (dem < 5) {
-                        g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                        g.fillOval(-x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                        dem++;
-                    }
-                    else if (dem < 10) {
-                        dem++;
-                    }
-                    else {
-                        dem = 0;
-                        g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                        g.fillOval(-x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                    }
-                    g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                    g.fillOval(-x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-
-                    // Kiem tra va cap nhat cac gia tri
-                    if (q0 > 0) {
-                        y--;
-                        dy = dy - (2 * a * a);
-                        q0 = q0 + (a * a) - dy;
-                    }
-                    else {
-                        y--;
-                        x++;
-                        dx = dx + (2 * b * b);
-                        dy = dy - (2 * a * a);
-                        q0 = q0 + dx - dy + (a * a);
-                    }
-                }
+        //Ve vung I
+        while (dx < dy) {
+            // Ve diem dua tren doi xung
+            if (dem < 5) {
+                g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
+                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
+                dem++;
             }
-            
-        };
-        panel.setOpaque(false);
-        panel.setSize(ThamSoTruyenVao.backgroundWidth, ThamSoTruyenVao.backgroundHeight);
-        return panel;
+            else if (dem < 10) {
+                dem++;
+            }
+            else {
+                dem = 0;
+                g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
+                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
+            }
+            g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
+            g.fillOval(-x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
+
+            // Kiem tra va cap nhat cac gia tri
+            if (p0 < 0) 
+            {
+                x++;
+                dx = dx + (2 * b * b);
+                p0 = p0 + dx + (b * b);
+            }
+            else
+            {
+                x++;
+                y--;
+                dx = dx + (2 * b * b);
+                dy = dy - (2 * a * a);
+                p0 = p0 + dx - dy + (b * b);
+            }
+        }
+        // Ve vung II
+        q0 = (int) (((b * b) * ((x + 0.5) * (x + 0.5))) + ((a * a) * ((y - 1) * (y - 1))) - (a * a * b * b));
+        while (y >= 0) {
+
+            // Ve 4 diem
+            if (dem < 5) {
+                g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
+                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
+                dem++;
+            }
+            else if (dem < 10) {
+                dem++;
+            }
+            else {
+                dem = 0;
+                g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
+                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
+            }
+            g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
+            g.fillOval(-x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
+
+            // Kiem tra va cap nhat cac gia tri
+            if (q0 > 0) {
+                y--;
+                dy = dy - (2 * a * a);
+                q0 = q0 + (a * a) - dy;
+            }
+            else {
+                y--;
+                x++;
+                dx = dx + (2 * b * b);
+                dy = dy - (2 * a * a);
+                q0 = q0 + dx - dy + (a * a);
+            }
+        }
     }
 }

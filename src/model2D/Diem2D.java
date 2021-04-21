@@ -6,8 +6,7 @@
 package model2D;
 
 import java.awt.Color;
-import java.awt.Graphics;
-import javax.swing.JPanel;
+import java.awt.Graphics2D;
 
 /**
  *
@@ -37,20 +36,10 @@ public class Diem2D {
         this.y = y;
     }
     
-    public JPanel draw() {
-        JPanel panel;
-        panel = new JPanel(){
-            @Override
-            protected void paintComponent(Graphics g) {
-                setForeground(Color.RED);  //dat mau hinh ve la red
-                String text = "Điểm (" + x/5 + ", " + y/5 + ")";
-                g.drawString(text, ThamSoTruyenVao.backgroundWidth/2 + x + 5, ThamSoTruyenVao.backgroundHeight/2 - y - 10);
-                g.fillOval(ThamSoTruyenVao.backgroundWidth/2 + x - 2, ThamSoTruyenVao.backgroundHeight/2 - y - 2, 4, 4);
-            }
-        };
-        panel.setOpaque(false);
-        panel.setSize(ThamSoTruyenVao.backgroundWidth, ThamSoTruyenVao.backgroundHeight);
-        panel.setVisible(true);
-        return panel;
+    public void draw(Graphics2D g) {
+        g.setColor(Color.RED);  //dat mau hinh ve la red
+        String text = "Điểm (" + x/5 + ", " + y/5 + ")";
+        g.drawString(text, ThamSoTruyenVao.backgroundWidth/2 + x + 5, ThamSoTruyenVao.backgroundHeight/2 - y - 10);
+        g.fillOval(ThamSoTruyenVao.backgroundWidth/2 + x - 2, ThamSoTruyenVao.backgroundHeight/2 - y - 2, 5, 5);
     }
 }

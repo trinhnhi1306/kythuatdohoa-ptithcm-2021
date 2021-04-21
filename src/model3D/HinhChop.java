@@ -7,11 +7,10 @@ package model3D;
 
 import phepchieu.Cabinet;
 import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.Graphics2D;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 import model2D.ThamSoTruyenVao;
 import model2D.Diem2D;
@@ -176,7 +175,7 @@ public class HinhChop {
     }
     
     public String layDuLieu () {
-        String str = "\t\tTỌA ĐỘ HÌNH CHÓP\n\n\tTọa độ đáy\t\tTọa độ đỉnh\n\n";
+        String str = "\n\t\tTỌA ĐỘ HÌNH CHÓP\n\n\tTọa độ đáy\t\tTọa độ đỉnh\n\n";
         
         str += "\tA (" + x + ", " + y + ", " + z + ")";
         str += "\t\tS (" + (x + dai/2) + ", " + (y + rong/2) + ", " + (z+cao) + ")\n\n";
@@ -192,8 +191,7 @@ public class HinhChop {
         return str;
     }
     
-    public JPanel draw() {
-        JPanel panel = new JPanel();
+    public void draw(Graphics2D g) {
         //4 điểm đáy dưới
         Diem3D a = new Diem3D(x, y, z);
         Diem3D b = new Diem3D(x + dai, y, z);
@@ -218,55 +216,41 @@ public class HinhChop {
         
         //Vẽ các đoạn thẳng đáy
         NetDut AB = new NetDut (A.getX(), A.getY(), B.getX(), B.getY());
-        panel.add(AB.draw());
+        AB.draw(g);
         DoanThang BC = new DoanThang (B.getX(), B.getY(), C.getX(), C.getY());
-        panel.add(BC.draw());
+        BC.draw(g);
         DoanThang DC = new DoanThang (D.getX(), D.getY(), C.getX(), C.getY());
-        panel.add(DC.draw());
+        DC.draw(g);
         NetDut DA = new NetDut (D.getX(), D.getY(), A.getX(), A.getY());
-        panel.add(DA.draw());
+        DA.draw(g);
         
         //Vẽ hai đường chéo đáy
         NetDut AC = new NetDut (A.getX(), A.getY(), C.getX(), C.getY());
-        panel.add(AC.draw());
+        AC.draw(g);
         NetDut BD = new NetDut (B.getX(), B.getY(), D.getX(), D.getY());
-        panel.add(BD.draw());
+        BD.draw(g);
         
         //Vẽ các cạnh bên
         NetDut SA = new NetDut(S.getX(), S.getY(), A.getX(), A.getY());
-        panel.add(SA.draw());
+        SA.draw(g);
         DoanThang SB = new DoanThang (S.getX(), S.getY(), B.getX(), B.getY());
-        panel.add(SB.draw());
+        SB.draw(g);
         DoanThang SC = new DoanThang (S.getX(), S.getY(), C.getX(), C.getY());
-        panel.add(SC.draw());
+        SC.draw(g);
         DoanThang SD = new DoanThang (S.getX(), S.getY(), D.getX(), D.getY());
-        panel.add(SD.draw());
+        SD.draw(g);
         
         //Vẽ trục SO
         NetDut SO = new NetDut(S.getX(), S.getY(), O.getX(), O.getY());
-        panel.add(SO.draw());
+        SO.draw(g);
         
         //Vẽ tên các điểm
-        JPanel panelTenDiem = new JPanel() {
-            @Override
-            protected void paintComponent(Graphics g) {
-                g.setColor(Color.red);
-                g.drawString("A", ThamSoTruyenVao.backgroundWidth/2 + A.getX()*5 + 10, ThamSoTruyenVao.backgroundHeight/2 - A.getY()*5 - 10);
-                g.drawString("B", ThamSoTruyenVao.backgroundWidth/2 + B.getX()*5 + 5, ThamSoTruyenVao.backgroundHeight/2 - B.getY()*5 - 10);
-                g.drawString("C", ThamSoTruyenVao.backgroundWidth/2 + C.getX()*5 - 10, ThamSoTruyenVao.backgroundHeight/2 - C.getY()*5 + 15);
-                g.drawString("D", ThamSoTruyenVao.backgroundWidth/2 + D.getX()*5 - 10, ThamSoTruyenVao.backgroundHeight/2 - D.getY()*5 + 15);
-                g.drawString("S", ThamSoTruyenVao.backgroundWidth/2 + S.getX()*5 + 5, ThamSoTruyenVao.backgroundHeight/2 - S.getY()*5 - 10);
-                g.drawString("O", ThamSoTruyenVao.backgroundWidth/2 + O.getX()*5 + 5, ThamSoTruyenVao.backgroundHeight/2 - O.getY()*5 - 5);
-            }
-        };
-        panelTenDiem.setOpaque(false);
-        panelTenDiem.setSize(500, 500);//set size cho vua jpanel ma minh ve
-        panelTenDiem.setVisible(true);
-        panel.add(panelTenDiem);
-        //============================================================================
-        panel.setOpaque(false);
-        panel.setSize(ThamSoTruyenVao.backgroundWidth, ThamSoTruyenVao.backgroundHeight);//set size cho vua jpanel ma minh ve
-        panel.setVisible(true);
-        return panel;
+        g.setColor(Color.red);
+        g.drawString("A", ThamSoTruyenVao.backgroundWidth/2 + A.getX()*5 + 10, ThamSoTruyenVao.backgroundHeight/2 - A.getY()*5 - 10);
+        g.drawString("B", ThamSoTruyenVao.backgroundWidth/2 + B.getX()*5 + 5, ThamSoTruyenVao.backgroundHeight/2 - B.getY()*5 - 10);
+        g.drawString("C", ThamSoTruyenVao.backgroundWidth/2 + C.getX()*5 - 10, ThamSoTruyenVao.backgroundHeight/2 - C.getY()*5 + 15);
+        g.drawString("D", ThamSoTruyenVao.backgroundWidth/2 + D.getX()*5 - 10, ThamSoTruyenVao.backgroundHeight/2 - D.getY()*5 + 15);
+        g.drawString("S", ThamSoTruyenVao.backgroundWidth/2 + S.getX()*5 + 5, ThamSoTruyenVao.backgroundHeight/2 - S.getY()*5 - 10);
+        g.drawString("O", ThamSoTruyenVao.backgroundWidth/2 + O.getX()*5 + 5, ThamSoTruyenVao.backgroundHeight/2 - O.getY()*5 - 5);
     }
 }

@@ -7,6 +7,7 @@ package model2D;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
 /**
@@ -17,9 +18,9 @@ public class TamGiacDeu {
     private int xDinh, yDinh, canh;
 
     public TamGiacDeu(int xDinh, int yDinh, int canh) {
-        this.xDinh = xDinh;
-        this.yDinh = yDinh;
-        this.canh = canh;
+        this.xDinh = xDinh*5;
+        this.yDinh = yDinh*5;
+        this.canh = canh*5;
     }
 
     public int getxDinh() {
@@ -47,10 +48,10 @@ public class TamGiacDeu {
     }
     
     public JPanel draw() {
-        JPanel panel = new JPanel(){
+        JPanel panel = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
-                setForeground(Color.RED);  //dat mau hinh ve la red
+                g.setColor(Color.RED);  //dat mau hinh ve la red
                 //khai bao tọa độ các đỉnh
                 int xA, yA, xB, yB, xC, yC;
                 xA = canh/2;
@@ -67,13 +68,12 @@ public class TamGiacDeu {
                 g.drawLine(xA, yA, xC, yC);
                 //vẽ cạnh đáy
                 g.drawLine(xB, yB, xC, yC);
-                
             }
         };
-        int xPanel = ThamSoTruyenVao.backgroundWidth/2 + xDinh - (canh/2);
+        int xPanel = ThamSoTruyenVao.backgroundWidth/2 + xDinh - canh/2;
         int yPanel = ThamSoTruyenVao.backgroundHeight/2 - yDinh;
         panel.setOpaque(false);
-        panel.setBounds(xPanel, yPanel, canh, canh);
+        panel.setBounds(xPanel, yPanel, canh + 1, canh + 1);
         panel.setVisible(true);
         return panel;
     }
