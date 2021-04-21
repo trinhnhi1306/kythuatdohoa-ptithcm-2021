@@ -74,7 +74,7 @@ public class NetDut {
                 y = y1;
                 int x_unit = 1, y_unit = 1;
 
-                g.fillRect(x + 250 - 1, 250 - y - 1, 3, 3);
+                g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 - 1, ThamSoTruyenVao.backgroundHeight/2 - y - 1, 3, 3);
 
                 //xét trường hợp để cho y_unit và x_unit để vẽ tăng lên hay giảm xuống
                 if (x2 - x1 < 0) {
@@ -95,13 +95,15 @@ public class NetDut {
                         }
                         x += x_unit;
                         if (dem < 10) {
-                            g.fillRect(x + 250 - 1, 250 - y - 1, 3, 3);
+                            g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 - 1, ThamSoTruyenVao.backgroundHeight/2 - y - 1, 3, 3);
                             dem++;
                         }
                         else if (dem < 20)
                             dem++;
-                        else
+                        else{
                             dem = 0;
+                            g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 - 1, ThamSoTruyenVao.backgroundHeight/2 - y - 1, 3, 3);
+                        }
                     }
                 } else {
                     p = 2 * Dx - Dy;
@@ -115,20 +117,22 @@ public class NetDut {
                         }
                         y += y_unit;
                         if (dem < 10) {
-                            g.fillRect(x + 250 - 1, 250 - y - 1, 3, 3);
+                            g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 - 1, ThamSoTruyenVao.backgroundHeight/2 - y - 1, 3, 3);
                             dem++;
                         }
                         else if (dem < 20)
                             dem++;
-                        else
+                        else {
                             dem = 0;
+                            g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 - 1, ThamSoTruyenVao.backgroundHeight/2 - y - 1, 3, 3);
+                        }
                         
                     }
                 }
             }
         };
         panel.setOpaque(false);
-        panel.setSize(500, 500);//set size cho vua jpanel ma minh ve
+        panel.setSize(ThamSoTruyenVao.backgroundWidth, ThamSoTruyenVao.backgroundHeight);//set size cho vua jpanel ma minh ve
         panel.setVisible(true);
         return panel;
     }

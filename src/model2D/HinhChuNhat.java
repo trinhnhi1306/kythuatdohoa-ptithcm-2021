@@ -21,10 +21,10 @@ public class HinhChuNhat extends Canvas {
     private int y2;
     
     public HinhChuNhat (int x1, int y1, int x2, int y2) {
-        this.x1 = x1;
-        this.y1 = y1;
-        this.x2 = x2;
-        this.y2 = y2;
+        this.x1 = x1*5;
+        this.y1 = y1*5;
+        this.x2 = x2*5;
+        this.y2 = y2*5;
     }
 
     public int getX1() {
@@ -75,15 +75,15 @@ public class HinhChuNhat extends Canvas {
                 //ve AB va DC
                 while (x != chieuRong)
                 {
-                    g.fillRect(x, 0, 1, 1);
-                    g.fillRect(x, chieuCao, 1, 1);
+                    g.fillOval(x, 0, 1, 1);
+                    g.fillOval(x, chieuCao, 1, 1);
                     x++;
                 }
                 //ve AD va BC
                 while (y != chieuCao)
                 {
-                    g.fillRect(0, y, 1, 1);
-                    g.fillRect(chieuRong, y, 1, 1);
+                    g.fillOval(0, y, 1, 1);
+                    g.fillOval(chieuRong, y, 1, 1);
                     y++;
                 }
             }

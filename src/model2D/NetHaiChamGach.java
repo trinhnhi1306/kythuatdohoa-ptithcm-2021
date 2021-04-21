@@ -19,10 +19,10 @@ public class NetHaiChamGach {
     private int x1, x2, y1, y2;
 
     public NetHaiChamGach(int x1, int y1, int x2, int y2) {
-        this.x1 = x1;
-        this.y1 = y1;
-        this.x2 = x2;
-        this.y2 = y2;
+        this.x1 = x1*5;
+        this.y1 = y1*5;
+        this.x2 = x2*5;
+        this.y2 = y2*5;
     }
 
     public int getX1() {
@@ -74,7 +74,7 @@ public class NetHaiChamGach {
                 y = y1;
                 int x_unit = 1, y_unit = 1;
 
-                g.fillRect(x + 250, 250 - y, 1, 1);
+                g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 - 1, ThamSoTruyenVao.backgroundHeight/2 - y - 1, 1, 1);
 
                 //xét trường hợp để cho y_unit và x_unit để vẽ tăng lên hay giảm xuống
                 if (x2 - x1 < 0) {
