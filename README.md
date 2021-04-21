@@ -6,7 +6,7 @@
 | Nguyễn Ngọc Lâm Như            |N18DCCN144  |D18CQCN03|
 | Nguyễn Ngọc Phương Trinh    | N18DCCN231  |D18CQCN03|
 | Hà Thị Mơ     | N18DCCN126 |D18CQCN03|
-| Nguyễn Thị Huyền Dịu  | N18DCCN027  |D18CQCN02|
+| Nguyễn Thị Huyền Dịu  | N18DCCN027  |D18CQCN03|
 | Phạm Minh Tuấn Anh   | N18DCCN006  |D18CQCN03|
 -----------------------------------------------
 ### Giảng viên hướng dẫn
