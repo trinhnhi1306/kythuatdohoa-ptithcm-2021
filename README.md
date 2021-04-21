@@ -1,5 +1,5 @@
-# KyThuatDoHoa_HVCNBCVT_D16CQCN02
-Đồ án kết thúc môn Kỹ thuật Đồ họa nhóm 13 lớp D18CQCN03
+# KyThuatDoHoa_HVCNBCVT_D18CQCN03
+Đồ án kết thúc môn Kỹ thuật đồ họa nhóm 13 lớp D18CQCN03
 ## Thành viên
 | Họ & Tên  | MSSV| Lớp|
 | ------------- | ------------- |----------|
