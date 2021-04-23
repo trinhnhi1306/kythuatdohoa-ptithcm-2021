@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package view;
+
+import biendoi2D.TinhTien;
 import model2D.ThamSoTruyenVao;
 import model2D.Diem2D;
 import model2D.DoanThang;
@@ -22,12 +24,13 @@ import java.awt.Frame;
 import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import model3D.HinhChop;
 import model3D.HinhHop;
-
 
 /**
  *
@@ -65,6 +68,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         jTextField_y = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jButton_VeDiem = new javax.swing.JButton();
+        jButton_TinhTien = new javax.swing.JButton();
         TamGiacDeu = new javax.swing.JPanel();
         jTextField_xDinh = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -260,6 +264,14 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 }
             });
             Diem.add(jButton_VeDiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 110, 40));
+
+            jButton_TinhTien.setText("Tịnh tiến");
+            jButton_TinhTien.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton_TinhTienActionPerformed(evt);
+                }
+            });
+            Diem.add(jButton_TinhTien, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
             jTabbedPane_Menu2D.addTab("Điểm", Diem);
 
@@ -576,11 +588,11 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             int y1 = Integer.parseInt(jTextField_y1.getText());
             int x2 = Integer.parseInt(jTextField_x2.getText());
             int y2 = Integer.parseInt(jTextField_y2.getText());
-            DoanThang m = new DoanThang(x1, y1, x2, y2); 
+            DoanThang m = new DoanThang(x1, y1, x2, y2);
             m.draw(g);
             return;
         }
-        JOptionPane.showMessageDialog(this, "Toa do khong duoc bo trong!");    
+        JOptionPane.showMessageDialog(this, "Toa do khong duoc bo trong!");
     }//GEN-LAST:event_jButton_VeDoanThangActionPerformed
 
     private void jButton_VeHinhChuNhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeHinhChuNhatActionPerformed
@@ -590,7 +602,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             int y1 = Integer.parseInt(jTextField_y1.getText());
             int x2 = Integer.parseInt(jTextField_x2.getText());
             int y2 = Integer.parseInt(jTextField_y2.getText());
-            HinhChuNhat m = new HinhChuNhat(x1, y1, x2, y2); 
+            HinhChuNhat m = new HinhChuNhat(x1, y1, x2, y2);
             jPanel_KhungVe2D.add(m.draw());
             jPanel_KhungVe2D.repaint();
             return;
@@ -605,7 +617,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             int xO = Integer.parseInt(jTextField_xO.getText());
             int yO = Integer.parseInt(jTextField_yO.getText());
             int r = Integer.parseInt(jTextField_r.getText());
-            DuongTron m = new DuongTron(xO, yO, r); 
+            DuongTron m = new DuongTron(xO, yO, r);
             m.draw(g);
             return;
         }
@@ -673,8 +685,8 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private void jButton_VeDiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeDiemActionPerformed
         // TODO add your handling code here:
         Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
-        int x = Integer.parseInt(jTextField_x.getText())*5;
-        int y = Integer.parseInt(jTextField_y.getText())*5;
+        int x = Integer.parseInt(jTextField_x.getText()) * 5;
+        int y = Integer.parseInt(jTextField_y.getText()) * 5;
         Diem2D m = new Diem2D(x, y);
         m.draw(g);
         return;
@@ -684,10 +696,10 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         // TODO add your handling code here:
         Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
         if (rangBuocDuLieuDuongThang() == true) {
-            int x1 = Integer.parseInt(jTextField_x1.getText())*5;
-            int y1 = Integer.parseInt(jTextField_y1.getText())*5;
-            int x2 = Integer.parseInt(jTextField_x2.getText())*5;
-            int y2 = Integer.parseInt(jTextField_y2.getText())*5;
+            int x1 = Integer.parseInt(jTextField_x1.getText()) * 5;
+            int y1 = Integer.parseInt(jTextField_y1.getText()) * 5;
+            int x2 = Integer.parseInt(jTextField_x2.getText()) * 5;
+            int y2 = Integer.parseInt(jTextField_y2.getText()) * 5;
             MuiTen m = new MuiTen(x1, y1, x2, y2);
             m.draw(g);
             return;
@@ -768,7 +780,27 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         jTextArea_ToaDo.setText("");
     }//GEN-LAST:event_jButton_Xoa3DActionPerformed
 
-    boolean rangBuocDuLieuDuongThang () {
+    private void jButton_TinhTienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_TinhTienActionPerformed
+        // TODO add your handling code here:
+//        Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
+//        int x = Integer.parseInt(jTextField_x.getText()) * 5;
+//        int y = Integer.parseInt(jTextField_y.getText()) * 5;
+//        Diem2D m = new Diem2D(x, y);
+//        m.draw(g);
+//        while(m.getX() >= -ThamSoTruyenVao.backgroundWidth && m.getX() <= ThamSoTruyenVao.backgroundWidth && m.getY() >= -ThamSoTruyenVao.backgroundHeight && m.getY() <= ThamSoTruyenVao.backgroundHeight) {
+//            jPanel_KhungVe2D.repaint();
+//            m = TinhTien.TinhTien(m, 1, 0);
+//            m.draw(g);
+//            try {
+//                Thread.sleep(20);
+//            } catch (InterruptedException ex) {
+//                Logger.getLogger(GiaoDienChinh.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }
+//        return;
+    }//GEN-LAST:event_jButton_TinhTienActionPerformed
+
+    boolean rangBuocDuLieuDuongThang() {
         String x1 = jTextField_x1.getText();
         String y1 = jTextField_y1.getText();
         String x2 = jTextField_x2.getText();
@@ -778,8 +810,8 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         }
         return false;
     }
-    
-    boolean rangBuocDuLieuDuongTron () {
+
+    boolean rangBuocDuLieuDuongTron() {
         String xO = jTextField_xO.getText();
         String yO = jTextField_yO.getText();
         String r = jTextField_r.getText();
@@ -788,6 +820,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         }
         return false;
     }
+
     /**
      * @param args the command line arguments
      */
@@ -831,6 +864,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private javax.swing.JPanel TamGiacDeu;
     private javax.swing.JButton jButton_NetChamGach;
     private javax.swing.JButton jButton_NetHaiChamGach;
+    private javax.swing.JButton jButton_TinhTien;
     private javax.swing.JButton jButton_VeDiem;
     private javax.swing.JButton jButton_VeDoanThang;
     private javax.swing.JButton jButton_VeDuongTron;
