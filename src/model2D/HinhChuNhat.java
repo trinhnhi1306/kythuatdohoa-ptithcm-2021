@@ -7,6 +7,7 @@ package model2D;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
 /**
@@ -14,16 +15,17 @@ import javax.swing.JPanel;
  * @author Apple Bee
  */
 public class HinhChuNhat {
+
     private int x1;
     private int y1;
     private int x2;
     private int y2;
-    
-    public HinhChuNhat (int x1, int y1, int x2, int y2) {
-        this.x1 = x1*5;
-        this.y1 = y1*5;
-        this.x2 = x2*5;
-        this.y2 = y2*5;
+
+    public HinhChuNhat(int x1, int y1, int x2, int y2) {
+        this.x1 = x1 * 5;
+        this.y1 = y1 * 5;
+        this.x2 = x2 * 5;
+        this.y2 = y2 * 5;
     }
 
     public int getX1() {
@@ -57,41 +59,29 @@ public class HinhChuNhat {
     public void setY2(int y2) {
         this.y2 = y2;
     }
-    
-    public JPanel draw () {
-        JPanel panel = new JPanel() {
-            @Override
-            protected void paintComponent(Graphics g) {
-                g.setColor(Color.RED);  //dat mau hinh ve la red
-                //khai bao 4 diem hinh chu nhat
-                int chieuCao = Math.abs(y1 - y2);    //           A----------------B (x2, y2)
-                int chieuRong = Math.abs(x1 - x2);   //           |                |
-                                                     //           |                |
-                                                     //  (x1, y1) D----------------C
 
-                int x = 0, y = 0;
-                //ve AB va DC
-                while (x != chieuRong)
-                {
-                    g.fillOval(x, 0, 1, 1);
-                    g.fillOval(x, chieuCao, 1, 1);
-                    x++;
-                }
-                //ve AD va BC
-                while (y != chieuCao)
-                {
-                    g.fillOval(0, y, 1, 1);
-                    g.fillOval(chieuRong, y, 1, 1);
-                    y++;
-                }
-            }
-        };
-        
-        int xPanel = (x1 < x2) ? x1 : x2;
-        int yPanel = (y1 > y2) ? y1 : y2;
-        panel.setOpaque(false);
-        panel.setBounds(ThamSoTruyenVao.backgroundWidth/2 + xPanel, ThamSoTruyenVao.backgroundHeight/2 - yPanel, Math.abs(x1-x2) + 1, Math.abs(y1-y2) + 1);
-        panel.setVisible(true);
-        return panel;
+    public void draw(Graphics2D g) {
+        g.setColor(Color.red);
+        int xUnit = 1, yUnit = 1; //Để xét x, y tăng hay giảm
+        int x = x1;
+        int y = y1;
+        g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 2 + x, ThamSoTruyenVao.backgroundHeight / 2 - 2 - y, 4, 4);
+        if (x1 - x2 > 0) {
+            xUnit = -xUnit;
+        }
+        if (y1 - y2 > 0) {
+            yUnit = -yUnit;
+        }
+        while (x != x2) {
+            g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 2 + x, ThamSoTruyenVao.backgroundHeight / 2 - 2 - y1, 4, 4);
+            g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 2 + x, ThamSoTruyenVao.backgroundHeight / 2 - 2 - y2, 4, 4);
+            x = x + xUnit;
+        }
+        while (y != y2) {
+            g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 2 + x1, ThamSoTruyenVao.backgroundHeight / 2 - 2 - y, 4, 4);
+            g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 2 + x2, ThamSoTruyenVao.backgroundHeight / 2 - 2 - y, 4, 4);
+            y = y + yUnit;
+        }
     }
+
 }

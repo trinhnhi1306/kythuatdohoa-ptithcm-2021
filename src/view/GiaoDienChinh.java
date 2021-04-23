@@ -597,14 +597,14 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
     private void jButton_VeHinhChuNhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeHinhChuNhatActionPerformed
         // TODO add your handling code here:
+        Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
         if (rangBuocDuLieuDuongThang() == true) {
             int x1 = Integer.parseInt(jTextField_x1.getText());
             int y1 = Integer.parseInt(jTextField_y1.getText());
             int x2 = Integer.parseInt(jTextField_x2.getText());
             int y2 = Integer.parseInt(jTextField_y2.getText());
             HinhChuNhat m = new HinhChuNhat(x1, y1, x2, y2);
-            jPanel_KhungVe2D.add(m.draw());
-            jPanel_KhungVe2D.repaint();
+            m.draw(g);
             return;
         }
         JOptionPane.showMessageDialog(this, "Toa do khong duoc bo trong!");
@@ -782,22 +782,22 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
     private void jButton_TinhTienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_TinhTienActionPerformed
         // TODO add your handling code here:
-//        Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
-//        int x = Integer.parseInt(jTextField_x.getText()) * 5;
-//        int y = Integer.parseInt(jTextField_y.getText()) * 5;
-//        Diem2D m = new Diem2D(x, y);
-//        m.draw(g);
-//        while(m.getX() >= -ThamSoTruyenVao.backgroundWidth && m.getX() <= ThamSoTruyenVao.backgroundWidth && m.getY() >= -ThamSoTruyenVao.backgroundHeight && m.getY() <= ThamSoTruyenVao.backgroundHeight) {
-//            jPanel_KhungVe2D.repaint();
-//            m = TinhTien.TinhTien(m, 1, 0);
-//            m.draw(g);
-//            try {
-//                Thread.sleep(20);
-//            } catch (InterruptedException ex) {
-//                Logger.getLogger(GiaoDienChinh.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//        }
-//        return;
+        Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
+        int x = Integer.parseInt(jTextField_x.getText()) * 5;
+        int y = Integer.parseInt(jTextField_y.getText()) * 5;
+        Diem2D m = new Diem2D(x, y);
+        m.draw(g);
+        while(m.getX() >= -ThamSoTruyenVao.backgroundWidth && m.getX() <= ThamSoTruyenVao.backgroundWidth && m.getY() >= -ThamSoTruyenVao.backgroundHeight && m.getY() <= ThamSoTruyenVao.backgroundHeight) {
+            g.clearRect(ThamSoTruyenVao.backgroundWidth/2 + m.getX() - 2, ThamSoTruyenVao.backgroundHeight/2 - m.getY() - 2, 5, 5);
+            m = TinhTien.TinhTien(m, 1, 0);
+            m.draw(g);
+            try {
+                Thread.sleep(20);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(GiaoDienChinh.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return;
     }//GEN-LAST:event_jButton_TinhTienActionPerformed
 
     boolean rangBuocDuLieuDuongThang() {
