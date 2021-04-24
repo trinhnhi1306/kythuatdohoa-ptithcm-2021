@@ -13,12 +13,13 @@ import java.awt.Graphics2D;
  * @author Apple Bee
  */
 public class DuongTron {
+
     private int xO, yO, r;
 
     public DuongTron(int xO, int yO, int r) {
-        this.xO = xO*5;
-        this.yO = yO*5;
-        this.r = r*5;
+        this.xO = xO * 5;
+        this.yO = yO * 5;
+        this.r = r * 5;
     }
 
     public int getxO() {
@@ -45,45 +46,45 @@ public class DuongTron {
         this.r = r;
     }
 
-    public void draw (Graphics2D g) {
+    public void draw(Graphics2D g) {
         g.setColor(Color.RED);  //dat mau hinh ve la red
         //khai bao cac bien cua thuat toan Presenhem
         int dem = 0;
         int x, y, p, x0;
-        p = 3 - 2*r;
+        p = 3 - 2 * r;
         x = 0;
         y = r;
         g.fillRect(x, y, 1, 1);
         while (x < y) { //ve 1/8 duong tron
-            if (p < 0) p += 4*x + 6;
-            else {
-                p += 4*(x - y) + 10;
+            if (p < 0) {
+                p += 4 * x + 6;
+            } else {
+                p += 4 * (x - y) + 10;
                 y -= 1;
             }
             x += 1;
             if (dem < 5) {
-                g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                g.fillOval(y + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, x + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, x + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -x + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                g.fillOval(y + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -x + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
+                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+                g.fillOval(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+                g.fillOval(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
                 dem++;
-            }
-            else if (dem < 10)
+            } else if (dem < 10) {
                 dem++;
-            else {
+            } else {
                 dem = 0;
-                g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                g.fillOval(y + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, x + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, x + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -x + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                g.fillOval(y + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -x + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
+                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+                g.fillOval(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+                g.fillOval(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
             }
         }
     }

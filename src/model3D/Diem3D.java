@@ -10,6 +10,7 @@ package model3D;
  * @author Apple Bee
  */
 public class Diem3D {
+
     private int x, y, z;
 
     public Diem3D() {
@@ -44,5 +45,5 @@ public class Diem3D {
     public void setZ(int z) {
         this.z = z;
     }
-    
+
 }

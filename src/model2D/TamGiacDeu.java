@@ -15,12 +15,13 @@ import javax.swing.JPanel;
  * @author Apple Bee
  */
 public class TamGiacDeu {
+
     private int xDinh, yDinh, canh;
 
     public TamGiacDeu(int xDinh, int yDinh, int canh) {
-        this.xDinh = xDinh*5;
-        this.yDinh = yDinh*5;
-        this.canh = canh*5;
+        this.xDinh = xDinh * 5;
+        this.yDinh = yDinh * 5;
+        this.canh = canh * 5;
     }
 
     public int getxDinh() {
@@ -46,7 +47,7 @@ public class TamGiacDeu {
     public void setCanh(int canh) {
         this.canh = canh;
     }
-    
+
     public JPanel draw() {
         JPanel panel = new JPanel() {
             @Override
@@ -54,12 +55,12 @@ public class TamGiacDeu {
                 g.setColor(Color.RED);  //dat mau hinh ve la red
                 //khai bao tọa độ các đỉnh
                 int xA, yA, xB, yB, xC, yC;
-                xA = canh/2;
+                xA = canh / 2;
                 yA = 0;
                 xB = 0;
-                yB = (int)(0.866 * canh);
+                yB = (int) (0.866 * canh);
                 xC = canh;
-                yC = (int)(0.866 * canh);
+                yC = (int) (0.866 * canh);
                 //khai bao cac bien trong thuat toan Presenhem
                 int x, y, Dx, Dy, p;
                 //vẽ cạnh bên trái
@@ -70,8 +71,8 @@ public class TamGiacDeu {
                 g.drawLine(xB, yB, xC, yC);
             }
         };
-        int xPanel = ThamSoTruyenVao.backgroundWidth/2 + xDinh - canh/2;
-        int yPanel = ThamSoTruyenVao.backgroundHeight/2 - yDinh;
+        int xPanel = ThamSoTruyenVao.backgroundWidth / 2 + xDinh - canh / 2;
+        int yPanel = ThamSoTruyenVao.backgroundHeight / 2 - yDinh;
         panel.setOpaque(false);
         panel.setBounds(xPanel, yPanel, canh + 1, canh + 1);
         panel.setVisible(true);

@@ -13,13 +13,14 @@ import java.awt.Graphics2D;
  * @author Apple Bee
  */
 public class Ellipse {
+
     private int xO, yO, a, b;
 
     public Ellipse(int xO, int yO, int a, int b) {
-        this.xO = xO*5;
-        this.yO = yO*5;
-        this.a = a*5;
-        this.b = b*5;
+        this.xO = xO * 5;
+        this.yO = yO * 5;
+        this.a = a * 5;
+        this.b = b * 5;
     }
 
     public int getxO() {
@@ -53,8 +54,8 @@ public class Ellipse {
     public void setB(int b) {
         this.b = b;
     }
-    
-    public void draw (Graphics2D g) {
+
+    public void draw(Graphics2D g) {
         g.setColor(Color.RED);  //dat mau hinh ve la red
         //khai bao cac bien cua thuat toan Midpoint
         int dem = 0;
@@ -71,30 +72,25 @@ public class Ellipse {
         while (dx < dy) {
             // Ve diem dua tren doi xung
             if (dem < 5) {
-                g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
+                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
                 dem++;
-            }
-            else if (dem < 10) {
+            } else if (dem < 10) {
                 dem++;
-            }
-            else {
+            } else {
                 dem = 0;
-                g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
+                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
             }
-            g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-            g.fillOval(-x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
+            g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+            g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
 
             // Kiem tra va cap nhat cac gia tri
-            if (p0 < 0) 
-            {
+            if (p0 < 0) {
                 x++;
                 dx = dx + (2 * b * b);
                 p0 = p0 + dx + (b * b);
-            }
-            else
-            {
+            } else {
                 x++;
                 y--;
                 dx = dx + (2 * b * b);
@@ -108,28 +104,25 @@ public class Ellipse {
 
             // Ve 4 diem
             if (dem < 5) {
-                g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
+                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
                 dem++;
-            }
-            else if (dem < 10) {
+            } else if (dem < 10) {
                 dem++;
-            }
-            else {
+            } else {
                 dem = 0;
-                g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
+                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
             }
-            g.fillOval(x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
-            g.fillOval(-x + ThamSoTruyenVao.backgroundWidth/2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight/2 - yO - 1, 3, 3);
+            g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+            g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
 
             // Kiem tra va cap nhat cac gia tri
             if (q0 > 0) {
                 y--;
                 dy = dy - (2 * a * a);
                 q0 = q0 + (a * a) - dy;
-            }
-            else {
+            } else {
                 y--;
                 x++;
                 dx = dx + (2 * b * b);

@@ -104,28 +104,27 @@ public class MuiTen {
         }
 
         //khai bao tọa độ các đỉnh
-        int xB, yB, xH, yH, xC, yC, xD, yD, AB; 
-        int a = x2-x1 ;
-        int b = y1-y2 ;
-        xB = x2 +250;
+        int xB, yB, xH, yH, xC, yC, xD, yD, AB;
+        int a = x2 - x1;
+        int b = y1 - y2;
+        xB = x2 + 250;
         yB = 250 - y2;
-        AB = (int) Math.sqrt((Math.pow(a*1.0, 2.0))+Math.pow(b*1.0, 2.0));
+        AB = (int) Math.sqrt((Math.pow(a * 1.0, 2.0)) + Math.pow(b * 1.0, 2.0));
         // Tính tọa độ của H
-        xH = (int)(xB - a/(AB/10.0));  
-        yH = (int)(yB - b/(AB/10.0));
+        xH = (int) (xB - a / (AB / 10.0));
+        yH = (int) (yB - b / (AB / 10.0));
 
         // Tính tọa độ của C
-        if (a==0){
+        if (a == 0) {
             yC = yH;
-            xC = xH - (AB/20);
-        }
-        else{
-            yC = (int)(yH - Math.sqrt((double)((AB/20.0)/(Math.pow((double)(b/a), 2.0)+1))));
-            xC = (int)((a*xH+b*yH-b*yC)/a);            
+            xC = xH - (AB / 20);
+        } else {
+            yC = (int) (yH - Math.sqrt((double) ((AB / 20.0) / (Math.pow((double) (b / a), 2.0) + 1))));
+            xC = (int) ((a * xH + b * yH - b * yC) / a);
         }
         // Tính tọa độ của D
-        xD = 2*xH - xC;
-        yD = 2*yH - yC;
+        xD = 2 * xH - xC;
+        yD = 2 * yH - yC;
 
         //khai bao cac bien trong thuat toan Presenhem
 //                int x, y, Dx, Dy, p;

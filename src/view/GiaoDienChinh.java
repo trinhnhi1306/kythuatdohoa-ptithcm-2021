@@ -5,6 +5,7 @@
  */
 package view;
 
+import biendoi2D.Quay;
 import biendoi2D.TinhTien;
 import model2D.ThamSoTruyenVao;
 import model2D.Diem2D;
@@ -43,10 +44,9 @@ public class GiaoDienChinh extends javax.swing.JFrame {
      */
     public GiaoDienChinh() {
         initComponents();
-        this.setLocationRelativeTo(null);
-        this.getContentPane().setBackground(Color.WHITE);
+        this.setLocationRelativeTo(null); //Hiển thị cửa sổ lên vị trí giữa màn hình
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE); //Thiết lập việc tắt chương trình khi click nào nút X trên thanh tiêu đề. Nếu không thêm dòng đó vào thì khi bấm nút X, cửa sổ chương trình vẫn sẽ biến mất nhưng bản thân chương trình thì vẫn chạy ngầm bên dưới chứ không tắt hẳn.
         jPanel_KhungVe2D.setBackground(Color.BLUE);
-        System.out.println(jPanel_KhungVe2D.getBounds());
     }
 
     /**
@@ -69,6 +69,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jButton_VeDiem = new javax.swing.JButton();
         jButton_TinhTien = new javax.swing.JButton();
+        jButton_Quay = new javax.swing.JButton();
         TamGiacDeu = new javax.swing.JPanel();
         jTextField_xDinh = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -272,6 +273,14 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 }
             });
             Diem.add(jButton_TinhTien, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
+
+            jButton_Quay.setText("Quay");
+            jButton_Quay.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton_QuayActionPerformed(evt);
+                }
+            });
+            Diem.add(jButton_Quay, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
 
             jTabbedPane_Menu2D.addTab("Điểm", Diem);
 
@@ -787,8 +796,8 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         int y = Integer.parseInt(jTextField_y.getText()) * 5;
         Diem2D m = new Diem2D(x, y);
         m.draw(g);
-        while(m.getX() >= -ThamSoTruyenVao.backgroundWidth && m.getX() <= ThamSoTruyenVao.backgroundWidth && m.getY() >= -ThamSoTruyenVao.backgroundHeight && m.getY() <= ThamSoTruyenVao.backgroundHeight) {
-            g.clearRect(ThamSoTruyenVao.backgroundWidth/2 + m.getX() - 2, ThamSoTruyenVao.backgroundHeight/2 - m.getY() - 2, 5, 5);
+        while (m.getX() >= -ThamSoTruyenVao.backgroundWidth / 2 && m.getX() <= ThamSoTruyenVao.backgroundWidth / 2 && m.getY() >= -ThamSoTruyenVao.backgroundHeight / 2 && m.getY() <= ThamSoTruyenVao.backgroundHeight / 2) {
+            jPanel_KhungVe2D.removeAll();
             m = TinhTien.TinhTien(m, 1, 0);
             m.draw(g);
             try {
@@ -799,6 +808,19 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         }
         return;
     }//GEN-LAST:event_jButton_TinhTienActionPerformed
+
+    private void jButton_QuayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_QuayActionPerformed
+        // TODO add your handling code here:
+        Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
+        int x = Integer.parseInt(jTextField_x.getText()) * 5;
+        int y = Integer.parseInt(jTextField_y.getText()) * 5;
+        Diem2D m = new Diem2D(x, y);
+        Diem2D tam = new Diem2D(0, 10 * 5);
+        m.draw(g);
+        m = Quay.QuayTamBatKy(tam, m, -(Math.PI) / 2);
+        m.draw(g);
+        return;
+    }//GEN-LAST:event_jButton_QuayActionPerformed
 
     boolean rangBuocDuLieuDuongThang() {
         String x1 = jTextField_x1.getText();
@@ -864,6 +886,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private javax.swing.JPanel TamGiacDeu;
     private javax.swing.JButton jButton_NetChamGach;
     private javax.swing.JButton jButton_NetHaiChamGach;
+    private javax.swing.JButton jButton_Quay;
     private javax.swing.JButton jButton_TinhTien;
     private javax.swing.JButton jButton_VeDiem;
     private javax.swing.JButton jButton_VeDoanThang;

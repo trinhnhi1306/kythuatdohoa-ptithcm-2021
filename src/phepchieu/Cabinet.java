@@ -13,7 +13,8 @@ import model3D.Diem3D;
  * @author Apple Bee
  */
 public class Cabinet {
-    public static Diem2D chieu (int x, int y, int z) {
+
+    public static Diem2D chieu(int x, int y, int z) {
         int X = (int) (x - y * (Math.sqrt(2)) / 4);
         int Y = (int) (z - y * (Math.sqrt(2)) / 4);
         Diem2D d = new Diem2D(X, Y);
