@@ -5,6 +5,7 @@
  */
 package view;
 
+import biendoi2D.DoiXungQuaDoanThang;
 import biendoi2D.Quay;
 import biendoi2D.TinhTien;
 import model2D.ThamSoTruyenVao;
@@ -70,6 +71,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         jButton_VeDiem = new javax.swing.JButton();
         jButton_TinhTien = new javax.swing.JButton();
         jButton_Quay = new javax.swing.JButton();
+        jButton_DoiXungQuaDuongThang = new javax.swing.JButton();
         TamGiacDeu = new javax.swing.JPanel();
         jTextField_xDinh = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -272,7 +274,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                     jButton_TinhTienActionPerformed(evt);
                 }
             });
-            Diem.add(jButton_TinhTien, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
+            Diem.add(jButton_TinhTien, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 233, -1, 30));
 
             jButton_Quay.setText("Quay");
             jButton_Quay.addActionListener(new java.awt.event.ActionListener() {
@@ -280,7 +282,15 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                     jButton_QuayActionPerformed(evt);
                 }
             });
-            Diem.add(jButton_Quay, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
+            Diem.add(jButton_Quay, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 273, -1, 30));
+
+            jButton_DoiXungQuaDuongThang.setText("Đối xứng qua đường thẳng");
+            jButton_DoiXungQuaDuongThang.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton_DoiXungQuaDuongThangActionPerformed(evt);
+                }
+            });
+            Diem.add(jButton_DoiXungQuaDuongThang, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, 30));
 
             jTabbedPane_Menu2D.addTab("Điểm", Diem);
 
@@ -694,8 +704,8 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private void jButton_VeDiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeDiemActionPerformed
         // TODO add your handling code here:
         Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
-        int x = Integer.parseInt(jTextField_x.getText()) * 5;
-        int y = Integer.parseInt(jTextField_y.getText()) * 5;
+        int x = Integer.parseInt(jTextField_x.getText());
+        int y = Integer.parseInt(jTextField_y.getText());
         Diem2D m = new Diem2D(x, y);
         m.draw(g);
         return;
@@ -705,10 +715,10 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         // TODO add your handling code here:
         Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
         if (rangBuocDuLieuDuongThang() == true) {
-            int x1 = Integer.parseInt(jTextField_x1.getText()) * 5;
-            int y1 = Integer.parseInt(jTextField_y1.getText()) * 5;
-            int x2 = Integer.parseInt(jTextField_x2.getText()) * 5;
-            int y2 = Integer.parseInt(jTextField_y2.getText()) * 5;
+            int x1 = Integer.parseInt(jTextField_x1.getText());
+            int y1 = Integer.parseInt(jTextField_y1.getText());
+            int x2 = Integer.parseInt(jTextField_x2.getText());
+            int y2 = Integer.parseInt(jTextField_y2.getText());
             MuiTen m = new MuiTen(x1, y1, x2, y2);
             m.draw(g);
             return;
@@ -792,35 +802,47 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private void jButton_TinhTienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_TinhTienActionPerformed
         // TODO add your handling code here:
         Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
-        int x = Integer.parseInt(jTextField_x.getText()) * 5;
-        int y = Integer.parseInt(jTextField_y.getText()) * 5;
+        int x = Integer.parseInt(jTextField_x.getText());
+        int y = Integer.parseInt(jTextField_y.getText());
         Diem2D m = new Diem2D(x, y);
+        
+        m = TinhTien.TinhTien(m, 10, 0);
         m.draw(g);
-        while (m.getX() >= -ThamSoTruyenVao.backgroundWidth / 2 && m.getX() <= ThamSoTruyenVao.backgroundWidth / 2 && m.getY() >= -ThamSoTruyenVao.backgroundHeight / 2 && m.getY() <= ThamSoTruyenVao.backgroundHeight / 2) {
-            jPanel_KhungVe2D.removeAll();
-            m = TinhTien.TinhTien(m, 1, 0);
-            m.draw(g);
-            try {
-                Thread.sleep(20);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(GiaoDienChinh.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+            
         return;
     }//GEN-LAST:event_jButton_TinhTienActionPerformed
 
     private void jButton_QuayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_QuayActionPerformed
         // TODO add your handling code here:
         Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
-        int x = Integer.parseInt(jTextField_x.getText()) * 5;
-        int y = Integer.parseInt(jTextField_y.getText()) * 5;
+        int x = Integer.parseInt(jTextField_x.getText());
+        int y = Integer.parseInt(jTextField_y.getText());
         Diem2D m = new Diem2D(x, y);
-        Diem2D tam = new Diem2D(0, 10 * 5);
+        Diem2D tam = new Diem2D(0, 10);
         m.draw(g);
         m = Quay.QuayTamBatKy(tam, m, -(Math.PI) / 2);
         m.draw(g);
         return;
     }//GEN-LAST:event_jButton_QuayActionPerformed
+
+    private void jButton_DoiXungQuaDuongThangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_DoiXungQuaDuongThangActionPerformed
+        // TODO add your handling code here:
+        Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
+        int x = Integer.parseInt(jTextField_x.getText());
+        int y = Integer.parseInt(jTextField_y.getText());
+        Diem2D m = new Diem2D(x, y);
+        Diem2D a = new Diem2D();
+        Diem2D b = new Diem2D();
+        a.setX(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm đầu")));
+        a.setY(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y điểm đầu")));
+        b.setX(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm cuối")));
+        b.setY(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y điểm cuối")));
+        m = DoiXungQuaDoanThang.layDoiXung(m, a , b);
+        System.out.println(m.getX() + " " + m.getY());
+        m.draw(g);
+        DoanThang ab = new DoanThang(a.getX(), a.getY(), b.getX(), b.getY());
+        ab.draw(g);
+    }//GEN-LAST:event_jButton_DoiXungQuaDuongThangActionPerformed
 
     boolean rangBuocDuLieuDuongThang() {
         String x1 = jTextField_x1.getText();
@@ -884,6 +906,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private javax.swing.JPanel Ellipse;
     private javax.swing.JPanel HinhTron;
     private javax.swing.JPanel TamGiacDeu;
+    private javax.swing.JButton jButton_DoiXungQuaDuongThang;
     private javax.swing.JButton jButton_NetChamGach;
     private javax.swing.JButton jButton_NetHaiChamGach;
     private javax.swing.JButton jButton_Quay;

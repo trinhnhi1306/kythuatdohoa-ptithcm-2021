@@ -65,7 +65,7 @@ public class HinhChuNhat {
         int xUnit = 1, yUnit = 1; //Để xét x, y tăng hay giảm
         int x = x1;
         int y = y1;
-        g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 2 + x, ThamSoTruyenVao.backgroundHeight / 2 - 2 - y, 4, 4);
+        g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 1 + x, ThamSoTruyenVao.backgroundHeight / 2 - 1 - y, 3, 3);
         if (x1 - x2 > 0) {
             xUnit = -xUnit;
         }
@@ -73,13 +73,13 @@ public class HinhChuNhat {
             yUnit = -yUnit;
         }
         while (x != x2) {
-            g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 2 + x, ThamSoTruyenVao.backgroundHeight / 2 - 2 - y1, 4, 4);
-            g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 2 + x, ThamSoTruyenVao.backgroundHeight / 2 - 2 - y2, 4, 4);
+            g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 1 + x, ThamSoTruyenVao.backgroundHeight / 2 - 1 - y1, 3, 3);
+            g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 1 + x, ThamSoTruyenVao.backgroundHeight / 2 - 1 - y2, 3, 3);
             x = x + xUnit;
         }
         while (y != y2) {
-            g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 2 + x1, ThamSoTruyenVao.backgroundHeight / 2 - 2 - y, 4, 4);
-            g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 2 + x2, ThamSoTruyenVao.backgroundHeight / 2 - 2 - y, 4, 4);
+            g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 1 + x1, ThamSoTruyenVao.backgroundHeight / 2 - 1 - y, 3, 4);
+            g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 1 + x2, ThamSoTruyenVao.backgroundHeight / 2 - 1 - y, 3, 3);
             y = y + yUnit;
         }
     }

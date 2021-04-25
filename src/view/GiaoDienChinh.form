@@ -151,7 +151,7 @@
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="10" y="240" width="-1" height="-1"/>
+                          <AbsoluteConstraints x="10" y="233" width="-1" height="30"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -164,7 +164,20 @@
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="10" y="270" width="-1" height="-1"/>
+                          <AbsoluteConstraints x="10" y="273" width="-1" height="30"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="jButton_DoiXungQuaDuongThang">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#x110;&#x1ed1;i x&#x1ee9;ng qua &#x111;&#x1b0;&#x1edd;ng th&#x1eb3;ng"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_DoiXungQuaDuongThangActionPerformed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="10" y="310" width="-1" height="30"/>
                         </Constraint>
                       </Constraints>
                     </Component>

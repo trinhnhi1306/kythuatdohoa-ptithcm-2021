@@ -47,6 +47,7 @@ public class DuongTron {
     }
 
     public void draw(Graphics2D g) {
+        
         g.setColor(Color.RED);  //dat mau hinh ve la red
         //khai bao cac bien cua thuat toan Presenhem
         int dem = 0;
