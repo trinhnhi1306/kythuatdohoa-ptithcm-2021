@@ -7,6 +7,6 @@ public class ThamSoTruyenVao {
 
     public final static int backgroundWidth = 500;
     public final static int backgroundHeight = 500;
-    public static JTextField x, y, z, dai, rong, cao;
+    public static JTextField x, y, z, r, dai, rong, cao;
     public static JButton nutVe, nutXoa;
 }

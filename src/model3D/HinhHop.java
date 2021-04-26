@@ -252,14 +252,14 @@ public class HinhHop {
 
         //Vẽ tên các điểm
         g.setColor(Color.red);
-        g.drawString("A1", ThamSoTruyenVao.backgroundWidth / 2 + A1.getX() * 5 + 5, ThamSoTruyenVao.backgroundHeight / 2 - A1.getY() * 5 - 10);
-        g.drawString("B1", ThamSoTruyenVao.backgroundWidth / 2 + B1.getX() * 5 + 5, ThamSoTruyenVao.backgroundHeight / 2 - B1.getY() * 5 - 10);
+        g.drawString("A1", ThamSoTruyenVao.backgroundWidth / 2 + A1.getX() * 5 + 5, ThamSoTruyenVao.backgroundHeight / 2 - A1.getY() * 5 - 5);
+        g.drawString("B1", ThamSoTruyenVao.backgroundWidth / 2 + B1.getX() * 5 + 5, ThamSoTruyenVao.backgroundHeight / 2 - B1.getY() * 5 - 5);
         g.drawString("C1", ThamSoTruyenVao.backgroundWidth / 2 + C1.getX() * 5 - 10, ThamSoTruyenVao.backgroundHeight / 2 - C1.getY() * 5 + 15);
         g.drawString("D1", ThamSoTruyenVao.backgroundWidth / 2 + D1.getX() * 5 - 10, ThamSoTruyenVao.backgroundHeight / 2 - D1.getY() * 5 + 15);
-        g.drawString("A2", ThamSoTruyenVao.backgroundWidth / 2 + A2.getX() * 5 + 5, ThamSoTruyenVao.backgroundHeight / 2 - A2.getY() * 5 - 10);
-        g.drawString("B2", ThamSoTruyenVao.backgroundWidth / 2 + B2.getX() * 5 + 5, ThamSoTruyenVao.backgroundHeight / 2 - B2.getY() * 5 - 10);
-        g.drawString("C2", ThamSoTruyenVao.backgroundWidth / 2 + C2.getX() * 5 - 10, ThamSoTruyenVao.backgroundHeight / 2 - C2.getY() * 5 - 15);
-        g.drawString("D2", ThamSoTruyenVao.backgroundWidth / 2 + D2.getX() * 5 - 10, ThamSoTruyenVao.backgroundHeight / 2 - D2.getY() * 5 - 15);
+        g.drawString("A2", ThamSoTruyenVao.backgroundWidth / 2 + A2.getX() * 5 + 5, ThamSoTruyenVao.backgroundHeight / 2 - A2.getY() * 5 - 7);
+        g.drawString("B2", ThamSoTruyenVao.backgroundWidth / 2 + B2.getX() * 5 + 5, ThamSoTruyenVao.backgroundHeight / 2 - B2.getY() * 5 - 7);
+        g.drawString("C2", ThamSoTruyenVao.backgroundWidth / 2 + C2.getX() * 5 - 10, ThamSoTruyenVao.backgroundHeight / 2 - C2.getY() * 5 - 5);
+        g.drawString("D2", ThamSoTruyenVao.backgroundWidth / 2 + D2.getX() * 5 - 10, ThamSoTruyenVao.backgroundHeight / 2 - D2.getY() * 5 - 5);
 
     }
 }

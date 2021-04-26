@@ -31,6 +31,7 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import model3D.HinhCau;
 import model3D.HinhChop;
 import model3D.HinhHop;
 
@@ -46,7 +47,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     public GiaoDienChinh() {
         initComponents();
         this.setLocationRelativeTo(null); //Hiển thị cửa sổ lên vị trí giữa màn hình
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE); //Thiết lập việc tắt chương trình khi click nào nút X trên thanh tiêu đề. Nếu không thêm dòng đó vào thì khi bấm nút X, cửa sổ chương trình vẫn sẽ biến mất nhưng bản thân chương trình thì vẫn chạy ngầm bên dưới chứ không tắt hẳn.
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE); //Thiết lập việc tắt chương trình khi click nào nút X trên thanh tiêu đề. Nếu không thêm dòng này vào thì khi bấm nút X, cửa sổ chương trình vẫn sẽ biến mất nhưng bản thân chương trình thì vẫn chạy ngầm bên dưới chứ không tắt hẳn.
         jPanel_KhungVe2D.setBackground(Color.BLUE);
     }
 
@@ -59,61 +60,62 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel8 = new javax.swing.JLabel();
+        jLabel_ChuThich = new javax.swing.JLabel();
         jTabbedPane_MenuChinh = new javax.swing.JTabbedPane();
-        jPanel_BT2D = new javax.swing.JPanel();
+        jPanel_2D = new javax.swing.JPanel();
         jTabbedPane_Menu2D = new javax.swing.JTabbedPane();
-        Diem = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
+        jPanel_Diem = new javax.swing.JPanel();
         jTextField_x = new javax.swing.JTextField();
         jTextField_y = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
+        jLabel_y = new javax.swing.JLabel();
         jButton_VeDiem = new javax.swing.JButton();
-        jButton_TinhTien = new javax.swing.JButton();
+        jPanel_BienDoi2D = new javax.swing.JPanel();
         jButton_Quay = new javax.swing.JButton();
+        jButton_TinhTien = new javax.swing.JButton();
         jButton_DoiXungQuaDuongThang = new javax.swing.JButton();
-        TamGiacDeu = new javax.swing.JPanel();
-        jTextField_xDinh = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jTextField_yDinh = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        jTextField_canh = new javax.swing.JTextField();
-        jButton_VeTamGiac = new javax.swing.JButton();
-        HinhTron = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField_xO = new javax.swing.JTextField();
-        jTextField_yO = new javax.swing.JTextField();
-        jButton_VeDuongTron = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField_r = new javax.swing.JTextField();
-        Ellipse = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        jTextField_xC = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        jTextField_yC = new javax.swing.JTextField();
-        jTextField_a = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        jButton_VeEllipse = new javax.swing.JButton();
-        jLabel17 = new javax.swing.JLabel();
-        jTextField_b = new javax.swing.JTextField();
-        DoanThang = new javax.swing.JPanel();
+        jLabel_x = new javax.swing.JLabel();
+        jPanel_DoanThang = new javax.swing.JPanel();
         jTextField_x1 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel_x1 = new javax.swing.JLabel();
+        jLabel_y1 = new javax.swing.JLabel();
+        jLabel_x2 = new javax.swing.JLabel();
+        jLabel_y2 = new javax.swing.JLabel();
         jTextField_y1 = new javax.swing.JTextField();
         jTextField_x2 = new javax.swing.JTextField();
         jTextField_y2 = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
+        jPanel_MenuDoanThang = new javax.swing.JPanel();
         jButton_VeDoanThang = new javax.swing.JButton();
         jButton_VeNetDut = new javax.swing.JButton();
-        jButton_NetChamGach = new javax.swing.JButton();
+        jButton_VeNetChamGach = new javax.swing.JButton();
         jButton_NetHaiChamGach = new javax.swing.JButton();
         jButton_VeMuiTen = new javax.swing.JButton();
         jButton_VeHinhChuNhat = new javax.swing.JButton();
+        jPanel_TamGiacDeu = new javax.swing.JPanel();
+        jTextField_xDinh = new javax.swing.JTextField();
+        jLabel_xDinh = new javax.swing.JLabel();
+        jLabel_yDinh = new javax.swing.JLabel();
+        jTextField_yDinh = new javax.swing.JTextField();
+        jLabel_Canh = new javax.swing.JLabel();
+        jTextField_Canh = new javax.swing.JTextField();
+        jButton_VeTamGiac = new javax.swing.JButton();
+        jPanel_DuongTron = new javax.swing.JPanel();
+        jLabel_xTam = new javax.swing.JLabel();
+        jLabel_yTam = new javax.swing.JLabel();
+        jTextField_xTam = new javax.swing.JTextField();
+        jTextField_yTam = new javax.swing.JTextField();
+        jButton_VeDuongTron = new javax.swing.JButton();
+        jLabel_BanKinh = new javax.swing.JLabel();
+        jTextField_BanKinh = new javax.swing.JTextField();
+        jPanel_Ellipse = new javax.swing.JPanel();
+        jLabel_Tamx = new javax.swing.JLabel();
+        jTextField_Tamx = new javax.swing.JTextField();
+        jLabel_Tamy = new javax.swing.JLabel();
+        jTextField_Tamy = new javax.swing.JTextField();
+        jTextField_BanKinhNgang = new javax.swing.JTextField();
+        jLabel_BanKinhNgang = new javax.swing.JLabel();
+        jButton_VeEllipse = new javax.swing.JButton();
+        jLabel_BanKinhDoc = new javax.swing.JLabel();
+        jTextField_BanKinhDoc = new javax.swing.JTextField();
         jPanel_KhungVe2D = new javax.swing.JPanel(){
             private static final long serialVersionUID = 1L;
             @Override
@@ -229,11 +231,12 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
                 }
             };
-            jPanel2 = new javax.swing.JPanel();
+            jPanel_Menu3D = new javax.swing.JPanel();
             jButton_VeHinhHop = new javax.swing.JButton();
             jButton_VeHinhChop = new javax.swing.JButton();
+            jButton_VeHinhCau = new javax.swing.JButton();
             jButton_Xoa3D = new javax.swing.JButton();
-            jScrollPane1 = new javax.swing.JScrollPane();
+            jScrollPane_ToaDo = new javax.swing.JScrollPane();
             jTextArea_ToaDo = new javax.swing.JTextArea();
             jTextArea_ToaDo.setEditable(false);
 
@@ -241,24 +244,21 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             setBackground(new java.awt.Color(0, 204, 255));
             getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-            jLabel8.setForeground(new java.awt.Color(153, 153, 153));
-            jLabel8.setText("1 đơn vị = 5 pixel");
-            getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+            jLabel_ChuThich.setForeground(new java.awt.Color(153, 153, 153));
+            jLabel_ChuThich.setText("1 đơn vị = 5 pixel");
+            getContentPane().add(jLabel_ChuThich, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-            jPanel_BT2D.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+            jPanel_2D.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
             jTabbedPane_Menu2D.setBackground(new java.awt.Color(0, 204, 255));
 
-            Diem.setBackground(new java.awt.Color(0, 204, 255));
-            Diem.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+            jPanel_Diem.setBackground(new java.awt.Color(0, 204, 255));
+            jPanel_Diem.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+            jPanel_Diem.add(jTextField_x, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 112, -1));
+            jPanel_Diem.add(jTextField_y, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 112, -1));
 
-            jLabel12.setText("x:");
-            Diem.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 30, -1));
-            Diem.add(jTextField_x, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 112, -1));
-            Diem.add(jTextField_y, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 112, -1));
-
-            jLabel13.setText("y:");
-            Diem.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, -1));
+            jLabel_y.setText("y:");
+            jPanel_Diem.add(jLabel_y, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, -1, -1));
 
             jButton_VeDiem.setText("Vẽ điểm");
             jButton_VeDiem.addActionListener(new java.awt.event.ActionListener() {
@@ -266,15 +266,10 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                     jButton_VeDiemActionPerformed(evt);
                 }
             });
-            Diem.add(jButton_VeDiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 110, 40));
+            jPanel_Diem.add(jButton_VeDiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 110, 40));
 
-            jButton_TinhTien.setText("Tịnh tiến");
-            jButton_TinhTien.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jButton_TinhTienActionPerformed(evt);
-                }
-            });
-            Diem.add(jButton_TinhTien, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 233, -1, 30));
+            jPanel_BienDoi2D.setBackground(new java.awt.Color(0, 204, 255));
+            jPanel_BienDoi2D.setLayout(new java.awt.GridLayout(3, 0));
 
             jButton_Quay.setText("Quay");
             jButton_Quay.addActionListener(new java.awt.event.ActionListener() {
@@ -282,7 +277,15 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                     jButton_QuayActionPerformed(evt);
                 }
             });
-            Diem.add(jButton_Quay, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 273, -1, 30));
+            jPanel_BienDoi2D.add(jButton_Quay);
+
+            jButton_TinhTien.setText("Tịnh tiến");
+            jButton_TinhTien.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton_TinhTienActionPerformed(evt);
+                }
+            });
+            jPanel_BienDoi2D.add(jButton_TinhTien);
 
             jButton_DoiXungQuaDuongThang.setText("Đối xứng qua đường thẳng");
             jButton_DoiXungQuaDuongThang.addActionListener(new java.awt.event.ActionListener() {
@@ -290,153 +293,36 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                     jButton_DoiXungQuaDuongThangActionPerformed(evt);
                 }
             });
-            Diem.add(jButton_DoiXungQuaDuongThang, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, 30));
+            jPanel_BienDoi2D.add(jButton_DoiXungQuaDuongThang);
 
-            jTabbedPane_Menu2D.addTab("Điểm", Diem);
+            jPanel_Diem.add(jPanel_BienDoi2D, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 200, 80));
 
-            TamGiacDeu.setBackground(new java.awt.Color(0, 204, 255));
-            TamGiacDeu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-            TamGiacDeu.add(jTextField_xDinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 112, -1));
+            jLabel_x.setText("x:");
+            jPanel_Diem.add(jLabel_x, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, -1, -1));
 
-            jLabel9.setText("x đỉnh:");
-            TamGiacDeu.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, -1, -1));
+            jTabbedPane_Menu2D.addTab("Điểm", jPanel_Diem);
 
-            jLabel10.setText("y đỉnh:");
-            TamGiacDeu.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, -1, -1));
-            TamGiacDeu.add(jTextField_yDinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 112, -1));
+            jPanel_DoanThang.setBackground(new java.awt.Color(0, 204, 255));
+            jPanel_DoanThang.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+            jPanel_DoanThang.add(jTextField_x1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 116, -1));
 
-            jLabel11.setText("a:");
-            TamGiacDeu.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, -1, -1));
-            TamGiacDeu.add(jTextField_canh, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 112, -1));
+            jLabel_x1.setText("x1:");
+            jPanel_DoanThang.add(jLabel_x1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, -1, -1));
 
-            jButton_VeTamGiac.setText("Vẽ tam giác");
-            jButton_VeTamGiac.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jButton_VeTamGiacActionPerformed(evt);
-                }
-            });
-            TamGiacDeu.add(jButton_VeTamGiac, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 160, 40));
+            jLabel_y1.setText("y1:");
+            jPanel_DoanThang.add(jLabel_y1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, -1, -1));
 
-            jTabbedPane_Menu2D.addTab("Tam giác đều", TamGiacDeu);
+            jLabel_x2.setText("x2:");
+            jPanel_DoanThang.add(jLabel_x2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, -1, -1));
 
-            HinhTron.setBackground(new java.awt.Color(0, 204, 255));
-            HinhTron.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+            jLabel_y2.setText("y2:");
+            jPanel_DoanThang.add(jLabel_y2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, -1));
+            jPanel_DoanThang.add(jTextField_y1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 116, -1));
+            jPanel_DoanThang.add(jTextField_x2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 116, -1));
+            jPanel_DoanThang.add(jTextField_y2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 116, -1));
 
-            jLabel5.setText("xO:");
-            HinhTron.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
-
-            jLabel6.setText("yO:");
-            HinhTron.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, -1, -1));
-            HinhTron.add(jTextField_xO, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 112, -1));
-            HinhTron.add(jTextField_yO, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 112, -1));
-
-            jButton_VeDuongTron.setText("Vẽ đường tròn");
-            jButton_VeDuongTron.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jButton_VeDuongTronActionPerformed(evt);
-                }
-            });
-            HinhTron.add(jButton_VeDuongTron, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 120, 30));
-
-            jLabel7.setText("r:");
-            HinhTron.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, -1, -1));
-            HinhTron.add(jTextField_r, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 112, -1));
-
-            jTabbedPane_Menu2D.addTab("Đường tròn", HinhTron);
-
-            Ellipse.setBackground(new java.awt.Color(0, 204, 255));
-
-            jLabel14.setText("xO:");
-
-            jLabel15.setText("yO:");
-
-            jLabel16.setText("a:");
-
-            jButton_VeEllipse.setText("Vẽ Ellipse");
-            jButton_VeEllipse.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jButton_VeEllipseActionPerformed(evt);
-                }
-            });
-
-            jLabel17.setText("b:");
-
-            javax.swing.GroupLayout EllipseLayout = new javax.swing.GroupLayout(Ellipse);
-            Ellipse.setLayout(EllipseLayout);
-            EllipseLayout.setHorizontalGroup(
-                EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EllipseLayout.createSequentialGroup()
-                    .addGap(164, 164, 164)
-                    .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(EllipseLayout.createSequentialGroup()
-                            .addComponent(jLabel15)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jTextField_yC, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(EllipseLayout.createSequentialGroup()
-                            .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel16)
-                                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField_b, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField_a, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(EllipseLayout.createSequentialGroup()
-                            .addComponent(jLabel14)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jTextField_xC, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGap(168, 168, 168))
-                .addGroup(EllipseLayout.createSequentialGroup()
-                    .addGap(174, 174, 174)
-                    .addComponent(jButton_VeEllipse, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap())
-            );
-            EllipseLayout.setVerticalGroup(
-                EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(EllipseLayout.createSequentialGroup()
-                    .addGap(65, 65, 65)
-                    .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel14)
-                        .addComponent(jTextField_xC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(18, 18, 18)
-                    .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel15)
-                        .addComponent(jTextField_yC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(34, 34, 34)
-                    .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel16)
-                        .addComponent(jTextField_a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(21, 21, 21)
-                    .addGroup(EllipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField_b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(49, 49, 49)
-                    .addComponent(jButton_VeEllipse, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(125, Short.MAX_VALUE))
-            );
-
-            jTabbedPane_Menu2D.addTab("Ellipse", Ellipse);
-
-            DoanThang.setBackground(new java.awt.Color(0, 204, 255));
-            DoanThang.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-            DoanThang.add(jTextField_x1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 116, -1));
-
-            jLabel1.setText("x1:");
-            DoanThang.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, -1, -1));
-
-            jLabel2.setText("y1:");
-            DoanThang.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, -1, -1));
-
-            jLabel3.setText("x2:");
-            DoanThang.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, -1, -1));
-
-            jLabel4.setText("y2:");
-            DoanThang.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, -1));
-            DoanThang.add(jTextField_y1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 116, -1));
-            DoanThang.add(jTextField_x2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 116, -1));
-            DoanThang.add(jTextField_y2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 116, -1));
-
-            jPanel1.setBackground(new java.awt.Color(0, 204, 255));
-            jPanel1.setLayout(new java.awt.GridLayout(3, 2, 20, 20));
+            jPanel_MenuDoanThang.setBackground(new java.awt.Color(0, 204, 255));
+            jPanel_MenuDoanThang.setLayout(new java.awt.GridLayout(3, 2, 20, 20));
 
             jButton_VeDoanThang.setText("Vẽ đoạn thẳng");
             jButton_VeDoanThang.addActionListener(new java.awt.event.ActionListener() {
@@ -444,7 +330,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                     jButton_VeDoanThangActionPerformed(evt);
                 }
             });
-            jPanel1.add(jButton_VeDoanThang);
+            jPanel_MenuDoanThang.add(jButton_VeDoanThang);
 
             jButton_VeNetDut.setText("Vẽ nét đứt");
             jButton_VeNetDut.addActionListener(new java.awt.event.ActionListener() {
@@ -452,15 +338,15 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                     jButton_VeNetDutActionPerformed(evt);
                 }
             });
-            jPanel1.add(jButton_VeNetDut);
+            jPanel_MenuDoanThang.add(jButton_VeNetDut);
 
-            jButton_NetChamGach.setText("Vẽ nét chấm gạch");
-            jButton_NetChamGach.addActionListener(new java.awt.event.ActionListener() {
+            jButton_VeNetChamGach.setText("Vẽ nét chấm gạch");
+            jButton_VeNetChamGach.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jButton_NetChamGachActionPerformed(evt);
+                    jButton_VeNetChamGachActionPerformed(evt);
                 }
             });
-            jPanel1.add(jButton_NetChamGach);
+            jPanel_MenuDoanThang.add(jButton_VeNetChamGach);
 
             jButton_NetHaiChamGach.setText("Vẽ nét hai chấm gạch");
             jButton_NetHaiChamGach.addActionListener(new java.awt.event.ActionListener() {
@@ -468,7 +354,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                     jButton_NetHaiChamGachActionPerformed(evt);
                 }
             });
-            jPanel1.add(jButton_NetHaiChamGach);
+            jPanel_MenuDoanThang.add(jButton_NetHaiChamGach);
 
             jButton_VeMuiTen.setText("Vẽ mũi tên");
             jButton_VeMuiTen.addActionListener(new java.awt.event.ActionListener() {
@@ -476,7 +362,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                     jButton_VeMuiTenActionPerformed(evt);
                 }
             });
-            jPanel1.add(jButton_VeMuiTen);
+            jPanel_MenuDoanThang.add(jButton_VeMuiTen);
 
             jButton_VeHinhChuNhat.setText("Vẽ hình chữ nhật");
             jButton_VeHinhChuNhat.addActionListener(new java.awt.event.ActionListener() {
@@ -484,13 +370,92 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                     jButton_VeHinhChuNhatActionPerformed(evt);
                 }
             });
-            jPanel1.add(jButton_VeHinhChuNhat);
+            jPanel_MenuDoanThang.add(jButton_VeHinhChuNhat);
 
-            DoanThang.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 360, 170));
+            jPanel_DoanThang.add(jPanel_MenuDoanThang, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 360, 170));
 
-            jTabbedPane_Menu2D.addTab("Đoạn thẳng", DoanThang);
+            jTabbedPane_Menu2D.addTab("Đoạn thẳng", jPanel_DoanThang);
 
-            jPanel_BT2D.add(jTabbedPane_Menu2D, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 450));
+            jPanel_TamGiacDeu.setBackground(new java.awt.Color(0, 204, 255));
+            jPanel_TamGiacDeu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+            jPanel_TamGiacDeu.add(jTextField_xDinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 112, -1));
+
+            jLabel_xDinh.setText("x đỉnh:");
+            jPanel_TamGiacDeu.add(jLabel_xDinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, -1, -1));
+
+            jLabel_yDinh.setText("y đỉnh:");
+            jPanel_TamGiacDeu.add(jLabel_yDinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, -1, -1));
+            jPanel_TamGiacDeu.add(jTextField_yDinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 112, -1));
+
+            jLabel_Canh.setText("Cạnh a:");
+            jPanel_TamGiacDeu.add(jLabel_Canh, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, -1, -1));
+            jPanel_TamGiacDeu.add(jTextField_Canh, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 112, -1));
+
+            jButton_VeTamGiac.setText("Vẽ tam giác");
+            jButton_VeTamGiac.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton_VeTamGiacActionPerformed(evt);
+                }
+            });
+            jPanel_TamGiacDeu.add(jButton_VeTamGiac, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 160, 40));
+
+            jTabbedPane_Menu2D.addTab("Tam giác đều", jPanel_TamGiacDeu);
+
+            jPanel_DuongTron.setBackground(new java.awt.Color(0, 204, 255));
+            jPanel_DuongTron.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+            jLabel_xTam.setText("x tâm:");
+            jPanel_DuongTron.add(jLabel_xTam, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, -1, -1));
+
+            jLabel_yTam.setText("y tâm:");
+            jPanel_DuongTron.add(jLabel_yTam, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, -1, -1));
+            jPanel_DuongTron.add(jTextField_xTam, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 112, -1));
+            jPanel_DuongTron.add(jTextField_yTam, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 112, -1));
+
+            jButton_VeDuongTron.setText("Vẽ đường tròn");
+            jButton_VeDuongTron.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton_VeDuongTronActionPerformed(evt);
+                }
+            });
+            jPanel_DuongTron.add(jButton_VeDuongTron, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 120, 30));
+
+            jLabel_BanKinh.setText("Bán kính:");
+            jPanel_DuongTron.add(jLabel_BanKinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, -1));
+            jPanel_DuongTron.add(jTextField_BanKinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 112, -1));
+
+            jTabbedPane_Menu2D.addTab("Đường tròn", jPanel_DuongTron);
+
+            jPanel_Ellipse.setBackground(new java.awt.Color(0, 204, 255));
+            jPanel_Ellipse.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+            jLabel_Tamx.setText("x tâm:");
+            jPanel_Ellipse.add(jLabel_Tamx, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 107, -1, -1));
+            jPanel_Ellipse.add(jTextField_Tamx, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 104, 112, -1));
+
+            jLabel_Tamy.setText("y tâm:");
+            jPanel_Ellipse.add(jLabel_Tamy, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 138, -1, -1));
+            jPanel_Ellipse.add(jTextField_Tamy, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 135, 112, -1));
+            jPanel_Ellipse.add(jTextField_BanKinhNgang, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 166, 112, -1));
+
+            jLabel_BanKinhNgang.setText("Bán kính ngang:");
+            jPanel_Ellipse.add(jLabel_BanKinhNgang, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 169, -1, -1));
+
+            jButton_VeEllipse.setText("Vẽ Ellipse");
+            jButton_VeEllipse.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton_VeEllipseActionPerformed(evt);
+                }
+            });
+            jPanel_Ellipse.add(jButton_VeEllipse, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 254, 120, 30));
+
+            jLabel_BanKinhDoc.setText("Bán kính dọc:");
+            jPanel_Ellipse.add(jLabel_BanKinhDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 197, -1, 20));
+            jPanel_Ellipse.add(jTextField_BanKinhDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 197, 112, -1));
+
+            jTabbedPane_Menu2D.addTab("Ellipse", jPanel_Ellipse);
+
+            jPanel_2D.add(jTabbedPane_Menu2D, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 450));
 
             jPanel_KhungVe2D.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -505,7 +470,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 .addGap(0, 498, Short.MAX_VALUE)
             );
 
-            jPanel_BT2D.add(jPanel_KhungVe2D, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 500, -1));
+            jPanel_2D.add(jPanel_KhungVe2D, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 500, -1));
 
             jButton_Xoa2D.setText("Xóa tất cả");
             jButton_Xoa2D.addActionListener(new java.awt.event.ActionListener() {
@@ -513,9 +478,9 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                     jButton_Xoa2DActionPerformed(evt);
                 }
             });
-            jPanel_BT2D.add(jButton_Xoa2D, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 470, 50));
+            jPanel_2D.add(jButton_Xoa2D, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 470, 50));
 
-            jTabbedPane_MenuChinh.addTab("Bài tập vẽ 2D", jPanel_BT2D);
+            jTabbedPane_MenuChinh.addTab("Vẽ 2D", jPanel_2D);
 
             jPanel_3D.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -534,8 +499,8 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
             jPanel_3D.add(jPanel_KhungVe3D, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 510, -1));
 
-            jPanel2.setBackground(new java.awt.Color(0, 204, 204));
-            jPanel2.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+            jPanel_Menu3D.setBackground(new java.awt.Color(0, 204, 204));
+            jPanel_Menu3D.setBorder(javax.swing.BorderFactory.createCompoundBorder());
 
             jButton_VeHinhHop.setBackground(new java.awt.Color(247, 247, 247));
             jButton_VeHinhHop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hinhhop.png"))); // NOI18N
@@ -553,28 +518,39 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 }
             });
 
-            javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-            jPanel2.setLayout(jPanel2Layout);
-            jPanel2Layout.setHorizontalGroup(
-                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
+            jButton_VeHinhCau.setBackground(new java.awt.Color(247, 247, 247));
+            jButton_VeHinhCau.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hinhcau.PNG"))); // NOI18N
+            jButton_VeHinhCau.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton_VeHinhCauActionPerformed(evt);
+                }
+            });
+
+            javax.swing.GroupLayout jPanel_Menu3DLayout = new javax.swing.GroupLayout(jPanel_Menu3D);
+            jPanel_Menu3D.setLayout(jPanel_Menu3DLayout);
+            jPanel_Menu3DLayout.setHorizontalGroup(
+                jPanel_Menu3DLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel_Menu3DLayout.createSequentialGroup()
                     .addGap(25, 25, 25)
                     .addComponent(jButton_VeHinhHop, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addComponent(jButton_VeHinhChop)
-                    .addContainerGap(201, Short.MAX_VALUE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jButton_VeHinhCau)
+                    .addContainerGap(74, Short.MAX_VALUE))
             );
-            jPanel2Layout.setVerticalGroup(
-                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
+            jPanel_Menu3DLayout.setVerticalGroup(
+                jPanel_Menu3DLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel_Menu3DLayout.createSequentialGroup()
                     .addGap(47, 47, 47)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel_Menu3DLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jButton_VeHinhHop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton_VeHinhChop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButton_VeHinhChop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton_VeHinhCau, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addContainerGap(32, Short.MAX_VALUE))
             );
 
-            jPanel_3D.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 160));
+            jPanel_3D.add(jPanel_Menu3D, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 160));
 
             jButton_Xoa3D.setText("Xóa tất cả");
             jButton_Xoa3D.addActionListener(new java.awt.event.ActionListener() {
@@ -588,9 +564,9 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             jTextArea_ToaDo.setColumns(20);
             jTextArea_ToaDo.setForeground(new java.awt.Color(255, 255, 255));
             jTextArea_ToaDo.setRows(5);
-            jScrollPane1.setViewportView(jTextArea_ToaDo);
+            jScrollPane_ToaDo.setViewportView(jTextArea_ToaDo);
 
-            jPanel_3D.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 460, 290));
+            jPanel_3D.add(jScrollPane_ToaDo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 460, 290));
 
             jTabbedPane_MenuChinh.addTab("Vẽ 3D", jPanel_3D);
 
@@ -633,9 +609,9 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         // TODO add your handling code here:
         Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
         if (rangBuocDuLieuDuongTron() == true) {
-            int xO = Integer.parseInt(jTextField_xO.getText());
-            int yO = Integer.parseInt(jTextField_yO.getText());
-            int r = Integer.parseInt(jTextField_r.getText());
+            int xO = Integer.parseInt(jTextField_xTam.getText());
+            int yO = Integer.parseInt(jTextField_yTam.getText());
+            int r = Integer.parseInt(jTextField_BanKinh.getText());
             DuongTron m = new DuongTron(xO, yO, r);
             m.draw(g);
             return;
@@ -659,7 +635,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         //f.setLayout(null);  
     }//GEN-LAST:event_jButton_VeNetDutActionPerformed
 
-    private void jButton_NetChamGachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_NetChamGachActionPerformed
+    private void jButton_VeNetChamGachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeNetChamGachActionPerformed
         // TODO add your handling code here:
         Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
         if (rangBuocDuLieuDuongThang() == true) {
@@ -672,7 +648,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             return;
         }
         JOptionPane.showMessageDialog(this, "Toa do khong duoc bo trong!");
-    }//GEN-LAST:event_jButton_NetChamGachActionPerformed
+    }//GEN-LAST:event_jButton_VeNetChamGachActionPerformed
 
     private void jButton_NetHaiChamGachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_NetHaiChamGachActionPerformed
         // TODO add your handling code here:
@@ -694,11 +670,10 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
         int xDinh = Integer.parseInt(jTextField_xDinh.getText());
         int yDinh = Integer.parseInt(jTextField_yDinh.getText());
-        int canh = Integer.parseInt(jTextField_canh.getText());
+        int canh = Integer.parseInt(jTextField_Canh.getText());
         TamGiacDeu m = new TamGiacDeu(xDinh, yDinh, canh);
         jPanel_KhungVe2D.add(m.draw());
         jPanel_KhungVe2D.repaint();
-        return;
     }//GEN-LAST:event_jButton_VeTamGiacActionPerformed
 
     private void jButton_VeDiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeDiemActionPerformed
@@ -708,7 +683,6 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         int y = Integer.parseInt(jTextField_y.getText());
         Diem2D m = new Diem2D(x, y);
         m.draw(g);
-        return;
     }//GEN-LAST:event_jButton_VeDiemActionPerformed
 
     private void jButton_VeMuiTenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeMuiTenActionPerformed
@@ -734,13 +708,12 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private void jButton_VeEllipseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeEllipseActionPerformed
         // TODO add your handling code here:
         Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
-        int xO = Integer.parseInt(jTextField_xC.getText());
-        int yO = Integer.parseInt(jTextField_yC.getText());
-        int a = Integer.parseInt(jTextField_a.getText());
-        int b = Integer.parseInt(jTextField_b.getText());
+        int xO = Integer.parseInt(jTextField_Tamx.getText());
+        int yO = Integer.parseInt(jTextField_Tamy.getText());
+        int a = Integer.parseInt(jTextField_BanKinhNgang.getText());
+        int b = Integer.parseInt(jTextField_BanKinhDoc.getText());
         Ellipse m = new Ellipse(xO, yO, a, b);
         m.draw(g);
-        return;
     }//GEN-LAST:event_jButton_VeEllipseActionPerformed
 
     private void jButton_VeHinhHopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeHinhHopActionPerformed
@@ -805,11 +778,11 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         int x = Integer.parseInt(jTextField_x.getText());
         int y = Integer.parseInt(jTextField_y.getText());
         Diem2D m = new Diem2D(x, y);
-        
-        m = TinhTien.TinhTien(m, 10, 0);
+        int dx, dy;
+        dx = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập khoảng tịnh tiến dx:"));
+        dy = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập khoảng tịnh tiến dy:"));
+        m = TinhTien.TinhTien(m, dx, dy);
         m.draw(g);
-            
-        return;
     }//GEN-LAST:event_jButton_TinhTienActionPerformed
 
     private void jButton_QuayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_QuayActionPerformed
@@ -818,11 +791,13 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         int x = Integer.parseInt(jTextField_x.getText());
         int y = Integer.parseInt(jTextField_y.getText());
         Diem2D m = new Diem2D(x, y);
-        Diem2D tam = new Diem2D(0, 10);
+        Diem2D tam = new Diem2D();
+        float gocQuay;
+        tam.setX(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập hoành độ tâm:")));
+        tam.setY(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tung độ tâm:")));
+        gocQuay = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập a (góc quay = a x pi (đơn vị radian)):"));
+        m = Quay.QuayTamBatKy(tam, m, (Math.PI) * gocQuay);
         m.draw(g);
-        m = Quay.QuayTamBatKy(tam, m, -(Math.PI) / 2);
-        m.draw(g);
-        return;
     }//GEN-LAST:event_jButton_QuayActionPerformed
 
     private void jButton_DoiXungQuaDuongThangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_DoiXungQuaDuongThangActionPerformed
@@ -837,12 +812,37 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         a.setY(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y điểm đầu")));
         b.setX(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm cuối")));
         b.setY(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y điểm cuối")));
-        m = DoiXungQuaDoanThang.layDoiXung(m, a , b);
+        m = DoiXungQuaDoanThang.layDoiXung(m, a, b);
         System.out.println(m.getX() + " " + m.getY());
         m.draw(g);
         DoanThang ab = new DoanThang(a.getX(), a.getY(), b.getX(), b.getY());
         ab.draw(g);
     }//GEN-LAST:event_jButton_DoiXungQuaDuongThangActionPerformed
+
+    private void jButton_VeHinhCauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeHinhCauActionPerformed
+        // TODO add your handling code here:
+        Graphics2D g = (Graphics2D) jPanel_KhungVe3D.getGraphics();
+        HinhCau hc = new HinhCau();
+        hc.nhapToaDo3D();
+        ThamSoTruyenVao.nutVe.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ThamSoTruyenVao.nutVe.setBackground(Color.MAGENTA);
+                ThamSoTruyenVao.nutXoa.setBackground(Color.WHITE);
+                hc.xuLyDuLieu();
+                hc.draw(g);
+                jTextArea_ToaDo.setText(hc.layDuLieu());
+            }
+        });
+        ThamSoTruyenVao.nutXoa.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ThamSoTruyenVao.nutXoa.setBackground(Color.MAGENTA);
+                ThamSoTruyenVao.nutVe.setBackground(Color.WHITE);
+                hc.xoaDuLieu();
+            }
+        });
+    }//GEN-LAST:event_jButton_VeHinhCauActionPerformed
 
     boolean rangBuocDuLieuDuongThang() {
         String x1 = jTextField_x1.getText();
@@ -856,9 +856,9 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     }
 
     boolean rangBuocDuLieuDuongTron() {
-        String xO = jTextField_xO.getText();
-        String yO = jTextField_yO.getText();
-        String r = jTextField_r.getText();
+        String xO = jTextField_xTam.getText();
+        String yO = jTextField_yTam.getText();
+        String r = jTextField_BanKinh.getText();
         if (!xO.equals("") && !yO.equals("") && !r.equals("")) {
             return true;
         }
@@ -901,13 +901,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Diem;
-    private javax.swing.JPanel DoanThang;
-    private javax.swing.JPanel Ellipse;
-    private javax.swing.JPanel HinhTron;
-    private javax.swing.JPanel TamGiacDeu;
     private javax.swing.JButton jButton_DoiXungQuaDuongThang;
-    private javax.swing.JButton jButton_NetChamGach;
     private javax.swing.JButton jButton_NetHaiChamGach;
     private javax.swing.JButton jButton_Quay;
     private javax.swing.JButton jButton_TinhTien;
@@ -915,56 +909,64 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private javax.swing.JButton jButton_VeDoanThang;
     private javax.swing.JButton jButton_VeDuongTron;
     private javax.swing.JButton jButton_VeEllipse;
+    private javax.swing.JButton jButton_VeHinhCau;
     private javax.swing.JButton jButton_VeHinhChop;
     private javax.swing.JButton jButton_VeHinhChuNhat;
     private javax.swing.JButton jButton_VeHinhHop;
     private javax.swing.JButton jButton_VeMuiTen;
+    private javax.swing.JButton jButton_VeNetChamGach;
     private javax.swing.JButton jButton_VeNetDut;
     private javax.swing.JButton jButton_VeTamGiac;
     private javax.swing.JButton jButton_Xoa2D;
     private javax.swing.JButton jButton_Xoa3D;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel jLabel_BanKinh;
+    private javax.swing.JLabel jLabel_BanKinhDoc;
+    private javax.swing.JLabel jLabel_BanKinhNgang;
+    private javax.swing.JLabel jLabel_Canh;
+    private javax.swing.JLabel jLabel_ChuThich;
+    private javax.swing.JLabel jLabel_Tamx;
+    private javax.swing.JLabel jLabel_Tamy;
+    private javax.swing.JLabel jLabel_x;
+    private javax.swing.JLabel jLabel_x1;
+    private javax.swing.JLabel jLabel_x2;
+    private javax.swing.JLabel jLabel_xDinh;
+    private javax.swing.JLabel jLabel_xTam;
+    private javax.swing.JLabel jLabel_y;
+    private javax.swing.JLabel jLabel_y1;
+    private javax.swing.JLabel jLabel_y2;
+    private javax.swing.JLabel jLabel_yDinh;
+    private javax.swing.JLabel jLabel_yTam;
+    private javax.swing.JPanel jPanel_2D;
     private javax.swing.JPanel jPanel_3D;
-    private javax.swing.JPanel jPanel_BT2D;
+    private javax.swing.JPanel jPanel_BienDoi2D;
+    private javax.swing.JPanel jPanel_Diem;
+    private javax.swing.JPanel jPanel_DoanThang;
+    private javax.swing.JPanel jPanel_DuongTron;
+    private javax.swing.JPanel jPanel_Ellipse;
     private javax.swing.JPanel jPanel_KhungVe2D;
     private javax.swing.JPanel jPanel_KhungVe3D;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel jPanel_Menu3D;
+    private javax.swing.JPanel jPanel_MenuDoanThang;
+    private javax.swing.JPanel jPanel_TamGiacDeu;
+    private javax.swing.JScrollPane jScrollPane_ToaDo;
     private javax.swing.JTabbedPane jTabbedPane_Menu2D;
     private javax.swing.JTabbedPane jTabbedPane_MenuChinh;
     private javax.swing.JTextArea jTextArea_ToaDo;
-    private javax.swing.JTextField jTextField_a;
-    private javax.swing.JTextField jTextField_b;
-    private javax.swing.JTextField jTextField_canh;
-    private javax.swing.JTextField jTextField_r;
+    private javax.swing.JTextField jTextField_BanKinh;
+    private javax.swing.JTextField jTextField_BanKinhDoc;
+    private javax.swing.JTextField jTextField_BanKinhNgang;
+    private javax.swing.JTextField jTextField_Canh;
+    private javax.swing.JTextField jTextField_Tamx;
+    private javax.swing.JTextField jTextField_Tamy;
     private javax.swing.JTextField jTextField_x;
     private javax.swing.JTextField jTextField_x1;
     private javax.swing.JTextField jTextField_x2;
-    private javax.swing.JTextField jTextField_xC;
     private javax.swing.JTextField jTextField_xDinh;
-    private javax.swing.JTextField jTextField_xO;
+    private javax.swing.JTextField jTextField_xTam;
     private javax.swing.JTextField jTextField_y;
     private javax.swing.JTextField jTextField_y1;
     private javax.swing.JTextField jTextField_y2;
-    private javax.swing.JTextField jTextField_yC;
     private javax.swing.JTextField jTextField_yDinh;
-    private javax.swing.JTextField jTextField_yO;
+    private javax.swing.JTextField jTextField_yTam;
     // End of variables declaration//GEN-END:variables
 }

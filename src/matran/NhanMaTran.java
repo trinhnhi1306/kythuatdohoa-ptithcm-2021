@@ -12,6 +12,7 @@ public class NhanMaTran {
         }
         return kq;
     }
+
     public static float[][] NhanXX(int n, float[][] a, float[][] b) { //Ma trận 3x3 với 3x3 hoặc 4x4 với 4x4
         float[][] kq = new float[n][n];
         for (int i = 0; i < n; i++) {

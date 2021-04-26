@@ -56,7 +56,7 @@ public class Ellipse {
     }
 
     public void draw(Graphics2D g) {
-    
+
         g.setColor(Color.RED);  //dat mau hinh ve la red
         //khai bao cac bien cua thuat toan Midpoint
         int dem = 0;

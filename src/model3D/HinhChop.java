@@ -245,11 +245,11 @@ public class HinhChop {
 
         //Vẽ tên các điểm
         g.setColor(Color.red);
-        g.drawString("A", ThamSoTruyenVao.backgroundWidth / 2 + A.getX() * 5 + 10, ThamSoTruyenVao.backgroundHeight / 2 - A.getY() * 5 - 10);
-        g.drawString("B", ThamSoTruyenVao.backgroundWidth / 2 + B.getX() * 5 + 5, ThamSoTruyenVao.backgroundHeight / 2 - B.getY() * 5 - 10);
+        g.drawString("A", ThamSoTruyenVao.backgroundWidth / 2 + A.getX() * 5 + 10, ThamSoTruyenVao.backgroundHeight / 2 - A.getY() * 5 - 7);
+        g.drawString("B", ThamSoTruyenVao.backgroundWidth / 2 + B.getX() * 5 + 5, ThamSoTruyenVao.backgroundHeight / 2 - B.getY() * 5 - 7);
         g.drawString("C", ThamSoTruyenVao.backgroundWidth / 2 + C.getX() * 5 - 10, ThamSoTruyenVao.backgroundHeight / 2 - C.getY() * 5 + 15);
         g.drawString("D", ThamSoTruyenVao.backgroundWidth / 2 + D.getX() * 5 - 10, ThamSoTruyenVao.backgroundHeight / 2 - D.getY() * 5 + 15);
-        g.drawString("S", ThamSoTruyenVao.backgroundWidth / 2 + S.getX() * 5 + 5, ThamSoTruyenVao.backgroundHeight / 2 - S.getY() * 5 - 10);
+        g.drawString("S", ThamSoTruyenVao.backgroundWidth / 2 + S.getX() * 5 + 5, ThamSoTruyenVao.backgroundHeight / 2 - S.getY() * 5 - 7);
         g.drawString("O", ThamSoTruyenVao.backgroundWidth / 2 + O.getX() * 5 + 5, ThamSoTruyenVao.backgroundHeight / 2 - O.getY() * 5 - 5);
     }
 }
