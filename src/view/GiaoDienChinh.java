@@ -795,8 +795,9 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         float gocQuay;
         tam.setX(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập hoành độ tâm:")));
         tam.setY(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tung độ tâm:")));
-        gocQuay = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập a (góc quay = a x pi (đơn vị radian)):"));
-        m = Quay.QuayTamBatKy(tam, m, (Math.PI) * gocQuay);
+        gocQuay = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập góc quay (độ):"));
+        gocQuay = gocQuay * (float)Math.PI / 180;
+        m = Quay.QuayTamBatKy(tam, m, gocQuay);
         m.draw(g);
     }//GEN-LAST:event_jButton_QuayActionPerformed
 
