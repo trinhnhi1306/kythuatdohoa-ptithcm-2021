@@ -89,6 +89,7 @@ public class DuongTron {
             }
         }
     }
+    
     public void drawLien(Graphics2D g) {
 
         g.setColor(Color.RED);  //dat mau hinh ve la red
@@ -107,6 +108,33 @@ public class DuongTron {
             g.fillOval(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
             g.fillOval(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
             g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+            if (p < 0) {
+                p += 4 * x + 6;
+            } else {
+                p += 4 * (x - y) + 10;
+                y -= 1;
+            }
+            x += 1;
+        }
+    }
+    public void drawLien1(Graphics2D g) {
+
+        g.setColor(Color.RED);  //dat mau hinh ve la red
+        //khai bao cac bien cua thuat toan Presenhem
+        int dem = 0;
+        int x, y, p, x0;
+        p = 3 - 2 * r;
+        x = 0;
+        y = r;
+        while (x < y) { //ve 1/8 duong tron
+            g.fillOval(x + 700 / 2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+            g.fillOval(y + 700 / 2 + xO - 1, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+            g.fillOval(-y + 700 / 2 + xO - 1, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+            g.fillOval(-x + 700 / 2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+            g.fillOval(-x + 700 / 2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+            g.fillOval(-y + 700 / 2 + xO - 1, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+            g.fillOval(y + 700 / 2 + xO - 1, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+            g.fillOval(x + 700 / 2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
             if (p < 0) {
                 p += 4 * x + 6;
             } else {

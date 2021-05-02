@@ -22,10 +22,10 @@ public class HinhChuNhat {
     private int y2;
 
     public HinhChuNhat(int x1, int y1, int x2, int y2) {
-        this.x1 = x1 * 5;
-        this.y1 = y1 * 5;
-        this.x2 = x2 * 5;
-        this.y2 = y2 * 5;
+        this.x1 = x1;
+        this.y1 = y1;
+        this.x2 = x2;
+        this.y2 = y2;
     }
 
     public int getX1() {
@@ -62,26 +62,44 @@ public class HinhChuNhat {
 
     public void draw(Graphics2D g) {
         g.setColor(Color.red);
-        int xUnit = 1, yUnit = 1; //Để xét x, y tăng hay giảm
-        int x = x1;
-        int y = y1;
-        g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 1 + x, ThamSoTruyenVao.backgroundHeight / 2 - 1 - y, 3, 3);
-        if (x1 - x2 > 0) {
-            xUnit = -xUnit;
-        }
-        if (y1 - y2 > 0) {
-            yUnit = -yUnit;
-        }
-        while (x != x2) {
-            g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 1 + x, ThamSoTruyenVao.backgroundHeight / 2 - 1 - y1, 3, 3);
-            g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 1 + x, ThamSoTruyenVao.backgroundHeight / 2 - 1 - y2, 3, 3);
-            x = x + xUnit;
-        }
-        while (y != y2) {
-            g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 1 + x1, ThamSoTruyenVao.backgroundHeight / 2 - 1 - y, 3, 4);
-            g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 1 + x2, ThamSoTruyenVao.backgroundHeight / 2 - 1 - y, 3, 3);
-            y = y + yUnit;
-        }
+        int ax, ay, bx, by, cx, cy, dx, dy;
+        ax = x1;
+        ay = y1;
+        bx = x2;
+        by = y1;
+        cx = x2;
+        cy = y2;
+        dx = x1;
+        dy = y2;
+        DoanThang ab = new DoanThang(ax, ay, bx, by);
+        ab.draw(g);
+        DoanThang bc = new DoanThang(bx, by, cx, cy);
+        bc.draw(g);
+        DoanThang cd = new DoanThang(cx, cy, dx, dy);
+        cd.draw(g);
+        DoanThang da = new DoanThang(dx, dy, ax, ay);
+        da.draw(g);
+        
+//        int xUnit = 1, yUnit = 1; //Để xét x, y tăng hay giảm
+//        int x = x1;
+//        int y = y1;
+//        g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 1 + x, ThamSoTruyenVao.backgroundHeight / 2 - 1 - y, 3, 3);
+//        if (x1 - x2 > 0) {
+//            xUnit = -xUnit;
+//        }
+//        if (y1 - y2 > 0) {
+//            yUnit = -yUnit;
+//        }
+//        while (x != x2) {
+//            g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 1 + x, ThamSoTruyenVao.backgroundHeight / 2 - 1 - y1, 3, 3);
+//            g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 1 + x, ThamSoTruyenVao.backgroundHeight / 2 - 1 - y2, 3, 3);
+//            x = x + xUnit;
+//        }
+//        while (y != y2) {
+//            g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 1 + x1, ThamSoTruyenVao.backgroundHeight / 2 - 1 - y, 3, 4);
+//            g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 - 1 + x2, ThamSoTruyenVao.backgroundHeight / 2 - 1 - y, 3, 3);
+//            y = y + yUnit;
+//        }
     }
 
 }

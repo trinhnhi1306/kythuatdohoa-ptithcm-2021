@@ -31,6 +31,7 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import model2Dchuyendong.ChongChong;
 import model3D.HinhCau;
 import model3D.HinhChop;
 import model3D.HinhHop;
@@ -48,7 +49,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null); //Hiển thị cửa sổ lên vị trí giữa màn hình
         this.setDefaultCloseOperation(EXIT_ON_CLOSE); //Thiết lập việc tắt chương trình khi click nào nút X trên thanh tiêu đề. Nếu không thêm dòng này vào thì khi bấm nút X, cửa sổ chương trình vẫn sẽ biến mất nhưng bản thân chương trình thì vẫn chạy ngầm bên dưới chứ không tắt hẳn.
-        jPanel_KhungVe2D.setBackground(Color.BLUE);
+        System.out.println(jPanel_KhungVe2DChuyenDong.getBounds());
     }
 
     /**
@@ -60,6 +61,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel_ChuThich = new javax.swing.JLabel();
         jTabbedPane_MenuChinh = new javax.swing.JTabbedPane();
         jPanel_2D = new javax.swing.JPanel();
@@ -239,6 +241,35 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             jScrollPane_ToaDo = new javax.swing.JScrollPane();
             jTextArea_ToaDo = new javax.swing.JTextArea();
             jTextArea_ToaDo.setEditable(false);
+            jPanel_2DChuyenDong = new javax.swing.JPanel();
+            jPanel_KhungVe2DChuyenDong = new javax.swing.JPanel(){
+                private static final long serialVersionUID = 1L;
+                @Override
+                protected void paintComponent(Graphics arg0) {
+                    // TODO Auto-generated method stub
+                    super.paintComponent(arg0);
+                    arg0.setColor(Color.LIGHT_GRAY);
+                    for (int i = 5; i< 700; i += 5) {
+                        arg0.drawLine(i,0,i,ThamSoTruyenVao.backgroundHeight);
+                    }
+                    for (int i = 5; i< ThamSoTruyenVao.backgroundHeight; i += 5) {
+                        arg0.drawLine(0,i,700, i);
+                    }
+                    setBackground(Color.WHITE);
+                    arg0.setColor(Color.red);
+                    arg0.drawLine(700/2, 0, 700/2, ThamSoTruyenVao.backgroundHeight);//y
+                    arg0.drawLine(0, ThamSoTruyenVao.backgroundHeight/2, 700, ThamSoTruyenVao.backgroundHeight/2);//x
+                }
+            };
+            jPanel1 = new javax.swing.JPanel();
+            jRadioButton_ChongChong = new javax.swing.JRadioButton();
+            jRadioButton2 = new javax.swing.JRadioButton();
+            jPanel2 = new javax.swing.JPanel();
+            jButton5 = new javax.swing.JButton();
+            jButton1 = new javax.swing.JButton();
+            jButton2 = new javax.swing.JButton();
+            jButton3 = new javax.swing.JButton();
+            jButton4 = new javax.swing.JButton();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
             setBackground(new java.awt.Color(0, 204, 255));
@@ -570,7 +601,107 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
             jTabbedPane_MenuChinh.addTab("Vẽ 3D", jPanel_3D);
 
-            getContentPane().add(jTabbedPane_MenuChinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
+            jPanel_KhungVe2DChuyenDong.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+            javax.swing.GroupLayout jPanel_KhungVe2DChuyenDongLayout = new javax.swing.GroupLayout(jPanel_KhungVe2DChuyenDong);
+            jPanel_KhungVe2DChuyenDong.setLayout(jPanel_KhungVe2DChuyenDongLayout);
+            jPanel_KhungVe2DChuyenDongLayout.setHorizontalGroup(
+                jPanel_KhungVe2DChuyenDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 697, Short.MAX_VALUE)
+            );
+            jPanel_KhungVe2DChuyenDongLayout.setVerticalGroup(
+                jPanel_KhungVe2DChuyenDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 498, Short.MAX_VALUE)
+            );
+
+            jPanel1.setBackground(new java.awt.Color(0, 102, 204));
+
+            jRadioButton_ChongChong.setBackground(new java.awt.Color(0, 102, 204));
+            buttonGroup1.add(jRadioButton_ChongChong);
+            jRadioButton_ChongChong.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+            jRadioButton_ChongChong.setForeground(new java.awt.Color(255, 255, 255));
+            jRadioButton_ChongChong.setText("Chong chóng");
+
+            jRadioButton2.setBackground(new java.awt.Color(0, 102, 204));
+            buttonGroup1.add(jRadioButton2);
+            jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+            jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
+            jRadioButton2.setText("Gì đó chưa biết");
+
+            jPanel2.setBackground(new java.awt.Color(0, 102, 204));
+            jPanel2.setLayout(new java.awt.GridLayout(5, 0, 10, 15));
+
+            jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+            jButton5.setText("Vẽ");
+            jButton5.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton5ActionPerformed(evt);
+                }
+            });
+            jPanel2.add(jButton5);
+
+            jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+            jButton1.setText("Tịnh tiến");
+            jPanel2.add(jButton1);
+
+            jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+            jButton2.setText("Quay");
+            jPanel2.add(jButton2);
+
+            jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+            jButton3.setText("Đối xứng");
+            jPanel2.add(jButton3);
+
+            jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+            jButton4.setText("Thu phóng");
+            jPanel2.add(jButton4);
+
+            javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+            jPanel1.setLayout(jPanel1Layout);
+            jPanel1Layout.setHorizontalGroup(
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(74, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jRadioButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jRadioButton_ChongChong))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(59, 59, 59))
+            );
+            jPanel1Layout.setVerticalGroup(
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(52, 52, 52)
+                    .addComponent(jRadioButton_ChongChong)
+                    .addGap(18, 18, 18)
+                    .addComponent(jRadioButton2)
+                    .addGap(58, 58, 58)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            );
+
+            javax.swing.GroupLayout jPanel_2DChuyenDongLayout = new javax.swing.GroupLayout(jPanel_2DChuyenDong);
+            jPanel_2DChuyenDong.setLayout(jPanel_2DChuyenDongLayout);
+            jPanel_2DChuyenDongLayout.setHorizontalGroup(
+                jPanel_2DChuyenDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel_2DChuyenDongLayout.createSequentialGroup()
+                    .addComponent(jPanel_KhungVe2DChuyenDong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            );
+            jPanel_2DChuyenDongLayout.setVerticalGroup(
+                jPanel_2DChuyenDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_2DChuyenDongLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(jPanel_2DChuyenDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jPanel_KhungVe2DChuyenDong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            );
+
+            jTabbedPane_MenuChinh.addTab("2D chuyển động", jPanel_2DChuyenDong);
+
+            getContentPane().add(jTabbedPane_MenuChinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 970, -1));
 
             pack();
         }// </editor-fold>//GEN-END:initComponents
@@ -845,6 +976,22 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_jButton_VeHinhCauActionPerformed
 
+    void veChongChong () {
+        ThamSoTruyenVao.xChongChong = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ x chong chóng"));
+        ThamSoTruyenVao.yChongChong = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ y chong chóng"));
+        ThamSoTruyenVao.bkChongChong = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập bán kính chong chóng"));
+        Graphics2D g = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
+        ChongChong cc = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
+        cc.draw(g);
+    }
+    
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        if(jRadioButton_ChongChong.isSelected()) {
+            veChongChong ();
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     boolean rangBuocDuLieuDuongThang() {
         String x1 = jTextField_x1.getText();
         String y1 = jTextField_y1.getText();
@@ -902,6 +1049,12 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton_DoiXungQuaDuongThang;
     private javax.swing.JButton jButton_NetHaiChamGach;
     private javax.swing.JButton jButton_Quay;
@@ -937,7 +1090,10 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_y2;
     private javax.swing.JLabel jLabel_yDinh;
     private javax.swing.JLabel jLabel_yTam;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel_2D;
+    private javax.swing.JPanel jPanel_2DChuyenDong;
     private javax.swing.JPanel jPanel_3D;
     private javax.swing.JPanel jPanel_BienDoi2D;
     private javax.swing.JPanel jPanel_Diem;
@@ -945,10 +1101,13 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel_DuongTron;
     private javax.swing.JPanel jPanel_Ellipse;
     private javax.swing.JPanel jPanel_KhungVe2D;
+    private javax.swing.JPanel jPanel_KhungVe2DChuyenDong;
     private javax.swing.JPanel jPanel_KhungVe3D;
     private javax.swing.JPanel jPanel_Menu3D;
     private javax.swing.JPanel jPanel_MenuDoanThang;
     private javax.swing.JPanel jPanel_TamGiacDeu;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton_ChongChong;
     private javax.swing.JScrollPane jScrollPane_ToaDo;
     private javax.swing.JTabbedPane jTabbedPane_Menu2D;
     private javax.swing.JTabbedPane jTabbedPane_MenuChinh;
