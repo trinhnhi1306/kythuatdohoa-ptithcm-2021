@@ -34,6 +34,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import model2Dchuyendong.ChongChong;
+import model2Dchuyendong.OTo;
 import model3D.Diem3D;
 import model3D.HinhCau;
 import model3D.HinhChop;
@@ -275,7 +276,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 }
             };
             jRadioButton_ChongChong = new javax.swing.JRadioButton();
-            jRadioButton2 = new javax.swing.JRadioButton();
+            jRadioButton_OTo = new javax.swing.JRadioButton();
             jPanel_ChucNang2DChuyenDong = new javax.swing.JPanel();
             jButton_2DVe = new javax.swing.JButton();
             jButton_2DTinhTien = new javax.swing.JButton();
@@ -753,11 +754,11 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             jRadioButton_ChongChong.setForeground(new java.awt.Color(255, 255, 255));
             jRadioButton_ChongChong.setText("Chong chóng");
 
-            jRadioButton2.setBackground(new java.awt.Color(0, 102, 204));
-            buttonGroup_Vat2DChuyenDong.add(jRadioButton2);
-            jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
-            jRadioButton2.setText("Gì đó chưa biết");
+            jRadioButton_OTo.setBackground(new java.awt.Color(0, 102, 204));
+            buttonGroup_Vat2DChuyenDong.add(jRadioButton_OTo);
+            jRadioButton_OTo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+            jRadioButton_OTo.setForeground(new java.awt.Color(255, 255, 255));
+            jRadioButton_OTo.setText("Ô tô");
 
             jPanel_ChucNang2DChuyenDong.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
             jPanel_ChucNang2DChuyenDong.setBackground(new Color(0, 0, 0, 65));
@@ -808,7 +809,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_Menu2DChuyenDongLayout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel_Menu2DChuyenDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jRadioButton2)
+                        .addComponent(jRadioButton_OTo)
                         .addComponent(jRadioButton_ChongChong))
                     .addGap(52, 52, 52))
             );
@@ -818,7 +819,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                     .addGap(19, 19, 19)
                     .addComponent(jRadioButton_ChongChong)
                     .addGap(31, 31, 31)
-                    .addComponent(jRadioButton2)
+                    .addComponent(jRadioButton_OTo)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addComponent(jPanel_ChucNang2DChuyenDong, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(22, Short.MAX_VALUE))
@@ -1127,11 +1128,25 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         ChongChong cc = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
         cc.draw(g);
     }
+    
+    private void VeOTo() {
+        int x = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ x bánh xe trái"));
+        ThamSoTruyenVao.tamBanh.setX(x);
+        int y = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ y bánh xe trái"));
+        ThamSoTruyenVao.tamBanh.setY(y);
+        int tam = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập bán kính bánh xe"));
+        ThamSoTruyenVao.bkBanh = tam;
+        Graphics2D g = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
+        OTo o = new OTo(ThamSoTruyenVao.tamBanh, ThamSoTruyenVao.bkBanh);
+        o.draw(g);
+    }
 
     private void jButton_2DVeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_2DVeActionPerformed
         // TODO add your handling code here:
         if (jRadioButton_ChongChong.isSelected()) {
             veChongChong();
+        } else if (jRadioButton_OTo.isSelected()) {
+            VeOTo();
         }
     }//GEN-LAST:event_jButton_2DVeActionPerformed
 
@@ -1323,8 +1338,8 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel_Menu3D;
     private javax.swing.JPanel jPanel_MenuDoanThang;
     private javax.swing.JPanel jPanel_TamGiacDeu;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton_ChongChong;
+    private javax.swing.JRadioButton jRadioButton_OTo;
     private javax.swing.JScrollPane jScrollPane_ToaDo;
     private javax.swing.JTabbedPane jTabbedPane_Menu2D;
     private javax.swing.JTabbedPane jTabbedPane_MenuChinh;

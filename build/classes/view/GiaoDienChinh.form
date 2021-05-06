@@ -1332,7 +1332,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+                              <Component id="jRadioButton_OTo" min="-2" max="-2" attributes="0"/>
                               <Component id="jRadioButton_ChongChong" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
@@ -1345,7 +1345,7 @@
                           <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                           <Component id="jRadioButton_ChongChong" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                          <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jRadioButton_OTo" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jPanel_ChucNang2DChuyenDong" min="-2" pref="331" max="-2" attributes="0"/>
                           <EmptySpace pref="22" max="32767" attributes="0"/>
@@ -1371,7 +1371,7 @@
                     <Property name="text" type="java.lang.String" value="Chong ch&#xf3;ng"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+                <Component class="javax.swing.JRadioButton" name="jRadioButton_OTo">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="cc" green="66" red="0" type="rgb"/>
@@ -1385,7 +1385,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="G&#xec; &#x111;&#xf3; ch&#x1b0;a bi&#x1ebf;t"/>
+                    <Property name="text" type="java.lang.String" value="&#xd4; t&#xf4;"/>
                   </Properties>
                 </Component>
                 <Container class="javax.swing.JPanel" name="jPanel_ChucNang2DChuyenDong">
