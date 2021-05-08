@@ -6,6 +6,7 @@
 package model2Dchuyendong;
 
 import biendoi2D.Quay;
+import biendoi2D.ThuPhong;
 import biendoi2D.TinhTien;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -262,5 +263,35 @@ public class ChongChong {
 //        g.setColor(Color.blue);
 //        g.fillOval(700 / 2 + x * 5 - banKinh / 2, 500 / 2 - y * 5 - banKinh / 2, banKinh + 1, banKinh + 1);
 
+    }
+    
+    public void drawThuPhong(Graphics2D g, float sx, float sy){
+        
+        a1 = ThuPhong.ThuPhong(a1, sx, sy);
+        a2 = ThuPhong.ThuPhong(a2, sx, sy);
+        a3 = ThuPhong.ThuPhong(a3, sx, sy);
+        a4 = ThuPhong.ThuPhong(a4, sx, sy);
+
+        b1 = ThuPhong.ThuPhong(b1, sx, sy);
+        b2 = ThuPhong.ThuPhong(b2, sx, sy);
+        b3 = ThuPhong.ThuPhong(b3, sx, sy);
+        b4 = ThuPhong.ThuPhong(b4, sx, sy);
+        
+        x *= sx;
+        y *= sy;
+        
+        banKinh = (int) (Math.sqrt(Math.pow((double)(a1.getX()-a2.getX()),2.0)+ Math.pow((double)(a1.getY()-a2.getY()),2.0)))/2;
+        
+        ThamSoTruyenVao.xChongChong = x;
+        ThamSoTruyenVao.yChongChong = y;
+        
+        // Dich ve vi tri cux nhung chua xong
+        float dx,dy;
+        dx = x*((1/sx)-1);
+        dy = y*((1/sy)-1);
+        
+//        drawTinhTien(g, sx-x, sy-y);
+        drawTinhTien(g,(int)dx ,(int)dy );
+//        draw(g);
     }
 }

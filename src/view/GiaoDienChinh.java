@@ -796,6 +796,11 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
             jButton_2DThuPhong.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
             jButton_2DThuPhong.setText("Thu phóng");
+            jButton_2DThuPhong.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton_2DThuPhongActionPerformed(evt);
+                }
+            });
             jPanel_ChucNang2DChuyenDong.add(jButton_2DThuPhong, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 145, 40));
 
             javax.swing.GroupLayout jPanel_Menu2DChuyenDongLayout = new javax.swing.GroupLayout(jPanel_Menu2DChuyenDong);
@@ -1221,6 +1226,21 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         str += "\tA' (" + kq.getX() + ", " + kq.getY() + ", " + kq.getZ() + ")";
         jTextArea_ToaDo.setText(str);
     }//GEN-LAST:event_jButton_ĐoiXungQuaDiemActionPerformed
+
+    void tpChongChong() {
+        float sx = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập tỉ lệ co giãn theo trục x"));
+        float sy = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập tỉ lệ co giãn theo trục y"));
+        Graphics2D g = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
+        ChongChong cc = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
+        cc.drawThuPhong(g, sx, sy);
+    }
+    
+    private void jButton_2DThuPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_2DThuPhongActionPerformed
+        // TODO add your handling code here:
+        if (jRadioButton_ChongChong.isSelected()) {
+            tpChongChong();
+        }
+    }//GEN-LAST:event_jButton_2DThuPhongActionPerformed
 
     boolean rangBuocDuLieuDuongThang() {
         String x1 = jTextField_x1.getText();
