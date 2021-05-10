@@ -6,6 +6,7 @@
 package model2Dchuyendong;
 
 import biendoi2D.DoiXungQuaDoanThang;
+import biendoi2D.TinhTien;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import model2D.Diem2D;
@@ -330,5 +331,10 @@ public class OTo {
         g.setColor(Color.white);
         g.fillOval(700 / 2 + (A.getX() - r * 3 / 5) * 5, 500 / 2 - (A.getY() + r * 3 / 5) * 5, r * 3 / 5 * 2 * 5, r * 3 / 5 * 2 * 5);
         g.fillOval(700 / 2 + (A5.getX() - r * 3 / 5) * 5, 500 / 2 - (A5.getY() + r * 3 / 5) * 5, r * 3 / 5 * 2 * 5, r * 3 / 5 * 2 * 5);
+    }
+    
+    public void drawTinhTien(Graphics2D g, int dx, int dy) {
+        OTo o = new OTo(TinhTien.TinhTien(A, dx, dy), r);
+        o.draw(g);
     }
 }

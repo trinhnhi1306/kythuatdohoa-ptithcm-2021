@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 import model2D.Diem2D;
 import model2D.DoanThang;
 import model2D.DuongTron;
+import model2D.Ellipse;
 import model2D.ThamSoTruyenVao;
 
 /**
@@ -190,7 +191,7 @@ public class ChongChong {
         b2 = Quay.QuayTamBatKy(tam, b2, goc);
         b3 = Quay.QuayTamBatKy(tam, b3, goc);
         b4 = Quay.QuayTamBatKy(tam, b4, goc);
-        
+
         draw(g);
     }
 
@@ -207,7 +208,7 @@ public class ChongChong {
 
         x += dx;
         y += dy;
-        
+
         ThamSoTruyenVao.xChongChong = x;
         ThamSoTruyenVao.yChongChong = y;
 
@@ -264,34 +265,94 @@ public class ChongChong {
 //        g.fillOval(700 / 2 + x * 5 - banKinh / 2, 500 / 2 - y * 5 - banKinh / 2, banKinh + 1, banKinh + 1);
 
     }
-    
-    public void drawThuPhong(Graphics2D g, float sx, float sy){
-        
+
+    public void drawThuPhong(Graphics2D g, float sx, float sy) {
+
         a1 = ThuPhong.ThuPhong(a1, sx, sy);
+        a1.setX((int) (a1.getX() - (sx - 1) * x));
+        a1.setY((int) (a1.getY() - (sy - 1) * y));
         a2 = ThuPhong.ThuPhong(a2, sx, sy);
+        a2.setX((int) (a2.getX() - (sx - 1) * x));
+        a2.setY((int) (a2.getY() - (sy - 1) * y));
         a3 = ThuPhong.ThuPhong(a3, sx, sy);
+        a3.setX((int) (a3.getX() - (sx - 1) * x));
+        a3.setY((int) (a3.getY() - (sy - 1) * y));
         a4 = ThuPhong.ThuPhong(a4, sx, sy);
+        a4.setX((int) (a4.getX() - (sx - 1) * x));
+        a4.setY((int) (a4.getY() - (sy - 1) * y));
 
         b1 = ThuPhong.ThuPhong(b1, sx, sy);
+        b1.setX((int) (b1.getX() - (sx - 1) * x));
+        b1.setY((int) (b1.getY() - (sy - 1) * y));
         b2 = ThuPhong.ThuPhong(b2, sx, sy);
+        b2.setX((int) (b2.getX() - (sx - 1) * x));
+        b2.setY((int) (b2.getY() - (sy - 1) * y));
         b3 = ThuPhong.ThuPhong(b3, sx, sy);
+        b3.setX((int) (b3.getX() - (sx - 1) * x));
+        b3.setY((int) (b3.getY() - (sy - 1) * y));
         b4 = ThuPhong.ThuPhong(b4, sx, sy);
-        
-        x *= sx;
-        y *= sy;
-        
-        banKinh = (int) (Math.sqrt(Math.pow((double)(a1.getX()-a2.getX()),2.0)+ Math.pow((double)(a1.getY()-a2.getY()),2.0)))/2;
-        
+        b4.setX((int) (b4.getX() - (sx - 1) * x));
+        b4.setY((int) (b4.getY() - (sy - 1) * y));
+
+        x = (int) (sx * x - (sx - 1) * x);
+        y = (int) (sy * y - (sy - 1) * y);
+
         ThamSoTruyenVao.xChongChong = x;
         ThamSoTruyenVao.yChongChong = y;
-        
-        // Dich ve vi tri cux nhung chua xong
-        float dx,dy;
-        dx = x*((1/sx)-1);
-        dy = y*((1/sy)-1);
-        
-//        drawTinhTien(g, sx-x, sy-y);
-        drawTinhTien(g,(int)dx ,(int)dy );
-//        draw(g);
+
+        BufferedImage Buferr = new BufferedImage(850, 850, BufferedImage.TYPE_INT_ARGB);
+        Graphics BufGraphics = Buferr.getGraphics();
+        DoanThang a1a3 = new DoanThang(a1.getX(), a1.getY(), a3.getX(), a3.getY());
+        a1a3.draw1((Graphics2D) BufGraphics);
+
+        DoanThang a2a4 = new DoanThang(a2.getX(), a2.getY(), a4.getX(), a4.getY());
+        a2a4.draw1((Graphics2D) BufGraphics);
+
+        DoanThang b1b3 = new DoanThang(b1.getX(), b1.getY(), b3.getX(), b3.getY());
+        b1b3.draw1((Graphics2D) BufGraphics);
+
+        DoanThang b2b4 = new DoanThang(b2.getX(), b2.getY(), b4.getX(), b4.getY());
+        b2b4.draw1((Graphics2D) BufGraphics);
+
+        DoanThang a1b1 = new DoanThang(a1.getX(), a1.getY(), b1.getX(), b1.getY());
+        a1b1.draw1((Graphics2D) BufGraphics);
+
+        DoanThang a2b2 = new DoanThang(a2.getX(), a2.getY(), b2.getX(), b2.getY());
+        a2b2.draw1((Graphics2D) BufGraphics);
+
+        DoanThang a3b3 = new DoanThang(a3.getX(), a3.getY(), b3.getX(), b3.getY());
+        a3b3.draw1((Graphics2D) BufGraphics);
+
+        DoanThang a4b4 = new DoanThang(a4.getX(), a4.getY(), b4.getX(), b4.getY());
+        a4b4.draw1((Graphics2D) BufGraphics);
+
+        Ellipse e = new Ellipse(x, y, (int) (sx * banKinh / 10), (int) (sy * banKinh / 10));
+        e.drawLien((Graphics2D) BufGraphics);
+
+        //to mau canh 1        
+        BufGraphics.setColor(Color.yellow);
+        int xCanh1[] = {700 / 2 + a1.getX() * 5, 700 / 2 + b1.getX() * 5, 700 / 2 + x * 5};
+        int yCanh1[] = {500 / 2 - a1.getY() * 5, 500 / 2 - b1.getY() * 5, 500 / 2 - y * 5};
+        BufGraphics.fillPolygon(xCanh1, yCanh1, 3);
+        //to mau canh 2    
+        BufGraphics.setColor(Color.yellow);
+        int xCanh2[] = {700 / 2 + a2.getX() * 5, 700 / 2 + b2.getX() * 5, 700 / 2 + x * 5};
+        int yCanh2[] = {500 / 2 - a2.getY() * 5, 500 / 2 - b2.getY() * 5, 500 / 2 - y * 5};
+        BufGraphics.fillPolygon(xCanh2, yCanh2, 3);
+        //to mau canh 3       
+        BufGraphics.setColor(Color.yellow);
+        int xCanh3[] = {700 / 2 + a3.getX() * 5, 700 / 2 + b3.getX() * 5, 700 / 2 + x * 5};
+        int yCanh3[] = {500 / 2 - a3.getY() * 5, 500 / 2 - b3.getY() * 5, 500 / 2 - y * 5};
+        BufGraphics.fillPolygon(xCanh3, yCanh3, 3);
+        //to mau canh 4      
+        BufGraphics.setColor(Color.yellow);
+        int xCanh4[] = {700 / 2 + a4.getX() * 5, 700 / 2 + b4.getX() * 5, 700 / 2 + x * 5};
+        int yCanh4[] = {500 / 2 - a4.getY() * 5, 500 / 2 - b4.getY() * 5, 500 / 2 - y * 5};
+        BufGraphics.fillPolygon(xCanh4, yCanh4, 3);
+        //to mau tam
+        BufGraphics.setColor(Color.blue);
+        BufGraphics.fillOval((int) (700 / 2 + x * 5 - sx * banKinh / 2), (int) (500 / 2 - y * 5 - sy * banKinh / 2), (int) (banKinh * sx + 1), (int) (banKinh * sy + 1));
+
+        g.drawImage(Buferr, 0, 0, null);
     }
 }

@@ -50,6 +50,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
      * Creates new form GiaoDienChinh
      */
     public Diem3D A = new Diem3D();
+
     public GiaoDienChinh() {
         initComponents();
         this.setLocationRelativeTo(null); //Hiển thị cửa sổ lên vị trí giữa màn hình
@@ -1133,7 +1134,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         ChongChong cc = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
         cc.draw(g);
     }
-    
+
     private void VeOTo() {
         int x = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ x bánh xe trái"));
         ThamSoTruyenVao.tamBanh.setX(x);
@@ -1162,18 +1163,31 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         ChongChong cc = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
         cc.drawTinhTien(g, dx, dy);
     }
+    
+    void ttOTo() {
+        int dx = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời x"));
+        int dy = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời y"));
+        Graphics2D g = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
+        OTo o = new OTo(ThamSoTruyenVao.tamBanh, ThamSoTruyenVao.bkBanh);
+        o.drawTinhTien(g, dx, dy);
+    }
+    
     private void jButton_2DTinhTienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_2DTinhTienActionPerformed
         // TODO add your handling code here:
         if (jRadioButton_ChongChong.isSelected()) {
             ttChongChong();
+        } else if (jRadioButton_OTo.isSelected()) {
+            ttOTo();
         }
     }//GEN-LAST:event_jButton_2DTinhTienActionPerformed
+    
     void quayChongChong() {
         float goc = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập góc quay"));
         Graphics2D g = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
         ChongChong cc = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
         cc.drawQuay(g, goc);
     }
+    
     private void jButton_2QuayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_2QuayActionPerformed
         // TODO add your handling code here:
         if (jRadioButton_ChongChong.isSelected()) {
@@ -1234,7 +1248,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         ChongChong cc = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
         cc.drawThuPhong(g, sx, sy);
     }
-    
+
     private void jButton_2DThuPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_2DThuPhongActionPerformed
         // TODO add your handling code here:
         if (jRadioButton_ChongChong.isSelected()) {
