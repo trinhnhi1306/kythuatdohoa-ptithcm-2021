@@ -21,19 +21,14 @@ import model2D.NetDut;
 import model2D.NetHaiChamGach;
 import model2D.TamGiacDeu;
 import java.awt.Graphics;
-import java.awt.Dimension;
 import java.awt.Color;
-import java.awt.Frame;
 import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 import model2Dchuyendong.ChongChong;
 import model2Dchuyendong.OTo;
 import model3D.Diem3D;
@@ -51,6 +46,10 @@ public class GiaoDienChinh extends javax.swing.JFrame {
      * Creates new form GiaoDienChinh
      */
     public Diem3D A = new Diem3D();
+    Timer timer = null;
+    boolean start = false;
+    OTo o1 = new OTo(new Diem2D(-133, -35), 7);
+    int quayGoc = 0;
 
     public GiaoDienChinh() {
         initComponents();
@@ -280,7 +279,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             jRadioButton_OTo = new javax.swing.JRadioButton();
             jPanel_ChucNang2DChuyenDong = new javax.swing.JPanel();
             jButton_2DTinhTien = new javax.swing.JButton();
-            jButton_2Quay = new javax.swing.JButton();
+            jButton_2DQuay = new javax.swing.JButton();
             jButton_2DDoiXung = new javax.swing.JButton();
             jButton_2DThuPhong = new javax.swing.JButton();
             jButton_2DVe = new javax.swing.JButton();
@@ -306,7 +305,8 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                     arg0.drawLine(0, ThamSoTruyenVao.backgroundHeight/2, 700, ThamSoTruyenVao.backgroundHeight/2);//x
                 }
             };
-            jButton_Run = new javax.swing.JButton();
+            jButton_RunStop = new javax.swing.JButton();
+            jButton_Ve = new javax.swing.JButton();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
             setBackground(new java.awt.Color(0, 204, 255));
@@ -794,14 +794,14 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             });
             jPanel_ChucNang2DChuyenDong.add(jButton_2DTinhTien, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 40));
 
-            jButton_2Quay.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-            jButton_2Quay.setText("Quay");
-            jButton_2Quay.addActionListener(new java.awt.event.ActionListener() {
+            jButton_2DQuay.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+            jButton_2DQuay.setText("Quay");
+            jButton_2DQuay.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jButton_2QuayActionPerformed(evt);
+                    jButton_2DQuayActionPerformed(evt);
                 }
             });
-            jPanel_ChucNang2DChuyenDong.add(jButton_2Quay, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 100, 40));
+            jPanel_ChucNang2DChuyenDong.add(jButton_2DQuay, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 100, 40));
 
             jButton_2DDoiXung.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
             jButton_2DDoiXung.setText("Đối xứng");
@@ -905,11 +905,19 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 .addGap(0, 498, Short.MAX_VALUE)
             );
 
-            jButton_Run.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-            jButton_Run.setText("Run");
-            jButton_Run.addActionListener(new java.awt.event.ActionListener() {
+            jButton_RunStop.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+            jButton_RunStop.setText("Run / Stop");
+            jButton_RunStop.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jButton_RunActionPerformed(evt);
+                    jButton_RunStopActionPerformed(evt);
+                }
+            });
+
+            jButton_Ve.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+            jButton_Ve.setText("Vẽ");
+            jButton_Ve.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton_VeActionPerformed(evt);
                 }
             });
 
@@ -919,8 +927,10 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 jPane_HoatCanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPane_HoatCanhLayout.createSequentialGroup()
                     .addComponent(jPanel_KhungVeHoatCanh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
-                    .addComponent(jButton_Run)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                    .addComponent(jButton_Ve)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jButton_RunStop)
                     .addGap(103, 103, 103))
             );
             jPane_HoatCanhLayout.setVerticalGroup(
@@ -928,7 +938,9 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 .addComponent(jPanel_KhungVeHoatCanh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPane_HoatCanhLayout.createSequentialGroup()
                     .addGap(30, 30, 30)
-                    .addComponent(jButton_Run)
+                    .addGroup(jPane_HoatCanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton_RunStop)
+                        .addComponent(jButton_Ve))
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             );
 
@@ -1031,7 +1043,6 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
     private void jButton_VeTamGiacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeTamGiacActionPerformed
         // TODO add your handling code here:
-        Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
         int xDinh = Integer.parseInt(jTextField_xDinh.getText());
         int yDinh = Integer.parseInt(jTextField_yDinh.getText());
         int canh = Integer.parseInt(jTextField_Canh.getText());
@@ -1268,7 +1279,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             ttChongChong();
         } else if (jRadioButton_OTo.isSelected()) {
             ttOTo();
-            
+
         }
     }//GEN-LAST:event_jButton_2DTinhTienActionPerformed
 
@@ -1284,12 +1295,12 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         jTextArea_ToaDoVat.setText(cc.inToaDo());
     }
 
-    private void jButton_2QuayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_2QuayActionPerformed
+    private void jButton_2DQuayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_2DQuayActionPerformed
         // TODO add your handling code here:
         if (jRadioButton_ChongChong.isSelected()) {
             quayChongChong();
         }
-    }//GEN-LAST:event_jButton_2QuayActionPerformed
+    }//GEN-LAST:event_jButton_2DQuayActionPerformed
 
     private void jButton_VeDiem3DActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeDiem3DActionPerformed
         // TODO add your handling code here:
@@ -1357,35 +1368,19 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton_2DThuPhongActionPerformed
 
-    private void jButton_RunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_RunActionPerformed
+    private void jButton_RunStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_RunStopActionPerformed
         // TODO add your handling code here:
-        OTo o = new OTo(new Diem2D(-70, -35), 7);
-        ChongChong cc1 = new ChongChong(-50, 20, 15);
-        ChongChong cc2 = new ChongChong(50, 20, 15);
-        int j = 0;
-        Graphics2D gr = (Graphics2D)jPanel_KhungVeHoatCanh.getGraphics();
-        for (int i = 0; i < 140; i++) {
-            BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
-            Graphics g = buffer.getGraphics();
-            ThamSoTruyenVao.veToaDo((Graphics2D) g);
-            if (j < -90) {
-                cc1 = new ChongChong(-50, 20, 15);
-                cc2 = new ChongChong(50, 20, 15);
-            }
-            cc1.drawQuay((Graphics2D) g, j);
-            cc2.drawQuay((Graphics2D) g, j);
-            j -= 15;
-            o.drawTinhTien((Graphics2D) g, 1, 0);
-            gr.drawImage(buffer, 0, 0, null);
-            try {
-                Thread.sleep(20);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(GiaoDienChinh.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        if (start == false) {
+            start = true;
+            timer = new Timer(100, this.jButton_Ve.getActionListeners()[0]);
+            timer.start();
+        } else if (start == true) {
+            start = false;
+            timer.stop();
         }
-    }//GEN-LAST:event_jButton_RunActionPerformed
+    }//GEN-LAST:event_jButton_RunStopActionPerformed
 
-    public void dxChongChong () {
+    public void dxChongChong() {
         int x1 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm đầu"));
         int y1 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y diểm đầu"));
         int x2 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm cuối"));
@@ -1399,13 +1394,36 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         gr.drawImage(buffer, 0, 0, null);
         jTextArea_ToaDoVat.setText(cc.inToaDo());
     }
-    
+
     private void jButton_2DDoiXungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_2DDoiXungActionPerformed
         // TODO add your handling code here:
         if (jRadioButton_ChongChong.isSelected()) {
             dxChongChong();
         }
     }//GEN-LAST:event_jButton_2DDoiXungActionPerformed
+
+    private void jButton_VeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeActionPerformed
+        // TODO add your handling code here:
+        ChongChong cc1 = new ChongChong(-50, 20, 15);
+        ChongChong cc2 = new ChongChong(50, 20, 15);
+        Graphics2D gr = (Graphics2D) jPanel_KhungVeHoatCanh.getGraphics();
+        BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
+        Graphics g = buffer.getGraphics();
+        ThamSoTruyenVao.veToaDo((Graphics2D) g);
+        if (o1.getA().getX() > 91) {
+            o1.getA().setX(-133);
+        } else {
+            o1.drawTinhTien((Graphics2D) g, 1, 0);
+        }
+        if (quayGoc < -90) {
+            cc1 = new ChongChong(-50, 20, 15);
+            cc2 = new ChongChong(50, 20, 15);
+        }
+        cc1.drawQuay((Graphics2D) g, quayGoc);
+        cc2.drawQuay((Graphics2D) g, quayGoc);
+        quayGoc -= 15;
+        gr.drawImage(buffer, 0, 0, null);
+    }//GEN-LAST:event_jButton_VeActionPerformed
 
     boolean rangBuocDuLieuDuongThang() {
         String x1 = jTextField_x1.getText();
@@ -1466,15 +1484,16 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup_Vat2DChuyenDong;
     private javax.swing.JButton jButton_2DDoiXung;
+    private javax.swing.JButton jButton_2DQuay;
     private javax.swing.JButton jButton_2DThuPhong;
     private javax.swing.JButton jButton_2DTinhTien;
     private javax.swing.JButton jButton_2DVe;
-    private javax.swing.JButton jButton_2Quay;
     private javax.swing.JButton jButton_DoiXungQuaDuongThang;
     private javax.swing.JButton jButton_NetHaiChamGach;
     private javax.swing.JButton jButton_Quay;
-    private javax.swing.JButton jButton_Run;
+    private javax.swing.JButton jButton_RunStop;
     private javax.swing.JButton jButton_TinhTien;
+    private javax.swing.JButton jButton_Ve;
     private javax.swing.JButton jButton_VeDiem;
     private javax.swing.JButton jButton_VeDiem3D;
     private javax.swing.JButton jButton_VeDoanThang;
