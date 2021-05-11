@@ -69,7 +69,6 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup_Vat2DChuyenDong = new javax.swing.ButtonGroup();
-        jLabel_ChuThich = new javax.swing.JLabel();
         jTabbedPane_MenuChinh = new javax.swing.JTabbedPane();
         jPanel_2D = new javax.swing.JPanel();
         jTabbedPane_Menu2D = new javax.swing.JTabbedPane();
@@ -280,20 +279,38 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             jRadioButton_ChongChong = new javax.swing.JRadioButton();
             jRadioButton_OTo = new javax.swing.JRadioButton();
             jPanel_ChucNang2DChuyenDong = new javax.swing.JPanel();
-            jButton_2DVe = new javax.swing.JButton();
             jButton_2DTinhTien = new javax.swing.JButton();
             jButton_2Quay = new javax.swing.JButton();
             jButton_2DDoiXung = new javax.swing.JButton();
             jButton_2DThuPhong = new javax.swing.JButton();
+            jButton_2DVe = new javax.swing.JButton();
+            jScrollPane1 = new javax.swing.JScrollPane();
+            jTextArea_ToaDoVat = new javax.swing.JTextArea();
+            jPane_HoatCanh = new javax.swing.JPanel();
+            jPanel_KhungVeHoatCanh = new javax.swing.JPanel(){
+                private static final long serialVersionUID = 1L;
+                @Override
+                protected void paintComponent(Graphics arg0) {
+                    // TODO Auto-generated method stub
+                    super.paintComponent(arg0);
+                    arg0.setColor(Color.LIGHT_GRAY);
+                    for (int i = 5; i< 700; i += 5) {
+                        arg0.drawLine(i,0,i,ThamSoTruyenVao.backgroundHeight);
+                    }
+                    for (int i = 5; i< ThamSoTruyenVao.backgroundHeight; i += 5) {
+                        arg0.drawLine(0,i,700, i);
+                    }
+                    setBackground(Color.WHITE);
+                    arg0.setColor(Color.red);
+                    arg0.drawLine(700/2, 0, 700/2, ThamSoTruyenVao.backgroundHeight);//y
+                    arg0.drawLine(0, ThamSoTruyenVao.backgroundHeight/2, 700, ThamSoTruyenVao.backgroundHeight/2);//x
+                }
+            };
+            jButton_Run = new javax.swing.JButton();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
             setBackground(new java.awt.Color(0, 204, 255));
             getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-            jLabel_ChuThich.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-            jLabel_ChuThich.setForeground(new java.awt.Color(153, 153, 153));
-            jLabel_ChuThich.setText("1 đơn vị = 5 pixel");
-            getContentPane().add(jLabel_ChuThich, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
             jTabbedPane_MenuChinh.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
 
@@ -307,19 +324,19 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
             jTextField_x1.setBackground(new java.awt.Color(240, 240, 240));
             jTextField_x1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(51, 153, 255), new java.awt.Color(102, 204, 255)));
-            jPanel_DoanThang.add(jTextField_x1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 130, 30));
+            jPanel_DoanThang.add(jTextField_x1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 130, 30));
 
             jTextField_y1.setBackground(new java.awt.Color(240, 240, 240));
             jTextField_y1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(51, 153, 255), new java.awt.Color(102, 204, 255)));
-            jPanel_DoanThang.add(jTextField_y1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 130, 30));
+            jPanel_DoanThang.add(jTextField_y1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 130, 30));
 
             jTextField_x2.setBackground(new java.awt.Color(240, 240, 240));
             jTextField_x2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(51, 153, 255), new java.awt.Color(102, 204, 255)));
-            jPanel_DoanThang.add(jTextField_x2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 130, 30));
+            jPanel_DoanThang.add(jTextField_x2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 130, 30));
 
             jTextField_y2.setBackground(new java.awt.Color(240, 240, 240));
             jTextField_y2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(51, 153, 255), new java.awt.Color(102, 204, 255)));
-            jPanel_DoanThang.add(jTextField_y2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 130, 30));
+            jPanel_DoanThang.add(jTextField_y2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 130, 30));
 
             jPanel_MenuDoanThang.setBackground(new java.awt.Color(153, 204, 255));
             jPanel_MenuDoanThang.setLayout(new java.awt.GridLayout(3, 2, 20, 20));
@@ -384,23 +401,23 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             });
             jPanel_MenuDoanThang.add(jButton_VeHinhChuNhat);
 
-            jPanel_DoanThang.add(jPanel_MenuDoanThang, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 410, 170));
+            jPanel_DoanThang.add(jPanel_MenuDoanThang, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 410, 170));
 
             jLabel1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
             jLabel1.setText("x2: ");
-            jPanel_DoanThang.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, -1, -1));
+            jPanel_DoanThang.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, -1, -1));
 
             jLabel2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
             jLabel2.setText("y2: ");
-            jPanel_DoanThang.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, -1, -1));
+            jPanel_DoanThang.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, -1, -1));
 
             jLabel3.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
             jLabel3.setText("x1: ");
-            jPanel_DoanThang.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
+            jPanel_DoanThang.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
             jLabel4.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
             jLabel4.setText("y1: ");
-            jPanel_DoanThang.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
+            jPanel_DoanThang.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
 
             jTabbedPane_Menu2D.addTab("Đoạn thẳng", jPanel_DoanThang);
 
@@ -632,7 +649,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 .addGap(0, 498, Short.MAX_VALUE)
             );
 
-            jPanel_3D.add(jPanel_KhungVe3D, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 510, -1));
+            jPanel_3D.add(jPanel_KhungVe3D, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 510, -1));
 
             jPanel_Menu3D.setBackground(new java.awt.Color(0, 204, 204));
             jPanel_Menu3D.setBorder(javax.swing.BorderFactory.createCompoundBorder());
@@ -743,7 +760,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             jPanel_KhungVe2DChuyenDong.setLayout(jPanel_KhungVe2DChuyenDongLayout);
             jPanel_KhungVe2DChuyenDongLayout.setHorizontalGroup(
                 jPanel_KhungVe2DChuyenDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 698, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
             );
             jPanel_KhungVe2DChuyenDongLayout.setVerticalGroup(
                 jPanel_KhungVe2DChuyenDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -754,19 +771,55 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
             jRadioButton_ChongChong.setBackground(new java.awt.Color(0, 102, 204));
             buttonGroup_Vat2DChuyenDong.add(jRadioButton_ChongChong);
-            jRadioButton_ChongChong.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+            jRadioButton_ChongChong.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
             jRadioButton_ChongChong.setForeground(new java.awt.Color(255, 255, 255));
             jRadioButton_ChongChong.setSelected(true);
             jRadioButton_ChongChong.setText("Chong chóng");
 
             jRadioButton_OTo.setBackground(new java.awt.Color(0, 102, 204));
             buttonGroup_Vat2DChuyenDong.add(jRadioButton_OTo);
-            jRadioButton_OTo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+            jRadioButton_OTo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
             jRadioButton_OTo.setForeground(new java.awt.Color(255, 255, 255));
             jRadioButton_OTo.setText("Ô tô");
 
             jPanel_ChucNang2DChuyenDong.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
             jPanel_ChucNang2DChuyenDong.setBackground(new Color(0, 0, 0, 65));
+
+            jButton_2DTinhTien.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+            jButton_2DTinhTien.setText("Tịnh tiến");
+            jButton_2DTinhTien.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton_2DTinhTienActionPerformed(evt);
+                }
+            });
+            jPanel_ChucNang2DChuyenDong.add(jButton_2DTinhTien, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 40));
+
+            jButton_2Quay.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+            jButton_2Quay.setText("Quay");
+            jButton_2Quay.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton_2QuayActionPerformed(evt);
+                }
+            });
+            jPanel_ChucNang2DChuyenDong.add(jButton_2Quay, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 100, 40));
+
+            jButton_2DDoiXung.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+            jButton_2DDoiXung.setText("Đối xứng");
+            jButton_2DDoiXung.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton_2DDoiXungActionPerformed(evt);
+                }
+            });
+            jPanel_ChucNang2DChuyenDong.add(jButton_2DDoiXung, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 90, 40));
+
+            jButton_2DThuPhong.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+            jButton_2DThuPhong.setText("Thu phóng");
+            jButton_2DThuPhong.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton_2DThuPhongActionPerformed(evt);
+                }
+            });
+            jPanel_ChucNang2DChuyenDong.add(jButton_2DThuPhong, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 100, 40));
 
             jButton_2DVe.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
             jButton_2DVe.setText("Vẽ");
@@ -775,62 +828,45 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                     jButton_2DVeActionPerformed(evt);
                 }
             });
-            jPanel_ChucNang2DChuyenDong.add(jButton_2DVe, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 145, 40));
 
-            jButton_2DTinhTien.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-            jButton_2DTinhTien.setText("Tịnh tiến");
-            jButton_2DTinhTien.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jButton_2DTinhTienActionPerformed(evt);
-                }
-            });
-            jPanel_ChucNang2DChuyenDong.add(jButton_2DTinhTien, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 145, 40));
-
-            jButton_2Quay.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-            jButton_2Quay.setText("Quay");
-            jButton_2Quay.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jButton_2QuayActionPerformed(evt);
-                }
-            });
-            jPanel_ChucNang2DChuyenDong.add(jButton_2Quay, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 145, 40));
-
-            jButton_2DDoiXung.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-            jButton_2DDoiXung.setText("Đối xứng");
-            jPanel_ChucNang2DChuyenDong.add(jButton_2DDoiXung, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 145, 40));
-
-            jButton_2DThuPhong.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-            jButton_2DThuPhong.setText("Thu phóng");
-            jButton_2DThuPhong.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jButton_2DThuPhongActionPerformed(evt);
-                }
-            });
-            jPanel_ChucNang2DChuyenDong.add(jButton_2DThuPhong, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 145, 40));
+            jTextArea_ToaDoVat.setEditable(false);
+            jTextArea_ToaDoVat.setBackground(new java.awt.Color(0, 0, 0));
+            jTextArea_ToaDoVat.setColumns(20);
+            jTextArea_ToaDoVat.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+            jTextArea_ToaDoVat.setForeground(new java.awt.Color(255, 255, 255));
+            jTextArea_ToaDoVat.setRows(5);
+            jScrollPane1.setViewportView(jTextArea_ToaDoVat);
 
             javax.swing.GroupLayout jPanel_Menu2DChuyenDongLayout = new javax.swing.GroupLayout(jPanel_Menu2DChuyenDong);
             jPanel_Menu2DChuyenDong.setLayout(jPanel_Menu2DChuyenDongLayout);
             jPanel_Menu2DChuyenDongLayout.setHorizontalGroup(
                 jPanel_Menu2DChuyenDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel_Menu2DChuyenDongLayout.createSequentialGroup()
-                    .addGap(32, 32, 32)
-                    .addComponent(jRadioButton_ChongChong))
-                .addGroup(jPanel_Menu2DChuyenDongLayout.createSequentialGroup()
-                    .addGap(32, 32, 32)
-                    .addComponent(jRadioButton_OTo))
-                .addGroup(jPanel_Menu2DChuyenDongLayout.createSequentialGroup()
-                    .addGap(24, 24, 24)
-                    .addComponent(jPanel_ChucNang2DChuyenDong, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(12, 12, 12)
+                    .addComponent(jRadioButton_ChongChong)
+                    .addGap(18, 18, 18)
+                    .addComponent(jRadioButton_OTo)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jButton_2DVe)
+                    .addContainerGap(22, Short.MAX_VALUE))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_Menu2DChuyenDongLayout.createSequentialGroup()
+                    .addComponent(jPanel_ChucNang2DChuyenDong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap())
+                .addComponent(jScrollPane1)
             );
             jPanel_Menu2DChuyenDongLayout.setVerticalGroup(
                 jPanel_Menu2DChuyenDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel_Menu2DChuyenDongLayout.createSequentialGroup()
-                    .addGap(27, 27, 27)
-                    .addComponent(jRadioButton_ChongChong)
-                    .addGap(31, 31, 31)
-                    .addComponent(jRadioButton_OTo)
-                    .addGap(7, 7, 7)
-                    .addComponent(jPanel_ChucNang2DChuyenDong, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap()
+                    .addGroup(jPanel_Menu2DChuyenDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jRadioButton_ChongChong)
+                        .addComponent(jRadioButton_OTo)
+                        .addComponent(jButton_2DVe))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jPanel_ChucNang2DChuyenDong, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(44, 44, 44))
             );
 
             javax.swing.GroupLayout jPanel_2DChuyenDongLayout = new javax.swing.GroupLayout(jPanel_2DChuyenDong);
@@ -838,23 +874,67 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             jPanel_2DChuyenDongLayout.setHorizontalGroup(
                 jPanel_2DChuyenDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel_2DChuyenDongLayout.createSequentialGroup()
-                    .addComponent(jPanel_KhungVe2DChuyenDong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel_KhungVe2DChuyenDong, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jPanel_Menu2DChuyenDong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel_Menu2DChuyenDong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(12, Short.MAX_VALUE))
             );
             jPanel_2DChuyenDongLayout.setVerticalGroup(
                 jPanel_2DChuyenDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_2DChuyenDongLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addGroup(jPanel_2DChuyenDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel_Menu2DChuyenDong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel_Menu2DChuyenDong, javax.swing.GroupLayout.PREFERRED_SIZE, 500, Short.MAX_VALUE)
                         .addComponent(jPanel_KhungVe2DChuyenDong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGap(41, 41, 41))
             );
 
-            jTabbedPane_MenuChinh.addTab("2D chuyển động", jPanel_2DChuyenDong);
+            jTabbedPane_MenuChinh.addTab("Vẽ vật", jPanel_2DChuyenDong);
 
-            getContentPane().add(jTabbedPane_MenuChinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 970, 530));
+            jPanel_KhungVeHoatCanh.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+            jPanel_KhungVeHoatCanh.setMinimumSize(new java.awt.Dimension(700, 500));
+
+            javax.swing.GroupLayout jPanel_KhungVeHoatCanhLayout = new javax.swing.GroupLayout(jPanel_KhungVeHoatCanh);
+            jPanel_KhungVeHoatCanh.setLayout(jPanel_KhungVeHoatCanhLayout);
+            jPanel_KhungVeHoatCanhLayout.setHorizontalGroup(
+                jPanel_KhungVeHoatCanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 698, Short.MAX_VALUE)
+            );
+            jPanel_KhungVeHoatCanhLayout.setVerticalGroup(
+                jPanel_KhungVeHoatCanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 498, Short.MAX_VALUE)
+            );
+
+            jButton_Run.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+            jButton_Run.setText("Run");
+            jButton_Run.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton_RunActionPerformed(evt);
+                }
+            });
+
+            javax.swing.GroupLayout jPane_HoatCanhLayout = new javax.swing.GroupLayout(jPane_HoatCanh);
+            jPane_HoatCanh.setLayout(jPane_HoatCanhLayout);
+            jPane_HoatCanhLayout.setHorizontalGroup(
+                jPane_HoatCanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPane_HoatCanhLayout.createSequentialGroup()
+                    .addComponent(jPanel_KhungVeHoatCanh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
+                    .addComponent(jButton_Run)
+                    .addGap(103, 103, 103))
+            );
+            jPane_HoatCanhLayout.setVerticalGroup(
+                jPane_HoatCanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel_KhungVeHoatCanh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPane_HoatCanhLayout.createSequentialGroup()
+                    .addGap(30, 30, 30)
+                    .addComponent(jButton_Run)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            );
+
+            jTabbedPane_MenuChinh.addTab("Hoạt cảnh", jPane_HoatCanh);
+
+            getContentPane().add(jTabbedPane_MenuChinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 530));
 
             pack();
         }// </editor-fold>//GEN-END:initComponents
@@ -1129,16 +1209,17 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_jButton_VeHinhCauActionPerformed
 
-    void veChongChong() {
+    public void veChongChong() {
         ThamSoTruyenVao.xChongChong = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ x chong chóng"));
         ThamSoTruyenVao.yChongChong = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ y chong chóng"));
         ThamSoTruyenVao.bkChongChong = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập bán kính chong chóng"));
         Graphics2D g = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
         ChongChong cc = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
         cc.draw(g);
+        jTextArea_ToaDoVat.setText(cc.inToaDo());
     }
 
-    private void VeOTo() {
+    public void veOTo() {
         int x = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ x bánh xe trái"));
         int y = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ y bánh xe trái"));
         int bk = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập bán kính bánh xe"));
@@ -1152,65 +1233,55 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         if (jRadioButton_ChongChong.isSelected()) {
             veChongChong();
         } else if (jRadioButton_OTo.isSelected()) {
-            VeOTo();
+            veOTo();
         }
     }//GEN-LAST:event_jButton_2DVeActionPerformed
 
     void ttChongChong() {
         int dx = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời x"));
         int dy = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời y"));
-        Graphics2D g = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
+        Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
         ChongChong cc = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
-        cc.drawTinhTien(g, dx, dy);
+        BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
+        Graphics g = buffer.getGraphics();
+        ThamSoTruyenVao.veToaDo((Graphics2D) g);
+        cc.drawTinhTien((Graphics2D) g, dx, dy);
+        gr.drawImage(buffer, 0, 0, null);
+        jTextArea_ToaDoVat.setText(cc.inToaDo());
     }
 
-//    void ttOTo() {
-//        int dx = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời x"));
-//        int dy = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời y"));
-//        Graphics2D g = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
-//        OTo o = new OTo(ThamSoTruyenVao.tamBanh, ThamSoTruyenVao.bkBanh);
-//        o.drawTinhTien(g, dx, dy);
-//    }
+    void ttOTo() {
+        int dx = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời x"));
+        int dy = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời y"));
+        Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
+        OTo o = new OTo(ThamSoTruyenVao.tamBanh, ThamSoTruyenVao.bkBanh);
+        BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
+        Graphics g = buffer.getGraphics();
+        ThamSoTruyenVao.veToaDo((Graphics2D) g);
+        o.drawTinhTien((Graphics2D) g, dx, dy);
+        gr.drawImage(buffer, 0, 0, null);
+    }
 
     private void jButton_2DTinhTienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_2DTinhTienActionPerformed
         // TODO add your handling code here:
         if (jRadioButton_ChongChong.isSelected()) {
             ttChongChong();
         } else if (jRadioButton_OTo.isSelected()) {
-            //ttOTo();
-            OTo o = new OTo(new Diem2D(-70, 7), 7);
-            Graphics2D gr = (Graphics2D)jPanel_KhungVe2DChuyenDong.getGraphics();
-            for (int i = 0; i < 140; i++) {
-                BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
-                Graphics g = buffer.getGraphics();
-                g.setColor(Color.white);
-                g.fillRect(0, 0, 700, 500);
-                g.setColor(Color.LIGHT_GRAY);
-                for (int j = 5; j < 700; j += 5) {
-                    g.drawLine(j, 0, j, ThamSoTruyenVao.backgroundHeight);
-                }
-                for (int j = 5; j < ThamSoTruyenVao.backgroundHeight; j += 5) {
-                    g.drawLine(0, j, 700, j);
-                }
-                g.setColor(Color.red);
-                g.drawLine(700 / 2, 0, 700 / 2, ThamSoTruyenVao.backgroundHeight);//y
-                g.drawLine(0, ThamSoTruyenVao.backgroundHeight / 2, 700, ThamSoTruyenVao.backgroundHeight / 2);//x
-                o.drawTinhTien((Graphics2D) g, 1, 0);
-                gr.drawImage(buffer, 0, 0, null);
-                try {
-                    Thread.sleep(70);
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(GiaoDienChinh.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
+            ttOTo();
+            
         }
     }//GEN-LAST:event_jButton_2DTinhTienActionPerformed
 
     void quayChongChong() {
         float goc = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập góc quay"));
-        Graphics2D g = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
+        Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
         ChongChong cc = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
-        cc.drawQuay(g, goc);
+        BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
+        Graphics g = buffer.getGraphics();
+        ThamSoTruyenVao.veToaDo((Graphics2D) g);
+        cc.drawQuay((Graphics2D) g, goc);
+        gr.drawImage(buffer, 0, 0, null);
+        jTextArea_ToaDoVat.setText(cc.inToaDo());
     }
 
     private void jButton_2QuayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_2QuayActionPerformed
@@ -1269,9 +1340,14 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     void tpChongChong() {
         float sx = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập tỉ lệ co giãn theo trục x"));
         float sy = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập tỉ lệ co giãn theo trục y"));
-        Graphics2D g = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
+        Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
         ChongChong cc = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
-        cc.drawThuPhong(g, sx, sy);
+        BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
+        Graphics g = buffer.getGraphics();
+        ThamSoTruyenVao.veToaDo((Graphics2D) g);
+        cc.drawThuPhong((Graphics2D) g, sx, sy);
+        gr.drawImage(buffer, 0, 0, null);
+        jTextArea_ToaDoVat.setText(cc.inToaDo());
     }
 
     private void jButton_2DThuPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_2DThuPhongActionPerformed
@@ -1280,6 +1356,56 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             tpChongChong();
         }
     }//GEN-LAST:event_jButton_2DThuPhongActionPerformed
+
+    private void jButton_RunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_RunActionPerformed
+        // TODO add your handling code here:
+        OTo o = new OTo(new Diem2D(-70, -35), 7);
+        ChongChong cc1 = new ChongChong(-50, 20, 15);
+        ChongChong cc2 = new ChongChong(50, 20, 15);
+        int j = 0;
+        Graphics2D gr = (Graphics2D)jPanel_KhungVeHoatCanh.getGraphics();
+        for (int i = 0; i < 140; i++) {
+            BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
+            Graphics g = buffer.getGraphics();
+            ThamSoTruyenVao.veToaDo((Graphics2D) g);
+            if (j < -90) {
+                cc1 = new ChongChong(-50, 20, 15);
+                cc2 = new ChongChong(50, 20, 15);
+            }
+            cc1.drawQuay((Graphics2D) g, j);
+            cc2.drawQuay((Graphics2D) g, j);
+            j -= 15;
+            o.drawTinhTien((Graphics2D) g, 1, 0);
+            gr.drawImage(buffer, 0, 0, null);
+            try {
+                Thread.sleep(20);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(GiaoDienChinh.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_jButton_RunActionPerformed
+
+    public void dxChongChong () {
+        int x1 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm đầu"));
+        int y1 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y diểm đầu"));
+        int x2 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm cuối"));
+        int y2 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y diem cuối"));
+        Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
+        ChongChong cc = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
+        BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
+        Graphics g = buffer.getGraphics();
+        ThamSoTruyenVao.veToaDo((Graphics2D) g);
+        cc.drawDoiXung((Graphics2D) g, new Diem2D(x1, y1), new Diem2D(x2, y2));
+        gr.drawImage(buffer, 0, 0, null);
+        jTextArea_ToaDoVat.setText(cc.inToaDo());
+    }
+    
+    private void jButton_2DDoiXungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_2DDoiXungActionPerformed
+        // TODO add your handling code here:
+        if (jRadioButton_ChongChong.isSelected()) {
+            dxChongChong();
+        }
+    }//GEN-LAST:event_jButton_2DDoiXungActionPerformed
 
     boolean rangBuocDuLieuDuongThang() {
         String x1 = jTextField_x1.getText();
@@ -1347,6 +1473,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private javax.swing.JButton jButton_DoiXungQuaDuongThang;
     private javax.swing.JButton jButton_NetHaiChamGach;
     private javax.swing.JButton jButton_Quay;
+    private javax.swing.JButton jButton_Run;
     private javax.swing.JButton jButton_TinhTien;
     private javax.swing.JButton jButton_VeDiem;
     private javax.swing.JButton jButton_VeDiem3D;
@@ -1372,7 +1499,6 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_BanKinhDoc;
     private javax.swing.JLabel jLabel_BanKinhNgang;
     private javax.swing.JLabel jLabel_Canh;
-    private javax.swing.JLabel jLabel_ChuThich;
     private javax.swing.JLabel jLabel_Tamx;
     private javax.swing.JLabel jLabel_Tamy;
     private javax.swing.JLabel jLabel_x;
@@ -1381,6 +1507,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_y;
     private javax.swing.JLabel jLabel_yDinh;
     private javax.swing.JLabel jLabel_yTam;
+    private javax.swing.JPanel jPane_HoatCanh;
     private javax.swing.JPanel jPanel_2D;
     private javax.swing.JPanel jPanel_2DChuyenDong;
     private javax.swing.JPanel jPanel_3D;
@@ -1393,16 +1520,19 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel_KhungVe2D;
     private javax.swing.JPanel jPanel_KhungVe2DChuyenDong;
     private javax.swing.JPanel jPanel_KhungVe3D;
+    private javax.swing.JPanel jPanel_KhungVeHoatCanh;
     private javax.swing.JPanel jPanel_Menu2DChuyenDong;
     private javax.swing.JPanel jPanel_Menu3D;
     private javax.swing.JPanel jPanel_MenuDoanThang;
     private javax.swing.JPanel jPanel_TamGiacDeu;
     private javax.swing.JRadioButton jRadioButton_ChongChong;
     private javax.swing.JRadioButton jRadioButton_OTo;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane_ToaDo;
     private javax.swing.JTabbedPane jTabbedPane_Menu2D;
     private javax.swing.JTabbedPane jTabbedPane_MenuChinh;
     private javax.swing.JTextArea jTextArea_ToaDo;
+    private javax.swing.JTextArea jTextArea_ToaDoVat;
     private javax.swing.JTextField jTextField_BanKinh;
     private javax.swing.JTextField jTextField_BanKinhDoc;
     private javax.swing.JTextField jTextField_BanKinhNgang;

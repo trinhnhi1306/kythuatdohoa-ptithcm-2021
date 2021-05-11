@@ -5,6 +5,7 @@
  */
 package model2Dchuyendong;
 
+import biendoi2D.DoiXungQuaDoanThang;
 import biendoi2D.Quay;
 import biendoi2D.ThuPhong;
 import biendoi2D.TinhTien;
@@ -354,5 +355,35 @@ public class ChongChong {
         BufGraphics.fillOval((int) (700 / 2 + x * 5 - sx * banKinh / 2), (int) (500 / 2 - y * 5 - sy * banKinh / 2), (int) (banKinh * sx + 1), (int) (banKinh * sy + 1));
 
         g.drawImage(Buferr, 0, 0, null);
+    }
+    
+    public void drawDoiXung (Graphics2D g, Diem2D a, Diem2D b) {
+        a1 = DoiXungQuaDoanThang.layDoiXung(a1, a, b);
+        a2 = DoiXungQuaDoanThang.layDoiXung(a2, a, b);
+        a3 = DoiXungQuaDoanThang.layDoiXung(a3, a, b);
+        a4 = DoiXungQuaDoanThang.layDoiXung(a4, a, b);
+
+        b1 = DoiXungQuaDoanThang.layDoiXung(b1, a, b);
+        b2 = DoiXungQuaDoanThang.layDoiXung(b2, a, b);
+        b3 = DoiXungQuaDoanThang.layDoiXung(b3, a, b);
+        b4 = DoiXungQuaDoanThang.layDoiXung(b4, a, b);
+
+        Diem2D tam = DoiXungQuaDoanThang.layDoiXung(new Diem2D(x, y), a, b);
+        x = tam.getX();
+        y = tam.getY();
+
+        draw(g);
+    }
+    
+    public String inToaDo () {
+        String str = "\nTỌA ĐỘ CHONG CHÓNG\n\nTọa độ tâm ";
+
+        str += "(" + x + ", " + y + ")";
+        str += "\n\nCánh thứ nhất: A1 (" + a1.getX() + ", " + a1.getY() + "), B1 (" + b1.getX() + ", " + b1.getY() + ")";
+        str += "\n\nCánh thứ hai: A2 (" + a2.getX() + ", " + a2.getY() + "), B2 (" + b2.getX() + ", " + b2.getY() + ")";
+        str += "\n\nCánh thứ ba: A3 (" + a3.getX() + ", " + a3.getY() + "), B3 (" + b3.getX() + ", " + b3.getY() + ")";
+        str += "\n\nCánh thứ tư: A4 (" + a4.getX() + ", " + a4.getY() + "), B4 (" + b4.getX() + ", " + b4.getY() + ")";
+        
+        return str;
     }
 }
