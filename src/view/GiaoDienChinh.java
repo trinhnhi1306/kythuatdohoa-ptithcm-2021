@@ -27,6 +27,7 @@ import java.awt.Frame;
 import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -707,7 +708,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                         .addComponent(jButton_VeHinhHop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addGroup(jPanel_Menu3DLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jButton_ĐoiXungQuaDiem, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+                        .addComponent(jButton_ĐoiXungQuaDiem, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
                         .addComponent(jButton_VeDiem3D, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addContainerGap())
             );
@@ -735,12 +736,14 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             jTabbedPane_MenuChinh.addTab("Vẽ 3D", jPanel_3D);
 
             jPanel_KhungVe2DChuyenDong.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+            jPanel_KhungVe2DChuyenDong.setMinimumSize(new java.awt.Dimension(700, 500));
+            jPanel_KhungVe2DChuyenDong.setPreferredSize(new java.awt.Dimension(700, 500));
 
             javax.swing.GroupLayout jPanel_KhungVe2DChuyenDongLayout = new javax.swing.GroupLayout(jPanel_KhungVe2DChuyenDong);
             jPanel_KhungVe2DChuyenDong.setLayout(jPanel_KhungVe2DChuyenDongLayout);
             jPanel_KhungVe2DChuyenDongLayout.setHorizontalGroup(
                 jPanel_KhungVe2DChuyenDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 697, Short.MAX_VALUE)
+                .addGap(0, 698, Short.MAX_VALUE)
             );
             jPanel_KhungVe2DChuyenDongLayout.setVerticalGroup(
                 jPanel_KhungVe2DChuyenDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -753,6 +756,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             buttonGroup_Vat2DChuyenDong.add(jRadioButton_ChongChong);
             jRadioButton_ChongChong.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
             jRadioButton_ChongChong.setForeground(new java.awt.Color(255, 255, 255));
+            jRadioButton_ChongChong.setSelected(true);
             jRadioButton_ChongChong.setText("Chong chóng");
 
             jRadioButton_OTo.setBackground(new java.awt.Color(0, 102, 204));
@@ -809,26 +813,24 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             jPanel_Menu2DChuyenDongLayout.setHorizontalGroup(
                 jPanel_Menu2DChuyenDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel_Menu2DChuyenDongLayout.createSequentialGroup()
+                    .addGap(32, 32, 32)
+                    .addComponent(jRadioButton_ChongChong))
+                .addGroup(jPanel_Menu2DChuyenDongLayout.createSequentialGroup()
+                    .addGap(32, 32, 32)
+                    .addComponent(jRadioButton_OTo))
+                .addGroup(jPanel_Menu2DChuyenDongLayout.createSequentialGroup()
                     .addGap(24, 24, 24)
-                    .addComponent(jPanel_ChucNang2DChuyenDong, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_Menu2DChuyenDongLayout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel_Menu2DChuyenDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jRadioButton_OTo)
-                        .addComponent(jRadioButton_ChongChong))
-                    .addGap(52, 52, 52))
+                    .addComponent(jPanel_ChucNang2DChuyenDong, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
             );
             jPanel_Menu2DChuyenDongLayout.setVerticalGroup(
                 jPanel_Menu2DChuyenDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel_Menu2DChuyenDongLayout.createSequentialGroup()
-                    .addGap(19, 19, 19)
+                    .addGap(27, 27, 27)
                     .addComponent(jRadioButton_ChongChong)
                     .addGap(31, 31, 31)
                     .addComponent(jRadioButton_OTo)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(jPanel_ChucNang2DChuyenDong, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(22, Short.MAX_VALUE))
+                    .addGap(7, 7, 7)
+                    .addComponent(jPanel_ChucNang2DChuyenDong, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
             );
 
             javax.swing.GroupLayout jPanel_2DChuyenDongLayout = new javax.swing.GroupLayout(jPanel_2DChuyenDong);
@@ -845,13 +847,14 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_2DChuyenDongLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addGroup(jPanel_2DChuyenDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel_KhungVe2DChuyenDong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel_Menu2DChuyenDong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jPanel_Menu2DChuyenDong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel_KhungVe2DChuyenDong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGap(41, 41, 41))
             );
 
             jTabbedPane_MenuChinh.addTab("2D chuyển động", jPanel_2DChuyenDong);
 
-            getContentPane().add(jTabbedPane_MenuChinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 970, -1));
+            getContentPane().add(jTabbedPane_MenuChinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 970, 530));
 
             pack();
         }// </editor-fold>//GEN-END:initComponents
@@ -1137,13 +1140,10 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
     private void VeOTo() {
         int x = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ x bánh xe trái"));
-        ThamSoTruyenVao.tamBanh.setX(x);
         int y = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ y bánh xe trái"));
-        ThamSoTruyenVao.tamBanh.setY(y);
-        int tam = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập bán kính bánh xe"));
-        ThamSoTruyenVao.bkBanh = tam;
+        int bk = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập bán kính bánh xe"));
         Graphics2D g = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
-        OTo o = new OTo(ThamSoTruyenVao.tamBanh, ThamSoTruyenVao.bkBanh);
+        OTo o = new OTo(new Diem2D(x, y), bk);
         o.draw(g);
     }
 
@@ -1163,31 +1163,56 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         ChongChong cc = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
         cc.drawTinhTien(g, dx, dy);
     }
-    
-    void ttOTo() {
-        int dx = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời x"));
-        int dy = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời y"));
-        Graphics2D g = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
-        OTo o = new OTo(ThamSoTruyenVao.tamBanh, ThamSoTruyenVao.bkBanh);
-        o.drawTinhTien(g, dx, dy);
-    }
-    
+
+//    void ttOTo() {
+//        int dx = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời x"));
+//        int dy = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời y"));
+//        Graphics2D g = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
+//        OTo o = new OTo(ThamSoTruyenVao.tamBanh, ThamSoTruyenVao.bkBanh);
+//        o.drawTinhTien(g, dx, dy);
+//    }
+
     private void jButton_2DTinhTienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_2DTinhTienActionPerformed
         // TODO add your handling code here:
         if (jRadioButton_ChongChong.isSelected()) {
             ttChongChong();
         } else if (jRadioButton_OTo.isSelected()) {
-            ttOTo();
+            //ttOTo();
+            OTo o = new OTo(new Diem2D(-70, 7), 7);
+            Graphics2D gr = (Graphics2D)jPanel_KhungVe2DChuyenDong.getGraphics();
+            for (int i = 0; i < 140; i++) {
+                BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
+                Graphics g = buffer.getGraphics();
+                g.setColor(Color.white);
+                g.fillRect(0, 0, 700, 500);
+                g.setColor(Color.LIGHT_GRAY);
+                for (int j = 5; j < 700; j += 5) {
+                    g.drawLine(j, 0, j, ThamSoTruyenVao.backgroundHeight);
+                }
+                for (int j = 5; j < ThamSoTruyenVao.backgroundHeight; j += 5) {
+                    g.drawLine(0, j, 700, j);
+                }
+                g.setColor(Color.red);
+                g.drawLine(700 / 2, 0, 700 / 2, ThamSoTruyenVao.backgroundHeight);//y
+                g.drawLine(0, ThamSoTruyenVao.backgroundHeight / 2, 700, ThamSoTruyenVao.backgroundHeight / 2);//x
+                o.drawTinhTien((Graphics2D) g, 1, 0);
+                gr.drawImage(buffer, 0, 0, null);
+                try {
+                    Thread.sleep(70);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(GiaoDienChinh.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
         }
     }//GEN-LAST:event_jButton_2DTinhTienActionPerformed
-    
+
     void quayChongChong() {
         float goc = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập góc quay"));
         Graphics2D g = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
         ChongChong cc = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
         cc.drawQuay(g, goc);
     }
-    
+
     private void jButton_2QuayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_2QuayActionPerformed
         // TODO add your handling code here:
         if (jRadioButton_ChongChong.isSelected()) {

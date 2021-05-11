@@ -12,6 +12,7 @@ import java.awt.Graphics2D;
 import model2D.Diem2D;
 import model2D.DoanThang;
 import model2D.DuongTron;
+import model2D.ThamSoTruyenVao;
 
 /**
  *
@@ -52,6 +53,8 @@ public class OTo {
         this.A19 = DoiXungQuaDoanThang.layDoiXung(A16, trucA, trucB);
         this.A20 = DoiXungQuaDoanThang.layDoiXung(A15, trucA, trucB);
         this.A21 = DoiXungQuaDoanThang.layDoiXung(A14, trucA, trucB);
+        ThamSoTruyenVao.tamBanh = A;
+        ThamSoTruyenVao.bkBanh = r;
     }
 
     public void setA(Diem2D A) {
@@ -334,7 +337,8 @@ public class OTo {
     }
     
     public void drawTinhTien(Graphics2D g, int dx, int dy) {
-        OTo o = new OTo(TinhTien.TinhTien(A, dx, dy), r);
+        A = TinhTien.TinhTien(A, dx, dy);
+        OTo o = new OTo(A, r);
         o.draw(g);
     }
 }
