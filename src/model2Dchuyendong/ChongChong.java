@@ -36,11 +36,11 @@ public class ChongChong {
         this.a1 = new Diem2D(x, y + banKinh);
         this.a2 = new Diem2D(x + banKinh, y);
         this.a3 = new Diem2D(x, y - banKinh);
-        this.a4 = new Diem2D(x - banKinh, y);
+        this.a4 = DoiXungQuaDoanThang.layDoiXung(a2, a1, a3);
         this.b1 = new Diem2D(x + banKinh / 2, y + banKinh / 2);
         this.b2 = new Diem2D(x + banKinh / 2, y - banKinh / 2);
-        this.b3 = new Diem2D(x - banKinh / 2, y - banKinh / 2);
-        this.b4 = new Diem2D(x - banKinh / 2, y + banKinh / 2);
+        this.b3 = DoiXungQuaDoanThang.layDoiXung(b2, a1, a3);
+        this.b4 = DoiXungQuaDoanThang.layDoiXung(b1, a1, a3);
     }
 
     public int getX() {

@@ -51,6 +51,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private boolean start = false, tang = false;
     private int timeDelay;
     private OTo o1 = new OTo(new Diem2D(-133, -35), 7);
+    private ChongChong cc;
     private ChongChong cc1;
     private ChongChong cc2;
     private int quayGoc = 0;
@@ -1368,7 +1369,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         ThamSoTruyenVao.yChongChong = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ y chong chóng"));
         ThamSoTruyenVao.bkChongChong = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập bán kính chong chóng"));
         Graphics2D g = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
-        ChongChong cc = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
+        cc = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
         cc.draw(g);
         jTextArea_ToaDoVat.setText(cc.inToaDo());
     }
@@ -1395,7 +1396,6 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         int dx = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời x"));
         int dy = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời y"));
         Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
-        ChongChong cc = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
         BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
         Graphics g = buffer.getGraphics();
         ThamSoTruyenVao.veToaDo((Graphics2D) g);
@@ -1429,11 +1429,11 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     void quayChongChong() {
         float goc = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập góc quay"));
         Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
-        ChongChong cc = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
+        ChongChong c = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
         BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
         Graphics g = buffer.getGraphics();
         ThamSoTruyenVao.veToaDo((Graphics2D) g);
-        cc.drawQuay((Graphics2D) g, goc);
+        c.drawQuay((Graphics2D) g, goc);
         gr.drawImage(buffer, 0, 0, null);
         jTextArea_ToaDoVat.setText(cc.inToaDo());
     }
@@ -1495,7 +1495,6 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         float sx = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập tỉ lệ co giãn theo trục x"));
         float sy = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập tỉ lệ co giãn theo trục y"));
         Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
-        ChongChong cc = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
         BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
         Graphics g = buffer.getGraphics();
         ThamSoTruyenVao.veToaDo((Graphics2D) g);
@@ -1540,7 +1539,6 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         int x2 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm cuối"));
         int y2 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y diem cuối"));
         Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
-        ChongChong cc = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
         BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
         Graphics g = buffer.getGraphics();
         ThamSoTruyenVao.veToaDo((Graphics2D) g);
