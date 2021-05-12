@@ -1133,7 +1133,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             int yO = Integer.parseInt(jTextField_yTam.getText());
             int r = Integer.parseInt(jTextField_BanKinh.getText());
             DuongTron m = new DuongTron(xO, yO, r);
-            m.draw(g);
+            m.drawLien(g);
             return;
         }
         JOptionPane.showMessageDialog(this, "Toa do khong duoc bo trong!");
@@ -1232,7 +1232,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         int a = Integer.parseInt(jTextField_BanKinhNgang.getText());
         int b = Integer.parseInt(jTextField_BanKinhDoc.getText());
         Ellipse m = new Ellipse(xO, yO, a, b);
-        m.draw(g);
+        m.drawBresenhem(g);
     }//GEN-LAST:event_jButton_VeEllipseActionPerformed
 
     private void jButton_VeHinhHopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeHinhHopActionPerformed

@@ -166,7 +166,7 @@ public class HinhCau {
 
         //Vẽ ellipse
         Ellipse E = new Ellipse(O.getX(), O.getY(), r, (int) (r * Math.sqrt(2) / 4));
-        E.draw(g);
+        E.drawBresenhem(g);
 
         //Vẽ tên các điểm
         g.setColor(Color.red);

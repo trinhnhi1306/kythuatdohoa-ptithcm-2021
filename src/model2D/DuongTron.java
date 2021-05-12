@@ -61,31 +61,31 @@ public class DuongTron {
                 p += 4 * x + 6;
             } else {
                 p += 4 * (x - y) + 10;
-                y -= 1;
+                y -= 5;
             }
-            x += 1;
-            if (dem < 5) {
-                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-                g.fillOval(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-                g.fillOval(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+            x += 5;
+            if (dem < 2) {
+                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillOval(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillOval(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
                 dem++;
-            } else if (dem < 10) {
+            } else if (dem < 5) {
                 dem++;
             } else {
                 dem = 0;
-                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-                g.fillOval(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-                g.fillOval(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillOval(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillOval(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
             }
         }
     }
@@ -100,21 +100,21 @@ public class DuongTron {
         x = 0;
         y = r;
         while (x < y) { //ve 1/8 duong tron
-            g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-            g.fillOval(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-            g.fillOval(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-            g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-            g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-            g.fillOval(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-            g.fillOval(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-            g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+            g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillOval(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillOval(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
             if (p < 0) {
                 p += 4 * x + 6;
             } else {
                 p += 4 * (x - y) + 10;
-                y -= 1;
+                y -= 5;
             }
-            x += 1;
+            x += 5;
         }
     }
     public void drawLien1(Graphics2D g) {
@@ -127,21 +127,21 @@ public class DuongTron {
         x = 0;
         y = r;
         while (x < y) { //ve 1/8 duong tron
-            g.fillOval(x + 700 / 2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-            g.fillOval(y + 700 / 2 + xO - 1, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-            g.fillOval(-y + 700 / 2 + xO - 1, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-            g.fillOval(-x + 700 / 2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-            g.fillOval(-x + 700 / 2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-            g.fillOval(-y + 700 / 2 + xO - 1, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-            g.fillOval(y + 700 / 2 + xO - 1, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-            g.fillOval(x + 700 / 2 + xO - 1, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+            g.fillOval(x + 700 / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillOval(y + 700 / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillOval(-y + 700 / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillOval(-x + 700 / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillOval(-x + 700 / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillOval(-y + 700 / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillOval(y + 700 / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillOval(x + 700 / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
             if (p < 0) {
                 p += 4 * x + 6;
             } else {
                 p += 4 * (x - y) + 10;
-                y -= 1;
+                y -= 5;
             }
-            x += 1;
+            x += 5;
         }
     }
 }

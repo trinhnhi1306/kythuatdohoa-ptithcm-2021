@@ -126,6 +126,30 @@ public class ChongChong {
     public void draw(Graphics2D g) {
         BufferedImage Buferr = new BufferedImage(850, 850, BufferedImage.TYPE_INT_ARGB);
         Graphics BufGraphics = Buferr.getGraphics();
+        
+
+        //to mau canh 1        
+        BufGraphics.setColor(Color.yellow);
+        int xCanh1[] = {700 / 2 + a1.getX() * 5, 700 / 2 + b1.getX() * 5, 700 / 2 + x * 5};
+        int yCanh1[] = {500 / 2 - a1.getY() * 5, 500 / 2 - b1.getY() * 5, 500 / 2 - y * 5};
+        BufGraphics.fillPolygon(xCanh1, yCanh1, 3);
+        //to mau canh 2    
+        BufGraphics.setColor(Color.yellow);
+        int xCanh2[] = {700 / 2 + a2.getX() * 5, 700 / 2 + b2.getX() * 5, 700 / 2 + x * 5};
+        int yCanh2[] = {500 / 2 - a2.getY() * 5, 500 / 2 - b2.getY() * 5, 500 / 2 - y * 5};
+        BufGraphics.fillPolygon(xCanh2, yCanh2, 3);
+        //to mau canh 3       
+        BufGraphics.setColor(Color.yellow);
+        int xCanh3[] = {700 / 2 + a3.getX() * 5, 700 / 2 + b3.getX() * 5, 700 / 2 + x * 5};
+        int yCanh3[] = {500 / 2 - a3.getY() * 5, 500 / 2 - b3.getY() * 5, 500 / 2 - y * 5};
+        BufGraphics.fillPolygon(xCanh3, yCanh3, 3);
+        //to mau canh 4      
+        BufGraphics.setColor(Color.yellow);
+        int xCanh4[] = {700 / 2 + a4.getX() * 5, 700 / 2 + b4.getX() * 5, 700 / 2 + x * 5};
+        int yCanh4[] = {500 / 2 - a4.getY() * 5, 500 / 2 - b4.getY() * 5, 500 / 2 - y * 5};
+        BufGraphics.fillPolygon(xCanh4, yCanh4, 3);
+        
+        //vẽ viền
         DoanThang a1a3 = new DoanThang(a1.getX(), a1.getY(), a3.getX(), a3.getY());
         a1a3.draw1((Graphics2D) BufGraphics);
 
@@ -150,32 +174,13 @@ public class ChongChong {
         DoanThang a4b4 = new DoanThang(a4.getX(), a4.getY(), b4.getX(), b4.getY());
         a4b4.draw1((Graphics2D) BufGraphics);
 
-        DuongTron dt = new DuongTron(x, y, banKinh / 10);
-        dt.drawLien1((Graphics2D) BufGraphics);
-
-        //to mau canh 1        
-        BufGraphics.setColor(Color.yellow);
-        int xCanh1[] = {700 / 2 + a1.getX() * 5, 700 / 2 + b1.getX() * 5, 700 / 2 + x * 5};
-        int yCanh1[] = {500 / 2 - a1.getY() * 5, 500 / 2 - b1.getY() * 5, 500 / 2 - y * 5};
-        BufGraphics.fillPolygon(xCanh1, yCanh1, 3);
-        //to mau canh 2    
-        BufGraphics.setColor(Color.yellow);
-        int xCanh2[] = {700 / 2 + a2.getX() * 5, 700 / 2 + b2.getX() * 5, 700 / 2 + x * 5};
-        int yCanh2[] = {500 / 2 - a2.getY() * 5, 500 / 2 - b2.getY() * 5, 500 / 2 - y * 5};
-        BufGraphics.fillPolygon(xCanh2, yCanh2, 3);
-        //to mau canh 3       
-        BufGraphics.setColor(Color.yellow);
-        int xCanh3[] = {700 / 2 + a3.getX() * 5, 700 / 2 + b3.getX() * 5, 700 / 2 + x * 5};
-        int yCanh3[] = {500 / 2 - a3.getY() * 5, 500 / 2 - b3.getY() * 5, 500 / 2 - y * 5};
-        BufGraphics.fillPolygon(xCanh3, yCanh3, 3);
-        //to mau canh 4      
-        BufGraphics.setColor(Color.yellow);
-        int xCanh4[] = {700 / 2 + a4.getX() * 5, 700 / 2 + b4.getX() * 5, 700 / 2 + x * 5};
-        int yCanh4[] = {500 / 2 - a4.getY() * 5, 500 / 2 - b4.getY() * 5, 500 / 2 - y * 5};
-        BufGraphics.fillPolygon(xCanh4, yCanh4, 3);
         //to mau tam
         BufGraphics.setColor(Color.blue);
         BufGraphics.fillOval(700 / 2 + x * 5 - banKinh / 2, 500 / 2 - y * 5 - banKinh / 2, banKinh + 1, banKinh + 1);
+        
+        DuongTron dt = new DuongTron(x, y, banKinh / 10);
+        dt.drawLien1((Graphics2D) BufGraphics);
+        
         g.drawImage(Buferr, 0, 0, null);
     }
 
@@ -303,6 +308,28 @@ public class ChongChong {
 
         BufferedImage Buferr = new BufferedImage(850, 850, BufferedImage.TYPE_INT_ARGB);
         Graphics BufGraphics = Buferr.getGraphics();
+        
+        //to mau canh 1        
+        BufGraphics.setColor(Color.yellow);
+        int xCanh1[] = {700 / 2 + a1.getX() * 5, 700 / 2 + b1.getX() * 5, 700 / 2 + x * 5};
+        int yCanh1[] = {500 / 2 - a1.getY() * 5, 500 / 2 - b1.getY() * 5, 500 / 2 - y * 5};
+        BufGraphics.fillPolygon(xCanh1, yCanh1, 3);
+        //to mau canh 2    
+        BufGraphics.setColor(Color.yellow);
+        int xCanh2[] = {700 / 2 + a2.getX() * 5, 700 / 2 + b2.getX() * 5, 700 / 2 + x * 5};
+        int yCanh2[] = {500 / 2 - a2.getY() * 5, 500 / 2 - b2.getY() * 5, 500 / 2 - y * 5};
+        BufGraphics.fillPolygon(xCanh2, yCanh2, 3);
+        //to mau canh 3       
+        BufGraphics.setColor(Color.yellow);
+        int xCanh3[] = {700 / 2 + a3.getX() * 5, 700 / 2 + b3.getX() * 5, 700 / 2 + x * 5};
+        int yCanh3[] = {500 / 2 - a3.getY() * 5, 500 / 2 - b3.getY() * 5, 500 / 2 - y * 5};
+        BufGraphics.fillPolygon(xCanh3, yCanh3, 3);
+        //to mau canh 4      
+        BufGraphics.setColor(Color.yellow);
+        int xCanh4[] = {700 / 2 + a4.getX() * 5, 700 / 2 + b4.getX() * 5, 700 / 2 + x * 5};
+        int yCanh4[] = {500 / 2 - a4.getY() * 5, 500 / 2 - b4.getY() * 5, 500 / 2 - y * 5};
+        BufGraphics.fillPolygon(xCanh4, yCanh4, 3);
+        
         DoanThang a1a3 = new DoanThang(a1.getX(), a1.getY(), a3.getX(), a3.getY());
         a1a3.draw1((Graphics2D) BufGraphics);
 
@@ -327,33 +354,13 @@ public class ChongChong {
         DoanThang a4b4 = new DoanThang(a4.getX(), a4.getY(), b4.getX(), b4.getY());
         a4b4.draw1((Graphics2D) BufGraphics);
 
-        Ellipse e = new Ellipse(x, y, (int) (sx * banKinh / 10), (int) (sy * banKinh / 10));
-        e.drawLien((Graphics2D) BufGraphics);
-
-        //to mau canh 1        
-        BufGraphics.setColor(Color.yellow);
-        int xCanh1[] = {700 / 2 + a1.getX() * 5, 700 / 2 + b1.getX() * 5, 700 / 2 + x * 5};
-        int yCanh1[] = {500 / 2 - a1.getY() * 5, 500 / 2 - b1.getY() * 5, 500 / 2 - y * 5};
-        BufGraphics.fillPolygon(xCanh1, yCanh1, 3);
-        //to mau canh 2    
-        BufGraphics.setColor(Color.yellow);
-        int xCanh2[] = {700 / 2 + a2.getX() * 5, 700 / 2 + b2.getX() * 5, 700 / 2 + x * 5};
-        int yCanh2[] = {500 / 2 - a2.getY() * 5, 500 / 2 - b2.getY() * 5, 500 / 2 - y * 5};
-        BufGraphics.fillPolygon(xCanh2, yCanh2, 3);
-        //to mau canh 3       
-        BufGraphics.setColor(Color.yellow);
-        int xCanh3[] = {700 / 2 + a3.getX() * 5, 700 / 2 + b3.getX() * 5, 700 / 2 + x * 5};
-        int yCanh3[] = {500 / 2 - a3.getY() * 5, 500 / 2 - b3.getY() * 5, 500 / 2 - y * 5};
-        BufGraphics.fillPolygon(xCanh3, yCanh3, 3);
-        //to mau canh 4      
-        BufGraphics.setColor(Color.yellow);
-        int xCanh4[] = {700 / 2 + a4.getX() * 5, 700 / 2 + b4.getX() * 5, 700 / 2 + x * 5};
-        int yCanh4[] = {500 / 2 - a4.getY() * 5, 500 / 2 - b4.getY() * 5, 500 / 2 - y * 5};
-        BufGraphics.fillPolygon(xCanh4, yCanh4, 3);
         //to mau tam
         BufGraphics.setColor(Color.blue);
         BufGraphics.fillOval((int) (700 / 2 + x * 5 - sx * banKinh / 2), (int) (500 / 2 - y * 5 - sy * banKinh / 2), (int) (banKinh * sx + 1), (int) (banKinh * sy + 1));
 
+        Ellipse e = new Ellipse(x, y, (int) (sx * banKinh / 10), (int) (sy * banKinh / 10));
+        e.drawLien((Graphics2D) BufGraphics);
+        
         g.drawImage(Buferr, 0, 0, null);
     }
     
