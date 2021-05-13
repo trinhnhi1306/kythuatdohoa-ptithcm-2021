@@ -12,10 +12,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import model2D.Diem2D;
-import model2D.DoanThang;
 import model2D.DuongTron;
 import model2D.Ellipse;
-import model2D.NetDut;
 import model2D.ThamSoTruyenVao;
 import phepchieu.Cabinet;
 

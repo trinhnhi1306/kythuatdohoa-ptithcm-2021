@@ -6,7 +6,6 @@
 package phepchieu;
 
 import model2D.Diem2D;
-import model3D.Diem3D;
 
 /**
  *

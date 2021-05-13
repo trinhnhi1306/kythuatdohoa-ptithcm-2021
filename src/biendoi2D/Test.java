@@ -5,7 +5,6 @@
  */
 package biendoi2D;
 
-import matran.NhanMaTran;
 import model2D.Diem2D;
 
 /**

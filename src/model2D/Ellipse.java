@@ -188,22 +188,21 @@ public class Ellipse {
             }
         }
     }
-    
-    public void drawBresenhem (Graphics2D g) {
+
+    public void drawBresenhem(Graphics2D g) {
         g.setColor(Color.RED);
         int dem = 0;
-        float p,a2,b2;
-        int x,y;
-        a2=(float) pow(a,2);
-        b2=(float) pow(b,2);
-        x=0;
-        y=b;
+        float p, a2, b2;
+        int x, y;
+        a2 = (float) pow(a, 2);
+        b2 = (float) pow(b, 2);
+        x = 0;
+        y = b;
 
-        p=2*((float)b2/a2)-(2*b)+1;
+        p = 2 * ((float) b2 / a2) - (2 * b) + 1;
 
         //ve nhanh thu 1(tu tren xuong )
-        while(((float)b2/a2)*x<=y)
-        {
+        while (((float) b2 / a2) * x <= y) {
             if (dem < 3) {
                 g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
                 g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
@@ -217,22 +216,19 @@ public class Ellipse {
             }
             g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
             g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-            if(p<0)
-            {
-                p=p+2*((float)b2/a2)*(2*x+3);
-            }
-            else{
-                p= p- 4*y + 2*((float)b2/a2)*(2*x+3);
+            if (p < 0) {
+                p = p + 2 * ((float) b2 / a2) * (2 * x + 3);
+            } else {
+                p = p - 4 * y + 2 * ((float) b2 / a2) * (2 * x + 3);
                 y -= 5;
             }
             x += 5;
         }
         //ve nhanh thu 2(tu duoi len )
-        y=0;
-        x=a;
-        p=2*((float)a2/b2)-2*a+1;
-        while(((float)a2/b2)*y<=x)
-        {
+        y = 0;
+        x = a;
+        p = 2 * ((float) a2 / b2) - 2 * a + 1;
+        while (((float) a2 / b2) * y <= x) {
             if (dem < 3) {
                 g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
                 g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
@@ -246,13 +242,10 @@ public class Ellipse {
             }
             g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
             g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-            if(p<0)
-            {
-                p=p +2*((float)a2/b2)*(2*y+3);
-            }
-            else
-            {
-                p=p- 4*x + 2*((float)a2/b2)*(2*y+3);
+            if (p < 0) {
+                p = p + 2 * ((float) a2 / b2) * (2 * y + 3);
+            } else {
+                p = p - 4 * x + 2 * ((float) a2 / b2) * (2 * y + 3);
                 x = x - 5;
             }
             y = y + 5;

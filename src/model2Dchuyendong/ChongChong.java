@@ -13,7 +13,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
-import javax.swing.JPanel;
 import model2D.Diem2D;
 import model2D.DoanThang;
 import model2D.DuongTron;
@@ -126,7 +125,6 @@ public class ChongChong {
     public void draw(Graphics2D g) {
         BufferedImage Buferr = new BufferedImage(850, 850, BufferedImage.TYPE_INT_ARGB);
         Graphics BufGraphics = Buferr.getGraphics();
-        
 
         //to mau canh 1        
         BufGraphics.setColor(Color.yellow);
@@ -148,7 +146,7 @@ public class ChongChong {
         int xCanh4[] = {700 / 2 + a4.getX() * 5, 700 / 2 + b4.getX() * 5, 700 / 2 + x * 5};
         int yCanh4[] = {500 / 2 - a4.getY() * 5, 500 / 2 - b4.getY() * 5, 500 / 2 - y * 5};
         BufGraphics.fillPolygon(xCanh4, yCanh4, 3);
-        
+
         //vẽ viền
         DoanThang a1a3 = new DoanThang(a1.getX(), a1.getY(), a3.getX(), a3.getY());
         a1a3.draw1((Graphics2D) BufGraphics);
@@ -177,10 +175,10 @@ public class ChongChong {
         //to mau tam
         BufGraphics.setColor(Color.blue);
         BufGraphics.fillOval(700 / 2 + x * 5 - banKinh / 2, 500 / 2 - y * 5 - banKinh / 2, banKinh + 1, banKinh + 1);
-        
+
         DuongTron dt = new DuongTron(x, y, banKinh / 10);
-        dt.drawLien1((Graphics2D) BufGraphics);
-        
+        dt.drawLien1((Graphics2D) BufGraphics, Color.RED);
+
         g.drawImage(Buferr, 0, 0, null);
     }
 
@@ -308,7 +306,7 @@ public class ChongChong {
 
         BufferedImage Buferr = new BufferedImage(850, 850, BufferedImage.TYPE_INT_ARGB);
         Graphics BufGraphics = Buferr.getGraphics();
-        
+
         //to mau canh 1        
         BufGraphics.setColor(Color.yellow);
         int xCanh1[] = {700 / 2 + a1.getX() * 5, 700 / 2 + b1.getX() * 5, 700 / 2 + x * 5};
@@ -329,7 +327,7 @@ public class ChongChong {
         int xCanh4[] = {700 / 2 + a4.getX() * 5, 700 / 2 + b4.getX() * 5, 700 / 2 + x * 5};
         int yCanh4[] = {500 / 2 - a4.getY() * 5, 500 / 2 - b4.getY() * 5, 500 / 2 - y * 5};
         BufGraphics.fillPolygon(xCanh4, yCanh4, 3);
-        
+
         DoanThang a1a3 = new DoanThang(a1.getX(), a1.getY(), a3.getX(), a3.getY());
         a1a3.draw1((Graphics2D) BufGraphics);
 
@@ -356,15 +354,20 @@ public class ChongChong {
 
         //to mau tam
         BufGraphics.setColor(Color.blue);
-        BufGraphics.fillOval((int) (700 / 2 + x * 5 - sx * banKinh / 2), (int) (500 / 2 - y * 5 - sy * banKinh / 2), (int) (banKinh * sx + 1), (int) (banKinh * sy + 1));
+        BufGraphics.fillOval((int) (700 / 2 + x * 5 - sx * banKinh / 2 - 1), (int) (500 / 2 - y * 5 - sy * banKinh / 2 + 1), (int) (banKinh * sx + 2), (int) (banKinh * sy + 2));
 
-        Ellipse e = new Ellipse(x, y, (int) (sx * banKinh / 10), (int) (sy * banKinh / 10));
-        e.drawLien((Graphics2D) BufGraphics);
-        
+        if (sx == sy) {
+            DuongTron dt = new DuongTron(x, y, (int) (sx * banKinh / 10));
+            dt.drawLien1(g, Color.RED);
+        } else {
+            Ellipse e = new Ellipse(x, y, (int) (sx * banKinh / 10), (int) (sy * banKinh / 10));
+            e.drawLien((Graphics2D) BufGraphics);
+        }
+
         g.drawImage(Buferr, 0, 0, null);
     }
-    
-    public void drawDoiXung (Graphics2D g, Diem2D a, Diem2D b) {
+
+    public void drawDoiXung(Graphics2D g, Diem2D a, Diem2D b) {
         a1 = DoiXungQuaDoanThang.layDoiXung(a1, a, b);
         a2 = DoiXungQuaDoanThang.layDoiXung(a2, a, b);
         a3 = DoiXungQuaDoanThang.layDoiXung(a3, a, b);
@@ -381,16 +384,14 @@ public class ChongChong {
 
         draw(g);
     }
-    
-    public String inToaDo () {
-        String str = "\nTỌA ĐỘ CHONG CHÓNG\n\nTọa độ tâm ";
 
-        str += "(" + x + ", " + y + ")";
+    public String inToaDo() {
+        String str = "\n\nTọa độ tâm (" + x + ", " + y + ")";
         str += "\n\nCánh thứ nhất: A1 (" + a1.getX() + ", " + a1.getY() + "), B1 (" + b1.getX() + ", " + b1.getY() + ")";
         str += "\n\nCánh thứ hai: A2 (" + a2.getX() + ", " + a2.getY() + "), B2 (" + b2.getX() + ", " + b2.getY() + ")";
         str += "\n\nCánh thứ ba: A3 (" + a3.getX() + ", " + a3.getY() + "), B3 (" + b3.getX() + ", " + b3.getY() + ")";
         str += "\n\nCánh thứ tư: A4 (" + a4.getX() + ", " + a4.getY() + "), B4 (" + b4.getX() + ", " + b4.getY() + ")";
-        
+
         return str;
     }
 }

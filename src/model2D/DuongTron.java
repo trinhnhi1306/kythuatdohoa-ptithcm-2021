@@ -51,7 +51,7 @@ public class DuongTron {
         g.setColor(Color.RED);  //dat mau hinh ve la red
         //khai bao cac bien cua thuat toan Presenhem
         int dem = 0;
-        int x, y, p, x0;
+        int x, y, p;
         p = 3 - 2 * r;
         x = 0;
         y = r;
@@ -94,8 +94,7 @@ public class DuongTron {
 
         g.setColor(Color.RED);  //dat mau hinh ve la red
         //khai bao cac bien cua thuat toan Presenhem
-        int dem = 0;
-        int x, y, p, x0;
+        int x, y, p;
         p = 3 - 2 * r;
         x = 0;
         y = r;
@@ -117,24 +116,23 @@ public class DuongTron {
             x += 5;
         }
     }
-    public void drawLien1(Graphics2D g) {
+    public void drawLien1(Graphics2D g, Color c) {
 
-        g.setColor(Color.RED);  //dat mau hinh ve la red
+        g.setColor(c);  //dat mau hinh ve la red
         //khai bao cac bien cua thuat toan Presenhem
-        int dem = 0;
-        int x, y, p, x0;
+        int x, y, p;
         p = 3 - 2 * r;
         x = 0;
         y = r;
         while (x < y) { //ve 1/8 duong tron
-            g.fillOval(x + 700 / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-            g.fillOval(y + 700 / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-            g.fillOval(-y + 700 / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-            g.fillOval(-x + 700 / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-            g.fillOval(-x + 700 / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-            g.fillOval(-y + 700 / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-            g.fillOval(y + 700 / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-            g.fillOval(x + 700 / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillRect(x + 700 / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillRect(y + 700 / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillRect(-y + 700 / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillRect(-x + 700 / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillRect(-x + 700 / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillRect(-y + 700 / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillRect(y + 700 / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillRect(x + 700 / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
             if (p < 0) {
                 p += 4 * x + 6;
             } else {
