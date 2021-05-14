@@ -45,7 +45,7 @@ public class Diem2D {
         g.setColor(Color.RED);  //dat mau hinh ve la red
 //        String text = "Điểm (" + x + ", " + y + ")";
 //        g.drawString(text, ThamSoTruyenVao.backgroundWidth / 2 + x * 5 + 5, ThamSoTruyenVao.backgroundHeight / 2 - y * 5 - 10);
-        g.fillOval(ThamSoTruyenVao.backgroundWidth / 2 + x * 5 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y * 5 - 2, 5, 5);
+        g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 + x * 5 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y * 5 - 2, 5, 5);
     }
 
     @Override

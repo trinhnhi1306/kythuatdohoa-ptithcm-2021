@@ -174,10 +174,10 @@ public class ChongChong {
 
         //to mau tam
         BufGraphics.setColor(Color.blue);
-        BufGraphics.fillOval(700 / 2 + x * 5 - banKinh / 2, 500 / 2 - y * 5 - banKinh / 2, banKinh + 1, banKinh + 1);
+        BufGraphics.fillOval(700 / 2 + x * 5 - banKinh / 2, 500 / 2 - y * 5 - banKinh / 2, banKinh, banKinh);
 
         DuongTron dt = new DuongTron(x, y, banKinh / 10);
-        dt.drawLien1((Graphics2D) BufGraphics, Color.RED);
+        dt.drawLien1((Graphics2D) BufGraphics, Color.black);
 
         g.drawImage(Buferr, 0, 0, null);
     }
@@ -358,10 +358,10 @@ public class ChongChong {
 
         if (sx == sy) {
             DuongTron dt = new DuongTron(x, y, (int) (sx * banKinh / 10));
-            dt.drawLien1(g, Color.RED);
+            dt.drawLien1((Graphics2D) BufGraphics, Color.black);
         } else {
             Ellipse e = new Ellipse(x, y, (int) (sx * banKinh / 10), (int) (sy * banKinh / 10));
-            e.drawLien((Graphics2D) BufGraphics);
+            e.drawBresenhem1((Graphics2D) BufGraphics);
         }
 
         g.drawImage(Buferr, 0, 0, null);

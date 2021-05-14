@@ -64,9 +64,9 @@ public class NetHaiChamGach {
 
         x = x1;
         y = y1;
-        int x_unit = 1, y_unit = 1;
+        int x_unit = 5, y_unit = 5;
 
-        g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 - 1, ThamSoTruyenVao.backgroundHeight / 2 - y - 1, 1, 1);
+        g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
 
         //xét trường hợp để cho y_unit và x_unit để vẽ tăng lên hay giảm xuống
         if (x2 - x1 < 0) {
@@ -86,23 +86,24 @@ public class NetHaiChamGach {
                     y += y_unit;
                 }
                 x += x_unit;
-                if (dem < 10) {
-                    g.fillRect(x + 250, 250 - y, 1, 1);
+                if (dem < 5) {
+                    g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
                     dem++;
-                } else if (dem < 13) {
+                } else if (dem < 7) {
                     dem++;
-                } else if (dem < 14) {
-                    g.fillRect(x + 250, 250 - y, 1, 1);
+                } else if (dem < 8) {
+                    g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
                     dem++;
-                } else if (dem < 17) {
+                } else if (dem < 10) {
                     dem++;
-                } else if (dem < 18) {
-                    g.fillRect(x + 250, 250 - y, 1, 1);
+                } else if (dem < 11) {
+                    g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
                     dem++;
-                } else if (dem < 20) {
+                } else if (dem < 12) {
                     dem++;
                 } else {
                     dem = 0;
+//                    g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
                 }
             }
         } else {
@@ -116,23 +117,24 @@ public class NetHaiChamGach {
                     x += x_unit;
                 }
                 y += y_unit;
-                if (dem < 10) {
-                    g.fillRect(x + 250, 250 - y, 1, 1);
+                if (dem < 5) {
+                    g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
                     dem++;
-                } else if (dem < 13) {
+                } else if (dem < 7) {
                     dem++;
-                } else if (dem < 14) {
-                    g.fillRect(x + 250, 250 - y, 1, 1);
+                } else if (dem < 8) {
+                    g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
                     dem++;
-                } else if (dem < 17) {
+                } else if (dem < 10) {
                     dem++;
-                } else if (dem < 18) {
-                    g.fillRect(x + 250, 250 - y, 1, 1);
+                } else if (dem < 11) {
+                    g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
                     dem++;
-                } else if (dem < 20) {
+                } else if (dem < 12) {
                     dem++;
                 } else {
                     dem = 0;
+//                    g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
                 }
 
             }

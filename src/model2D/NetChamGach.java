@@ -64,9 +64,9 @@ public class NetChamGach {
 
         x = x1;
         y = y1;
-        int x_unit = 1, y_unit = 1;
+        int x_unit = 5, y_unit = 5;
 
-        g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 - 1, ThamSoTruyenVao.backgroundHeight / 2 - y - 1, 3, 3);
+        g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
 
         //xét trường hợp để cho y_unit và x_unit để vẽ tăng lên hay giảm xuống
         if (x2 - x1 < 0) {
@@ -87,18 +87,18 @@ public class NetChamGach {
                 }
                 x += x_unit;
                 if (dem < 5) {
-                    g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 - 1, ThamSoTruyenVao.backgroundHeight / 2 - y - 1, 3, 3);
+                    g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
                     dem++;
-                } else if (dem < 12) {
+                } else if (dem < 7) {
                     dem++;
-                } else if (dem < 13) {
-                    g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 - 1, ThamSoTruyenVao.backgroundHeight / 2 - y - 1, 3, 3);
+                } else if (dem < 8) {
+                    g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
                     dem++;
-                } else if (dem < 20) {
+                } else if (dem < 9) {
                     dem++;
                 } else {
                     dem = 0;
-                    g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 - 1, ThamSoTruyenVao.backgroundHeight / 2 - y - 1, 3, 3);
+//                    g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
                 }
             }
         } else {
@@ -113,18 +113,18 @@ public class NetChamGach {
                 }
                 y += y_unit;
                 if (dem < 5) {
-                    g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 - 1, ThamSoTruyenVao.backgroundHeight / 2 - y - 1, 3, 3);
+                    g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
                     dem++;
-                } else if (dem < 12) {
+                } else if (dem < 7) {
                     dem++;
-                } else if (dem < 13) {
-                    g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 - 1, ThamSoTruyenVao.backgroundHeight / 2 - y - 1, 3, 3);
+                } else if (dem < 8) {
+                    g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
                     dem++;
-                } else if (dem < 20) {
+                } else if (dem < 9) {
                     dem++;
                 } else {
                     dem = 0;
-                    g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 - 1, ThamSoTruyenVao.backgroundHeight / 2 - y - 1, 3, 3);
+//                    g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
                 }
             }
         }

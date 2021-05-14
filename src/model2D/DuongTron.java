@@ -65,27 +65,27 @@ public class DuongTron {
             }
             x += 5;
             if (dem < 2) {
-                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                g.fillOval(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                g.fillOval(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
                 dem++;
             } else if (dem < 5) {
                 dem++;
             } else {
                 dem = 0;
-                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                g.fillOval(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                g.fillOval(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
             }
         }
     }
@@ -98,15 +98,15 @@ public class DuongTron {
         p = 3 - 2 * r;
         x = 0;
         y = r;
-        while (x < y) { //ve 1/8 duong tron
-            g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                g.fillOval(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                g.fillOval(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                g.fillOval(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                g.fillOval(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+        while (x <= y) { //ve 1/8 duong tron
+            g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillRect(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillRect(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillRect(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillRect(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
             if (p < 0) {
                 p += 4 * x + 6;
             } else {
@@ -124,7 +124,7 @@ public class DuongTron {
         p = 3 - 2 * r;
         x = 0;
         y = r;
-        while (x < y) { //ve 1/8 duong tron
+        while (x <= y) { //ve 1/8 duong tron
             g.fillRect(x + 700 / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
             g.fillRect(y + 700 / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
             g.fillRect(-y + 700 / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);

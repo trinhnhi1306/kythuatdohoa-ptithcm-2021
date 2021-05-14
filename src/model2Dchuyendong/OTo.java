@@ -382,12 +382,12 @@ public class OTo {
 
         //Vẽ bánh
         DuongTron banhTraiL = new DuongTron(A.getX(), A.getY(), r);
-        banhTraiL.drawLien1(g, Color.RED);
+        banhTraiL.drawLien1(g, Color.black);
         DuongTron banhTraiN = new DuongTron(A.getX(), A.getY(), r * 3 / 5);
         banhTraiN.drawLien1(g, Color.RED);
 
         DuongTron banhPhaiL = new DuongTron(A5.getX(), A5.getY(), r);
-        banhPhaiL.drawLien1(g, Color.RED);
+        banhPhaiL.drawLien1(g, Color.black);
         DuongTron banhPhaiN = new DuongTron(A5.getX(), A5.getY(), r * 3 / 5);
         banhPhaiN.drawLien1(g, Color.RED);
 

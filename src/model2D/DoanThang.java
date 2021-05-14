@@ -65,9 +65,9 @@ public class DoanThang {
 
         x = x1;
         y = y1;
-        int x_unit = 1, y_unit = 1;
+        int x_unit = 5, y_unit = 5;
 
-        g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 - 1, ThamSoTruyenVao.backgroundHeight / 2 - y - 1, 3, 3);
+        g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
 
         //xét trường hợp để cho y_unit và x_unit để vẽ tăng lên hay giảm xuống
         if (x2 - x1 < 0) {
@@ -87,7 +87,7 @@ public class DoanThang {
                     y += y_unit;
                 }
                 x += x_unit;
-                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 - 1, ThamSoTruyenVao.backgroundHeight / 2 - y - 1, 3, 3);
+                g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
             }
         } else {
             p = 2 * Dx - Dy;
@@ -100,13 +100,13 @@ public class DoanThang {
                     x += x_unit;
                 }
                 y += y_unit;
-                g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 - 1, ThamSoTruyenVao.backgroundHeight / 2 - y - 1, 3, 3);
+                g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
             }
         }
     }
     public void draw1 (Graphics2D g) {
 
-        g.setColor(Color.RED);  //dat mau hinh ve la red
+        g.setColor(Color.black);  //dat mau hinh ve la red
 
         int x, y, Dx, Dy, p;
         Dx = Math.abs(x2 - x1);
@@ -116,7 +116,7 @@ public class DoanThang {
         y = y1;
         int x_unit = 5, y_unit = 5;
 
-        g.fillOval(x + 700 / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
+        g.fillRect(x + 700 / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
 
         //xét trường hợp để cho y_unit và x_unit để vẽ tăng lên hay giảm xuống
         if (x2 - x1 < 0) {
@@ -136,7 +136,7 @@ public class DoanThang {
                     y += y_unit;
                 }
                 x += x_unit;
-                g.fillOval(x + 700 / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
+                g.fillRect(x + 700 / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
             }
         } else {
             p = 2 * Dx - Dy;
@@ -149,7 +149,7 @@ public class DoanThang {
                     x += x_unit;
                 }
                 y += y_unit;
-                g.fillOval(x + 700 / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
+                g.fillRect(x + 700 / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
             }
         }
     }

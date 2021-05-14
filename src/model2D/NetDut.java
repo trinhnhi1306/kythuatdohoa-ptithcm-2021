@@ -65,10 +65,10 @@ public class NetDut {
 
         x = x1;
         y = y1;
-        int x_unit = 1, y_unit = 1;
+        int x_unit = 5, y_unit = 5;
 
-        g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 - 1, ThamSoTruyenVao.backgroundHeight / 2 - y - 1, 3, 3);
-
+        g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
+        
         //xét trường hợp để cho y_unit và x_unit để vẽ tăng lên hay giảm xuống
         if (x2 - x1 < 0) {
             x_unit = -x_unit;
@@ -87,14 +87,14 @@ public class NetDut {
                     y += y_unit;
                 }
                 x += x_unit;
-                if (dem < 10) {
-                    g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 - 1, ThamSoTruyenVao.backgroundHeight / 2 - y - 1, 3, 3);
+                if (dem < 3) {
+                    g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
                     dem++;
-                } else if (dem < 20) {
+                } else if (dem < 5) {
                     dem++;
                 } else {
                     dem = 0;
-                    g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 - 1, ThamSoTruyenVao.backgroundHeight / 2 - y - 1, 3, 3);
+                    g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
                 }
             }
         } else {
@@ -108,14 +108,14 @@ public class NetDut {
                     x += x_unit;
                 }
                 y += y_unit;
-                if (dem < 10) {
-                    g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 - 1, ThamSoTruyenVao.backgroundHeight / 2 - y - 1, 3, 3);
+                if (dem < 3) {
+                    g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
                     dem++;
-                } else if (dem < 20) {
+                } else if (dem < 5) {
                     dem++;
                 } else {
                     dem = 0;
-                    g.fillOval(x + ThamSoTruyenVao.backgroundWidth / 2 - 1, ThamSoTruyenVao.backgroundHeight / 2 - y - 1, 3, 3);
+                    g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y - 2, 5, 5);
                 }
 
             }
