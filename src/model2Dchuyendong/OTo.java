@@ -540,15 +540,15 @@ public class OTo {
         String str = "\tÔ TÔ";
         str += "\n\nTâm bánh: A (" + A.getX() + ", " + A.getY() + ")   A5 (" + A5.getX() + ", " + A5.getY() + ")";
         str += "\n\nKhung xe: A1 (" + A1.getX() + ", " + A1.getY() + ")   A2 (" + A2.getX() + ", " + A2.getY() + ")";
-        str += "\n                 A3 (" + A3.getX() + ", " + A3.getY() + ")   A4 (" + A4.getX() + ", " + A4.getY() + ")";
-        str += "\n                 A6 (" + A6.getX() + ", " + A6.getY() + ")   A7 (" + A7.getX() + ", " + A7.getY() + ")";
-        str += "\n                 A8 (" + A8.getX() + ", " + A8.getY() + ")   A9 (" + A9.getX() + ", " + A9.getY() + ")";
-        str += "\n                 A10 (" + A10.getX() + ", " + A10.getY() + ")   A11 (" + A11.getX() + ", " + A11.getY() + ")";
-        str += "\n                 A12 (" + A12.getX() + ", " + A12.getY() + ")   A13 (" + A13.getX() + ", " + A13.getY() + ")";
+        str += "\n\n                  A3 (" + A3.getX() + ", " + A3.getY() + ")   A4 (" + A4.getX() + ", " + A4.getY() + ")";
+        str += "\n\n                  A6 (" + A6.getX() + ", " + A6.getY() + ")   A7 (" + A7.getX() + ", " + A7.getY() + ")";
+        str += "\n\n                  A8 (" + A8.getX() + ", " + A8.getY() + ")   A9 (" + A9.getX() + ", " + A9.getY() + ")";
+        str += "\n\n                 A10 (" + A10.getX() + ", " + A10.getY() + ")   A11 (" + A11.getX() + ", " + A11.getY() + ")";
+        str += "\n\n                 A12 (" + A12.getX() + ", " + A12.getY() + ")   A13 (" + A13.getX() + ", " + A13.getY() + ")";
         str += "\n\nCửa sổ: Trái: A14 (" + A14.getX() + ", " + A14.getY() + ")   A15 (" + A15.getX() + ", " + A15.getY() + ")";
-        str += "\n                     A16 (" + A16.getX() + ", " + A16.getY() + ")   A17 (" + A17.getX() + ", " + A17.getY() + ")";
-        str += "\n            Phải: A18 (" + A18.getX() + ", " + A18.getY() + ")   A19 (" + A19.getX() + ", " + A19.getY() + ")";
-        str += "\n                     A20 (" + A20.getX() + ", " + A20.getY() + ")   A21 (" + A21.getX() + ", " + A21.getY() + ")";
+        str += "\n\n                      A16 (" + A16.getX() + ", " + A16.getY() + ")   A17 (" + A17.getX() + ", " + A17.getY() + ")";
+        str += "\n\n              Phải: A18 (" + A18.getX() + ", " + A18.getY() + ")   A19 (" + A19.getX() + ", " + A19.getY() + ")";
+        str += "\n\n                       A20 (" + A20.getX() + ", " + A20.getY() + ")   A21 (" + A21.getX() + ", " + A21.getY() + ")";
         return str;
     }
 }
