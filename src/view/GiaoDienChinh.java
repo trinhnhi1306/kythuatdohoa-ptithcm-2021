@@ -50,6 +50,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private Timer timer = null;
     private boolean start = false, tang = false;
     private int timeDelay;
+    private OTo o;
     private OTo o1 = new OTo(new Diem2D(-133, -42), 7);
     private ChongChong cc;
     private ChongChong cc1;
@@ -58,7 +59,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     private float tyLe = 1;
     private ImageIcon scaledStopIcon = null;
     private ImageIcon scaledPlayIcon = null;
-    
+
     public GiaoDienChinh() {
         initComponents();
         try {
@@ -1243,36 +1244,36 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         Image newImg = image.getScaledInstance(this.jButton_RunStop.getWidth(), this.jButton_RunStop.getHeight(), java.awt.Image.SCALE_SMOOTH);
         scaledPlayIcon = new ImageIcon(newImg);
         this.jButton_RunStop.setIcon(scaledPlayIcon);
-        
+
         icon = new ImageIcon("src/icon/stopicon.png");
         image = icon.getImage();
         newImg = image.getScaledInstance(this.jButton_RunStop.getWidth(), this.jButton_RunStop.getHeight(), java.awt.Image.SCALE_SMOOTH);
         scaledStopIcon = new ImageIcon(newImg);
-        
+
         icon = new ImageIcon("src/icon/veicon.png");
         image = icon.getImage();
-        newImg = image.getScaledInstance(this.jButton_Ve.getWidth(), this.jButton_Ve.getHeight()- 10, java.awt.Image.SCALE_SMOOTH);
+        newImg = image.getScaledInstance(this.jButton_Ve.getWidth(), this.jButton_Ve.getHeight() - 10, java.awt.Image.SCALE_SMOOTH);
         ImageIcon scaledDrawIcon = new ImageIcon(newImg);
         this.jButton_Ve.setIcon(scaledDrawIcon);
-        
+
         icon = new ImageIcon("src/icon/tinhtienicon.png");
         image = icon.getImage();
         newImg = image.getScaledInstance(this.jButton_2DTinhTien.getWidth(), this.jButton_2DTinhTien.getHeight(), java.awt.Image.SCALE_SMOOTH);
         ImageIcon scaledTinhTienIcon = new ImageIcon(newImg);
         this.jButton_2DTinhTien.setIcon(scaledTinhTienIcon);
-        
+
         icon = new ImageIcon("src/icon/quayicon.png");
         image = icon.getImage();
         newImg = image.getScaledInstance(this.jButton_2DQuay.getWidth() - 55, this.jButton_2DQuay.getHeight() - 10, java.awt.Image.SCALE_SMOOTH);
         ImageIcon scaledQuayIcon = new ImageIcon(newImg);
         this.jButton_2DQuay.setIcon(scaledQuayIcon);
-        
+
         icon = new ImageIcon("src/icon/doixungicon.png");
         image = icon.getImage();
         newImg = image.getScaledInstance(this.jButton_2DDoiXung.getWidth() - 10, this.jButton_2DDoiXung.getHeight(), java.awt.Image.SCALE_SMOOTH);
         ImageIcon scaledDoiXungIcon = new ImageIcon(newImg);
         this.jButton_2DDoiXung.setIcon(scaledDoiXungIcon);
-        
+
         icon = new ImageIcon("src/icon/thuphongicon.jpg");
         image = icon.getImage();
         newImg = image.getScaledInstance(this.jButton_2DThuPhong.getWidth() - 50, this.jButton_2DThuPhong.getHeight(), java.awt.Image.SCALE_SMOOTH);
@@ -1548,7 +1549,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             }
         });
     }//GEN-LAST:event_jButton_VeHinhCauActionPerformed
-    
+
     private void veChongChong() {
         ThamSoTruyenVao.xChongChong = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ x chong chóng"));
         ThamSoTruyenVao.yChongChong = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ y chong chóng"));
@@ -1558,13 +1559,16 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         cc.draw(g);
         jTextArea_ToaDoVat.setText("          TỌA ĐỘ CHONG CHONG" + cc.inToaDo());
     }
-    
+
     private void veOTo() {
         int x = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ x bánh xe trái"));
         int y = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ y bánh xe trái"));
         int bk = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập bán kính bánh xe"));
         Graphics2D g = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
-        OTo o = new OTo(new Diem2D(x, y), bk);
+        ThamSoTruyenVao.tamBanh.setX(x);
+        ThamSoTruyenVao.tamBanh.setY(y);
+        ThamSoTruyenVao.bkBanh = bk;
+        o = new OTo(new Diem2D(x, y), bk);
         o.draw(g);
         jTextArea_ToaDoVat.setText(o.inToaDo());
     }
@@ -1577,7 +1581,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             veOTo();
         }
     }//GEN-LAST:event_jButton_2DVeActionPerformed
-    
+
     private void ttChongChong() {
         int dx = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời x"));
         int dy = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời y"));
@@ -1589,12 +1593,11 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         gr.drawImage(buffer, 0, 0, null);
         jTextArea_ToaDoVat.setText("          TỌA ĐỘ CHONG CHÓNG" + cc.inToaDo());
     }
-    
+
     private void ttOTo() {
         int dx = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời x"));
         int dy = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời y"));
         Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
-        OTo o = new OTo(ThamSoTruyenVao.tamBanh, ThamSoTruyenVao.bkBanh);
         BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
         Graphics g = buffer.getGraphics();
         ThamSoTruyenVao.veToaDo((Graphics2D) g);
@@ -1609,26 +1612,37 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             ttChongChong();
         } else if (jRadioButton_OTo.isSelected()) {
             ttOTo();
-            
         }
     }//GEN-LAST:event_jButton_2DTinhTienActionPerformed
-    
+
     private void quayChongChong() {
         float goc = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập góc quay"));
         Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
-        ChongChong c = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
         BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
         Graphics g = buffer.getGraphics();
         ThamSoTruyenVao.veToaDo((Graphics2D) g);
-        c.drawQuay((Graphics2D) g, goc);
+        cc.drawQuay((Graphics2D) g, goc);
         gr.drawImage(buffer, 0, 0, null);
         jTextArea_ToaDoVat.setText("          TỌA ĐỘ CHONG CHONG" + cc.inToaDo());
+    }
+
+    private void quayOTo() {
+        float goc = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập góc quay"));
+        Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
+        BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
+        Graphics g = buffer.getGraphics();
+        ThamSoTruyenVao.veToaDo((Graphics2D) g);
+        o.drawQuay((Graphics2D) g, goc);
+        gr.drawImage(buffer, 0, 0, null);
+        jTextArea_ToaDoVat.setText("\tTỌA ĐỘ Ô TÔ" + o.inToaDo());
     }
 
     private void jButton_2DQuayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_2DQuayActionPerformed
         // TODO add your handling code here:
         if (jRadioButton_ChongChong.isSelected()) {
             quayChongChong();
+        } else {
+            quayOTo();
         }
     }//GEN-LAST:event_jButton_2DQuayActionPerformed
 
@@ -1677,7 +1691,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         str += "\tA' (" + kq.getX() + ", " + kq.getY() + ", " + kq.getZ() + ")";
         jTextArea_ToaDo.setText(str);
     }//GEN-LAST:event_jButton_DoiXungQuaDiemActionPerformed
-    
+
     private void tpChongChong() {
         float sx = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập tỉ lệ co giãn theo trục x"));
         float sy = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập tỉ lệ co giãn theo trục y"));
@@ -1685,15 +1699,31 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
         Graphics g = buffer.getGraphics();
         ThamSoTruyenVao.veToaDo((Graphics2D) g);
-        cc.drawThuPhong((Graphics2D) g, sx, sy);
+        ChongChong c = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
+        c.drawThuPhong((Graphics2D) g, sx, sy);
         gr.drawImage(buffer, 0, 0, null);
-        jTextArea_ToaDoVat.setText("          TỌA ĐỘ CHONG CHONG" + cc.inToaDo());
+        jTextArea_ToaDoVat.setText("          TỌA ĐỘ CHONG CHONG" + c.inToaDo());
+    }
+
+    private void tpOTo() {
+        float sx = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập tỉ lệ co giãn theo trục x"));
+        float sy = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập tỉ lệ co giãn theo trục y"));
+        Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
+        BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
+        Graphics g = buffer.getGraphics();
+        ThamSoTruyenVao.veToaDo((Graphics2D) g);
+        OTo oo = new OTo(ThamSoTruyenVao.tamBanh, ThamSoTruyenVao.bkBanh);
+        oo.drawThuPhong((Graphics2D) g, sx, sy);
+        gr.drawImage(buffer, 0, 0, null);
+        jTextArea_ToaDoVat.setText("\tTỌA ĐỘ Ô TÔ" + oo.inToaDo());
     }
 
     private void jButton_2DThuPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_2DThuPhongActionPerformed
         // TODO add your handling code here:
         if (jRadioButton_ChongChong.isSelected()) {
             tpChongChong();
+        } else {
+            tpOTo();
         }
     }//GEN-LAST:event_jButton_2DThuPhongActionPerformed
 
@@ -1710,7 +1740,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         }
         changePlayStopIcon();
     }//GEN-LAST:event_jButton_RunStopActionPerformed
-    
+
     private void changePlayStopIcon() {
         if (start == true) {
             this.jButton_RunStop.setIcon(scaledStopIcon);
@@ -1718,12 +1748,12 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             this.jButton_RunStop.setIcon(scaledPlayIcon);
         }
     }
-    
+
     private void dxChongChong() {
         int x1 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm đầu"));
         int y1 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y diểm đầu"));
         int x2 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm cuối"));
-        int y2 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y diem cuối"));
+        int y2 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y điểm cuối"));
         Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
         BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
         Graphics g = buffer.getGraphics();
@@ -1733,10 +1763,28 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         jTextArea_ToaDoVat.setText("          TỌA ĐỘ CHONG CHONG" + cc.inToaDo());
     }
 
+    private void dxOTo() {
+        int x1 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm đầu"));
+        int y1 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y diểm đầu"));
+        int x2 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm cuối"));
+        int y2 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y điểm cuối"));
+        Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
+        BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
+        Graphics g = buffer.getGraphics();
+        ThamSoTruyenVao.veToaDo((Graphics2D) g);
+        DoanThang AB = new DoanThang(x1 * 5, y1 * 5, x2 * 5, y2 * 5);
+        AB.draw1((Graphics2D) g);
+        o.drawDoiXung((Graphics2D) g, new Diem2D(x1, y1), new Diem2D(x2, y2));
+        gr.drawImage(buffer, 0, 0, null);
+        jTextArea_ToaDoVat.setText("\tTỌA ĐỘ Ô TÔ" + o.inToaDo());
+    }
+
     private void jButton_2DDoiXungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_2DDoiXungActionPerformed
         // TODO add your handling code here:
         if (jRadioButton_ChongChong.isSelected()) {
             dxChongChong();
+        } else {
+            dxOTo();
         }
     }//GEN-LAST:event_jButton_2DDoiXungActionPerformed
 
@@ -1806,7 +1854,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         jDialog_ThongTinNhom.setLocationRelativeTo(this);
         jDialog_ThongTinNhom.setVisible(true);
     }//GEN-LAST:event_jButton_ThongTinNhomActionPerformed
-    
+
     private boolean rangBuocDuLieuDuongThang() {
         String x1 = jTextField_x1.getText();
         String y1 = jTextField_y1.getText();
@@ -1817,7 +1865,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         }
         return false;
     }
-    
+
     private boolean rangBuocDuLieuDuongTron() {
         String xO = jTextField_xTam.getText();
         String yO = jTextField_yTam.getText();

@@ -6,13 +6,17 @@
 package model2Dchuyendong;
 
 import biendoi2D.DoiXungQuaDoanThang;
-import static biendoi2D.Quay.QuayTamBatKy;
+import biendoi2D.Quay;
+import biendoi2D.ThuPhong;
 import biendoi2D.TinhTien;
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 import model2D.Diem2D;
 import model2D.DoanThang;
 import model2D.DuongTron;
+import model2D.Ellipse;
 import model2D.ThamSoTruyenVao;
 
 /**
@@ -56,17 +60,17 @@ public class OTo {
         this.A20 = DoiXungQuaDoanThang.layDoiXung(A15, trucA, trucB);
         this.A21 = DoiXungQuaDoanThang.layDoiXung(A14, trucA, trucB);
         this.B = new Diem2D(A.getX(), A.getY() + r * 3 / 5);
-        this.B1 = QuayTamBatKy(A, B, Math.PI);
-        this.B2 = QuayTamBatKy(A, B, Math.PI / 3);
-        this.B3 = QuayTamBatKy(A, B, -2 * Math.PI / 3);
-        this.B4 = QuayTamBatKy(A, B, 2 * Math.PI / 3);
-        this.B5 = QuayTamBatKy(A, B, -Math.PI / 3);
-        this.B6 = DoiXungQuaDoanThang.layDoiXung(B, trucA, trucB);
-        this.B7 = DoiXungQuaDoanThang.layDoiXung(B1, trucA, trucB);
-        this.B8 = DoiXungQuaDoanThang.layDoiXung(B2, trucA, trucB);
-        this.B9 = DoiXungQuaDoanThang.layDoiXung(B3, trucA, trucB);
-        this.B10 = DoiXungQuaDoanThang.layDoiXung(B4, trucA, trucB);
-        this.B11 = DoiXungQuaDoanThang.layDoiXung(B5, trucA, trucB);
+        this.B1 = Quay.QuayTamBatKy(A, B, Math.PI);
+        this.B2 = Quay.QuayTamBatKy(A, B, Math.PI / 3);
+        this.B3 = Quay.QuayTamBatKy(A, B, -2 * Math.PI / 3);
+        this.B4 = Quay.QuayTamBatKy(A, B, 2 * Math.PI / 3);
+        this.B5 = Quay.QuayTamBatKy(A, B, -Math.PI / 3);
+        this.B6 = TinhTien.TinhTien(B, 6 * r, 0);
+        this.B7 = Quay.QuayTamBatKy(A5, B6, Math.PI);
+        this.B8 = Quay.QuayTamBatKy(A5, B6, Math.PI / 3);
+        this.B9 = Quay.QuayTamBatKy(A5, B6, -2 * Math.PI / 3);
+        this.B10 = Quay.QuayTamBatKy(A5, B6, 2 * Math.PI / 3);
+        this.B11 = Quay.QuayTamBatKy(A5, B6, -Math.PI / 3);
         this.goc = 0;
         ThamSoTruyenVao.tamBanh = A;
         ThamSoTruyenVao.bkBanh = r;
@@ -215,7 +219,7 @@ public class OTo {
     public void setGoc(float goc) {
         this.goc = goc;
     }
-    
+
     public Diem2D getA() {
         return A;
     }
@@ -382,14 +386,14 @@ public class OTo {
 
         //Vẽ bánh
         DuongTron banhTraiL = new DuongTron(A.getX(), A.getY(), r);
-        banhTraiL.drawLien1(g, Color.black);
+        banhTraiL.drawLien1(g, Color.BLACK);
         DuongTron banhTraiN = new DuongTron(A.getX(), A.getY(), r * 3 / 5);
-        banhTraiN.drawLien1(g, Color.RED);
+        banhTraiN.drawLien1(g, Color.BLACK);
 
         DuongTron banhPhaiL = new DuongTron(A5.getX(), A5.getY(), r);
-        banhPhaiL.drawLien1(g, Color.black);
+        banhPhaiL.drawLien1(g, Color.BLACK);
         DuongTron banhPhaiN = new DuongTron(A5.getX(), A5.getY(), r * 3 / 5);
-        banhPhaiN.drawLien1(g, Color.RED);
+        banhPhaiN.drawLien1(g, Color.BLACK);
 
         //Tô màu hai hình tròn lớn
 //        DuongTron l;
@@ -492,9 +496,9 @@ public class OTo {
         g.fillOval(700 / 2 + A5.getX() * 5 - 7, 500 / 2 - A5.getY() * 5 - 7, 15, 15);
     }
 
-    public void drawTinhTien(Graphics2D g, int dx, int dy) {
+    public void drawTinhTien(Graphics2D g, int dx, int dy) { //Chỉ tịnh tiến cho xe đi ngang
         this.A = TinhTien.TinhTien(A, dx, dy);
-        this.goc += Math.PI / 12;
+        this.goc += -Math.PI / 12;
         Diem2D trucA = new Diem2D(A.getX() + 3 * r, A.getY());
         Diem2D trucB = new Diem2D(A.getX() + 3 * r, A.getY() + 5 * r);
         this.A1 = new Diem2D(A.getX() - 3 * r, A.getY());
@@ -519,21 +523,314 @@ public class OTo {
         this.A20 = DoiXungQuaDoanThang.layDoiXung(A15, trucA, trucB);
         this.A21 = DoiXungQuaDoanThang.layDoiXung(A14, trucA, trucB);
         this.B = new Diem2D(A.getX(), A.getY() + r * 3 / 5);
-        this.B = QuayTamBatKy(A, B, goc);
-        this.B1 = QuayTamBatKy(A, B, Math.PI);
-        this.B2 = QuayTamBatKy(A, B, Math.PI / 3);
-        this.B3 = QuayTamBatKy(A, B, -2 * Math.PI / 3);
-        this.B4 = QuayTamBatKy(A, B, 2 * Math.PI / 3);
-        this.B5 = QuayTamBatKy(A, B, -Math.PI / 3);
-        this.B6 = DoiXungQuaDoanThang.layDoiXung(B, trucA, trucB);
-        this.B7 = DoiXungQuaDoanThang.layDoiXung(B1, trucA, trucB);
-        this.B8 = DoiXungQuaDoanThang.layDoiXung(B2, trucA, trucB);
-        this.B9 = DoiXungQuaDoanThang.layDoiXung(B3, trucA, trucB);
-        this.B10 = DoiXungQuaDoanThang.layDoiXung(B4, trucA, trucB);
-        this.B11 = DoiXungQuaDoanThang.layDoiXung(B5, trucA, trucB);
+        this.B = Quay.QuayTamBatKy(A, B, goc);
+        this.B1 = Quay.QuayTamBatKy(A, B, Math.PI);
+        this.B2 = Quay.QuayTamBatKy(A, B, Math.PI / 3);
+        this.B3 = Quay.QuayTamBatKy(A, B, -2 * Math.PI / 3);
+        this.B4 = Quay.QuayTamBatKy(A, B, 2 * Math.PI / 3);
+        this.B5 = Quay.QuayTamBatKy(A, B, -Math.PI / 3);
+        this.B6 = TinhTien.TinhTien(B, 6 * r, 0);
+        this.B7 = Quay.QuayTamBatKy(A5, B6, Math.PI);
+        this.B8 = Quay.QuayTamBatKy(A5, B6, Math.PI / 3);
+        this.B9 = Quay.QuayTamBatKy(A5, B6, -2 * Math.PI / 3);
+        this.B10 = Quay.QuayTamBatKy(A5, B6, 2 * Math.PI / 3);
+        this.B11 = Quay.QuayTamBatKy(A5, B6, -Math.PI / 3);
         ThamSoTruyenVao.tamBanh = A;
         ThamSoTruyenVao.bkBanh = r;
         draw(g);
+    }
+
+    public void drawQuay(Graphics2D g, float goc) { //Tâm quay A
+        goc = goc * (float) Math.PI / 180;
+
+        A1 = Quay.QuayTamBatKy(A, A1, goc);
+        A2 = Quay.QuayTamBatKy(A, A2, goc);
+        A3 = Quay.QuayTamBatKy(A, A3, goc);
+        A4 = Quay.QuayTamBatKy(A, A4, goc);
+        A5 = Quay.QuayTamBatKy(A, A5, goc);
+        A6 = Quay.QuayTamBatKy(A, A6, goc);
+        A7 = Quay.QuayTamBatKy(A, A7, goc);
+        A11 = Quay.QuayTamBatKy(A, A11, goc);
+        A10 = Quay.QuayTamBatKy(A, A10, goc);
+        A12 = Quay.QuayTamBatKy(A, A12, goc);
+        A9 = Quay.QuayTamBatKy(A, A9, goc);
+        A13 = Quay.QuayTamBatKy(A, A13, goc);
+        A8 = Quay.QuayTamBatKy(A, A8, goc);
+        A14 = Quay.QuayTamBatKy(A, A14, goc);
+        A15 = Quay.QuayTamBatKy(A, A15, goc);
+        A16 = Quay.QuayTamBatKy(A, A16, goc);
+        A17 = Quay.QuayTamBatKy(A, A17, goc);
+        A18 = Quay.QuayTamBatKy(A, A18, goc);
+        A19 = Quay.QuayTamBatKy(A, A19, goc);
+        A20 = Quay.QuayTamBatKy(A, A20, goc);
+        A21 = Quay.QuayTamBatKy(A, A21, goc);
+        B = Quay.QuayTamBatKy(A, B, goc);
+        B1 = Quay.QuayTamBatKy(A, B1, goc);
+        B2 = Quay.QuayTamBatKy(A, B2, goc);
+        B3 = Quay.QuayTamBatKy(A, B3, goc);
+        B4 = Quay.QuayTamBatKy(A, B4, goc);
+        B5 = Quay.QuayTamBatKy(A, B5, goc);
+        B6 = Quay.QuayTamBatKy(A, B6, goc);
+        B7 = Quay.QuayTamBatKy(A, B7, goc);
+        B8 = Quay.QuayTamBatKy(A, B8, goc);
+        B9 = Quay.QuayTamBatKy(A, B9, goc);
+        B10 = Quay.QuayTamBatKy(A, B10, goc);
+        B11 = Quay.QuayTamBatKy(A, B11, goc);
+
+        draw(g);
+    }
+
+    public void drawDoiXung(Graphics2D g, Diem2D a, Diem2D b) { //Đối xứng qua đường thẳng ab
+        A = DoiXungQuaDoanThang.layDoiXung(A, a, b);
+        A1 = DoiXungQuaDoanThang.layDoiXung(A1, a, b);
+        A2 = DoiXungQuaDoanThang.layDoiXung(A2, a, b);
+        A3 = DoiXungQuaDoanThang.layDoiXung(A3, a, b);
+        A4 = DoiXungQuaDoanThang.layDoiXung(A4, a, b);
+        A5 = DoiXungQuaDoanThang.layDoiXung(A5, a, b);
+        A6 = DoiXungQuaDoanThang.layDoiXung(A6, a, b);
+        A7 = DoiXungQuaDoanThang.layDoiXung(A7, a, b);
+        A11 = DoiXungQuaDoanThang.layDoiXung(A11, a, b);
+        A10 = DoiXungQuaDoanThang.layDoiXung(A10, a, b);
+        A12 = DoiXungQuaDoanThang.layDoiXung(A12, a, b);
+        A9 = DoiXungQuaDoanThang.layDoiXung(A9, a, b);
+        A13 = DoiXungQuaDoanThang.layDoiXung(A13, a, b);
+        A8 = DoiXungQuaDoanThang.layDoiXung(A8, a, b);
+        A14 = DoiXungQuaDoanThang.layDoiXung(A14, a, b);
+        A15 = DoiXungQuaDoanThang.layDoiXung(A15, a, b);
+        A16 = DoiXungQuaDoanThang.layDoiXung(A16, a, b);
+        A17 = DoiXungQuaDoanThang.layDoiXung(A17, a, b);
+        A18 = DoiXungQuaDoanThang.layDoiXung(A18, a, b);
+        A19 = DoiXungQuaDoanThang.layDoiXung(A19, a, b);
+        A20 = DoiXungQuaDoanThang.layDoiXung(A20, a, b);
+        A21 = DoiXungQuaDoanThang.layDoiXung(A21, a, b);
+        B = DoiXungQuaDoanThang.layDoiXung(B, a, b);
+        B1 = DoiXungQuaDoanThang.layDoiXung(B1, a, b);
+        B2 = DoiXungQuaDoanThang.layDoiXung(B2, a, b);
+        B3 = DoiXungQuaDoanThang.layDoiXung(B3, a, b);
+        B4 = DoiXungQuaDoanThang.layDoiXung(B4, a, b);
+        B5 = DoiXungQuaDoanThang.layDoiXung(B5, a, b);
+        B6 = DoiXungQuaDoanThang.layDoiXung(B6, a, b);
+        B7 = DoiXungQuaDoanThang.layDoiXung(B7, a, b);
+        B8 = DoiXungQuaDoanThang.layDoiXung(B8, a, b);
+        B9 = DoiXungQuaDoanThang.layDoiXung(B9, a, b);
+        B10 = DoiXungQuaDoanThang.layDoiXung(B10, a, b);
+        B11 = DoiXungQuaDoanThang.layDoiXung(B11, a, b);
+
+        draw(g);
+    }
+
+    public void drawThuPhong(Graphics2D g, float sx, float sy) { //Tâm A
+
+        A1 = ThuPhong.ThuPhongDungTam(A1, A, sx, sy);
+        A2 = ThuPhong.ThuPhongDungTam(A2, A, sx, sy);
+        A3 = ThuPhong.ThuPhongDungTam(A3, A, sx, sy);
+        A4 = ThuPhong.ThuPhongDungTam(A4, A, sx, sy);
+        A5 = ThuPhong.ThuPhongDungTam(A5, A, sx, sy);
+        A6 = ThuPhong.ThuPhongDungTam(A6, A, sx, sy);
+        A7 = ThuPhong.ThuPhongDungTam(A7, A, sx, sy);
+        A8 = ThuPhong.ThuPhongDungTam(A8, A, sx, sy);
+        A9 = ThuPhong.ThuPhongDungTam(A9, A, sx, sy);
+        A10 = ThuPhong.ThuPhongDungTam(A10, A, sx, sy);
+        A11 = ThuPhong.ThuPhongDungTam(A11, A, sx, sy);
+        A12 = ThuPhong.ThuPhongDungTam(A12, A, sx, sy);
+        A13 = ThuPhong.ThuPhongDungTam(A13, A, sx, sy);
+        A14 = ThuPhong.ThuPhongDungTam(A14, A, sx, sy);
+        A15 = ThuPhong.ThuPhongDungTam(A15, A, sx, sy);
+        A16 = ThuPhong.ThuPhongDungTam(A16, A, sx, sy);
+        A17 = ThuPhong.ThuPhongDungTam(A17, A, sx, sy);
+        A18 = ThuPhong.ThuPhongDungTam(A18, A, sx, sy);
+        A19 = ThuPhong.ThuPhongDungTam(A19, A, sx, sy);
+        A20 = ThuPhong.ThuPhongDungTam(A20, A, sx, sy);
+        A21 = ThuPhong.ThuPhongDungTam(A21, A, sx, sy);
+        B = ThuPhong.ThuPhongDungTam(B, A, sx, sy);
+        B1 = ThuPhong.ThuPhongDungTam(B1, A, sx, sy);
+        B2 = ThuPhong.ThuPhongDungTam(B2, A, sx, sy);
+        B3 = ThuPhong.ThuPhongDungTam(B3, A, sx, sy);
+        B4 = ThuPhong.ThuPhongDungTam(B4, A, sx, sy);
+        B5 = ThuPhong.ThuPhongDungTam(B5, A, sx, sy);
+        B6 = ThuPhong.ThuPhongDungTam(B6, A, sx, sy);
+        B7 = ThuPhong.ThuPhongDungTam(B7, A, sx, sy);
+        B8 = ThuPhong.ThuPhongDungTam(B8, A, sx, sy);
+        B9 = ThuPhong.ThuPhongDungTam(B9, A, sx, sy);
+        B10 = ThuPhong.ThuPhongDungTam(B10, A, sx, sy);
+        B11 = ThuPhong.ThuPhongDungTam(B11, A, sx, sy);
+
+        //Tô màu khung lớn phía dưới
+        g.setColor(Color.BLUE);
+        int x1[] = {700 / 2 + A1.getX() * 5, 700 / 2 + A7.getX() * 5, 700 / 2 + A8.getX() * 5, 700 / 2 + A9.getX() * 5, 700 / 2 + A12.getX() * 5, 700 / 2 + A13.getX() * 5};
+        int y1[] = {500 / 2 - A1.getY() * 5, 500 / 2 - A7.getY() * 5, 500 / 2 - A8.getY() * 5, 500 / 2 - A9.getY() * 5, 500 / 2 - A12.getY() * 5, 500 / 2 - A13.getY() * 5};
+        g.fillPolygon(x1, y1, 6);
+        //Tô màu khung lớn phía trên
+        int x2[] = {700 / 2 + A9.getX() * 5, 700 / 2 + A10.getX() * 5, 700 / 2 + A11.getX() * 5, 700 / 2 + A12.getX() * 5};
+        int y2[] = {500 / 2 - A9.getY() * 5, 500 / 2 - A10.getY() * 5, 500 / 2 - A11.getY() * 5, 500 / 2 - A12.getY() * 5};
+        g.fillPolygon(x2, y2, 4);
+
+        //Tô màu hai cửa sổ
+        g.setColor(Color.white);
+        int x3[] = {700 / 2 + A14.getX() * 5, 700 / 2 + A15.getX() * 5, 700 / 2 + A16.getX() * 5, 700 / 2 + A17.getX() * 5};
+        int y3[] = {500 / 2 - A14.getY() * 5, 500 / 2 - A15.getY() * 5, 500 / 2 - A16.getY() * 5, 500 / 2 - A17.getY() * 5};
+        g.fillPolygon(x3, y3, 4);
+        int x4[] = {700 / 2 + A18.getX() * 5, 700 / 2 + A19.getX() * 5, 700 / 2 + A20.getX() * 5, 700 / 2 + A21.getX() * 5};
+        int y4[] = {500 / 2 - A18.getY() * 5, 500 / 2 - A19.getY() * 5, 500 / 2 - A20.getY() * 5, 500 / 2 - A21.getY() * 5};
+        g.fillPolygon(x4, y4, 4);
+
+        //Vẽ bánh
+        if (sx == sy) {
+            DuongTron banhTraiL = new DuongTron(A.getX(), A.getY(), (int) (r * sx));
+            banhTraiL.drawLien1(g, Color.BLACK);
+            DuongTron banhTraiN = new DuongTron(A.getX(), A.getY(), (int) (sx * r * 3 / 5));
+            banhTraiN.drawLien1(g, Color.BLACK);
+
+            DuongTron banhPhaiL = new DuongTron(A5.getX(), A5.getY(), (int) (r * sx));
+            banhPhaiL.drawLien1(g, Color.BLACK);
+            DuongTron banhPhaiN = new DuongTron(A5.getX(), A5.getY(), (int) (sx * r * 3 / 5));
+            banhPhaiN.drawLien1(g, Color.BLACK);
+        } else {
+            Ellipse tl = new Ellipse(A.getX(), A.getY(), (int) (sx * r), (int) (sy * r));
+            tl.drawBresenhem1(g, Color.BLACK);
+            Ellipse tn = new Ellipse(A.getX(), A.getY(), (int) (sx * r * 3 / 5), (int) (sy * r * 3 / 5));
+            tn.drawBresenhem1(g, Color.BLACK);
+
+            Ellipse pl = new Ellipse(A5.getX(), A5.getY(), (int) (sx * r), (int) (sy * r));
+            pl.drawBresenhem1(g, Color.BLACK);
+            Ellipse pn = new Ellipse(A5.getX(), A5.getY(), (int) (sx * r * 3 / 5), (int) (sy * r * 3 / 5));
+            pn.drawBresenhem1(g, Color.BLACK);
+        }
+
+        if (sx == sy) {
+            DuongTron l;
+            //Tô màu hai hình tròn lớn
+            for (int i = 1; i < r * sx; i++) {
+                l = new DuongTron(A.getX(), A.getY(), i);
+                l.drawLien1(g, Color.DARK_GRAY);
+                l = new DuongTron(A5.getX(), A5.getY(), i);
+                l.drawLien1(g, Color.DARK_GRAY);
+            }
+            //Tô màu hai hình tròn nhỏ
+            for (int i = 1; i < r * sx * 3.0 / 5; i++) {
+                l = new DuongTron(A.getX(), A.getY(), i);
+                l.drawLien1(g, Color.WHITE);
+                l = new DuongTron(A5.getX(), A5.getY(), i);
+                l.drawLien1(g, Color.WHITE);
+            }
+        } else {
+            Ellipse e;
+            int m = (int) (r * sx);
+            int n = (int) (r * sy);
+            //Tô màu hai hình tròn lớn
+            while (m > 1 || n > 1) {
+                e = new Ellipse(A.getX(), A.getY(), m, n);
+                e.drawBresenhem1(g, Color.DARK_GRAY);
+                e = new Ellipse(A5.getX(), A5.getY(), m, n);
+                e.drawBresenhem1(g, Color.DARK_GRAY);
+                if (m > 1) {
+                    m--;
+                }
+                if (n > 1) {
+                    n--;
+                }
+            }
+            m = (int) (r * sx * 3 / 5);
+            n = (int) (r * sy * 3 / 5);
+            //Tô màu hai hình tròn nhỏ
+            while (m > 1 || n > 1) {
+                e = new Ellipse(A.getX(), A.getY(), m, n);
+                e.drawBresenhem1(g, Color.WHITE);
+                e = new Ellipse(A5.getX(), A5.getY(), m, n);
+                e.drawBresenhem1(g, Color.WHITE);
+                if (m > 1) {
+                    m--;
+                }
+                if (n > 1) {
+                    n--;
+                }
+            }
+        }
+        //Tô màu hai hình tròn lớn
+//        g.setColor(Color.DARK_GRAY);
+//        g.fillOval((int) (700 / 2 + (A.getX() - r * sx) * 5), (int) (500 / 2 - (A.getY() + r * sy) * 5), (int) (r * 2 * 5 * sx), (int) (r * 2 * 5 * sy));
+//        g.fillOval((int) (700 / 2 + (A5.getX() - r * sx) * 5), (int) (500 / 2 - (A5.getY() + r * sy) * 5), (int) (r * 2 * 5 * sx), (int) (r * 2 * 5 * sy));
+
+        //Tô màu hai hình tròn nhỏ
+//        g.setColor(Color.WHITE);
+//        g.fillOval((int) (700 / 2 + (A.getX() - sx * r * 3 / 5) * 5), (int) (500 / 2 - (A.getY() + sy * r * 3 / 5) * 5), (int) (sx * r * 3 / 5 * 2 * 5), (int) (sy * r * 3 / 5 * 2 * 5));
+//        g.fillOval((int) (700 / 2 + (A5.getX() - sx * r * 3 / 5) * 5), (int) (500 / 2 - (A5.getY() + sy * r * 3 / 5) * 5), (int) (sx * r * 3 / 5 * 2 * 5), (int) (sy * r * 3 / 5 * 2 * 5));
+        //Vẽ các đường khung xe
+        DoanThang A1A2 = new DoanThang(A1.getX(), A1.getY(), A2.getX(), A2.getY());
+        A1A2.draw1(g);
+
+        DoanThang A3A4 = new DoanThang(A3.getX(), A3.getY(), A4.getX(), A4.getY());
+        A3A4.draw1(g);
+
+        DoanThang A6A7 = new DoanThang(A6.getX(), A6.getY(), A7.getX(), A7.getY());
+        A6A7.draw1(g);
+
+        DoanThang A7A8 = new DoanThang(A7.getX(), A7.getY(), A8.getX(), A8.getY());
+        A7A8.draw1(g);
+
+        DoanThang A8A9 = new DoanThang(A8.getX(), A8.getY(), A9.getX(), A9.getY());
+        A8A9.draw1(g);
+
+        DoanThang A9A10 = new DoanThang(A9.getX(), A9.getY(), A10.getX(), A10.getY());
+        A9A10.draw1(g);
+
+        DoanThang A10A11 = new DoanThang(A10.getX(), A10.getY(), A11.getX(), A11.getY());
+        A10A11.draw1(g);
+
+        DoanThang A11A12 = new DoanThang(A11.getX(), A11.getY(), A12.getX(), A12.getY());
+        A11A12.draw1(g);
+
+        DoanThang A12A13 = new DoanThang(A12.getX(), A12.getY(), A13.getX(), A13.getY());
+        A12A13.draw1(g);
+
+        DoanThang A13A1 = new DoanThang(A13.getX(), A13.getY(), A1.getX(), A1.getY());
+        A13A1.draw1(g);
+
+        DoanThang A14A15 = new DoanThang(A14.getX(), A14.getY(), A15.getX(), A15.getY());
+        A14A15.draw1(g);
+
+        DoanThang A15A16 = new DoanThang(A15.getX(), A15.getY(), A16.getX(), A16.getY());
+        A15A16.draw1(g);
+
+        DoanThang A16A17 = new DoanThang(A16.getX(), A16.getY(), A17.getX(), A17.getY());
+        A16A17.draw1(g);
+
+        DoanThang A17A14 = new DoanThang(A17.getX(), A17.getY(), A14.getX(), A14.getY());
+        A17A14.draw1(g);
+
+        DoanThang A19A20 = new DoanThang(A19.getX(), A19.getY(), A20.getX(), A20.getY());
+        A19A20.draw1(g);
+
+        DoanThang A20A21 = new DoanThang(A20.getX(), A20.getY(), A21.getX(), A21.getY());
+        A20A21.draw1(g);
+
+        DoanThang A21A18 = new DoanThang(A21.getX(), A21.getY(), A18.getX(), A18.getY());
+        A21A18.draw1(g);
+
+        DoanThang A18A19 = new DoanThang(A18.getX(), A18.getY(), A19.getX(), A19.getY());
+        A18A19.draw1(g);
+
+        DoanThang BB1 = new DoanThang(B.getX(), B.getY(), B1.getX(), B1.getY());
+        BB1.draw1(g);
+
+        DoanThang B2B3 = new DoanThang(B2.getX(), B2.getY(), B3.getX(), B3.getY());
+        B2B3.draw1(g);
+
+        DoanThang B4B5 = new DoanThang(B4.getX(), B4.getY(), B5.getX(), B5.getY());
+        B4B5.draw1(g);
+
+        DoanThang B6B7 = new DoanThang(B6.getX(), B6.getY(), B7.getX(), B7.getY());
+        B6B7.draw1(g);
+
+        DoanThang B8B9 = new DoanThang(B8.getX(), B8.getY(), B9.getX(), B9.getY());
+        B8B9.draw1(g);
+
+        DoanThang B10B11 = new DoanThang(B10.getX(), B10.getY(), B11.getX(), B11.getY());
+        B10B11.draw1(g);
+
+        g.setColor(Color.BLACK);
+        g.fillOval((int) (700 / 2 + A.getX() * 5 - 7 * sx), (int) (500 / 2 - A.getY() * 5 - 7 * sy), (int) (15 * sx), (int) (15 * sy));
+        g.fillOval((int) (700 / 2 + A5.getX() * 5 - 7 * sx), (int) (500 / 2 - A5.getY() * 5 - 7 * sy), (int) (15 * sx), (int) (15 * sy));
     }
 
     public String inToaDo() {

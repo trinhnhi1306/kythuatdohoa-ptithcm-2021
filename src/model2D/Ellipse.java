@@ -252,8 +252,8 @@ public class Ellipse {
         }
     }
     
-    public void drawBresenhem1(Graphics2D g) {
-        g.setColor(Color.black);
+    public void drawBresenhem1(Graphics2D g, Color c) {
+        g.setColor(c);
         float p, a2, b2;
         int x, y;
         a2 = (float) pow(a, 2);

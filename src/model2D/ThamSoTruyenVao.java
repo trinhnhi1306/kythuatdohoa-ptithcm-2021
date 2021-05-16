@@ -9,6 +9,8 @@ public class ThamSoTruyenVao {
 
     public final static int backgroundWidth = 500;
     public final static int backgroundHeight = 500;
+    public final static int backgroundWidthChuyenDong = 700;
+    public final static int backgroundHeightChuyenDong = 700;
     public static JTextField x, y, z, r, dai, rong, cao;
     public static JButton nutVe, nutXoa;
     public static int xChongChong, yChongChong, bkChongChong;

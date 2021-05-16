@@ -271,38 +271,17 @@ public class ChongChong {
     }
 
     public void drawThuPhong(Graphics2D g, float sx, float sy) {
+        Diem2D tam = new Diem2D(x, y);
 
-        a1 = ThuPhong.ThuPhong(a1, sx, sy);
-        a1.setX((int) (a1.getX() - (sx - 1) * x));
-        a1.setY((int) (a1.getY() - (sy - 1) * y));
-        a2 = ThuPhong.ThuPhong(a2, sx, sy);
-        a2.setX((int) (a2.getX() - (sx - 1) * x));
-        a2.setY((int) (a2.getY() - (sy - 1) * y));
-        a3 = ThuPhong.ThuPhong(a3, sx, sy);
-        a3.setX((int) (a3.getX() - (sx - 1) * x));
-        a3.setY((int) (a3.getY() - (sy - 1) * y));
-        a4 = ThuPhong.ThuPhong(a4, sx, sy);
-        a4.setX((int) (a4.getX() - (sx - 1) * x));
-        a4.setY((int) (a4.getY() - (sy - 1) * y));
+        a1 = ThuPhong.ThuPhongDungTam(a1, tam, sx, sy);
+        a2 = ThuPhong.ThuPhongDungTam(a2, tam, sx, sy);
+        a3 = ThuPhong.ThuPhongDungTam(a3, tam, sx, sy);
+        a4 = ThuPhong.ThuPhongDungTam(a4, tam, sx, sy);
 
-        b1 = ThuPhong.ThuPhong(b1, sx, sy);
-        b1.setX((int) (b1.getX() - (sx - 1) * x));
-        b1.setY((int) (b1.getY() - (sy - 1) * y));
-        b2 = ThuPhong.ThuPhong(b2, sx, sy);
-        b2.setX((int) (b2.getX() - (sx - 1) * x));
-        b2.setY((int) (b2.getY() - (sy - 1) * y));
-        b3 = ThuPhong.ThuPhong(b3, sx, sy);
-        b3.setX((int) (b3.getX() - (sx - 1) * x));
-        b3.setY((int) (b3.getY() - (sy - 1) * y));
-        b4 = ThuPhong.ThuPhong(b4, sx, sy);
-        b4.setX((int) (b4.getX() - (sx - 1) * x));
-        b4.setY((int) (b4.getY() - (sy - 1) * y));
-
-        x = (int) (sx * x - (sx - 1) * x);
-        y = (int) (sy * y - (sy - 1) * y);
-
-        ThamSoTruyenVao.xChongChong = x;
-        ThamSoTruyenVao.yChongChong = y;
+        b1 = ThuPhong.ThuPhongDungTam(b1, tam, sx, sy);
+        b2 = ThuPhong.ThuPhongDungTam(b2, tam, sx, sy);
+        b3 = ThuPhong.ThuPhongDungTam(b3, tam, sx, sy);
+        b4 = ThuPhong.ThuPhongDungTam(b4, tam, sx, sy);
 
         BufferedImage Buferr = new BufferedImage(850, 850, BufferedImage.TYPE_INT_ARGB);
         Graphics BufGraphics = Buferr.getGraphics();
@@ -361,7 +340,7 @@ public class ChongChong {
             dt.drawLien1((Graphics2D) BufGraphics, Color.black);
         } else {
             Ellipse e = new Ellipse(x, y, (int) (sx * banKinh / 10), (int) (sy * banKinh / 10));
-            e.drawBresenhem1((Graphics2D) BufGraphics);
+            e.drawBresenhem1((Graphics2D) BufGraphics, Color.BLACK);
         }
 
         g.drawImage(Buferr, 0, 0, null);
