@@ -23,6 +23,7 @@ import model2D.TamGiacDeu;
 import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.HeadlessException;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -1373,21 +1374,33 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
     private void jButton_VeTamGiacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeTamGiacActionPerformed
         // TODO add your handling code here:
-        int xDinh = Integer.parseInt(jTextField_xDinh.getText());
-        int yDinh = Integer.parseInt(jTextField_yDinh.getText());
-        int canh = Integer.parseInt(jTextField_Canh.getText());
-        TamGiacDeu m = new TamGiacDeu(xDinh, yDinh, canh);
-        jPanel_KhungVe2D.add(m.draw());
-        jPanel_KhungVe2D.repaint();
+        try {
+            int xDinh = Integer.parseInt(jTextField_xDinh.getText());
+            int yDinh = Integer.parseInt(jTextField_yDinh.getText());
+            int canh = Integer.parseInt(jTextField_Canh.getText());
+            TamGiacDeu m = new TamGiacDeu(xDinh, yDinh, canh);
+            jPanel_KhungVe2D.add(m.draw());
+            jPanel_KhungVe2D.repaint();
+        }
+        catch (NumberFormatException e){
+            System.out.println("Nhập thông tin sai!");
+            JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
+        }
     }//GEN-LAST:event_jButton_VeTamGiacActionPerformed
 
     private void jButton_VeDiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeDiemActionPerformed
         // TODO add your handling code here:
-        Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
-        int x = Integer.parseInt(jTextField_x.getText());
-        int y = Integer.parseInt(jTextField_y.getText());
-        Diem2D m = new Diem2D(x, y);
-        m.draw(g);
+        try {
+            Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
+            int x = Integer.parseInt(jTextField_x.getText());
+            int y = Integer.parseInt(jTextField_y.getText());
+            Diem2D m = new Diem2D(x, y);
+            m.draw(g);
+        }
+        catch (NumberFormatException e){
+            System.out.println("Nhập thông tin sai!");
+            JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
+        }
     }//GEN-LAST:event_jButton_VeDiemActionPerformed
 
     private void jButton_VeMuiTenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeMuiTenActionPerformed
@@ -1412,63 +1425,81 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
     private void jButton_VeEllipseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeEllipseActionPerformed
         // TODO add your handling code here:
-        Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
-        int xO = Integer.parseInt(jTextField_Tamx.getText());
-        int yO = Integer.parseInt(jTextField_Tamy.getText());
-        int a = Integer.parseInt(jTextField_BanKinhNgang.getText());
-        int b = Integer.parseInt(jTextField_BanKinhDoc.getText());
-        Ellipse m = new Ellipse(xO, yO, a, b);
-        m.drawBresenhem(g);
+        try {
+            Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
+            int xO = Integer.parseInt(jTextField_Tamx.getText());
+            int yO = Integer.parseInt(jTextField_Tamy.getText());
+            int a = Integer.parseInt(jTextField_BanKinhNgang.getText());
+            int b = Integer.parseInt(jTextField_BanKinhDoc.getText());
+            Ellipse m = new Ellipse(xO, yO, a, b);
+            m.drawBresenhem(g);
+        }
+        catch (NumberFormatException e){
+            System.out.println("Nhập thông tin sai!");
+            JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
+        }
     }//GEN-LAST:event_jButton_VeEllipseActionPerformed
 
     private void jButton_VeHinhHopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeHinhHopActionPerformed
         // TODO add your handling code here:
-        Graphics2D g = (Graphics2D) jPanel_KhungVe3D.getGraphics();
-        HinhHop hh = new HinhHop();
-        hh.nhapToaDo3D();
-        ThamSoTruyenVao.nutVe.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ThamSoTruyenVao.nutVe.setBackground(Color.MAGENTA);
-                ThamSoTruyenVao.nutXoa.setBackground(Color.WHITE);
-                hh.xuLyDuLieu();
-                hh.draw(g);
-                jTextArea_ToaDo.setText(hh.layDuLieu());
-            }
-        });
-        ThamSoTruyenVao.nutXoa.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ThamSoTruyenVao.nutXoa.setBackground(Color.MAGENTA);
-                ThamSoTruyenVao.nutVe.setBackground(Color.WHITE);
-                hh.xoaDuLieu();
-            }
-        });
+        try {
+            Graphics2D g = (Graphics2D) jPanel_KhungVe3D.getGraphics();
+            HinhHop hh = new HinhHop();
+            hh.nhapToaDo3D();
+            ThamSoTruyenVao.nutVe.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    ThamSoTruyenVao.nutVe.setBackground(Color.MAGENTA);
+                    ThamSoTruyenVao.nutXoa.setBackground(Color.WHITE);
+                    hh.xuLyDuLieu();
+                    hh.draw(g);
+                    jTextArea_ToaDo.setText(hh.layDuLieu());
+                }
+            });
+            ThamSoTruyenVao.nutXoa.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    ThamSoTruyenVao.nutXoa.setBackground(Color.MAGENTA);
+                    ThamSoTruyenVao.nutVe.setBackground(Color.WHITE);
+                    hh.xoaDuLieu();
+                }
+            });
+        }
+        catch (Exception e){
+            System.out.println("Nhập thông tin sai!");
+            JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
+        }
     }//GEN-LAST:event_jButton_VeHinhHopActionPerformed
 
     private void jButton_VeHinhChopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeHinhChopActionPerformed
         // TODO add your handling code here:
-        Graphics2D g = (Graphics2D) jPanel_KhungVe3D.getGraphics();
-        HinhChop hc = new HinhChop();
-        hc.nhapToaDo3D();
-        ThamSoTruyenVao.nutVe.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ThamSoTruyenVao.nutVe.setBackground(Color.MAGENTA);
-                ThamSoTruyenVao.nutXoa.setBackground(Color.WHITE);
-                hc.xuLyDuLieu();
-                hc.draw(g);
-                jTextArea_ToaDo.setText(hc.layDuLieu());
-            }
-        });
-        ThamSoTruyenVao.nutXoa.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ThamSoTruyenVao.nutXoa.setBackground(Color.MAGENTA);
-                ThamSoTruyenVao.nutVe.setBackground(Color.WHITE);
-                hc.xoaDuLieu();
-            }
-        });
+        try {
+            Graphics2D g = (Graphics2D) jPanel_KhungVe3D.getGraphics();
+            HinhChop hc = new HinhChop();
+            hc.nhapToaDo3D();
+            ThamSoTruyenVao.nutVe.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    ThamSoTruyenVao.nutVe.setBackground(Color.MAGENTA);
+                    ThamSoTruyenVao.nutXoa.setBackground(Color.WHITE);
+                    hc.xuLyDuLieu();
+                    hc.draw(g);
+                    jTextArea_ToaDo.setText(hc.layDuLieu());
+                }
+            });
+            ThamSoTruyenVao.nutXoa.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    ThamSoTruyenVao.nutXoa.setBackground(Color.MAGENTA);
+                    ThamSoTruyenVao.nutVe.setBackground(Color.WHITE);
+                    hc.xoaDuLieu();
+                }
+            });
+        }
+        catch (Exception e){
+            System.out.println("Nhập thông tin sai!");
+            JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
+        }
     }//GEN-LAST:event_jButton_VeHinhChopActionPerformed
 
     private void jButton_Xoa3DActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Xoa3DActionPerformed
@@ -1479,98 +1510,134 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
     private void jButton_TinhTienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_TinhTienActionPerformed
         // TODO add your handling code here:
-        Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
-        int x = Integer.parseInt(jTextField_x.getText());
-        int y = Integer.parseInt(jTextField_y.getText());
-        Diem2D m = new Diem2D(x, y);
-        int dx, dy;
-        dx = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập khoảng tịnh tiến dx:"));
-        dy = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập khoảng tịnh tiến dy:"));
-        m = TinhTien.TinhTien(m, dx, dy);
-        m.draw(g);
+        try {
+            Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
+            int x = Integer.parseInt(jTextField_x.getText());
+            int y = Integer.parseInt(jTextField_y.getText());
+            Diem2D m = new Diem2D(x, y);
+            int dx, dy;
+            dx = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập khoảng tịnh tiến dx:"));
+            dy = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập khoảng tịnh tiến dy:"));
+            m = TinhTien.TinhTien(m, dx, dy);
+            m.draw(g);
+        }
+        catch (HeadlessException | NumberFormatException e){
+            System.out.println("Nhập thông tin sai!");
+            JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
+        }
     }//GEN-LAST:event_jButton_TinhTienActionPerformed
 
     private void jButton_QuayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_QuayActionPerformed
         // TODO add your handling code here:
-        Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
-        int x = Integer.parseInt(jTextField_x.getText());
-        int y = Integer.parseInt(jTextField_y.getText());
-        Diem2D m = new Diem2D(x, y);
-        Diem2D tam = new Diem2D();
-        float gocQuay;
-        tam.setX(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập hoành độ tâm:")));
-        tam.setY(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tung độ tâm:")));
-        gocQuay = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập góc quay (độ):"));
-        gocQuay = gocQuay * (float) Math.PI / 180;
-        m = Quay.QuayTamBatKy(tam, m, gocQuay);
-        m.draw(g);
+        try {
+            Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
+            int x = Integer.parseInt(jTextField_x.getText());
+            int y = Integer.parseInt(jTextField_y.getText());
+            Diem2D m = new Diem2D(x, y);
+            Diem2D tam = new Diem2D();
+            float gocQuay;
+            tam.setX(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập hoành độ tâm:")));
+            tam.setY(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tung độ tâm:")));
+            gocQuay = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập góc quay (độ):"));
+            gocQuay = gocQuay * (float) Math.PI / 180;
+            m = Quay.QuayTamBatKy(tam, m, gocQuay);
+            m.draw(g);
+        }
+        catch (HeadlessException | NumberFormatException e){
+            System.out.println("Nhập thông tin sai!");
+            JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
+        }
     }//GEN-LAST:event_jButton_QuayActionPerformed
 
     private void jButton_DoiXungQuaDuongThangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_DoiXungQuaDuongThangActionPerformed
         // TODO add your handling code here:
-        Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
-        int x = Integer.parseInt(jTextField_x.getText());
-        int y = Integer.parseInt(jTextField_y.getText());
-        Diem2D m = new Diem2D(x, y);
-        Diem2D a = new Diem2D();
-        Diem2D b = new Diem2D();
-        a.setX(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm đầu")));
-        a.setY(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y điểm đầu")));
-        b.setX(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm cuối")));
-        b.setY(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y điểm cuối")));
-        m = DoiXungQuaDoanThang.layDoiXung(m, a, b);
-        System.out.println(m.getX() + " " + m.getY());
-        m.draw(g);
-        DoanThang ab = new DoanThang(a.getX(), a.getY(), b.getX(), b.getY());
-        ab.draw(g);
+        try {
+            Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
+            int x = Integer.parseInt(jTextField_x.getText());
+            int y = Integer.parseInt(jTextField_y.getText());
+            Diem2D m = new Diem2D(x, y);
+            Diem2D a = new Diem2D();
+            Diem2D b = new Diem2D();
+            a.setX(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm đầu")));
+            a.setY(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y điểm đầu")));
+            b.setX(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm cuối")));
+            b.setY(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y điểm cuối")));
+            m = DoiXungQuaDoanThang.layDoiXung(m, a, b);
+            System.out.println(m.getX() + " " + m.getY());
+            m.draw(g);
+            DoanThang ab = new DoanThang(a.getX(), a.getY(), b.getX(), b.getY());
+            ab.draw(g);
+        }
+        catch (HeadlessException | NumberFormatException e){
+            System.out.println("Nhập thông tin sai!");
+            JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
+        }
     }//GEN-LAST:event_jButton_DoiXungQuaDuongThangActionPerformed
 
     private void jButton_VeHinhCauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeHinhCauActionPerformed
         // TODO add your handling code here:
-        Graphics2D g = (Graphics2D) jPanel_KhungVe3D.getGraphics();
-        HinhCau hc = new HinhCau();
-        hc.nhapToaDo3D();
-        ThamSoTruyenVao.nutVe.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ThamSoTruyenVao.nutVe.setBackground(Color.MAGENTA);
-                ThamSoTruyenVao.nutXoa.setBackground(Color.WHITE);
-                hc.xuLyDuLieu();
-                hc.draw(g);
-                jTextArea_ToaDo.setText(hc.layDuLieu());
-            }
-        });
-        ThamSoTruyenVao.nutXoa.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ThamSoTruyenVao.nutXoa.setBackground(Color.MAGENTA);
-                ThamSoTruyenVao.nutVe.setBackground(Color.WHITE);
-                hc.xoaDuLieu();
-            }
-        });
+        try {
+            Graphics2D g = (Graphics2D) jPanel_KhungVe3D.getGraphics();
+            HinhCau hc = new HinhCau();
+            hc.nhapToaDo3D();
+            ThamSoTruyenVao.nutVe.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    ThamSoTruyenVao.nutVe.setBackground(Color.MAGENTA);
+                    ThamSoTruyenVao.nutXoa.setBackground(Color.WHITE);
+                    hc.xuLyDuLieu();
+                    hc.draw(g);
+                    jTextArea_ToaDo.setText(hc.layDuLieu());
+                }
+            });
+            ThamSoTruyenVao.nutXoa.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    ThamSoTruyenVao.nutXoa.setBackground(Color.MAGENTA);
+                    ThamSoTruyenVao.nutVe.setBackground(Color.WHITE);
+                    hc.xoaDuLieu();
+                }
+            });
+        }
+        catch (Exception e){
+            System.out.println("Nhập thông tin sai!");
+            JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
+        }
     }//GEN-LAST:event_jButton_VeHinhCauActionPerformed
 
     private void veChongChong() {
-        ThamSoTruyenVao.xChongChong = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ x chong chóng"));
-        ThamSoTruyenVao.yChongChong = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ y chong chóng"));
-        ThamSoTruyenVao.bkChongChong = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập bán kính chong chóng"));
-        Graphics2D g = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
-        cc = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
-        cc.draw(g);
-        jTextArea_ToaDoVat.setText("          TỌA ĐỘ CHONG CHONG" + cc.inToaDo());
+        try {
+            ThamSoTruyenVao.xChongChong = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ x chong chóng"));
+            ThamSoTruyenVao.yChongChong = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ y chong chóng"));
+            ThamSoTruyenVao.bkChongChong = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập bán kính chong chóng"));
+            Graphics2D g = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
+            cc = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
+            cc.draw(g);
+            jTextArea_ToaDoVat.setText("          TỌA ĐỘ CHONG CHONG" + cc.inToaDo());
+        }
+        catch (HeadlessException | NumberFormatException e){
+            System.out.println("Nhập thông tin sai!");
+            JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
+        }
     }
 
     private void veOTo() {
-        int x = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ x bánh xe trái"));
-        int y = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ y bánh xe trái"));
-        int bk = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập bán kính bánh xe"));
-        Graphics2D g = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
-        ThamSoTruyenVao.tamBanh.setX(x);
-        ThamSoTruyenVao.tamBanh.setY(y);
-        ThamSoTruyenVao.bkBanh = bk;
-        o = new OTo(new Diem2D(x, y), bk);
-        o.draw(g);
-        jTextArea_ToaDoVat.setText(o.inToaDo());
+        try {
+            int x = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ x bánh xe trái"));
+            int y = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập tọa độ y bánh xe trái"));
+            int bk = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập bán kính bánh xe"));
+            Graphics2D g = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
+            ThamSoTruyenVao.tamBanh.setX(x);
+            ThamSoTruyenVao.tamBanh.setY(y);
+            ThamSoTruyenVao.bkBanh = bk;
+            o = new OTo(new Diem2D(x, y), bk);
+            o.draw(g);
+            jTextArea_ToaDoVat.setText(o.inToaDo());
+        }
+        catch (HeadlessException | NumberFormatException e){
+            System.out.println("Nhập thông tin sai!");
+            JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
+        }
     }
 
     private void jButton_2DVeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_2DVeActionPerformed
@@ -1583,27 +1650,39 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_2DVeActionPerformed
 
     private void ttChongChong() {
-        int dx = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời x"));
-        int dy = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời y"));
-        Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
-        BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
-        Graphics g = buffer.getGraphics();
-        ThamSoTruyenVao.veToaDo((Graphics2D) g);
-        cc.drawTinhTien((Graphics2D) g, dx, dy);
-        gr.drawImage(buffer, 0, 0, null);
-        jTextArea_ToaDoVat.setText("          TỌA ĐỘ CHONG CHÓNG" + cc.inToaDo());
+        try {
+            int dx = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời x"));
+            int dy = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời y"));
+            Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
+            BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
+            Graphics g = buffer.getGraphics();
+            ThamSoTruyenVao.veToaDo((Graphics2D) g);
+            cc.drawTinhTien((Graphics2D) g, dx, dy);
+            gr.drawImage(buffer, 0, 0, null);
+            jTextArea_ToaDoVat.setText("          TỌA ĐỘ CHONG CHÓNG" + cc.inToaDo());
+        }
+        catch (HeadlessException | NumberFormatException e){
+            System.out.println("Nhập thông tin sai!");
+            JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
+        }
     }
 
     private void ttOTo() {
-        int dx = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời x"));
-        int dy = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời y"));
-        Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
-        BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
-        Graphics g = buffer.getGraphics();
-        ThamSoTruyenVao.veToaDo((Graphics2D) g);
-        o.drawTinhTien((Graphics2D) g, dx, dy);
-        gr.drawImage(buffer, 0, 0, null);
-        jTextArea_ToaDoVat.setText(o.inToaDo());
+        try {
+            int dx = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời x"));
+            int dy = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập độ dời y"));
+            Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
+            BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
+            Graphics g = buffer.getGraphics();
+            ThamSoTruyenVao.veToaDo((Graphics2D) g);
+            o.drawTinhTien((Graphics2D) g, dx, dy);
+            gr.drawImage(buffer, 0, 0, null);
+            jTextArea_ToaDoVat.setText(o.inToaDo());
+        }
+        catch (HeadlessException | NumberFormatException e){
+            System.out.println("Nhập thông tin sai!");
+            JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
+        }
     }
 
     private void jButton_2DTinhTienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_2DTinhTienActionPerformed
@@ -1616,25 +1695,37 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_2DTinhTienActionPerformed
 
     private void quayChongChong() {
-        float goc = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập góc quay"));
-        Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
-        BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
-        Graphics g = buffer.getGraphics();
-        ThamSoTruyenVao.veToaDo((Graphics2D) g);
-        cc.drawQuay((Graphics2D) g, goc);
-        gr.drawImage(buffer, 0, 0, null);
-        jTextArea_ToaDoVat.setText("          TỌA ĐỘ CHONG CHONG" + cc.inToaDo());
+        try {
+            float goc = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập góc quay"));
+            Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
+            BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
+            Graphics g = buffer.getGraphics();
+            ThamSoTruyenVao.veToaDo((Graphics2D) g);
+            cc.drawQuay((Graphics2D) g, goc);
+            gr.drawImage(buffer, 0, 0, null);
+            jTextArea_ToaDoVat.setText("          TỌA ĐỘ CHONG CHONG" + cc.inToaDo());
+        }
+        catch (HeadlessException | NumberFormatException e){
+            System.out.println("Nhập thông tin sai!");
+            JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
+        }
     }
 
     private void quayOTo() {
-        float goc = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập góc quay"));
-        Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
-        BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
-        Graphics g = buffer.getGraphics();
-        ThamSoTruyenVao.veToaDo((Graphics2D) g);
-        o.drawQuay((Graphics2D) g, goc);
-        gr.drawImage(buffer, 0, 0, null);
-        jTextArea_ToaDoVat.setText("\tTỌA ĐỘ Ô TÔ" + o.inToaDo());
+        try {
+            float goc = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập góc quay"));
+            Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
+            BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
+            Graphics g = buffer.getGraphics();
+            ThamSoTruyenVao.veToaDo((Graphics2D) g);
+            o.drawQuay((Graphics2D) g, goc);
+            gr.drawImage(buffer, 0, 0, null);
+            jTextArea_ToaDoVat.setText("\tTỌA ĐỘ Ô TÔ" + o.inToaDo());
+        }
+        catch (HeadlessException | NumberFormatException e){
+            System.out.println("Nhập thông tin sai!");
+            JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
+        }
     }
 
     private void jButton_2DQuayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_2DQuayActionPerformed
@@ -1672,50 +1763,68 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
     private void jButton_DoiXungQuaDiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_DoiXungQuaDiemActionPerformed
         // TODO add your handling code here:
-        Graphics2D g = (Graphics2D) jPanel_KhungVe3D.getGraphics();
-        Diem3D kq = new Diem3D();
-        Diem3D tam = new Diem3D();
-        int x = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x tâm đối xứng:"));
-        tam.setX(x);
-        int y = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y tâm đối xứng:"));
-        tam.setY(y);
-        int z = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập z tâm đối xứng:"));
-        tam.setZ(z);
-        kq = DoiXungQuaDiem.LayDoiXung(A, tam);
-        kq.draw(g);
-        String str = "\n\t\tTỌA ĐỘ ĐIỂM\n\n";
-        str += "\tA (" + A.getX() + ", " + A.getY() + ", " + A.getZ() + ")";
-        str += "\n\t\tTÂM\n\n";
-        str += "\tS (" + x + ", " + y + ", " + z + ")";
-        str += "\n\t\tĐIỂM SAU ĐỐI XỨNG\n\n";
-        str += "\tA' (" + kq.getX() + ", " + kq.getY() + ", " + kq.getZ() + ")";
-        jTextArea_ToaDo.setText(str);
+        try {
+            Graphics2D g = (Graphics2D) jPanel_KhungVe3D.getGraphics();
+            Diem3D kq = new Diem3D();
+            Diem3D tam = new Diem3D();
+            int x = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x tâm đối xứng:"));
+            tam.setX(x);
+            int y = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y tâm đối xứng:"));
+            tam.setY(y);
+            int z = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập z tâm đối xứng:"));
+            tam.setZ(z);
+            kq = DoiXungQuaDiem.LayDoiXung(A, tam);
+            kq.draw(g);
+            String str = "\n\t\tTỌA ĐỘ ĐIỂM\n\n";
+            str += "\tA (" + A.getX() + ", " + A.getY() + ", " + A.getZ() + ")";
+            str += "\n\t\tTÂM\n\n";
+            str += "\tS (" + x + ", " + y + ", " + z + ")";
+            str += "\n\t\tĐIỂM SAU ĐỐI XỨNG\n\n";
+            str += "\tA' (" + kq.getX() + ", " + kq.getY() + ", " + kq.getZ() + ")";
+            jTextArea_ToaDo.setText(str);
+        }
+        catch (HeadlessException | NumberFormatException e){
+            System.out.println("Nhập thông tin sai!");
+            JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
+        }
     }//GEN-LAST:event_jButton_DoiXungQuaDiemActionPerformed
 
     private void tpChongChong() {
-        float sx = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập tỉ lệ co giãn theo trục x"));
-        float sy = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập tỉ lệ co giãn theo trục y"));
-        Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
-        BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
-        Graphics g = buffer.getGraphics();
-        ThamSoTruyenVao.veToaDo((Graphics2D) g);
-        ChongChong c = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
-        c.drawThuPhong((Graphics2D) g, sx, sy);
-        gr.drawImage(buffer, 0, 0, null);
-        jTextArea_ToaDoVat.setText("          TỌA ĐỘ CHONG CHONG" + c.inToaDo());
+        try {
+            float sx = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập tỉ lệ co giãn theo trục x"));
+            float sy = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập tỉ lệ co giãn theo trục y"));
+            Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
+            BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
+            Graphics g = buffer.getGraphics();
+            ThamSoTruyenVao.veToaDo((Graphics2D) g);
+            ChongChong c = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
+            c.drawThuPhong((Graphics2D) g, sx, sy);
+            gr.drawImage(buffer, 0, 0, null);
+            jTextArea_ToaDoVat.setText("          TỌA ĐỘ CHONG CHONG" + c.inToaDo());
+        }
+        catch (HeadlessException | NumberFormatException e){
+            System.out.println("Nhập thông tin sai!");
+            JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
+        }
     }
 
     private void tpOTo() {
-        float sx = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập tỉ lệ co giãn theo trục x"));
-        float sy = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập tỉ lệ co giãn theo trục y"));
-        Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
-        BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
-        Graphics g = buffer.getGraphics();
-        ThamSoTruyenVao.veToaDo((Graphics2D) g);
-        OTo oo = new OTo(ThamSoTruyenVao.tamBanh, ThamSoTruyenVao.bkBanh);
-        oo.drawThuPhong((Graphics2D) g, sx, sy);
-        gr.drawImage(buffer, 0, 0, null);
-        jTextArea_ToaDoVat.setText("\tTỌA ĐỘ Ô TÔ" + oo.inToaDo());
+        try {
+            float sx = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập tỉ lệ co giãn theo trục x"));
+            float sy = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập tỉ lệ co giãn theo trục y"));
+            Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
+            BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
+            Graphics g = buffer.getGraphics();
+            ThamSoTruyenVao.veToaDo((Graphics2D) g);
+            OTo oo = new OTo(ThamSoTruyenVao.tamBanh, ThamSoTruyenVao.bkBanh);
+            oo.drawThuPhong((Graphics2D) g, sx, sy);
+            gr.drawImage(buffer, 0, 0, null);
+            jTextArea_ToaDoVat.setText("\tTỌA ĐỘ Ô TÔ" + oo.inToaDo());
+        }
+        catch (HeadlessException | NumberFormatException e){
+            System.out.println("Nhập thông tin sai!");
+            JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
+        }
     }
 
     private void jButton_2DThuPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_2DThuPhongActionPerformed
@@ -1750,33 +1859,45 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     }
 
     private void dxChongChong() {
-        int x1 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm đầu"));
-        int y1 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y diểm đầu"));
-        int x2 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm cuối"));
-        int y2 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y điểm cuối"));
-        Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
-        BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
-        Graphics g = buffer.getGraphics();
-        ThamSoTruyenVao.veToaDo((Graphics2D) g);
-        cc.drawDoiXung((Graphics2D) g, new Diem2D(x1, y1), new Diem2D(x2, y2));
-        gr.drawImage(buffer, 0, 0, null);
-        jTextArea_ToaDoVat.setText("          TỌA ĐỘ CHONG CHONG" + cc.inToaDo());
+        try {
+            int x1 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm đầu"));
+            int y1 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y diểm đầu"));
+            int x2 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm cuối"));
+            int y2 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y điểm cuối"));
+            Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
+            BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
+            Graphics g = buffer.getGraphics();
+            ThamSoTruyenVao.veToaDo((Graphics2D) g);
+            cc.drawDoiXung((Graphics2D) g, new Diem2D(x1, y1), new Diem2D(x2, y2));
+            gr.drawImage(buffer, 0, 0, null);
+            jTextArea_ToaDoVat.setText("          TỌA ĐỘ CHONG CHONG" + cc.inToaDo());
+        }
+        catch (HeadlessException | NumberFormatException e){
+            System.out.println("Nhập thông tin sai!");
+            JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
+        }
     }
 
     private void dxOTo() {
-        int x1 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm đầu"));
-        int y1 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y diểm đầu"));
-        int x2 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm cuối"));
-        int y2 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y điểm cuối"));
-        Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
-        BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
-        Graphics g = buffer.getGraphics();
-        ThamSoTruyenVao.veToaDo((Graphics2D) g);
-        DoanThang AB = new DoanThang(x1 * 5, y1 * 5, x2 * 5, y2 * 5);
-        AB.draw1((Graphics2D) g);
-        o.drawDoiXung((Graphics2D) g, new Diem2D(x1, y1), new Diem2D(x2, y2));
-        gr.drawImage(buffer, 0, 0, null);
-        jTextArea_ToaDoVat.setText("\tTỌA ĐỘ Ô TÔ" + o.inToaDo());
+        try {
+            int x1 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm đầu"));
+            int y1 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y diểm đầu"));
+            int x2 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập x điểm cuối"));
+            int y2 = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y điểm cuối"));
+            Graphics2D gr = (Graphics2D) jPanel_KhungVe2DChuyenDong.getGraphics();
+            BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
+            Graphics g = buffer.getGraphics();
+            ThamSoTruyenVao.veToaDo((Graphics2D) g);
+            DoanThang AB = new DoanThang(x1 * 5, y1 * 5, x2 * 5, y2 * 5);
+            AB.draw1((Graphics2D) g);
+            o.drawDoiXung((Graphics2D) g, new Diem2D(x1, y1), new Diem2D(x2, y2));
+            gr.drawImage(buffer, 0, 0, null);
+            jTextArea_ToaDoVat.setText("\tTỌA ĐỘ Ô TÔ" + o.inToaDo());
+        }
+        catch (HeadlessException | NumberFormatException e){
+            System.out.println("Nhập thông tin sai!");
+            JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
+        }
     }
 
     private void jButton_2DDoiXungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_2DDoiXungActionPerformed
@@ -1905,6 +2026,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new GiaoDienChinh().setVisible(true);
             }
