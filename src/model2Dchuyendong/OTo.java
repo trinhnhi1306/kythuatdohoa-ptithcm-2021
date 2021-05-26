@@ -10,9 +10,7 @@ import biendoi2D.Quay;
 import biendoi2D.ThuPhong;
 import biendoi2D.TinhTien;
 import java.awt.Color;
-import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
 import model2D.Diem2D;
 import model2D.DoanThang;
 import model2D.DuongTron;
@@ -687,14 +685,14 @@ public class OTo {
             banhPhaiN.drawLien1(g, Color.BLACK);
         } else {
             Ellipse tl = new Ellipse(A.getX(), A.getY(), (int) (sx * r), (int) (sy * r));
-            tl.drawBresenhem1(g, Color.BLACK);
+            tl.drawLien1(g, Color.BLACK);
             Ellipse tn = new Ellipse(A.getX(), A.getY(), (int) (sx * r * 3 / 5), (int) (sy * r * 3 / 5));
-            tn.drawBresenhem1(g, Color.BLACK);
+            tn.drawLien1(g, Color.BLACK);
 
             Ellipse pl = new Ellipse(A5.getX(), A5.getY(), (int) (sx * r), (int) (sy * r));
-            pl.drawBresenhem1(g, Color.BLACK);
+            pl.drawLien1(g, Color.BLACK);
             Ellipse pn = new Ellipse(A5.getX(), A5.getY(), (int) (sx * r * 3 / 5), (int) (sy * r * 3 / 5));
-            pn.drawBresenhem1(g, Color.BLACK);
+            pn.drawLien1(g, Color.BLACK);
         }
 
         if (sx == sy) {
@@ -720,9 +718,9 @@ public class OTo {
             //Tô màu hai hình tròn lớn
             while (m > 1 || n > 1) {
                 e = new Ellipse(A.getX(), A.getY(), m, n);
-                e.drawBresenhem1(g, Color.DARK_GRAY);
+                e.drawLien1(g, Color.DARK_GRAY);
                 e = new Ellipse(A5.getX(), A5.getY(), m, n);
-                e.drawBresenhem1(g, Color.DARK_GRAY);
+                e.drawLien1(g, Color.DARK_GRAY);
                 if (m > 1) {
                     m--;
                 }

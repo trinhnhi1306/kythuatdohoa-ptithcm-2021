@@ -49,7 +49,7 @@ public class DuongTron {
     public void draw(Graphics2D g) {
 
         g.setColor(Color.RED);  //dat mau hinh ve la red
-        //khai bao cac bien cua thuat toan Presenhem
+        //khai bao cac bien cua thuat toan Bresenham
         int dem = 0;
         int x, y, p;
         p = 3 - 2 * r;
@@ -89,13 +89,36 @@ public class DuongTron {
             }
         }
     }
-    
+
     public void drawLien(Graphics2D g) {
 
+//        g.setColor(Color.RED);  //dat mau hinh ve la red
+//        //khai bao cac bien cua thuat toan Bresenham
+//        int x, y, p;
+//        p = 3 - 2 * r;
+//        x = 0;
+//        y = r;
+//        while (x <= y) { //ve 1/8 duong tron
+//            g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+//            g.fillRect(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+//            g.fillRect(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+//            g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+//            g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+//            g.fillRect(-y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+//            g.fillRect(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+//            g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+//            if (p < 0) {
+//                p += 4 * x + 6;
+//            } else {
+//                p += 4 * (x - y) + 10;
+//                y -= 5;
+//            }
+//            x += 5;
+//        }
         g.setColor(Color.RED);  //dat mau hinh ve la red
-        //khai bao cac bien cua thuat toan Presenhem
-        int x, y, p;
-        p = 1 - r;
+        //khai bao cac bien cua thuat toan MidPoint
+        int x, y;
+        float p = 125.0f / 4 - 5 * r;
         x = 0;
         y = r;
         while (x <= y) { //ve 1/8 duong tron
@@ -108,35 +131,60 @@ public class DuongTron {
             g.fillRect(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
             g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
             if (p < 0) {
-                p += 2 * x + 3;
+                p += 10 * x + 75;
             } else {
-                p += 2 * (x - y) + 5;
+                p += 10 * (x - y) + 125;
                 y -= 5;
             }
             x += 5;
         }
     }
+
     public void drawLien1(Graphics2D g, Color c) {
 
+//        g.setColor(c);  //dat mau hinh ve la red
+//        //khai bao cac bien cua thuat toan Bresenham
+//        int x, y, p;
+//        p = 3 - 2 * r;
+//        x = 0;
+//        y = r;
+//        while (x <= y) { //ve 1/8 duong tron
+//            g.fillRect(x + 700 / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+//            g.fillRect(y + 700 / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+//            g.fillRect(-y + 700 / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+//            g.fillRect(-x + 700 / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+//            g.fillRect(-x + 700 / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+//            g.fillRect(-y + 700 / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+//            g.fillRect(y + 700 / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+//            g.fillRect(x + 700 / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+//            if (p < 0) {
+//                p += 4 * x + 6;
+//            } else {
+//                p += 4 * (x - y) + 10;
+//                y -= 5;
+//            }
+//            x += 5;
+//        }
+        
         g.setColor(c);  //dat mau hinh ve la red
-        //khai bao cac bien cua thuat toan Presenhem
-        int x, y, p;
-        p = 3 - 2 * r;
+        //khai bao cac bien cua thuat toan MidPoint
+        int x, y;
+        float p = 125.0f / 4 - 5 * r;
         x = 0;
         y = r;
         while (x <= y) { //ve 1/8 duong tron
-            g.fillRect(x + 700 / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-            g.fillRect(y + 700 / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-            g.fillRect(-y + 700 / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-            g.fillRect(-x + 700 / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-            g.fillRect(-x + 700 / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-            g.fillRect(-y + 700 / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-            g.fillRect(y + 700 / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-            g.fillRect(x + 700 / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillRect(x + ThamSoTruyenVao.backgroundWidthChuyenDong / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeightChuyenDong / 2 - yO - 2, 5, 5);
+            g.fillRect(y + ThamSoTruyenVao.backgroundWidthChuyenDong / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeightChuyenDong / 2 - yO - 2, 5, 5);
+            g.fillRect(-y + ThamSoTruyenVao.backgroundWidthChuyenDong / 2 + xO - 2, x + ThamSoTruyenVao.backgroundHeightChuyenDong / 2 - yO - 2, 5, 5);
+            g.fillRect(-x + ThamSoTruyenVao.backgroundWidthChuyenDong / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeightChuyenDong / 2 - yO - 2, 5, 5);
+            g.fillRect(-x + ThamSoTruyenVao.backgroundWidthChuyenDong / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeightChuyenDong / 2 - yO - 2, 5, 5);
+            g.fillRect(-y + ThamSoTruyenVao.backgroundWidthChuyenDong / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeightChuyenDong / 2 - yO - 2, 5, 5);
+            g.fillRect(y + ThamSoTruyenVao.backgroundWidthChuyenDong / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeightChuyenDong / 2 - yO - 2, 5, 5);
+            g.fillRect(x + ThamSoTruyenVao.backgroundWidthChuyenDong / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeightChuyenDong / 2 - yO - 2, 5, 5);
             if (p < 0) {
-                p += 4 * x + 6;
+                p += 10 * x + 75;
             } else {
-                p += 4 * (x - y) + 10;
+                p += 10 * (x - y) + 125;
                 y -= 5;
             }
             x += 5;

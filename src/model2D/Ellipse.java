@@ -76,7 +76,6 @@ public class Ellipse {
         //Ve vung I
         while (dx < dy) {
             // Ve diem dua tren doi xung
-            
             // Kiem tra va cap nhat cac gia tri
             if (p0 < 0) {
                 x++;
@@ -89,7 +88,7 @@ public class Ellipse {
                 dy = dy - (2 * a * a);
                 p0 = p0 + dx - dy + (b * b);
             }
-            if ( x % 5 == 0) {
+            if (x % 5 == 0) {
                 int tempY = ThamSoTruyenVao.tinhXY(y);
                 if (dem < 3) {
                     g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -tempY + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
@@ -110,7 +109,6 @@ public class Ellipse {
         q0 = Math.round(((b * b) * ((x + 0.5f) * (x + 0.5f))) + ((a * a) * ((y - 1) * (y - 1))) - (a * a * b * b));
         while (y > 0) {
 
-            
             // Kiem tra va cap nhat cac gia tri
             if (q0 > 0) {
                 y--;
@@ -124,7 +122,7 @@ public class Ellipse {
                 q0 = q0 + dx - dy + (a * a);
             }
             // Ve 4 diem
-            if ( y % 5 == 0) {
+            if (y % 5 == 0) {
                 int tempX = ThamSoTruyenVao.tinhXY(x);
                 if (dem < 3) {
                     g.fillRect(tempX + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
@@ -156,45 +154,121 @@ public class Ellipse {
         p0 = (int) ((b * b) - (a * a * b) + (0.25 * a * a));
         dx = 2 * b * b * x;
         dy = 2 * a * a * y;
-
+        g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+        g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+        g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+        g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
         //Ve vung I
         while (dx < dy) {
             // Ve diem dua tren doi xung
-            g.fillRect(x + 700 / 2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-            g.fillRect(-x + 700 / 2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-
             // Kiem tra va cap nhat cac gia tri
             if (p0 < 0) {
-                x += 1;
+                x++;
                 dx = dx + (2 * b * b);
                 p0 = p0 + dx + (b * b);
             } else {
-                x += 1;
-                y -= 1;
+                x++;
+                y--;
                 dx = dx + (2 * b * b);
                 dy = dy - (2 * a * a);
                 p0 = p0 + dx - dy + (b * b);
             }
+            if (x % 5 == 0) {
+                int tempY = ThamSoTruyenVao.tinhXY(y);
+                g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -tempY + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -tempY + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, tempY + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, tempY + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            }
         }
         // Ve vung II
-        q0 = (int) (((b * b) * ((x + 0.5) * (x + 0.5))) + ((a * a) * ((y - 1) * (y - 1))) - (a * a * b * b));
-        while (y >= 0) {
-
-            // Ve 4 diem
-            g.fillRect(x + 700 / 2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
-            g.fillRect(-x + 700 / 2 + xO - 1, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 1, 3, 3);
+        q0 = Math.round(((b * b) * ((x + 0.5f) * (x + 0.5f))) + ((a * a) * ((y - 1) * (y - 1))) - (a * a * b * b));
+        while (y > 0) {
 
             // Kiem tra va cap nhat cac gia tri
             if (q0 > 0) {
-                y -= 1;
+                y--;
                 dy = dy - (2 * a * a);
                 q0 = q0 + (a * a) - dy;
             } else {
-                y -= 1;
-                x += 1;
+                y--;
+                x++;
                 dx = dx + (2 * b * b);
                 dy = dy - (2 * a * a);
                 q0 = q0 + dx - dy + (a * a);
+            }
+            // Ve 4 diem
+            if (y % 5 == 0) {
+                int tempX = ThamSoTruyenVao.tinhXY(x);
+                g.fillRect(tempX + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(-tempX + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(tempX + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(-tempX + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            }
+        }
+    }
+    
+    public void drawLien1(Graphics2D g, Color c) {
+        g.setColor(c);
+        //khai bao cac bien cua thuat toan Midpoint
+        int dx, dy, p0, q0, x, y;
+        x = 0;
+        y = b;
+
+        //Khai bao cac bien vung I
+        p0 = (int) ((b * b) - (a * a * b) + (0.25 * a * a));
+        dx = 2 * b * b * x;
+        dy = 2 * a * a * y;
+        g.fillRect(x + ThamSoTruyenVao.backgroundWidthChuyenDong / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeightChuyenDong / 2 - yO - 2, 5, 5);
+        g.fillRect(-x + ThamSoTruyenVao.backgroundWidthChuyenDong / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeightChuyenDong / 2 - yO - 2, 5, 5);
+        g.fillRect(x + ThamSoTruyenVao.backgroundWidthChuyenDong / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeightChuyenDong / 2 - yO - 2, 5, 5);
+        g.fillRect(-x + ThamSoTruyenVao.backgroundWidthChuyenDong / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeightChuyenDong / 2 - yO - 2, 5, 5);
+        //Ve vung I
+        while (dx < dy) {
+            // Ve diem dua tren doi xung
+            // Kiem tra va cap nhat cac gia tri
+            if (p0 < 0) {
+                x++;
+                dx = dx + (2 * b * b);
+                p0 = p0 + dx + (b * b);
+            } else {
+                x++;
+                y--;
+                dx = dx + (2 * b * b);
+                dy = dy - (2 * a * a);
+                p0 = p0 + dx - dy + (b * b);
+            }
+            if (x % 5 == 0) {
+                int tempY = ThamSoTruyenVao.tinhXY(y);
+                g.fillRect(x + ThamSoTruyenVao.backgroundWidthChuyenDong / 2 + xO - 2, -tempY + ThamSoTruyenVao.backgroundHeightChuyenDong / 2 - yO - 2, 5, 5);
+                g.fillRect(-x + ThamSoTruyenVao.backgroundWidthChuyenDong / 2 + xO - 2, -tempY + ThamSoTruyenVao.backgroundHeightChuyenDong / 2 - yO - 2, 5, 5);
+                g.fillRect(x + ThamSoTruyenVao.backgroundWidthChuyenDong / 2 + xO - 2, tempY + ThamSoTruyenVao.backgroundHeightChuyenDong / 2 - yO - 2, 5, 5);
+                g.fillRect(-x + ThamSoTruyenVao.backgroundWidthChuyenDong / 2 + xO - 2, tempY + ThamSoTruyenVao.backgroundHeightChuyenDong / 2 - yO - 2, 5, 5);
+            }
+        }
+        // Ve vung II
+        q0 = Math.round(((b * b) * ((x + 0.5f) * (x + 0.5f))) + ((a * a) * ((y - 1) * (y - 1))) - (a * a * b * b));
+        while (y > 0) {
+
+            // Kiem tra va cap nhat cac gia tri
+            if (q0 > 0) {
+                y--;
+                dy = dy - (2 * a * a);
+                q0 = q0 + (a * a) - dy;
+            } else {
+                y--;
+                x++;
+                dx = dx + (2 * b * b);
+                dy = dy - (2 * a * a);
+                q0 = q0 + dx - dy + (a * a);
+            }
+            // Ve 4 diem
+            if (y % 5 == 0) {
+                int tempX = ThamSoTruyenVao.tinhXY(x);
+                g.fillRect(tempX + ThamSoTruyenVao.backgroundWidthChuyenDong / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeightChuyenDong / 2 - yO - 2, 5, 5);
+                g.fillRect(-tempX + ThamSoTruyenVao.backgroundWidthChuyenDong / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeightChuyenDong / 2 - yO - 2, 5, 5);
+                g.fillRect(tempX + ThamSoTruyenVao.backgroundWidthChuyenDong / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeightChuyenDong / 2 - yO - 2, 5, 5);
+                g.fillRect(-tempX + ThamSoTruyenVao.backgroundWidthChuyenDong / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeightChuyenDong / 2 - yO - 2, 5, 5);
             }
         }
     }
@@ -214,19 +288,19 @@ public class Ellipse {
         //ve nhanh thu 1 (tu tren xuong)
         while (((float) b2 / a2) * x <= y - 5) {
 //            if (x % 5 == 0) {
-                if (dem < 3) {
-                    g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                    g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                    dem++;
-                } else if (dem < 5) {
-                    dem++;
-                } else {
-                    dem = 0;
-                    g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                    g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                }
-                g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            if (dem < 3) {
+                g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                dem++;
+            } else if (dem < 5) {
+                dem++;
+            } else {
+                dem = 0;
+                g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            }
+            g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
 //            }
             if (p < 0) {
                 p = p + 2 * ((float) b2 / a2) * (2 * x + 3);
@@ -242,19 +316,19 @@ public class Ellipse {
         p = 2 * ((float) a2 / b2) - 2 * a + 1;
         while (((float) a2 / b2) * y <= x) {
 //            if (x % 5 == 0) { 
-                if (dem < 3) {
-                    g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                    g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                    dem++;
-                } else if (dem < 5) {
-                    dem++;
-                } else {
-                    dem = 0;
-                    g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                    g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                }
-                g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
-                g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            if (dem < 3) {
+                g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                dem++;
+            } else if (dem < 5) {
+                dem++;
+            } else {
+                dem = 0;
+                g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+                g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            }
+            g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
+            g.fillRect(-x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
 //            }
             if (p < 0) {
                 p = p + 2 * ((float) a2 / b2) * (2 * y + 3);
@@ -265,7 +339,7 @@ public class Ellipse {
             y += 5;
         }
     }
-    
+
     public void drawBresenhem1(Graphics2D g, Color c) {
         g.setColor(c);
         float p, a2, b2;

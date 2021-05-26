@@ -340,7 +340,7 @@ public class ChongChong {
             dt.drawLien1((Graphics2D) BufGraphics, Color.black);
         } else {
             Ellipse e = new Ellipse(x, y, (int) (sx * banKinh / 10), (int) (sy * banKinh / 10));
-            e.drawBresenhem1((Graphics2D) BufGraphics, Color.BLACK);
+            e.drawLien1((Graphics2D) BufGraphics, Color.BLACK);
         }
 
         g.drawImage(Buferr, 0, 0, null);
