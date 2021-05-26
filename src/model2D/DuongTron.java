@@ -95,7 +95,7 @@ public class DuongTron {
         g.setColor(Color.RED);  //dat mau hinh ve la red
         //khai bao cac bien cua thuat toan Presenhem
         int x, y, p;
-        p = 3 - 2 * r;
+        p = 1 - r;
         x = 0;
         y = r;
         while (x <= y) { //ve 1/8 duong tron
@@ -108,9 +108,9 @@ public class DuongTron {
             g.fillRect(y + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -x + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
             g.fillRect(x + ThamSoTruyenVao.backgroundWidth / 2 + xO - 2, -y + ThamSoTruyenVao.backgroundHeight / 2 - yO - 2, 5, 5);
             if (p < 0) {
-                p += 4 * x + 6;
+                p += 2 * x + 3;
             } else {
-                p += 4 * (x - y) + 10;
+                p += 2 * (x - y) + 5;
                 y -= 5;
             }
             x += 5;

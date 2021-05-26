@@ -1432,7 +1432,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             int a = Integer.parseInt(jTextField_BanKinhNgang.getText());
             int b = Integer.parseInt(jTextField_BanKinhDoc.getText());
             Ellipse m = new Ellipse(xO, yO, a, b);
-            m.drawBresenhem(g);
+            m.draw(g);
         }
         catch (NumberFormatException e){
             System.out.println("Nhập thông tin sai!");

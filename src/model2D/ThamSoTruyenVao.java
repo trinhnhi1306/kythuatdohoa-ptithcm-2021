@@ -30,4 +30,16 @@ public class ThamSoTruyenVao {
         g.drawLine(700 / 2, 0, 700 / 2, ThamSoTruyenVao.backgroundHeight);//y
         g.drawLine(0, ThamSoTruyenVao.backgroundHeight / 2, 700, ThamSoTruyenVao.backgroundHeight / 2);//x
     }
+    public static int tinhXY (int xy) {
+        int temp = xy % 5;
+        if (temp != 0) {
+            if (temp <= 2.5) {
+                xy -= temp;
+            }
+            else {
+                xy += 5 - temp;
+            }
+        }
+        return xy;
+    }
 }

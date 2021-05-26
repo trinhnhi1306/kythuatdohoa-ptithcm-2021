@@ -11,6 +11,7 @@ import java.awt.Graphics2D;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import model2D.ThamSoTruyenVao;
 import model2D.Diem2D;
