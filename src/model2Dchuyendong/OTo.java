@@ -382,16 +382,9 @@ public class OTo {
         int y4[] = {500 / 2 - A18.getY() * 5, 500 / 2 - A19.getY() * 5, 500 / 2 - A20.getY() * 5, 500 / 2 - A21.getY() * 5};
         g.fillPolygon(x4, y4, 4);
 
-        //Vẽ bánh
-        DuongTron banhTraiL = new DuongTron(A.getX(), A.getY(), r);
-        banhTraiL.drawLien1(g, Color.BLACK);
-        DuongTron banhTraiN = new DuongTron(A.getX(), A.getY(), r * 3 / 5);
-        banhTraiN.drawLien1(g, Color.BLACK);
+        
 
-        DuongTron banhPhaiL = new DuongTron(A5.getX(), A5.getY(), r);
-        banhPhaiL.drawLien1(g, Color.BLACK);
-        DuongTron banhPhaiN = new DuongTron(A5.getX(), A5.getY(), r * 3 / 5);
-        banhPhaiN.drawLien1(g, Color.BLACK);
+        
 
         //Tô màu hai hình tròn lớn
 //        DuongTron l;
@@ -492,6 +485,17 @@ public class OTo {
         g.setColor(Color.BLACK);
         g.fillOval(700 / 2 + A.getX() * 5 - 7, 500 / 2 - A.getY() * 5 - 7, 15, 15);
         g.fillOval(700 / 2 + A5.getX() * 5 - 7, 500 / 2 - A5.getY() * 5 - 7, 15, 15);
+        
+        //Vẽ bánh
+        DuongTron banhTraiL = new DuongTron(A.getX(), A.getY(), r);
+        banhTraiL.drawLien1(g, Color.BLACK);
+        DuongTron banhTraiN = new DuongTron(A.getX(), A.getY(), r * 3 / 5);
+        banhTraiN.drawLien1(g, Color.BLACK);
+        
+        DuongTron banhPhaiL = new DuongTron(A5.getX(), A5.getY(), r);
+        banhPhaiL.drawLien1(g, Color.BLACK);
+        DuongTron banhPhaiN = new DuongTron(A5.getX(), A5.getY(), r * 3 / 5);
+        banhPhaiN.drawLien1(g, Color.BLACK);
     }
 
     public void drawTinhTien(Graphics2D g, int dx, int dy) { //Chỉ tịnh tiến cho xe đi ngang
@@ -672,87 +676,66 @@ public class OTo {
         int y4[] = {500 / 2 - A18.getY() * 5, 500 / 2 - A19.getY() * 5, 500 / 2 - A20.getY() * 5, 500 / 2 - A21.getY() * 5};
         g.fillPolygon(x4, y4, 4);
 
-        //Vẽ bánh
-        if (sx == sy) {
-            DuongTron banhTraiL = new DuongTron(A.getX(), A.getY(), (int) (r * sx));
-            banhTraiL.drawLien1(g, Color.BLACK);
-            DuongTron banhTraiN = new DuongTron(A.getX(), A.getY(), (int) (sx * r * 3 / 5));
-            banhTraiN.drawLien1(g, Color.BLACK);
+        
 
-            DuongTron banhPhaiL = new DuongTron(A5.getX(), A5.getY(), (int) (r * sx));
-            banhPhaiL.drawLien1(g, Color.BLACK);
-            DuongTron banhPhaiN = new DuongTron(A5.getX(), A5.getY(), (int) (sx * r * 3 / 5));
-            banhPhaiN.drawLien1(g, Color.BLACK);
-        } else {
-            Ellipse tl = new Ellipse(A.getX(), A.getY(), (int) (sx * r), (int) (sy * r));
-            tl.drawLien1(g, Color.BLACK);
-            Ellipse tn = new Ellipse(A.getX(), A.getY(), (int) (sx * r * 3 / 5), (int) (sy * r * 3 / 5));
-            tn.drawLien1(g, Color.BLACK);
-
-            Ellipse pl = new Ellipse(A5.getX(), A5.getY(), (int) (sx * r), (int) (sy * r));
-            pl.drawLien1(g, Color.BLACK);
-            Ellipse pn = new Ellipse(A5.getX(), A5.getY(), (int) (sx * r * 3 / 5), (int) (sy * r * 3 / 5));
-            pn.drawLien1(g, Color.BLACK);
-        }
-
-        if (sx == sy) {
-            DuongTron l;
-            //Tô màu hai hình tròn lớn
-            for (int i = 1; i < r * sx; i++) {
-                l = new DuongTron(A.getX(), A.getY(), i);
-                l.drawLien1(g, Color.DARK_GRAY);
-                l = new DuongTron(A5.getX(), A5.getY(), i);
-                l.drawLien1(g, Color.DARK_GRAY);
-            }
-            //Tô màu hai hình tròn nhỏ
-            for (int i = 1; i < r * sx * 3.0 / 5; i++) {
-                l = new DuongTron(A.getX(), A.getY(), i);
-                l.drawLien1(g, Color.WHITE);
-                l = new DuongTron(A5.getX(), A5.getY(), i);
-                l.drawLien1(g, Color.WHITE);
-            }
-        } else {
-            Ellipse e;
-            int m = (int) (r * sx);
-            int n = (int) (r * sy);
-            //Tô màu hai hình tròn lớn
-            while (m > 1 || n > 1) {
-                e = new Ellipse(A.getX(), A.getY(), m, n);
-                e.drawLien1(g, Color.DARK_GRAY);
-                e = new Ellipse(A5.getX(), A5.getY(), m, n);
-                e.drawLien1(g, Color.DARK_GRAY);
-                if (m > 1) {
-                    m--;
-                }
-                if (n > 1) {
-                    n--;
-                }
-            }
-            m = (int) (r * sx * 3 / 5);
-            n = (int) (r * sy * 3 / 5);
-            //Tô màu hai hình tròn nhỏ
-            while (m > 1 || n > 1) {
-                e = new Ellipse(A.getX(), A.getY(), m, n);
-                e.drawBresenhem1(g, Color.WHITE);
-                e = new Ellipse(A5.getX(), A5.getY(), m, n);
-                e.drawBresenhem1(g, Color.WHITE);
-                if (m > 1) {
-                    m--;
-                }
-                if (n > 1) {
-                    n--;
-                }
-            }
-        }
+//        if (sx == sy) {
+//            DuongTron l;
+//            //Tô màu hai hình tròn lớn
+//            for (int i = 1; i < r * sx; i++) {
+//                l = new DuongTron(A.getX(), A.getY(), i);
+//                l.drawLien1(g, Color.DARK_GRAY);
+//                l = new DuongTron(A5.getX(), A5.getY(), i);
+//                l.drawLien1(g, Color.DARK_GRAY);
+//            }
+//            //Tô màu hai hình tròn nhỏ
+//            for (int i = 1; i < r * sx * 3.0 / 5; i++) {
+//                l = new DuongTron(A.getX(), A.getY(), i);
+//                l.drawLien1(g, Color.WHITE);
+//                l = new DuongTron(A5.getX(), A5.getY(), i);
+//                l.drawLien1(g, Color.WHITE);
+//            }
+//        } else {
+//            Ellipse e;
+//            int m = (int) (r * sx);
+//            int n = (int) (r * sy);
+//            //Tô màu hai hình tròn lớn
+//            while (m > 1 || n > 1) {
+//                e = new Ellipse(A.getX(), A.getY(), m, n);
+//                e.drawLien1(g, Color.DARK_GRAY);
+//                e = new Ellipse(A5.getX(), A5.getY(), m, n);
+//                e.drawLien1(g, Color.DARK_GRAY);
+//                if (m > 1) {
+//                    m--;
+//                }
+//                if (n > 1) {
+//                    n--;
+//                }
+//            }
+//            m = (int) (r * sx * 3 / 5);
+//            n = (int) (r * sy * 3 / 5);
+//            //Tô màu hai hình tròn nhỏ
+//            while (m > 1 || n > 1) {
+//                e = new Ellipse(A.getX(), A.getY(), m, n);
+//                e.drawBresenhem1(g, Color.WHITE);
+//                e = new Ellipse(A5.getX(), A5.getY(), m, n);
+//                e.drawBresenhem1(g, Color.WHITE);
+//                if (m > 1) {
+//                    m--;
+//                }
+//                if (n > 1) {
+//                    n--;
+//                }
+//            }
+//        }
         //Tô màu hai hình tròn lớn
-//        g.setColor(Color.DARK_GRAY);
-//        g.fillOval((int) (700 / 2 + (A.getX() - r * sx) * 5), (int) (500 / 2 - (A.getY() + r * sy) * 5), (int) (r * 2 * 5 * sx), (int) (r * 2 * 5 * sy));
-//        g.fillOval((int) (700 / 2 + (A5.getX() - r * sx) * 5), (int) (500 / 2 - (A5.getY() + r * sy) * 5), (int) (r * 2 * 5 * sx), (int) (r * 2 * 5 * sy));
+        g.setColor(Color.DARK_GRAY);
+        g.fillOval((int) (700 / 2 + (A.getX() - r * sx) * 5), (int) (500 / 2 - (A.getY() + r * sy) * 5), (int) (r * 2 * 5 * sx), (int) (r * 2 * 5 * sy));
+        g.fillOval((int) (700 / 2 + (A5.getX() - r * sx) * 5), (int) (500 / 2 - (A5.getY() + r * sy) * 5), (int) (r * 2 * 5 * sx), (int) (r * 2 * 5 * sy));
 
         //Tô màu hai hình tròn nhỏ
-//        g.setColor(Color.WHITE);
-//        g.fillOval((int) (700 / 2 + (A.getX() - sx * r * 3 / 5) * 5), (int) (500 / 2 - (A.getY() + sy * r * 3 / 5) * 5), (int) (sx * r * 3 / 5 * 2 * 5), (int) (sy * r * 3 / 5 * 2 * 5));
-//        g.fillOval((int) (700 / 2 + (A5.getX() - sx * r * 3 / 5) * 5), (int) (500 / 2 - (A5.getY() + sy * r * 3 / 5) * 5), (int) (sx * r * 3 / 5 * 2 * 5), (int) (sy * r * 3 / 5 * 2 * 5));
+        g.setColor(Color.WHITE);
+        g.fillOval((int) (700 / 2 + (A.getX() - sx * r * 3 / 5) * 5), (int) (500 / 2 - (A.getY() + sy * r * 3 / 5) * 5), (int) (sx * r * 3 / 5 * 2 * 5), (int) (sy * r * 3 / 5 * 2 * 5));
+        g.fillOval((int) (700 / 2 + (A5.getX() - sx * r * 3 / 5) * 5), (int) (500 / 2 - (A5.getY() + sy * r * 3 / 5) * 5), (int) (sx * r * 3 / 5 * 2 * 5), (int) (sy * r * 3 / 5 * 2 * 5));
         //Vẽ các đường khung xe
         DoanThang A1A2 = new DoanThang(A1.getX(), A1.getY(), A2.getX(), A2.getY());
         A1A2.draw1(g);
@@ -829,6 +812,29 @@ public class OTo {
         g.setColor(Color.BLACK);
         g.fillOval((int) (700 / 2 + A.getX() * 5 - 7 * sx), (int) (500 / 2 - A.getY() * 5 - 7 * sy), (int) (15 * sx), (int) (15 * sy));
         g.fillOval((int) (700 / 2 + A5.getX() * 5 - 7 * sx), (int) (500 / 2 - A5.getY() * 5 - 7 * sy), (int) (15 * sx), (int) (15 * sy));
+    
+        //Vẽ bánh
+        if (sx == sy) {
+            DuongTron banhTraiL = new DuongTron(A.getX(), A.getY(), (int) (r * sx));
+            banhTraiL.drawLien1(g, Color.BLACK);
+            DuongTron banhTraiN = new DuongTron(A.getX(), A.getY(), (int) (sx * r * 3 / 5));
+            banhTraiN.drawLien1(g, Color.BLACK);
+
+            DuongTron banhPhaiL = new DuongTron(A5.getX(), A5.getY(), (int) (r * sx));
+            banhPhaiL.drawLien1(g, Color.BLACK);
+            DuongTron banhPhaiN = new DuongTron(A5.getX(), A5.getY(), (int) (sx * r * 3 / 5));
+            banhPhaiN.drawLien1(g, Color.BLACK);
+        } else {
+            Ellipse tl = new Ellipse(A.getX(), A.getY(), (int) (sx * r), (int) (sy * r));
+            tl.drawLien1(g, Color.BLACK);
+            Ellipse tn = new Ellipse(A.getX(), A.getY(), (int) (sx * r * 3 / 5), (int) (sy * r * 3 / 5));
+            tn.drawLien1(g, Color.BLACK);
+
+            Ellipse pl = new Ellipse(A5.getX(), A5.getY(), (int) (sx * r), (int) (sy * r));
+            pl.drawLien1(g, Color.BLACK);
+            Ellipse pn = new Ellipse(A5.getX(), A5.getY(), (int) (sx * r * 3 / 5), (int) (sy * r * 3 / 5));
+            pn.drawLien1(g, Color.BLACK);
+        }
     }
 
     public String inToaDo() {

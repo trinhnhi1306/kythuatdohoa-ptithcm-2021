@@ -40,11 +40,14 @@ public class Diem2D {
         this.y = y;
     }
 
-    public void draw(Graphics2D g) {
+    public void draw(Graphics2D g, int flag) {
 
         g.setColor(Color.RED);  //dat mau hinh ve la red
-//        String text = "Điểm (" + x + ", " + y + ")";
-//        g.drawString(text, ThamSoTruyenVao.backgroundWidth / 2 + x * 5 + 5, ThamSoTruyenVao.backgroundHeight / 2 - y * 5 - 10);
+        if (flag == 1) {
+            String text = "Điểm (" + x + ", " + y + ")";
+            g.drawString(text, ThamSoTruyenVao.backgroundWidth / 2 + x * 5 + 5, ThamSoTruyenVao.backgroundHeight / 2 - y * 5 - 10);
+        }
+
         g.fillRect(ThamSoTruyenVao.backgroundWidth / 2 + x * 5 - 2, ThamSoTruyenVao.backgroundHeight / 2 - y * 5 - 2, 5, 5);
     }
 
@@ -52,6 +55,5 @@ public class Diem2D {
     public String toString() {
         return x + " " + y;
     }
-    
-    
+
 }

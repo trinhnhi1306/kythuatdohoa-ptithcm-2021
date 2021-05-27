@@ -29,7 +29,7 @@ public class DoiXungQuaDoanThang {
         float[][] tinhtien1 = new float[][]{{1, 0, 0}, {0, 1, 0}, {-A.getX(), -A.getY(), 1}}; //Ma trận tinh tien 1
         float[][] quay1 = new float[][]{{cos1, sin1, 0}, {-sin1, cos1, 0}, {0, 0, 1}}; //Ma trận quay 1
         float[][] tinhtien2 = new float[][]{{1, 0, 0}, {0, 1, 0}, {A.getX(), A.getY(), 1}}; //Ma trận tinh tien 2
-        float[][] quay2 = new float[][]{{cos2, sin2, 0}, {-sin2, cos2, 0}, {0, 0, 1}}; //Ma trận quay 2
+        float[][] quay2 = new float[][]{{cos2, sin2, 0}, {-sin2, cos2, 0}, {0, 0, 1}}; //Ma trận quay 2   
         float[][] doixung = new float[][]{{-1, 0, 0}, {0, 1, 0}, {0, 0, 1}}; //Ma trận đối xứng. đối xứng qua Oy
         Atn = NhanMaTran.NhanMotX(Atn.length, Atn, tinhtien1);
         Atn = NhanMaTran.NhanMotX(Atn.length, Atn, quay1);

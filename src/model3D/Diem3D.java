@@ -136,7 +136,7 @@ public class Diem3D {
         Diem2D A = Cabinet.chieu(a.getX(), a.getY(), a.getZ());
         
         //Vẽ điểm
-        A.draw(g);
+        A.draw(g, 0);
 
         //Vẽ tên điểm
         g.setColor(Color.red);

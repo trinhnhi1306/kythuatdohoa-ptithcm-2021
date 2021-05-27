@@ -161,7 +161,7 @@ public class HinhCau {
         T.drawLien(g);
 
         //Vẽ tâm
-        O.draw(g);
+        O.draw(g, 0);
 
         //Vẽ ellipse
         Ellipse E = new Ellipse(O.getX(), O.getY(), r, (int) (r * Math.sqrt(2) / 4));

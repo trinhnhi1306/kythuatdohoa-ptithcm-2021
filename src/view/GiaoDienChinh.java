@@ -403,6 +403,11 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTabbedPane_MenuChinh.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jTabbedPane_MenuChinh.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane_MenuChinhStateChanged(evt);
+            }
+        });
 
         jPanel_2D.setOpaque(false);
         jPanel_2D.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -520,6 +525,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
         jPanel_TamGiacDeu.setBackground(new java.awt.Color(153, 204, 255));
         jPanel_TamGiacDeu.setOpaque(false);
+        jPanel_TamGiacDeu.setRequestFocusEnabled(false);
         jPanel_TamGiacDeu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextField_xDinh.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(102, 153, 255), new java.awt.Color(51, 204, 255)));
@@ -993,7 +999,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jButton_2DVe)))
                 .addContainerGap())
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
         );
         jPanel_Menu2DChuyenDongLayout.setVerticalGroup(
             jPanel_Menu2DChuyenDongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1090,7 +1096,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 .addComponent(jButton_Ve, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(jButton_RunStop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         jPanel_ChucNangLayout.setVerticalGroup(
             jPanel_ChucNangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1126,7 +1132,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             jPanel_TocDoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel_TocDoLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jSlider_TocDo, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                .addComponent(jSlider_TocDo, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel_Speed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -1374,13 +1380,13 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
     private void jButton_VeTamGiacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeTamGiacActionPerformed
         // TODO add your handling code here:
+        Graphics2D g = (Graphics2D) jPanel_KhungVe2D.getGraphics();
         try {
             int xDinh = Integer.parseInt(jTextField_xDinh.getText());
             int yDinh = Integer.parseInt(jTextField_yDinh.getText());
             int canh = Integer.parseInt(jTextField_Canh.getText());
             TamGiacDeu m = new TamGiacDeu(xDinh, yDinh, canh);
-            jPanel_KhungVe2D.add(m.draw());
-            jPanel_KhungVe2D.repaint();
+            m.draw(g);
         }
         catch (NumberFormatException e){
             System.out.println("Nhập thông tin sai!");
@@ -1395,7 +1401,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             int x = Integer.parseInt(jTextField_x.getText());
             int y = Integer.parseInt(jTextField_y.getText());
             Diem2D m = new Diem2D(x, y);
-            m.draw(g);
+            m.draw(g, 1);
         }
         catch (NumberFormatException e){
             System.out.println("Nhập thông tin sai!");
@@ -1519,7 +1525,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             dx = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập khoảng tịnh tiến dx:"));
             dy = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập khoảng tịnh tiến dy:"));
             m = TinhTien.TinhTien(m, dx, dy);
-            m.draw(g);
+            m.draw(g, 1);
         }
         catch (HeadlessException | NumberFormatException e){
             System.out.println("Nhập thông tin sai!");
@@ -1541,7 +1547,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             gocQuay = Float.parseFloat(JOptionPane.showInputDialog(this, "Nhập góc quay (độ):"));
             gocQuay = gocQuay * (float) Math.PI / 180;
             m = Quay.QuayTamBatKy(tam, m, gocQuay);
-            m.draw(g);
+            m.draw(g, 1);
         }
         catch (HeadlessException | NumberFormatException e){
             System.out.println("Nhập thông tin sai!");
@@ -1564,7 +1570,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             b.setY(Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập y điểm cuối")));
             m = DoiXungQuaDoanThang.layDoiXung(m, a, b);
             System.out.println(m.getX() + " " + m.getY());
-            m.draw(g);
+            m.draw(g, 1);
             DoanThang ab = new DoanThang(a.getX(), a.getY(), b.getX(), b.getY());
             ab.draw(g);
         }
@@ -1911,7 +1917,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
 
     private void jButton_VeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VeActionPerformed
         // TODO add your handling code here:
-        cc1 = new ChongChong(-50, 20, 15);
+        cc1 = new ChongChong(-35, 20, 25);
         cc2 = new ChongChong(30, 20, 15);
         Graphics2D gr = (Graphics2D) jPanel_KhungVeHoatCanh.getGraphics();
         BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
@@ -1975,6 +1981,15 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         jDialog_ThongTinNhom.setLocationRelativeTo(this);
         jDialog_ThongTinNhom.setVisible(true);
     }//GEN-LAST:event_jButton_ThongTinNhomActionPerformed
+
+    private void jTabbedPane_MenuChinhStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane_MenuChinhStateChanged
+        // TODO add your handling code here:
+        if (start == true) {
+            timer.stop();
+            start = false;
+            changePlayStopIcon();
+        }
+    }//GEN-LAST:event_jTabbedPane_MenuChinhStateChanged
 
     private boolean rangBuocDuLieuDuongThang() {
         String x1 = jTextField_x1.getText();

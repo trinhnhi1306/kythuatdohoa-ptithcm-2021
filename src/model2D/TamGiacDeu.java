@@ -7,6 +7,7 @@ package model2D;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
 /**
@@ -18,9 +19,9 @@ public class TamGiacDeu {
     private int xDinh, yDinh, canh;
 
     public TamGiacDeu(int xDinh, int yDinh, int canh) {
-        this.xDinh = xDinh * 5;
-        this.yDinh = yDinh * 5;
-        this.canh = canh * 5;
+        this.xDinh = xDinh;
+        this.yDinh = yDinh;
+        this.canh = canh;
     }
 
     public int getxDinh() {
@@ -47,34 +48,25 @@ public class TamGiacDeu {
         this.canh = canh;
     }
 
-    public JPanel draw() {
-        JPanel panel = new JPanel() {
-            @Override
-            protected void paintComponent(Graphics g) {
-                g.setColor(Color.RED);  //dat mau hinh ve la red
-                //khai bao tọa độ các đỉnh
-                int xA, yA, xB, yB, xC, yC;
-                xA = canh / 2;
-                yA = 0;
-                xB = 0;
-                yB = (int) (0.866 * canh);
-                xC = canh;
-                yC = (int) (0.866 * canh);
-                //khai bao cac bien trong thuat toan Presenhem
-                int x, y, Dx, Dy, p;
-                //vẽ cạnh bên trái
-                g.drawLine(xB, yB, xA, yA);
-                //vẽ cạnh bên phải
-                g.drawLine(xA, yA, xC, yC);
-                //vẽ cạnh đáy
-                g.drawLine(xB, yB, xC, yC);
-            }
-        };
-        int xPanel = ThamSoTruyenVao.backgroundWidth / 2 + xDinh - canh / 2;
-        int yPanel = ThamSoTruyenVao.backgroundHeight / 2 - yDinh;
-        panel.setOpaque(false);
-        panel.setBounds(xPanel, yPanel, canh + 1, canh + 1);
-        panel.setVisible(true);
-        return panel;
+    public void draw(Graphics2D g) {
+        g.setColor(Color.RED);  //dat mau hinh ve la red
+        //khai bao tọa độ các đỉnh
+        Diem2D a = new Diem2D(xDinh, yDinh);
+        Diem2D b = new Diem2D((int) (xDinh - canh / 2), (int) (yDinh - canh * (Math.sqrt(3.0) / 2)));
+        Diem2D c = new Diem2D((int) (xDinh + canh / 2), (int) (yDinh - canh * (Math.sqrt(3.0) / 2)));
+
+        //vẽ cạnh AB
+        DoanThang ab = new DoanThang(a.getX(), a.getY(), b.getX(), b.getY());
+        ab.draw(g);
+
+        //vẽ cạnh BC
+        DoanThang bc = new DoanThang(c.getX(), c.getY(), b.getX(), b.getY());
+        bc.draw(g);
+
+        //vẽ cạnh AC
+        DoanThang ac = new DoanThang(a.getX(), a.getY(), c.getX(), c.getY());
+        ac.draw(g);
+
     }
+
 }
