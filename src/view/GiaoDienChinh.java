@@ -1387,8 +1387,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             int canh = Integer.parseInt(jTextField_Canh.getText());
             TamGiacDeu m = new TamGiacDeu(xDinh, yDinh, canh);
             m.draw(g);
-        }
-        catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             System.out.println("Nhập thông tin sai!");
             JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
         }
@@ -1402,8 +1401,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             int y = Integer.parseInt(jTextField_y.getText());
             Diem2D m = new Diem2D(x, y);
             m.draw(g, 1);
-        }
-        catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             System.out.println("Nhập thông tin sai!");
             JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
         }
@@ -1439,8 +1437,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             int b = Integer.parseInt(jTextField_BanKinhDoc.getText());
             Ellipse m = new Ellipse(xO, yO, a, b);
             m.draw(g);
-        }
-        catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             System.out.println("Nhập thông tin sai!");
             JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
         }
@@ -1470,8 +1467,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                     hh.xoaDuLieu();
                 }
             });
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Nhập thông tin sai!");
             JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
         }
@@ -1501,8 +1497,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                     hc.xoaDuLieu();
                 }
             });
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Nhập thông tin sai!");
             JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
         }
@@ -1526,8 +1521,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             dy = Integer.parseInt(JOptionPane.showInputDialog(this, "Nhập khoảng tịnh tiến dy:"));
             m = TinhTien.TinhTien(m, dx, dy);
             m.draw(g, 1);
-        }
-        catch (HeadlessException | NumberFormatException e){
+        } catch (HeadlessException | NumberFormatException e) {
             System.out.println("Nhập thông tin sai!");
             JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
         }
@@ -1548,8 +1542,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             gocQuay = gocQuay * (float) Math.PI / 180;
             m = Quay.QuayTamBatKy(tam, m, gocQuay);
             m.draw(g, 1);
-        }
-        catch (HeadlessException | NumberFormatException e){
+        } catch (HeadlessException | NumberFormatException e) {
             System.out.println("Nhập thông tin sai!");
             JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
         }
@@ -1573,8 +1566,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             m.draw(g, 1);
             DoanThang ab = new DoanThang(a.getX(), a.getY(), b.getX(), b.getY());
             ab.draw(g);
-        }
-        catch (HeadlessException | NumberFormatException e){
+        } catch (HeadlessException | NumberFormatException e) {
             System.out.println("Nhập thông tin sai!");
             JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
         }
@@ -1604,8 +1596,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                     hc.xoaDuLieu();
                 }
             });
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Nhập thông tin sai!");
             JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
         }
@@ -1620,8 +1611,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             cc = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
             cc.draw(g);
             jTextArea_ToaDoVat.setText("          TỌA ĐỘ CHONG CHONG" + cc.inToaDo());
-        }
-        catch (HeadlessException | NumberFormatException e){
+        } catch (HeadlessException | NumberFormatException e) {
             System.out.println("Nhập thông tin sai!");
             JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
         }
@@ -1639,8 +1629,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             o = new OTo(new Diem2D(x, y), bk);
             o.draw(g);
             jTextArea_ToaDoVat.setText(o.inToaDo());
-        }
-        catch (HeadlessException | NumberFormatException e){
+        } catch (HeadlessException | NumberFormatException e) {
             System.out.println("Nhập thông tin sai!");
             JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
         }
@@ -1666,8 +1655,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             cc.drawTinhTien((Graphics2D) g, dx, dy);
             gr.drawImage(buffer, 0, 0, null);
             jTextArea_ToaDoVat.setText("          TỌA ĐỘ CHONG CHÓNG" + cc.inToaDo());
-        }
-        catch (HeadlessException | NumberFormatException e){
+        } catch (HeadlessException | NumberFormatException e) {
             System.out.println("Nhập thông tin sai!");
             JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
         }
@@ -1684,8 +1672,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             o.drawTinhTien((Graphics2D) g, dx, dy);
             gr.drawImage(buffer, 0, 0, null);
             jTextArea_ToaDoVat.setText(o.inToaDo());
-        }
-        catch (HeadlessException | NumberFormatException e){
+        } catch (HeadlessException | NumberFormatException e) {
             System.out.println("Nhập thông tin sai!");
             JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
         }
@@ -1710,8 +1697,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             cc.drawQuay((Graphics2D) g, goc);
             gr.drawImage(buffer, 0, 0, null);
             jTextArea_ToaDoVat.setText("          TỌA ĐỘ CHONG CHONG" + cc.inToaDo());
-        }
-        catch (HeadlessException | NumberFormatException e){
+        } catch (HeadlessException | NumberFormatException e) {
             System.out.println("Nhập thông tin sai!");
             JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
         }
@@ -1727,8 +1713,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             o.drawQuay((Graphics2D) g, goc);
             gr.drawImage(buffer, 0, 0, null);
             jTextArea_ToaDoVat.setText("\tTỌA ĐỘ Ô TÔ" + o.inToaDo());
-        }
-        catch (HeadlessException | NumberFormatException e){
+        } catch (HeadlessException | NumberFormatException e) {
             System.out.println("Nhập thông tin sai!");
             JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
         }
@@ -1788,8 +1773,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             str += "\n\t\tĐIỂM SAU ĐỐI XỨNG\n\n";
             str += "\tA' (" + kq.getX() + ", " + kq.getY() + ", " + kq.getZ() + ")";
             jTextArea_ToaDo.setText(str);
-        }
-        catch (HeadlessException | NumberFormatException e){
+        } catch (HeadlessException | NumberFormatException e) {
             System.out.println("Nhập thông tin sai!");
             JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
         }
@@ -1807,8 +1791,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             cc.drawThuPhong((Graphics2D) g, sx, sy);
             gr.drawImage(buffer, 0, 0, null);
             jTextArea_ToaDoVat.setText("          TỌA ĐỘ CHONG CHONG" + cc.inToaDo());
-        }
-        catch (HeadlessException | NumberFormatException e){
+        } catch (HeadlessException | NumberFormatException e) {
             System.out.println("Nhập thông tin sai!");
             JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
         }
@@ -1826,8 +1809,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             o.drawThuPhong((Graphics2D) g, sx, sy);
             gr.drawImage(buffer, 0, 0, null);
             jTextArea_ToaDoVat.setText("\tTỌA ĐỘ Ô TÔ" + o.inToaDo());
-        }
-        catch (HeadlessException | NumberFormatException e){
+        } catch (HeadlessException | NumberFormatException e) {
             System.out.println("Nhập thông tin sai!");
             JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
         }
@@ -1877,8 +1859,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             cc.drawDoiXung((Graphics2D) g, new Diem2D(x1, y1), new Diem2D(x2, y2));
             gr.drawImage(buffer, 0, 0, null);
             jTextArea_ToaDoVat.setText("          TỌA ĐỘ CHONG CHONG" + cc.inToaDo());
-        }
-        catch (HeadlessException | NumberFormatException e){
+        } catch (HeadlessException | NumberFormatException e) {
             System.out.println("Nhập thông tin sai!");
             JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
         }
@@ -1899,8 +1880,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             o.drawDoiXung((Graphics2D) g, new Diem2D(x1, y1), new Diem2D(x2, y2));
             gr.drawImage(buffer, 0, 0, null);
             jTextArea_ToaDoVat.setText("\tTỌA ĐỘ Ô TÔ" + o.inToaDo());
-        }
-        catch (HeadlessException | NumberFormatException e){
+        } catch (HeadlessException | NumberFormatException e) {
             System.out.println("Nhập thông tin sai!");
             JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
         }

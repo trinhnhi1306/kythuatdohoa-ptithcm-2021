@@ -382,10 +382,6 @@ public class OTo {
         int y4[] = {500 / 2 - A18.getY() * 5, 500 / 2 - A19.getY() * 5, 500 / 2 - A20.getY() * 5, 500 / 2 - A21.getY() * 5};
         g.fillPolygon(x4, y4, 4);
 
-        
-
-        
-
         //Tô màu hai hình tròn lớn
 //        DuongTron l;
 //        for (int i = 1; i < r; i++) {
@@ -485,13 +481,13 @@ public class OTo {
         g.setColor(Color.BLACK);
         g.fillOval(700 / 2 + A.getX() * 5 - 7, 500 / 2 - A.getY() * 5 - 7, 15, 15);
         g.fillOval(700 / 2 + A5.getX() * 5 - 7, 500 / 2 - A5.getY() * 5 - 7, 15, 15);
-        
+
         //Vẽ bánh
         DuongTron banhTraiL = new DuongTron(A.getX(), A.getY(), r);
         banhTraiL.drawLien1(g, Color.BLACK);
         DuongTron banhTraiN = new DuongTron(A.getX(), A.getY(), r * 3 / 5);
         banhTraiN.drawLien1(g, Color.BLACK);
-        
+
         DuongTron banhPhaiL = new DuongTron(A5.getX(), A5.getY(), r);
         banhPhaiL.drawLien1(g, Color.BLACK);
         DuongTron banhPhaiN = new DuongTron(A5.getX(), A5.getY(), r * 3 / 5);
@@ -676,8 +672,6 @@ public class OTo {
         int y4[] = {500 / 2 - A18.getY() * 5, 500 / 2 - A19.getY() * 5, 500 / 2 - A20.getY() * 5, 500 / 2 - A21.getY() * 5};
         g.fillPolygon(x4, y4, 4);
 
-        
-
 //        if (sx == sy) {
 //            DuongTron l;
 //            //Tô màu hai hình tròn lớn
@@ -812,7 +806,7 @@ public class OTo {
         g.setColor(Color.BLACK);
         g.fillOval((int) (700 / 2 + A.getX() * 5 - 7 * sx), (int) (500 / 2 - A.getY() * 5 - 7 * sy), (int) (15 * sx), (int) (15 * sy));
         g.fillOval((int) (700 / 2 + A5.getX() * 5 - 7 * sx), (int) (500 / 2 - A5.getY() * 5 - 7 * sy), (int) (15 * sx), (int) (15 * sy));
-    
+
         //Vẽ bánh
         if (sx == sy) {
             DuongTron banhTraiL = new DuongTron(A.getX(), A.getY(), (int) (r * sx));
