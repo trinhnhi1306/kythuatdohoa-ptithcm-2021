@@ -835,6 +835,7 @@ public class OTo {
             Ellipse pn = new Ellipse(A5.getX(), A5.getY(), (int) (sx * r * 3 / 5), (int) (sy * r * 3 / 5));
             pn.drawLien1(g, Color.BLACK);
         }
+        r = (int) (r * sx);
     }
 
     public String inToaDo() {

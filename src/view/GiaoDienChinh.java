@@ -1803,10 +1803,10 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
             Graphics g = buffer.getGraphics();
             ThamSoTruyenVao.veToaDo((Graphics2D) g);
-            ChongChong c = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
-            c.drawThuPhong((Graphics2D) g, sx, sy);
+//            ChongChong c = new ChongChong(ThamSoTruyenVao.xChongChong, ThamSoTruyenVao.yChongChong, ThamSoTruyenVao.bkChongChong);
+            cc.drawThuPhong((Graphics2D) g, sx, sy);
             gr.drawImage(buffer, 0, 0, null);
-            jTextArea_ToaDoVat.setText("          TỌA ĐỘ CHONG CHONG" + c.inToaDo());
+            jTextArea_ToaDoVat.setText("          TỌA ĐỘ CHONG CHONG" + cc.inToaDo());
         }
         catch (HeadlessException | NumberFormatException e){
             System.out.println("Nhập thông tin sai!");
@@ -1822,10 +1822,10 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             BufferedImage buffer = new BufferedImage(700, 500, BufferedImage.TYPE_INT_ARGB);
             Graphics g = buffer.getGraphics();
             ThamSoTruyenVao.veToaDo((Graphics2D) g);
-            OTo oo = new OTo(ThamSoTruyenVao.tamBanh, ThamSoTruyenVao.bkBanh);
-            oo.drawThuPhong((Graphics2D) g, sx, sy);
+//            OTo oo = new OTo(ThamSoTruyenVao.tamBanh, ThamSoTruyenVao.bkBanh);
+            o.drawThuPhong((Graphics2D) g, sx, sy);
             gr.drawImage(buffer, 0, 0, null);
-            jTextArea_ToaDoVat.setText("\tTỌA ĐỘ Ô TÔ" + oo.inToaDo());
+            jTextArea_ToaDoVat.setText("\tTỌA ĐỘ Ô TÔ" + o.inToaDo());
         }
         catch (HeadlessException | NumberFormatException e){
             System.out.println("Nhập thông tin sai!");

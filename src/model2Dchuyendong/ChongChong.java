@@ -272,7 +272,7 @@ public class ChongChong {
 
     public void drawThuPhong(Graphics2D g, float sx, float sy) {
         Diem2D tam = new Diem2D(x, y);
-
+        
         a1 = ThuPhong.ThuPhongDungTam(a1, tam, sx, sy);
         a2 = ThuPhong.ThuPhongDungTam(a2, tam, sx, sy);
         a3 = ThuPhong.ThuPhongDungTam(a3, tam, sx, sy);
@@ -344,6 +344,8 @@ public class ChongChong {
         }
 
         g.drawImage(Buferr, 0, 0, null);
+        
+        banKinh = (int) (banKinh*sx);
     }
 
     public void drawDoiXung(Graphics2D g, Diem2D a, Diem2D b) {
