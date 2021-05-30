@@ -152,11 +152,11 @@ public class HinhCau {
     public void draw(Graphics2D g) {
         //Tâm O
         Diem3D o = new Diem3D(x, y, z);
-        Diem3D a = new Diem3D(x, y - r, z); // Thuộc hình cầu, nằm trên đường tròn đi qua tâm song song với mặt phẳng Oxy
+//        Diem3D a = new Diem3D(x, y - r, z); // Thuộc hình cầu, nằm trên đường tròn đi qua tâm song song với mặt phẳng Oxy
 
         //chuyển đổi sang 2D bằng phép chiếu Cabinet
         Diem2D O = Cabinet.chieu(o.getX(), o.getY(), o.getZ());
-        Diem2D A = Cabinet.chieu(a.getX(), a.getY(), a.getZ());
+//        Diem2D A = Cabinet.chieu(a.getX(), a.getY(), a.getZ());
 
         //Vẽ hình tròn
         DuongTron T = new DuongTron(O.getX(), O.getY(), r);
@@ -166,10 +166,9 @@ public class HinhCau {
         O.draw(g, 0);
 
         //Vẽ ellipse
-//        Ellipse E = new Ellipse(O.getX(), O.getY(), r, (int) (r * Math.sqrt(2) / 4));
-        Ellipse E = new Ellipse(O.getX(), O.getY(), r, (int) (Math.sqrt((o.getX() - A.getX()) * (o.getX() - A.getX()) + (o.getY() - A.getY()) * (o.getY() - A.getY()))));
+        Ellipse E = new Ellipse(O.getX(), O.getY(), r, (int) (r * Math.sqrt(2) / 4));
+//        Ellipse E = new Ellipse(O.getX(), O.getY(), r, (int) (Math.sqrt((o.getX() - A.getX()) * (o.getX() - A.getX()) + (o.getY() - A.getY()) * (o.getY() - A.getY()))));
         E.draw(g);
-
         //Vẽ tên các điểm
         g.setColor(Color.red);
         g.drawString("O", ThamSoTruyenVao.backgroundWidth / 2 + O.getX() * 5 - 10, ThamSoTruyenVao.backgroundHeight / 2 - O.getY() * 5 - 10);

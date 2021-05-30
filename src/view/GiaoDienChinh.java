@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package view;
-
+import org.xml.sax.Attributes;
 import biendoi2D.DoiXungQuaDoanThang;
 import biendoi2D.Quay;
 import biendoi2D.TinhTien;
@@ -1436,7 +1436,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             int a = Integer.parseInt(jTextField_BanKinhNgang.getText());
             int b = Integer.parseInt(jTextField_BanKinhDoc.getText());
             Ellipse m = new Ellipse(xO, yO, a, b);
-            m.draw(g);
+            m.drawLien(g);
         } catch (NumberFormatException e) {
             System.out.println("Nhập thông tin sai!");
             JOptionPane.showMessageDialog(this, "Nhập thông tin sai!");
