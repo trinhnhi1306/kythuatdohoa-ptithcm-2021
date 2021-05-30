@@ -1911,8 +1911,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         } else if (o1.getA().getX() <= 91) {
             o1.drawTinhTien((Graphics2D) g, 1, 0);
         } else {
-            o1.getA().setX(-133);
-            o1.getA().setY(-42);
+            o1 = new OTo(new Diem2D(-133, -42), 7);
         }
         cc1.drawQuay((Graphics2D) g, quayGoc);
         cc2.drawThuPhong((Graphics2D) g, tyLe, tyLe);
