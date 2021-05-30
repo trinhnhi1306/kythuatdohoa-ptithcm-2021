@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package view;
-import org.xml.sax.Attributes;
 import biendoi2D.DoiXungQuaDoanThang;
 import biendoi2D.Quay;
 import biendoi2D.TinhTien;

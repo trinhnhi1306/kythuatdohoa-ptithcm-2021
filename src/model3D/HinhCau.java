@@ -169,6 +169,7 @@ public class HinhCau {
         Ellipse E = new Ellipse(O.getX(), O.getY(), r, (int) (r * Math.sqrt(2) / 4));
 //        Ellipse E = new Ellipse(O.getX(), O.getY(), r, (int) (Math.sqrt((o.getX() - A.getX()) * (o.getX() - A.getX()) + (o.getY() - A.getY()) * (o.getY() - A.getY()))));
         E.draw(g);
+
         //Vẽ tên các điểm
         g.setColor(Color.red);
         g.drawString("O", ThamSoTruyenVao.backgroundWidth / 2 + O.getX() * 5 - 10, ThamSoTruyenVao.backgroundHeight / 2 - O.getY() * 5 - 10);
